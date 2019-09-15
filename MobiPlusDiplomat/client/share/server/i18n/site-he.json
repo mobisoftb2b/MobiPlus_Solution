@@ -1,0 +1,206 @@
+﻿{
+  "langSettings": {
+    "shortLang": "he",
+    "fullLang": "he-IL",
+    "langID": 1
+  },
+  "dashboard": {
+    "WELCOME": "ברוכים הבאים ל MobiSoft",
+    "tabs": {
+      "MAIN": "ריכוז פעילות",
+      "DRIVERACTION": "פעילות נהג",
+      "DRIVERSTATUS": "סטטוס נהגים",
+      "ENDDAY": "סוף יום",
+      "MAP": "מפה",
+      "CUSTOMERS": "לקוחות",
+      "REMARKS": "הערות גביה",
+      "COLLECTIONNOTES": "הערות גביה",
+      "DRIVERREPORT": "דיווחי נהג"
+    }
+  },
+  "topbar": {
+    "search": {
+      "PLACEHOLDER": "Tipea y pulsa enter.."
+    }
+  },
+  "sidebar": {
+    "WELCOME": "ברוכים הבאים",
+    "heading": {
+      "HEADER": "תפריט ראשי"
+    },
+    "nav": {
+      "DASHBOARD": "לוח מלוונים",
+      "SINGLEVIEW": "נהגים למשתמש",
+      "menu": {
+        "MENU": "משתמשים",
+        "SUBMENU": "נהול משתמשים"
+      }
+    }
+  },
+  "offsidebar": {
+    "LANGUAGES": "שפות",
+    "SETTINGS": "הגדרות"
+  },
+  "login": {
+    "header": {
+      "TITLE": "MobiSoft"
+    },
+    "loginForm": {
+      "LOGINTITLE": "ברוכים הבאים ל- MobiPlus",
+      "USERNAMEPLACEHOLDER": "שם משתמש",
+      "PASSWORD": "סיסאה",
+      "REMEMBERME": "זכור אותי",
+      "LOGINBUTTON": "כניסה"
+    },
+    "wrongLogin": {
+      "headline": "ההתחברות נכשלה",
+      "message": "שם משתמש או סיסמה לא נכונה"
+    }
+  },
+  "filter": {
+    "COUNTRY": "בחר מדינה",
+    "DISTRIBUTION": "בחר מרכז הפצה",
+    "DRIVER": "בחר נהג",
+    "DATE": "בחר תעריך",
+    "OKLABEL": "שמור",
+    "CANCELLABEL": "סגור"
+  },
+  "concActivityGrid": {
+    "DriverID": "מס' נהג",
+    "DriverName": "שם נהג",
+    "Delivery": "משלוח",
+    "Shipping": "משלוח",
+    "Cycle": "סבב",
+    "Visit": "בקור",
+    "NotVisited": "אי ביקורים",
+    "NotFullDelivery": "אי אספקה מלאה",
+    "AgentReturn": "החזרת סוכן",
+    "DriverReturn": "החזרת נהג",
+    "DriverStatus": "משימות",
+    "Progress": "קצב",
+    "Order": "סדר",
+    "Customer": "לקוח",
+    "Address": "כתובת",
+    "TravelHours": "שעות נסיעה",
+    "ServiceHours": "שעות שירות",
+    "OriginalTime": "זמן מקורי",
+    "DeliveryTime": "זמן משלוח",
+    "Deliveries": "משלוחים",
+    "Pallets": "משטחים שנאספו",
+    "Shipment": "משלוח",
+    "ActualSortOrder": "סדר מיין בפועל",
+    "CollectedSurfaces": "משטחים שנאספו",
+    "searchGrid": "חפוש"
+  },
+  "buttonCaptions": {
+    "CloseModal": "סגור",
+    "searchGrid": "חיפוש",
+    "AddTask": "משימה חדשה",
+    "SaveTask": "שמור משימה",
+    "DeleteTask": "למחוק"
+  },
+  "mapsSettings": {
+    "TrucksView": "משאיות",
+    "VisitView": "ביקורים",
+    "RoadsView": "מסלולים"
+  },
+  "deleteRowWarnings": {
+    "confirmTitle": "האם אתה בטוח?",
+    "confirmMainText": "אתה בטוח שאתה רוצה למחוק?",
+    "confirmButtonText": "כן, מחק!",
+    "cancelButtonText": "לא, לבטל!",
+    "deleted": "נמחק",
+    "deletedText": "השורה שנבחרה נמחקה.",
+    "Cancelled": "מבוטל",
+    "CancelledText": "השורה שנבחרה בטוחה :)"
+  },
+  "driverStatus": {
+    "UpdateDate": "שידור אחרון",
+    "LineDownload": "נטען למכשיר",
+    "Wise": "יצא לדרך",
+    "ToDiplomat": "בדרך לדיפלומט",
+    "LineEnded": "הגעה לדיפלומט",
+    "DriverID": "מס' הנהג",
+    "DriverName": "שם הנהג",
+    "Cycle": "סבב",
+    "ImgLeaveBB": "יצא B&B",
+    "ImgArriveBB": "הגעה B&B",
+    "TaskTime": "זמן משימה",
+    "ShipmentID": "מזהה המשלוח",
+    "Customer": "לקוח",
+    "CustAddress": "כתובת הלקוח",
+    "TaskID": "מזהה משימה",
+    "DocNumber": "מס 'מסמך",
+    "ReportCode": "דוח קוד",
+    "Description": "תאור",
+    "Comment": "הערה",
+    "LastChange": "שינוי אחרון"
+  },
+  "tasksDataGrid": {
+    "TaskID": "#",
+    "UsersTasksName": "משימה",
+    "TaskUser": "נהג",
+    "CustomerCode": "לקוח",
+    "CustAddress": "כתובת הלקוח",
+    "CustCity": "עיר",
+    "TaskTypeID": "סוג משימה",
+    "TaskTypeDesc": "סוג משימה",
+    "TaskDesc": "משימה",
+    "TaskEdit_Driver": "נהג",
+    "TaskEdit_Customer": "לקוח",
+    "TaskEdit_Address": "כתובת",
+    "TaskEdit_City": "עיר",
+    "TaskEdit_FromDate": "מתאריך",
+    "TaskEdit_ToDate": "עד תאריך",
+    "TaskEdit_TypeTask": "סוג משימה",
+    "TaskEdit_TaskDesc": "משימה",
+    "TaskEdit_Title": "משימה חדשה"
+  },
+  "endDayGrid": {
+    "DriverID": "מספר נהג",
+    "DriverName": "שפ נהג",
+    "Shipping": "משלוח",
+    "AgentReturn": "החזרות סוכן",
+    "DriverReturn": "החזרות נהג",
+    "DriverStatus": "סטטוס נהג",
+    "DistansePlanned": "קמ. מצתוכנן",
+    "DistanseReal": "קמ. בפועל",
+    "Customer": "לקוח",
+    "Address": "כתובת",
+    "Shipment": "אספקות",
+    "CollectedSurfaces": "משטחים שנאספו",
+    "searchGrid": "חיפוס",
+    "ShipmentDetails": "מסלול",
+    "Order": "סדר",
+    "Delivery": "אספקות",
+    "Status": "סטטוס"
+  },
+  "notesCollectionGrid": {
+    "AgentID": "נהג",
+    "DriverName": "שם נהג",
+    "Customer": "לקוח",
+    "TaskDescription": "סוג",
+    "DeliveryNum": "תעודה",
+    "InvoiceComment": "הערה",
+    "CustomerComment": "הערות קבועות",
+    "DeliveryStatus": "סטטוס"
+  },
+  "agentsReportNTGrid": {
+    "Driver": "נהג",
+    "ShipmentID": "משלוח",
+    "Customer": "לקוח",
+    "ReportDescription": "סטטוס",
+    "Delivery": "תעודות שלא סופקו"
+  },
+  "agentsReportGrid": {
+    "DocStartTime": "שעת דיווח",
+    "DriverName": "נהג",
+    "Reference": "משלוח",
+    "Customer": "לקוח",
+    "ShipmentNumber": "תעודה",
+    "Item": "פריט",
+    "QTY": "הסתייגות קר",
+    "ReasonDescription": "סיבה"
+  }
+
+}

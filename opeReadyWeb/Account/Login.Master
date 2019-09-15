@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Login.master.cs" Inherits="PQ.Admin.Account.Login1" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>opeReady</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/opeReady/Resources/Styles/style_all.css" type="text/css" />
+    <link rel="stylesheet" id="cssTheme" type="text/css" media="screen" />
+    <!-- to choose another color scheme uncomment one of the foloowing stylesheets and wrap styl1.css into a comment -->
+    <link rel="stylesheet" href="../Resources/Styles/jquery.wysiwyg.css" type="text/css" media="screen" />
+        <link href="../favicon_16x16.ico" rel="shortcut icon" type="image/x-icon" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="nobackground">
+    <form id="frmLoginForm" runat="server" clientidmode="Static" class="login-form">
+        
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+        <Services>
+            <asp:ServiceReference Path="~/WebService/PQWebService.asmx" />
+        </Services>
+        <Scripts>
+            <asp:ScriptReference Path="~/Resources/Scripts/Common/jquery-1.5.2.js" />   
+            <asp:ScriptReference Path="~/Resources/Scripts/Account/userAccount.min.js" />
+            <asp:ScriptReference Path="~/Resources/Scripts/Common/jquery.cookie.js" />
+        </Scripts>
+    </asp:ScriptManager>
+    
+    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+    </asp:ContentPlaceHolder>
+    </form>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if ($.cookie("css")) {
+                $("#cssTheme").attr("href", $.cookie("css"));
+            }
+            else {
+                $("#cssTheme").attr("href", "/opeReady/Resources/Styles/redmond/redmond.css");
+            }
+        });
+    </script>
+</body>
+</html>

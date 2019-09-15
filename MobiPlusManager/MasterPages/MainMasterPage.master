@@ -1,0 +1,99 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainMasterPage.master.cs"
+    Inherits="MasterPages_MainMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="~/css/Main.css" rel="stylesheet" type="text/css" />
+    <script src="../../js/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../js/Main.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="~/css/jquery-ui.css">
+    <script src="../../js/jquery-ui.js" type="text/javascript"></script>
+    <script src="../../js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+    <link rel="SHORTCUT ICON" href="../img/package_network.ico" />
+
+    <link href="~/css/jquery-ui-1.9.2.custom.css" rel="stylesheet" type="text/css" />
+    <script src="../../js/jquery.jqGrid.js" type="text/javascript"></script>
+    <link href="~/css/ui.jqgrid.css" rel="stylesheet" type="text/css" />
+    <script src="../../js/grid.locale-en.js" type="text/javascript"></script>
+    <script src="../../js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div>
+            <div>
+                <div class="mpHeadRow">
+                    <div class="dUsr" onclick="ShowLogOut();">
+                        <div class="dImgUsr">
+                            <img alt="User" src="../../Img/usr.png" class="imgUsr" />
+                        </div>
+                        <div class="dLblUsr">
+                                <asp:Label runat="server" ID="lblUser" CssClass="LblUsr"></asp:Label>
+                        </div>
+                    </div>
+                    <div class="dmHeaderText">
+                        <asp:Label runat="server" ID="lblMSG"></asp:Label>
+                    </div>
+                    <div class="HomeLogo">
+                        <img src="../../Img/logogray.jpg" height="50px" />
+                    </div>
+                    <div class="dMenu">
+                        <table cellpadding="2" cellspacing="2">
+                            <tr>
+                                <td class="menuItem" id="nMain">
+                                    <a href="../../pages/Home/GridRequests.aspx" class="menuLink">דף הבית</a>
+                                </td>
+                                <td class="menuItem" id="nManual">
+                                    <a href="javascript:ShowManualForm();" class="menuLink">ידני</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="clear: both;">
+                    </div>
+                    <div class="boxlogout" style="">
+                        <div class="dLo" id="dLo">
+                            <div class="dLo2">
+                                <div class="dLo3" onclick="logOut();" style="">
+                                    <div class="dLo5">
+                                        יציאה
+                                    </div>
+                                    <div class="dLo4">
+                                        <img alt="Log out" src="../../Img/logout.png" class="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="height: 100%;" id="dContent">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="mainfotter">
+            MobiPlus Manager טלפון: 09-8858188 ( נתב שיחות )
+        </div>
+    </div>
+    </form>
+    <script type="text/javascript">
+
+        function SetFotter() {
+            //debugger;
+            if ($(document).height() - $('#dContent').height() > 0)
+                $('.mainfotter').css("margin-top", $(document).height() - $('#dContent').height() - 117);
+            else
+                $('.mainfotter').css("margin-top", "80");
+        }
+        function SetMSG(MSG) {
+            $('#<%=lblMSG.ClientID %>')[0].innerHTML = MSG;
+        }
+        //setTimeout(SetFotter,500);
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html >
+<html>
+<head>
+    <link rel="stylesheet" href="demos.css" type="text/css" media="screen" />
+    
+
+     <script type="text/javascript" src="../../js/RGraph.pie.js"></script>
+     <script type="text/javascript" src="../../js/RGraph.bar.js"></script>
+    
+    <script type="text/javascript" src="../../js/RGraph.common.core.js"></script>
+    <script type="text/javascript" src="../../js/RGraph.common.dynamic.js"></script>
+    <script type="text/javascript" src="../../js/RGraph.common.tooltips.js"></script>
+    <script type="text/javascript" src="../../js/RGraph.common.effects.js"></script>
+    <script type="text/javascript" src="../../js/RGraph.common.key.js"></script>
+    <script type="text/javascript" src="../../js/RGraph.drawing.rect.js" ></script>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="/excanvas/excanvas.js"></script><![endif]-->
+    
+    <title>Bar chart Wave effect</title>
+    
+</head>
+<body>
+
+    <h1>Bar chart Wave effect</h1>
+
+    <canvas id="cvs" width="900" height="250">[No canvas support]</canvas>
+    
+    <script>
+        $(document).ready(function () {
+            var data = [[4, 8], [5, 7], [1, 7], [6, 3], [3, 7]];
+            //var Colors = ['#4D3594', '#E76400']; //count = 15
+            var Colors = ['Gradient(#8674BA:#4D3594:#4D3594:#4D3594:#4D3594)', 'Gradient(#EF9643:#E76400:#E76400:#E76400:#E76400)'];
+            // Turn off the alpha (opacity) of the canvas
+            var bar = new RGraph.Bar('cvs', data)
+
+                .set('linewidth', 3)
+
+                .set('hmargin', 10)
+
+                .set('labels', ['ינואר', 'פברואר', 'מרץ', 'אפריל', 'מאי'])
+               .set('colors', Colors)
+
+
+                .set('labels.above', true)
+            //.set('units.post', '%')
+
+
+                .set('title', ['יעד', 'ביצוע'])
+                .set('key', ['יעד', 'ביצוע'])
+                .set('key.interactive', true)
+                .set('key.colors', Colors)
+                .set('key.rounded', false)
+                .set('key.halign', 'left')
+
+            RGraph.ISOLD ? bar.draw() : bar.wave({ frames: 60 })
+        })
+    </script>
+
+    <p>
+        <a href="./">&laquo; Back</a>
+    </p>
+
+</body>
+</html>

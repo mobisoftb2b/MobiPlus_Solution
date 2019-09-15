@@ -1,0 +1,14 @@
+﻿[
+  {
+    "CountryID": 1000,
+    "CountryName": "Diplomat"
+  },
+  {
+    "CountryID": 5000,
+    "CountryName": "Diplomat GE"
+  },
+  {
+    "CountryID": 8000,
+    "CountryName": "Diplomat SA"
+  }
+]

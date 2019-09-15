@@ -1,0 +1,379 @@
+﻿body
+{
+    /*background: #b6b7bc;*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    direction: rtl;
+    text-align: right;
+    vertical-align: top;
+    margin: 0 auto;
+    width: 100%; /*padding-bottom: 2em;*/
+    background-color: #E2E3E4;
+    overflow-y: scroll;
+}
+.dLoginBox
+{
+    width: 350px;
+    height: 170px;
+    border: 1px groove black;
+    background-color: #888A83;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+.dLoginHeadText
+{
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.btn
+{
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+   
+    
+}
+.btn.login
+{
+    width: 150px;
+    height: 25px;
+    background-color:#20255A;
+    color: white;
+     font-size:14px;
+}
+.LoginMsg
+{
+    text-align: right;
+    width: 300px;
+    padding-right: 30px;
+    color: #DA3039;
+}
+.mpHeadRow
+{
+    width: 100%;
+    height: 50px;
+    background-color: #888A83;
+    border-bottom: 1px solid black;
+}
+.imgUsr
+{
+    cursor: pointer;
+}
+.dUsr
+{
+    width: 450px;
+    float: left;
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 5px;
+    height: 40px;
+   z-index:9999;
+}
+.dMenu
+{
+    width: 500px;
+    float: right;
+    text-align: right;
+    margin-right: 10px;
+    margin-top: 25px;
+    height: 40px;
+   
+}
+.dmHeaderText
+{
+    float:left;
+    width:300px;
+    color:White;
+    margin-top:10px;
+    font-size:16px;
+    text-align:right;
+   
+}
+.menuItem
+{
+    color: White;
+    font-size: 16px;
+    cursor: pointer;
+    width: 90px;
+    text-align: center;
+}
+.Selected
+{
+    background-color: #414141;
+}
+.menuLink
+{
+    text-decoration: none;
+    color: White;
+    width: 100px;
+    text-align: center;
+}
+.LblUsr
+{
+    font-size: 18px;
+    color: White;
+    cursor: pointer;
+    height: 40px;
+}
+.dImgUsr
+{
+    width: 42px;
+    float: left;
+}
+.dLblUsr
+{
+    width:200px;
+    float: right;
+    padding-top: 3px;
+    text-align:right;
+    margin-right:200px;
+}
+.dLo
+{
+    text-align: left;
+    direction: ltr;
+    margin-top: 5px;
+    width: 200px;
+    z-index: 9999;
+}
+.dLo2
+{
+    background-color: #888A83; /*position: fixed;*/
+    width: 150px;
+    height: 50px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    display: none;
+    z-index: 9999;
+     -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    
+}
+.dLo3
+{
+    padding-top: 20px;
+    padding-left: 80px;
+    cursor: pointer;
+}
+.dLo4
+{
+   
+    float: left;
+    width: 20px;
+}
+.dLo5
+{
+    float: left;
+    width: 35px;
+    text-align: left;
+   
+    margin-top: 8px;
+    font-size: 16px;
+    text-decoration: underline;
+    color: White;
+}
+.boxlogout
+{
+    direction: ltr;
+    z-index: 9999;
+    position: absolute;
+    left: 0;
+    top: 45px;    
+}
+.txtDate
+{
+    width:117px;
+    margin-top:10px;
+}
+.tblC
+{
+    width:99%;
+    height:100%;
+}
+.HomeMSG
+{
+    color: White;
+    position: absolute;
+    right:35px;
+    /*top: 75px;*/
+    margin-top:-33px;
+    cursor: pointer;
+    z-index:9999;
+    text-align:right;
+}
+.HomeLogo
+{
+    color: White;
+    position: absolute;
+    text-align:center;
+    /*top: 75px;*/
+    margin-top:0px;
+    cursor: pointer;
+    z-index:1;
+    text-align:right;    
+    width:200px;
+    right:49%;
+}
+.mainfotter
+{
+    background-color: #888A83;
+    text-align: center;
+    color: White;
+    height: 25px;
+    font-size: 16px;
+    padding-top: 9px;
+}
+.ui-jqgrid tr.jqgrow td
+{
+    white-space: normal !important;
+}
+.ItemEditBox
+{
+    top:100px;
+    left:40%;
+    position:absolute;
+    width: 350px;
+    height: 360px;
+    border: 2px groove black;
+    background-color: #888A83;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index:9999;
+    display:none;
+}
+.ItemEditX
+{
+    text-align:right;   
+}
+.imngX
+{
+    cursor:pointer;
+    margin-right:5px;
+    margin-top:5px;
+}
+.imgRef
+{
+    height:18px;
+}
+.ItemEditHead
+{
+    text-align:center;
+    font-size:20px;
+    padding-bottom:20px;
+}
+.ItemEditTbl
+{
+    text-align:right;
+    padding-right:20px;
+}
+.ItemEdit.item
+{
+    color:#E2E3E4;
+    vertical-align:top;
+    font-weight:700;
+}
+.ItemEdit.val
+{
+    color:White;
+}
+.ItemEdit.btn
+{
+    width:100px;
+    height:30px;
+    background-color:#20255A;
+    color:White;
+    font-size:14px;
+}
+.dBtns
+{
+    text-align:center;
+    padding-top:20px;
+}
+.ui-jqgrid .ui-jqgrid-view
+{
+    font-size:13px !important;
+}
+
+.ManualBox
+{
+    top:100px;
+    left:40%;
+    position:absolute;
+    width: 470px;
+    height: 270px;
+    border: 2px groove black;
+    background-color: #888A83;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index:9999;
+    display:none;
+}
+.ManualX
+{
+    text-align:right;   
+}
+.imngX
+{
+    cursor:pointer;
+    margin-right:5px;
+    margin-top:5px;
+}
+.imgRef
+{
+    height:18px;
+}
+.ManualHead
+{
+    text-align:center;
+    font-size:20px;
+    padding-bottom:20px;
+}
+.ManualTbl
+{
+    text-align:right;
+    padding-right:20px;
+}
+.Manual.item
+{
+    color:#E2E3E4;
+    vertical-align:top;
+    font-weight:700;
+}
+.Manual.val
+{
+    color:White;
+}
+.Manual.btn
+{
+    width:100px;
+    height:30px;
+    background-color:#20255A;
+    color:White;
+    font-size:14px;
+}
+.dBtns
+{
+    text-align:center;
+    padding-top:10px;
+}
+.divPass
+{
+    color:Black;
+    font-weight:700;
+    font-size:18px;
+    direction:ltr;
+    text-align:center;
+    padding-top:10px;
+}

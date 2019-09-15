@@ -1,0 +1,572 @@
+﻿body
+{
+    /*background: #b6b7bc;*/
+    font-family:Arial;
+    font-size: 14px;
+    font-weight: 500;
+    direction: rtl;
+    text-align: right;
+    vertical-align: top;
+    margin: 0 auto;
+    width: 100%; /*padding-bottom: 2em;*/
+    background-color: #E2E3E4;
+    overflow-y: scroll;
+}
+.dRightPrinterDohot
+{
+    float: right;
+    width: 190px;
+    background-color: #A2A2A2;
+    height: 650px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border-top: 2px solid #E2E3E4;
+    margin-right:10px;
+}
+.dRightPrinter
+{
+    float: right;
+    width: 19%;
+    background-color: #A2A2A2;
+    height: 650px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border-top: 2px solid #E2E3E4;
+    margin-right:10px;
+}
+.dLeftPrinter
+{
+    float: right;
+    width: 800px;
+    background-color: White;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    height: 612px;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+.h3
+{
+    background-color: #4071CA;
+    color: White;
+    -webkit-box-shadow: 0 0 1px 3px #4071AE inset;
+    -moz-box-shadow: 0 0 1px 3px #4071AE inset;
+    box-shadow: 0 0 1px 3px #4071AE inset;
+    width:88%;
+    margin-right:2%;
+    font-size:16px;
+}
+.h3Left
+{
+    background-color: #4F81BD;
+    color: White;
+    -webkit-box-shadow: 0 0 1px 3px #5699D8 inset;
+    -moz-box-shadow: 0 0 1px 3px #5699D8 inset;
+    box-shadow: 0 0 1px 3px #5699D8 inset;
+    width:95%;
+    font-size:16px;
+    outline:none;
+}
+.h3Section
+{
+    background-color: #4F81BD;
+    color: White;
+    -webkit-box-shadow: 0 0 1px 3px #5699D8 inset;
+    -moz-box-shadow: 0 0 1px 3px #5699D8 inset;
+    box-shadow: 0 0 1px 3px #5699D8 inset;
+    width:87%;
+    height:25px;
+    font-size:16px;
+    outline:none;
+    
+}
+.h3LeftHalf
+{
+    background-color: #4F81BD;
+    color: White;
+    -webkit-box-shadow: 0 0 1px 3px #5699D8 inset;
+    -moz-box-shadow: 0 0 1px 3px #5699D8 inset;
+    box-shadow: 0 0 1px 3px #5699D8 inset;
+    width:45%;
+    font-size:16px;
+}
+.h3Left3
+{
+    background-color: #4F81BD;
+    color: White;
+    -webkit-box-shadow: 0 0 1px 3px #5699D8 inset;
+    -moz-box-shadow: 0 0 1px 3px #5699D8 inset;
+    box-shadow: 0 0 1px 3px #5699D8 inset;
+    font-size:16px;
+}
+.h3Header
+{
+    background-color: #4F81BD;
+    color: White;
+    -webkit-box-shadow: 0 0 1px 3px #4476B inset;
+    -moz-box-shadow: 0 0 1px 3px #4476B inset;
+    box-shadow: 0 0 1px 3px #4476B inset;
+    font-size:16px;
+    height:35px;
+}
+.h3HeaderText
+{
+    margin-right:15px;
+    padding-top:10px;
+}
+.dDoh
+{
+    height: 200px;
+    overflow-y: auto;
+}
+.dDoh1
+{
+     height:575px;
+    overflow: auto;
+    background-color:White;
+}
+
+.dDohContainer
+{
+    width:85.15%;
+    margin-right:2%;
+}
+.dDohContainer1
+{
+    width:96%;
+    margin-right:2%;
+    overflow:hidden;
+   
+}
+.MSGrid
+{
+    width: 340px;
+    overflow-x:hidden;
+}
+.MSHeader
+{
+    background-color: #A2A2A2;/*#5197D7;*/
+    color: White;
+    border-bottom: 1px solid #A2A2A2;
+    padding: 2px;
+    text-align: right;
+}
+.MSItem
+{
+    padding: 2px;
+    border-bottom: 1px solid #A2A2A2;
+    max-width: 200px;
+}
+.MSItemSelected
+{
+    background-color: #4F81BD;
+    color:White;
+}
+.l
+{
+    text-align: left;
+    direction: ltr;
+}
+.c
+{
+    text-align: center;
+}
+.dAllPr
+{
+    padding-top: 10px;
+}
+.MSBTNSave
+{
+    background-image: url('../Img/ok.png');
+    background-repeat: no-repeat;
+    width: 85px;
+    height: 30px;
+    background-position: right center;
+    background-color: #4F81BD;
+    -webkit-box-shadow: 0 0 1px 1px #418CD3 inset;
+    -moz-box-shadow: 0 0 1px 1px #418CD3 inset;
+    box-shadow: 0 0 1px 1px #418CD3 inset;
+     -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color:White;
+    font-size:16px;
+}
+.MSBtnGeneral
+{
+    background-image: url('../Img/ok.png');
+    background-repeat: no-repeat;
+    width: 85px;
+    height: 30px;
+    background-position: right center;
+    background-color: #4F81BD;
+    -webkit-box-shadow: 0 0 1px 1px #418CD3 inset;
+    -moz-box-shadow: 0 0 1px 1px #418CD3 inset;
+    box-shadow: 0 0 1px 1px #418CD3 inset;
+     -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color:White;
+    font-size:16px;
+}
+.dBtnsPr
+{
+    clear:both;
+    padding-top:2px;
+    width: 500px;
+}
+.rbr
+{
+   /* -moz-border-radius: 0px;
+    -webkit-border-radius: 0px 6px 6px 0px;
+    border-radius: 0px 6px 6px 0px; */
+}
+
+.lbr
+{/*
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 6px 0px 0px 6px;
+    border-radius: 6px 0px 0px 6px; 
+*/
+}
+
+
+
+.option
+{
+    padding-right:40.3%;
+    padding-bottom:10px;
+}
+.dDohContainerLeft
+{
+    overflow:hidden;
+    width:730px;
+    direction:rtl;
+    
+}
+.dDohContainerLeftHalf
+{
+    overflow:hidden;
+    width:360px;
+    float:right;
+}
+.dInnerPr
+{
+    overflow:hidden;
+    
+    /*TRUE TYPE*/
+    font-family:Courier New;    
+}
+.ddlQueriesContainer
+{
+    text-align:center;
+    margin-right:20px;
+    width:200px;
+    background-color: #A2A2A2;
+    height: 620px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border-top: 2px solid #E2E3E4;
+    margin-right:10px;
+    float:right;
+    margin-top:15px;
+}
+.QueryHeader
+{
+    text-align:center;
+    border-bottom:1px solid gray;
+    color:White;
+    background-color:#4F81BD;
+    height:20px;
+    vertical-align:middle;
+}
+.QueryHeaderIn
+{
+    padding-top:3px;
+    font-weight:700;
+}
+.ddlQueries
+{
+    margin-top:10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+.txtQueryContainer
+{
+    text-align:center;
+    margin-right:20px;
+    width:420px;
+    background-color: #A2A2A2;
+    height: 620px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border-top: 2px solid #E2E3E4;
+    margin-right:10px;
+    float:right;
+    margin-top:15px;
+}
+.txtQuery
+{
+    margin-top:10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    text-align:left;
+    direction:ltr;
+}
+.cssQueries
+{
+    width:650px;
+    background-color: #C2C3C3;
+    height: 645px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border-top: 2px solid #E2E3E4;
+    margin-right:10px;
+    float:right;
+}
+.cssParts
+{
+    width:1160px;
+    background-color: #C2C3C3;
+    height: 645px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border-top: 2px solid #E2E3E4;
+    margin-right:10px;
+    float:right;
+    
+}
+.txtPartEditContainer
+{
+    text-align:center;
+    margin-right:20px;
+    width:270px;
+    background-color: #A2A2A2;
+    height: 620px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border-top: 2px solid #E2E3E4;
+    margin-right:10px;
+    float:right;
+    margin-top:15px;
+}
+.txtPartsGridContainer
+{
+    text-align:center;
+    margin-right:20px;
+    width:650px;
+    background-color: #A2A2A2;
+    height: 620px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border-top: 2px solid #E2E3E4;
+    margin-right:10px;
+    float:right;
+    margin-top:15px;
+}
+.tblParts
+{
+    margin-top:10px;
+    margin-right:5px;
+    color:White;
+    text-align:right;
+    font-weight:700;
+}
+.Borders
+{
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+.EditWinColsItemBox
+{
+    left: 47%;
+    position: absolute;
+    width: 240px;
+    height: 370px;
+    border: 2px groove black;
+    background-color: #A2A2A2;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display:none;
+}
+#sHeadEdit
+{
+    background-color:#4F81BD;
+    font-weight:700;
+}
+.h3LeftContainer
+{
+    outline: none;
+}
+
+.EditWinReportItemBox
+{
+    left: 47%;
+    position: absolute;
+    width: 240px;
+    height: 190px;
+    border: 2px groove black;
+    background-color: #A2A2A2;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display:none;
+    
+}
+.EditWinParamsItemBox
+{
+    left: 26%;
+    position: absolute;
+    width: 600px;
+    height: 562px;
+    border: 2px groove black;
+    background-color: #A2A2A2;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display:none;
+    
+}
+.EditWinEditParamsItemBox
+{
+    left: 58%;
+    position: absolute;
+    width: 260px;
+    height: 350px;
+    border: 2px groove black;
+    background-color: #A2A2A2;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display:none;
+    
+}
+.divSections
+{
+    
+}
+.a1
+{
+    font-size:12px;
+    color:#4F81BD !important;
+}
+.a2
+{
+    font-size:12px;
+    color:White !important;
+}
+.DuplicateReport
+{
+    left: 47%;
+    position: absolute;
+    width: 240px;
+    height: 140px;
+    border: 2px groove black;
+    background-color: #A2A2A2;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display:none;
+    
+}
+.dLeftPrn
+{
+    width:800px;
+    float: right;
+    background-color: #A2A2A2;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    height: 652px;
+    overflow:hidden;
+    margin-right:10px;
+}
+.EditWinProfilesItemBox
+{
+    left: 47%;
+    position: absolute;
+    width: 270px;
+    height: 250px;
+    border: 2px groove black;
+    background-color: #A2A2A2;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display:none;
+    
+}
+.EditWinUsersItemBox
+{
+    left: 47%;
+    position: absolute;
+    width: 270px;
+    height: 260px;
+    border: 2px groove black;
+    background-color: #A2A2A2;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display:none;
+}
+.EditWinVersionItemBox
+{
+    left: 47%;
+    position: absolute;
+    width: 270px;
+    height: 250px;
+    border: 2px groove black;
+    background-color: #A2A2A2;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display:none;
+}

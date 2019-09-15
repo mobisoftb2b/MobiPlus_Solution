@@ -1,0 +1,243 @@
+﻿{
+  "langSettings": {
+    "shortLang": "en",
+    "fullLang": "en-US",
+    "langID": 2
+  },
+  "dashboard": {
+    "WELCOME": "Welcome to MobiSoft !",
+    "tabs": {
+      "MAIN": "Activity",
+      "DRIVERACTION": "Driver action",
+      "DRIVERSTATUS": "Driver status",
+      "ENDDAY": "End of day",
+      "MAP": "Tracking map",
+      "CUSTOMERS": "Customers",
+      "REMARKS": "Remarks",
+      "COLLECTIONNOTES": "Collection Notes",
+      "DRIVERREPORT": "Driver's Report"
+    }
+  },
+  "widget": {
+    "titles": {
+      "Customers": "Customers",
+      "Delivery": "Delivery",
+      "ReturnsAgent": "Returns Agent",
+      "Tasks": "Tasks",
+      "Undelivered": "Undelivered",
+      "Unvisited": "Unvisited"
+    }
+  },
+  "topbar": {
+    "search": {
+      "PLACEHOLDER": "Type and hit enter.."
+    }
+  },
+  "sidebar": {
+    "WELCOME": "Welcome",
+    "heading": {
+      "HEADER": "Main Navigation"
+    },
+    "nav": {
+      "DASHBOARD": "Dashboard",
+      "SINGLEVIEW": "Single View",
+      "menu": {
+        "MENU": "Menu",
+        "SUBMENU": "Sub Menu"
+      }
+    }
+  },
+  "offsidebar": {
+    "SETTINGS": "Settings",
+    "LANGUAGES": "Languages"
+  },
+  "login": {
+    "header": {
+      "TITLE": "MobiSoft"
+    },
+    "loginForm": {
+      "LOGINTITLE": "Welcome to MobiPlus Layout",
+      "USERNAMEPLACEHOLDER": "Enter your login name",
+      "PASSWORD": "Enter password",
+      "REMEMBERME": "Remember me",
+      "LOGINBUTTON": "Login"
+    },
+    "wrongLogin": {
+      "headline": "Login failed",
+      "message": "Wrong username or password"
+    }
+  },
+  "filter": {
+    "COUNTRY": "Select country",
+    "DISTRIBUTION": "Select Distribution Center",
+    "DRIVER": "Select Driver",
+    "DATE": "From Date",
+    "TODATE": "To Date",
+    "OKLABEL": "OK",
+    "CANCELLABEL": "Cancel"
+  },
+  "concActivityGrid": {
+    "DriverID": "DriverID",
+    "DriverName": "Driver's Name",
+    "Delivery": "Delivery",
+    "Shipping": "Shipping",
+    "Cycle": "Cycle",
+    "Visit": "Visit",
+    "NotVisited": "Not Visited",
+    "NotFullDelivery": "Not Full Delivery",
+    "AgentReturn": "Agent Return",
+    "DriverReturn": "Driver Return",
+    "DriverStatus": "Driver Status",
+    "Progress": "Progress",
+    "Order": "Order",
+    "Customer": "Customer",
+    "Address": "Address",
+    "TravelHours": "Travel Hours",
+    "ServiceHours": "Service Hours",
+    "OriginalTime": "Original Time",
+    "DeliveryTime": "Delivery Time",
+    "Deliveries": "Deliveries",
+    "Pallets": "Pallets",
+    "Shipment": "Shipment",
+    "ActualSortOrder": "Actual Order",
+    "CollectedSurfaces": "Collected Surfaces",
+    "searchGrid": "\"Search\"б",
+    "TaskDate": "Task Date",
+    "Tasks": "Tasks"
+  },
+  "buttonCaptions": {
+    "CloseModal": "Close",
+    "searchGrid": "Search",
+    "AddTask": "New Task",
+    "SaveTask": "Save Task",
+    "DeleteTask": "Delete",
+    "ExportCSV": "Export to CSV"
+      
+  },
+  "mapsSettings": {
+    "TrucksView": "Trucks",
+    "VisitView": "Visits",
+    "RoadsView": "Roads"
+  },
+  "deleteRowWarnings": {
+    "confirmTitle": "Are you sure?",
+    "confirmMainText": "Are you sure you want to delete?",
+    "confirmButtonText": "Yes, delete it!",
+    "cancelButtonText": "No, cancel!",
+    "deleted": "Deleted",
+    "deletedText": "Selected row has been deleted.",
+    "Cancelled": "Cancelled",
+    "CancelledText": "Selected row is safe :)"
+  },
+  "driverStatus": {
+    "UpdateDate": "Last Update",
+    "LineDownload": "Data Received",
+    "Wise": "Leave WH",
+    "ToDiplomat": "On the way to WH",
+    "LineEnded": "Arrive to WH",
+    "DriverID": "Driver ID",
+    "DriverName": "Driver's Name",
+    "Cycle": "Cycle",
+    "ImgLeaveBB": "Leave B&B",
+    "ImgArriveBB": "Arrive B&B",
+    "TaskTime": "Task Time",
+    "ShipmentID": "Shipment ID",
+    "Customer": "Customer",
+    "CustAddress": "Customer Address",
+    "TaskID": "Task ID",
+    "DocNumber": "Document Number",
+    "ReportCode": "Report Code",
+    "Description": "Description",
+    "Comment": "Comment",
+    "LastChange": "Last Change"
+  },
+  "tasksDataGrid": {
+    "TaskID": "TaskID",
+    "UsersTasksName": "Users Tasks Name",
+    "TaskUser": "Task User",
+    "CustomerCode": "Customer Code",
+    "CustAddress": "Customer Address",
+    "CustCity": "Customer City",
+    "TaskTypeID": "Task TypeID",
+    "TaskTypeDesc": "Task Type",
+    "TaskDesc": "Task Description",
+    "TaskEdit_Driver": "Driver",
+    "TaskEdit_Customer": "Customer",
+    "TaskEdit_Address": "Address",
+    "TaskEdit_City": "City",
+    "TaskEdit_FromDate": "From Date",
+    "TaskEdit_ToDate": "To Date",
+    "TaskEdit_TypeTask": "Task Type",
+    "TaskEdit_TaskDesc": "Task Description",
+    "TaskEdit_Title": "New Task"
+  },
+  "endDayGrid": {
+    "DriverID": "DriverID",
+    "DriverName": "Driver's Name",
+    "Shipping": "Shipping",
+    "AgentReturn": "Agent Return",
+    "DriverReturn": "Driver Return",
+    "DriverStatus": "Driver Status",
+    "DistansePlanned": "Planned Distanse",
+    "DistanseReal": "Actually Distanse",
+    "Customer": "Customer",
+    "Address": "Address",
+    "Shipment": "Shipment",
+    "CollectedSurfaces": "Collected Surfaces",
+    "searchGrid": "Search",
+    "ShipmentDetails": "Shipment",
+    "Order": "Order",
+    "Delivery": "Delivery",
+    "Status": "Status"
+  },
+  "notesCollectionGrid": {
+    "AgentID": "Agent ID",
+    "DriverName": "Driver Name",
+    "Customer": "Customer",
+    "TaskDescription": "Task Description",
+    "DeliveryNum": "Delivery Number",
+    "InvoiceComment": "Invoice Comment",
+    "CustomerComment": "Customer Comment",
+    "DeliveryStatus": "Delivery Status"
+  },
+  "agentsReportNTGrid": {
+    "Driver": "Driver",
+    "ShipmentID": "Shipment ID",
+    "Customer": "Customer",
+    "ReportDescription": "Report Description",
+    "Delivery": "Delivery"
+  },
+  "agentsReportGrid": {
+    "DocStartTime": "Start Time",
+    "DriverName": "Driver Name",
+    "Reference": "Reference",
+    "Customer": "Customer",
+    "ShipmentNumber": "Shipment Number",
+    "Item": "Item",
+    "QTY": "QTY",
+    "ReasonDescription": "Reason Description"
+  },
+  "customerGrid": {
+    "TaskDate": "Task Date",
+    "Shipment": "Shipment",
+    "DriverName": "Driver Name",
+    "Customer": "Customer",
+    "CustAddress": "Address",
+    "TravelHours": "Travel Hours",
+    "ServiceHours": "Service Hours",
+    "OriginalTime": "Original Time",
+    "DeliveryTime": "Delivery Time",
+    "Deliveries": "Deliveriy",
+    "Pallets": "Pallets",
+    "AgentReturn": "Agent Return",
+    "DriverReturn": "Driver Return",
+    "ReportGPS_Lat": "Lat",
+    "ReportGPS_Lon": "Lon",
+    "TaskDescription": "Task Description",
+    "DeliveryNum": "Delivery Number",
+    "Comment": "Comments",
+    "Description": "Descriptions",
+    "Quality": "Quality",
+    "Mission": "Mission"
+  }
+}

@@ -1,0 +1,685 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.2.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.2.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B850C642-2640-4FAF-91B5-8FFCDEB473BB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MobiPlus.Diplomat</RootNamespace>
+    <AssemblyName>MobiPlus.Diplomat</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="webpack.prod.js" />
+    <None Include="client\app\dashboard\collectionNotes\collectionNotes.component.jsx" />
+    <Content Include="client\app\dashboard\filter.component.run.js" />
+    <Content Include="client\app\dashboard\map\map.container.run.js" />
+    <Content Include="client\app\dashboard\widgets\widget.component.run.js" />
+    <Content Include="client\redux\actions\auth.js" />
+    <Content Include="client\redux\actions\cascade.js" />
+    <Content Include="client\redux\actions\dashboard.js" />
+    <Content Include="client\redux\actions\filter.js" />
+    <Content Include="client\redux\actions\layout.js" />
+    <Content Include="client\redux\actions\local.js" />
+    <Content Include="client\redux\actions\maps.js" />
+    <Content Include="client\redux\actions\menu.js" />
+    <Content Include="client\redux\actions\reportGrid.js" />
+    <Content Include="client\redux\actions\tasks.js" />
+    <Content Include="client\redux\actions\widget.js" />
+    <Content Include="client\redux\consts\actionTypes.js" />
+    <Content Include="client\redux\reducers\authReducer.js" />
+    <Content Include="client\redux\reducers\cascadeReducer.js" />
+    <Content Include="client\redux\reducers\dashboardReducer.js" />
+    <Content Include="client\redux\reducers\filterReducer.js" />
+    <Content Include="client\redux\reducers\layoutReducer.js" />
+    <Content Include="client\redux\reducers\localReducer.js" />
+    <Content Include="client\redux\reducers\mapsReducer.js" />
+    <Content Include="client\redux\reducers\menuReducer.js" />
+    <Content Include="client\redux\reducers\reportGridReducer.js" />
+    <Content Include="client\redux\reducers\rootReducer.js" />
+    <Content Include="client\redux\reducers\tasksReducer.js" />
+    <Content Include="client\redux\store\configureStore.dev.js" />
+    <Content Include="client\redux\store\configureStore.js" />
+    <Content Include="client\redux\store\configureStore.prod.js" />
+    <Content Include="client\share\components\Common\common.js" />
+    <Content Include="client\share\components\Common\constants.js" />
+    <Content Include="client\share\components\Common\fullscreen.js" />
+    <Content Include="client\share\components\Common\load-themes.js" />
+    <Content Include="client\share\components\Common\localize.js" />
+    <Content Include="client\share\components\Common\logout.js" />
+    <Content Include="client\share\components\Common\maps-google.js" />
+    <Content Include="client\share\components\Common\maps-vector.js" />
+    <Content Include="client\share\components\Common\menuBuilder.js" />
+    <Content Include="client\share\components\Common\notify.js" />
+    <Content Include="client\share\components\Common\panel-tools.js" />
+    <Content Include="client\share\components\Common\security.js" />
+    <Content Include="client\share\components\Common\slimscroll.js" />
+    <Content Include="client\share\components\Common\sparkline.js" />
+    <Content Include="client\share\components\Common\theme-state.js" />
+    <Content Include="client\share\components\Common\toggle-state.js" />
+    <Content Include="client\share\components\Common\trigger-resize.js" />
+    <Content Include="client\share\components\Common\utils.js" />
+    <Content Include="client\share\components\Layout\Header.run.js" />
+    <Content Include="client\share\components\Layout\Offsidebar.run.js" />
+    <Content Include="client\share\components\Layout\Sidebar.run.js" />
+    <Content Include="client\share\fonts\fontawesome-webfont.svg" />
+    <Content Include="client\share\fonts\Simple-Line-Icons.svg" />
+    <Content Include="client\share\fonts\weathericons-regular-webfont.svg" />
+    <Content Include="client\share\img\53504-200.png" />
+    <Content Include="client\share\img\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="client\share\img\bootstrap-colorpicker\alpha.png" />
+    <Content Include="client\share\img\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="client\share\img\bootstrap-colorpicker\hue.png" />
+    <Content Include="client\share\img\bootstrap-colorpicker\saturation.png" />
+    <Content Include="client\share\img\chosen-sprite%402x.png" />
+    <Content Include="client\share\img\chosen-sprite.png" />
+    <Content Include="client\share\img\clear.png" />
+    <Content Include="client\share\img\closeWin.png" />
+    <Content Include="client\share\img\dummy.png" />
+    <Content Include="client\share\img\Gray.png" />
+    <Content Include="client\share\img\GrayBall.png" />
+    <Content Include="client\share\img\Green.png" />
+    <Content Include="client\share\img\GreenBall.png" />
+    <Content Include="client\share\img\Logo_300x300 %2800000003%29 up.png" />
+    <Content Include="client\share\img\M.PNG" />
+    <Content Include="client\share\img\M.SVG" />
+    <Content Include="client\share\img\main_launcher.ico" />
+    <Content Include="client\share\img\jqui\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="client\share\img\jqui\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="client\share\img\jqui\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="client\share\img\jqui\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="client\share\img\jqui\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="client\share\img\jqui\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="client\share\img\jqui\ui-icons_222222_256x240.png" />
+    <Content Include="client\share\img\jqui\ui-icons_2e83ff_256x240.png" />
+    <Content Include="client\share\img\jqui\ui-icons_454545_256x240.png" />
+    <Content Include="client\share\img\jqui\ui-icons_888888_256x240.png" />
+    <Content Include="client\share\img\jqui\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="client\share\img\loading.gif" />
+    <Content Include="client\share\img\logo-single.png" />
+    <Content Include="client\share\img\logo.png" />
+    <Content Include="client\share\img\mb-sample.jpg" />
+    <Content Include="client\share\img\MobiSoft_Logo.svg" />
+    <Content Include="client\share\img\MobiSoft_Logo_X2.png" />
+    <Content Include="client\share\img\M_X2.png" />
+    <Content Include="client\share\img\M_X3.png" />
+    <Content Include="client\share\img\No.png" />
+    <Content Include="client\share\img\Orange.png" />
+    <Content Include="client\share\img\OrangeBall.png" />
+    <Content Include="client\share\img\progressbar.gif" />
+    <Content Include="client\share\img\Red.png" />
+    <Content Include="client\share\img\roadPin.png" />
+    <Content Include="client\share\img\truck2.png" />
+    <Content Include="client\share\img\user\01.jpg" />
+    <Content Include="client\share\img\user\02.jpg" />
+    <Content Include="client\share\img\user\03.jpg" />
+    <Content Include="client\share\img\user\04.jpg" />
+    <Content Include="client\share\img\user\05.jpg" />
+    <Content Include="client\share\img\user\06.jpg" />
+    <Content Include="client\share\img\user\07.jpg" />
+    <Content Include="client\share\img\user\08.jpg" />
+    <Content Include="client\share\img\user\09.jpg" />
+    <Content Include="client\share\img\user\10.jpg" />
+    <Content Include="client\share\img\user\11.jpg" />
+    <Content Include="client\share\img\user\12.jpg" />
+    <Content Include="client\share\img\user\13.jpg" />
+    <Content Include="client\share\img\user\matan.png" />
+    <Content Include="client\share\img\YES1.png" />
+    <Content Include="Global.asax" />
+    <Content Include="public\345cf3f19ec85e7c21ba29f2922da352.svg" />
+    <Content Include="public\d7c639084f684d66a1bc66855d193ed8.svg" />
+    <Content Include="public\ecaf8b481729b18f6a8494d9f691cdae.svg" />
+    <Content Include="public\ed0943f224d6a39871066f569a18fa60.svg" />
+    <Content Include="public\fonts\fontawesome-webfont.svg" />
+    <Content Include="public\fonts\Simple-Line-Icons.svg" />
+    <Content Include="public\fonts\weathericons-regular-webfont.svg" />
+    <Content Include="public\img\53504-200.png" />
+    <Content Include="public\img\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="public\img\bootstrap-colorpicker\alpha.png" />
+    <Content Include="public\img\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="public\img\bootstrap-colorpicker\hue.png" />
+    <Content Include="public\img\bootstrap-colorpicker\saturation.png" />
+    <Content Include="public\img\chosen-sprite%402x.png" />
+    <Content Include="public\img\chosen-sprite.png" />
+    <Content Include="public\img\clear.png" />
+    <Content Include="public\img\closeWin.png" />
+    <Content Include="public\img\dummy.png" />
+    <Content Include="public\img\Gray.png" />
+    <Content Include="public\img\GrayBall.png" />
+    <Content Include="public\img\Green.png" />
+    <Content Include="public\img\GreenBall.png" />
+    <Content Include="public\img\jqui\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="public\img\jqui\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="public\img\jqui\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="public\img\jqui\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="public\img\jqui\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="public\img\jqui\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="public\img\jqui\ui-icons_222222_256x240.png" />
+    <Content Include="public\img\jqui\ui-icons_2e83ff_256x240.png" />
+    <Content Include="public\img\jqui\ui-icons_454545_256x240.png" />
+    <Content Include="public\img\jqui\ui-icons_888888_256x240.png" />
+    <Content Include="public\img\jqui\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="public\img\loading.gif" />
+    <Content Include="public\img\logo-single.png" />
+    <Content Include="public\img\logo.png" />
+    <Content Include="public\img\main_launcher.ico" />
+    <Content Include="public\img\No.png" />
+    <Content Include="public\img\Orange.png" />
+    <Content Include="public\img\OrangeBall.png" />
+    <Content Include="public\img\progressbar.gif" />
+    <Content Include="public\img\Red.png" />
+    <Content Include="public\img\roadPin.png" />
+    <Content Include="public\img\truck2.png" />
+    <Content Include="public\img\user\matan.png" />
+    <Content Include="public\img\YES1.png" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="webpack.config.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="WebAPI\AuthController.cs" />
+    <Compile Include="WebAPI\DashboardController.cs" />
+    <Compile Include="WebAPI\DefaultController.cs" />
+    <Compile Include="WebAPI\LayoutController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bower.json" />
+    <Content Include="package.json" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="client\app\app.jsx" />
+    <Content Include="client\app\auth\login.container.jsx" />
+    <Content Include="client\app\auth\loginForm.component.jsx" />
+    <Content Include="client\app\auth\requireAuthentication.component.jsx" />
+    <Content Include="client\app\dashboard\dashboard.container.jsx" />
+    <Content Include="client\app\dashboard\filter.component.jsx" />
+    <Content Include="client\app\dashboard\tabs.component.jsx" />
+    <Content Include="client\app\routes.jsx" />
+    <Content Include="client\app\vendor.jsx" />
+    <Content Include="client\dev\DevTools.jsx" />
+    <Content Include="client\index.jsx" />
+    <Content Include="client\root\Root.dev.jsx" />
+    <Content Include="client\root\Root.jsx" />
+    <Content Include="client\root\Root.prod.jsx" />
+    <Content Include="client\share\components\Layout\Base.jsx" />
+    <Content Include="client\share\components\Layout\BaseHorizontal.jsx" />
+    <Content Include="client\share\components\Layout\BasePage.jsx" />
+    <Content Include="client\share\components\Layout\ContentWrapper.jsx" />
+    <Content Include="client\share\components\Layout\Footer.jsx" />
+    <Content Include="client\share\components\Layout\Header.jsx" />
+    <Content Include="client\share\components\Layout\HeaderHorizontal.jsx" />
+    <Content Include="client\share\components\Layout\Offsidebar.jsx" />
+    <Content Include="client\share\components\Layout\Sidebar.jsx" />
+    <Content Include="client\share\components\Layout\TabBar.jsx" />
+    <Content Include="client\share\components\SingleView\SingleView.jsx" />
+    <Content Include="client\share\components\SubMenu\SubMenu.jsx" />
+    <Content Include="client\share\fonts\fontawesome-webfont.eot" />
+    <Content Include="client\share\fonts\fontawesome-webfont.ttf" />
+    <Content Include="client\share\fonts\fontawesome-webfont.woff" />
+    <Content Include="client\share\fonts\fontawesome-webfont.woff2" />
+    <Content Include="client\share\fonts\FontAwesome.otf" />
+    <Content Include="client\share\fonts\Simple-Line-Icons.eot" />
+    <Content Include="client\share\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="client\share\fonts\Simple-Line-Icons.woff" />
+    <Content Include="client\share\fonts\Simple-Line-Icons.woff2" />
+    <Content Include="client\share\server\datatable.json" />
+    <Content Include="client\share\server\i18n\site-en.json" />
+    <Content Include="client\share\server\i18n\site-he.json" />
+    <Content Include="client\share\server\jqgrid.json" />
+    <Content Include="client\share\styles\app.scss" />
+    <Content Include="client\share\styles\app\alerts.scss" />
+    <Content Include="client\share\styles\app\animate.scss" />
+    <Content Include="client\share\styles\app\bootstrap-reset.scss" />
+    <Content Include="client\share\styles\app\breadcrumbs.scss" />
+    <Content Include="client\share\styles\app\button-extra.scss" />
+    <Content Include="client\share\styles\app\calendar.scss" />
+    <Content Include="client\share\styles\app\chart-easypie.scss" />
+    <Content Include="client\share\styles\app\chart-flot.scss" />
+    <Content Include="client\share\styles\app\circles.scss" />
+    <Content Include="client\share\styles\app\datatable.scss" />
+    <Content Include="client\share\styles\app\docs.scss" />
+    <Content Include="client\share\styles\app\dropdown-extra.scss" />
+    <Content Include="client\share\styles\app\form-elements.scss" />
+    <Content Include="client\share\styles\app\form-imgcrop.scss" />
+    <Content Include="client\share\styles\app\form-tags.scss" />
+    <Content Include="client\share\styles\app\form-validation.scss" />
+    <Content Include="client\share\styles\app\form-wizard.scss" />
+    <Content Include="client\share\styles\app\gmap.scss" />
+    <Content Include="client\share\styles\app\half-float.scss" />
+    <Content Include="client\share\styles\app\jqgrid.scss" />
+    <Content Include="client\share\styles\app\layout-animation.scss" />
+    <Content Include="client\share\styles\app\layout-extra.scss" />
+    <Content Include="client\share\styles\app\layout.scss" />
+    <Content Include="client\share\styles\app\mailbox.scss" />
+    <Content Include="client\share\styles\app\masonry-grid.scss" />
+    <Content Include="client\share\styles\app\media-queries.scss" />
+    <Content Include="client\share\styles\app\nestable.scss" />
+    <Content Include="client\share\styles\app\notify.scss" />
+    <Content Include="client\share\styles\app\offsidebar.scss" />
+    <Content Include="client\share\styles\app\panels.scss" />
+    <Content Include="client\share\styles\app\placeholder.scss" />
+    <Content Include="client\share\styles\app\plans.scss" />
+    <Content Include="client\share\styles\app\plugins.scss" />
+    <Content Include="client\share\styles\app\portlets.scss" />
+    <Content Include="client\share\styles\app\print.scss" />
+    <Content Include="client\share\styles\app\progress-extra.scss" />
+    <Content Include="client\share\styles\app\radial-bar.scss" />
+    <Content Include="client\share\styles\app\row-extra.scss" />
+    <Content Include="client\share\styles\app\settings.scss" />
+    <Content Include="client\share\styles\app\sidebar.scss" />
+    <Content Include="client\share\styles\app\slim-scroll.scss" />
+    <Content Include="client\share\styles\app\spinner.scss" />
+    <Content Include="client\share\styles\app\table-extras.scss" />
+    <Content Include="client\share\styles\app\table-grid.scss" />
+    <Content Include="client\share\styles\app\timeline.scss" />
+    <Content Include="client\share\styles\app\todo.scss" />
+    <Content Include="client\share\styles\app\top-navbar.scss" />
+    <Content Include="client\share\styles\app\typo.scss" />
+    <Content Include="client\share\styles\app\user-block.scss" />
+    <Content Include="client\share\styles\app\utils-definitions.scss" />
+    <Content Include="client\share\styles\app\utils.scss" />
+    <Content Include="client\share\styles\app\variables.scss" />
+    <Content Include="client\share\styles\app\vector-map.scss" />
+    <Content Include="client\share\styles\app\weather-icons.scss" />
+    <Content Include="client\share\styles\app\widget.scss" />
+    <Content Include="client\share\styles\bootstrap.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_alerts.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_buttons.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_center-block.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_forms.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_gradients.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_grid.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_hide-text.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_image.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_labels.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_list-group.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_nav-vertical-align.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_opacity.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_pagination.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_panels.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_progress-bar.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_reset-filter.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_resize.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_responsive-visibility.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_size.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_tab-focus.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_table-row.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_text-overflow.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\mixins\_vendor-prefixes.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_alerts.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_badges.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_breadcrumbs.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_button-groups.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_buttons.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_carousel.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_close.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_code.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_component-animations.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_dropdowns.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_forms.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_glyphicons.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_grid.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_input-groups.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_jumbotron.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_labels.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_list-group.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_media.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_mixins.scss" />
+    <Content Include="client\app\task\taskDialog.component.jsx" />
+    <Content Include="client\app\dashboard\map\googleMap.component.jsx" />
+    <Content Include="client\app\dashboard\endDay\endDay.component.jsx" />
+    <Content Include="client\app\dashboard\endDay\endDayDialog.component.jsx" />
+    <Content Include="client\share\components\Layout\selectLanguage.component.jsx" />
+    <Content Include="client\app\dashboard\driverReport\driverReport.component.jsx" />
+    <Content Include="client\app\dashboard\driverReport\driverReport.container.jsx" />
+    <Content Include="client\app\dashboard\driverReport\driverReportNoTarget.component.jsx" />
+    <Content Include="client\share\components\Common\driverFilter.component.jsx" />
+    <Content Include="client\share\components\Common\superselectfield.component.jsx" />
+    <Content Include="client\app\dashboard\customers\customer.component.jsx" />
+    <Content Include="client\app\dashboard\customers\customerDialog.component.jsx" />
+    <None Include="client\app\dashboard\map\nativeMap.component.jsx" />
+    <None Include="client\share\styles\bootstrap\bootstrap\_modals.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_navbar.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_navs.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_normalize.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_pager.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_pagination.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_panels.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_popovers.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_print.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_progress-bars.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_responsive-embed.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_responsive-utilities.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_scaffolding.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_tables.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_theme.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_thumbnails.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_tooltip.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_type.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_utilities.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_variables.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\_wells.scss" />
+    <Content Include="client\share\styles\bootstrap\_bootstrap-compass.scss" />
+    <Content Include="client\share\styles\bootstrap\_bootstrap-mincer.scss" />
+    <Content Include="client\share\styles\bootstrap\_bootstrap-sprockets.scss" />
+    <Content Include="client\share\styles\bootstrap\_bootstrap.scss" />
+    <Content Include="client\share\styles\themes\theme-a.scss" />
+    <Content Include="client\share\styles\themes\theme-b.scss" />
+    <Content Include="client\share\styles\themes\theme-c.scss" />
+    <Content Include="client\share\styles\themes\theme-d.scss" />
+    <Content Include="client\share\styles\themes\theme-e.scss" />
+    <Content Include="client\share\styles\themes\theme-f.scss" />
+    <Content Include="client\share\styles\themes\theme-g.scss" />
+    <Content Include="client\share\styles\themes\theme-h.scss" />
+    <Content Include="client\share\components\Common\dateTimeField.component.jsx" />
+    <Content Include="client\share\server\Layout_GetReportColsAsync.json" />
+    <Content Include="client\share\server\userAuth.json" />
+    <Content Include="client\share\server\widgetModel.json" />
+    <Content Include="client\app\dashboard\menu.component.jsx" />
+    <Content Include="client\share\components\SingleView\LayoutView.jsx" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\layout\_col.scss" />
+    <Content Include="client\share\styles\bootstrap\bootstrap\layout\_grid.scss" />
+    <Content Include="client\share\styles\bootstrap\main.rtl.scss" />
+    <Content Include="client\share\styles\bootstrap\main.scss" />
+    <Content Include="client\app\dashboard\widgets\defaultWidget.component.jsx" />
+    <Content Include="client\app\dashboard\widgets\radialWidget.component.jsx" />
+    <Content Include="client\app\dashboard\widgets\widget.container.jsx" />
+    <Content Include="client\share\server\Layout_GetDistributionDataAsync.json" />
+    <Content Include="client\share\server\Layout_GetDriverDataAsync.json" />
+    <Content Include="client\share\server\Layout_GetCountryDataAsync.json" />
+    <Content Include="client\share\server\Layout_MenuItems_SelectByUserAsync.json" />
+    <Content Include="client\share\server\Layout_GetReportDataAsync.json" />
+    <Content Include="client\app\dashboard\widgets\deliveryWidget.component.jsx" />
+    <Content Include="client\app\dashboard\widgets\agentReturnWidget.component.jsx" />
+    <Content Include="client\app\dashboard\widgets\taskWidget.component.jsx" />
+    <Content Include="client\app\task\task.container.jsx" />
+    <Content Include="client\app\hardware\hardware.container.jsx" />
+    <Content Include="client\app\dashboard\map\map.container.jsx" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Default\ltr.cshtml" />
+    <Content Include="Views\Default\rtl.cshtml" />
+    <Content Include="client\share\components\Common\localBase.js" />
+    <Content Include="client\app\dashboard\widgets\unDeliveryWidget.component.jsx" />
+    <Content Include="client\app\dashboard\widgets\unVisitedWidget.component.jsx" />
+    <Content Include="client\share\server\i18n\site-gr.json" />
+    <Content Include="client\share\components\Layout\WidgetWrapper.jsx" />
+    <Content Include="client\share\server\defaultFilter.json" />
+    <Content Include="client\share\fonts\weathericons-regular-webfont.eot" />
+    <Content Include="client\share\fonts\weathericons-regular-webfont.ttf" />
+    <Content Include="client\share\fonts\weathericons-regular-webfont.woff" />
+    <Content Include="client\share\fonts\weathericons-regular-webfont.woff2" />
+    <Content Include="client\app\dashboard\concentrationActivity\concActivity.component.jsx" />
+    <Content Include="client\share\components\Common\ImageFormatter.jsx" />
+    <Content Include="client\share\components\Common\PercentCompleteFormatter.jsx" />
+    <Content Include="client\app\dashboard\concentrationActivity\concActivityDialog.component.jsx" />
+    <Content Include="client\app\dashboard\driverStatus\driverStatus.component.jsx" />
+    <Content Include="client\app\dashboard\driverStatus\driverStatusDialog.component.jsx" />
+    <Content Include="client\app\task\tasks.componemt.jsx" />
+    <Content Include="client\share\components\Common\linearProgressDeterminate.component.jsx" />
+    <Content Include="client\app\task\driverList.component.jsx" />
+    <None Include="Properties\PublishProfiles\Mobiplus.Diplomat.pubxml" />
+    <None Include="Properties\PublishProfiles\MobiplusDiplomat.QA.pubxml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="public\028b61689d5048b2c223d361356ce742.ttf" />
+    <Content Include="public\1cd48d78f06d33973d9d761d426e69bf.woff2" />
+    <Content Include="public\1dc35d25e61d819a9c357074014867ab.ttf" />
+    <Content Include="public\25a32416abee198dd821b0b17a198a8f.eot" />
+    <Content Include="public\4618f0de2a818e7ad3fe880e0b74d04a.ttf" />
+    <Content Include="public\4b658767da6bd92ce2addb3ce512784d.eot" />
+    <Content Include="public\83360b802f5abbf01695bdd9abcd7d71.woff2" />
+    <Content Include="public\8cac70ebda3f23ce472110d9f21e8593.woff" />
+    <Content Include="public\905b586978954b076cf1d7486053db1c.eot" />
+    <Content Include="public\ac045cc71fbfd63aae58e43d8c3af86e.woff" />
+    <Content Include="public\c8ddf1e5e5bf3682bc7bebf30f394148.woff" />
+    <Content Include="public\e6cf7c6ec7c2d6f670ae9d762604cb0b.woff2" />
+    <Content Include="public\fonts\fontawesome-webfont.eot" />
+    <Content Include="public\fonts\fontawesome-webfont.ttf" />
+    <Content Include="public\fonts\fontawesome-webfont.woff" />
+    <Content Include="public\fonts\fontawesome-webfont.woff2" />
+    <Content Include="public\fonts\FontAwesome.otf" />
+    <Content Include="public\fonts\Simple-Line-Icons.eot" />
+    <Content Include="public\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="public\fonts\Simple-Line-Icons.woff" />
+    <Content Include="public\fonts\Simple-Line-Icons.woff2" />
+    <Content Include="public\fonts\weathericons-regular-webfont.eot" />
+    <Content Include="public\fonts\weathericons-regular-webfont.ttf" />
+    <Content Include="public\fonts\weathericons-regular-webfont.woff" />
+    <Content Include="public\fonts\weathericons-regular-webfont.woff2" />
+    <Content Include="public\server\datatable.json" />
+    <Content Include="public\server\defaultFilter.json" />
+    <Content Include="public\server\i18n\site-en.json" />
+    <Content Include="public\server\i18n\site-gr.json" />
+    <Content Include="public\server\i18n\site-he.json" />
+    <Content Include="public\server\jqgrid.json" />
+    <Content Include="public\server\Layout_GetCountryDataAsync.json" />
+    <Content Include="public\server\Layout_GetDistributionDataAsync.json" />
+    <Content Include="public\server\Layout_GetDriverDataAsync.json" />
+    <Content Include="public\server\Layout_GetReportColsAsync.json" />
+    <Content Include="public\server\Layout_GetReportDataAsync.json" />
+    <Content Include="public\server\Layout_MenuItems_SelectByUserAsync.json" />
+    <Content Include="public\server\userAuth.json" />
+    <Content Include="public\server\widgetModel.json" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MobiPlus.BusinessLogic\MobiPlus.BusinessLogic.csproj">
+      <Project>{d5200e9e-ce32-4beb-8ba8-faac9149b103}</Project>
+      <Name>MobiPlus.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MobiPlus.Models\MobiPlus.Models.csproj">
+      <Project>{d61a043e-d974-4089-8365-08b042176152}</Project>
+      <Name>MobiPlus.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59100</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49541/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.2.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.2.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

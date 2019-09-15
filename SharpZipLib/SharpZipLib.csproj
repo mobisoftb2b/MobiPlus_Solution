@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{80EBA657-722D-4DC6-AB74-F127FD20DC1D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharpZipLib</RootNamespace>
+    <AssemblyName>SharpZipLib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="zz\Checksums\Adler32.cs" />
+    <Compile Include="zz\Checksums\Crc32.cs" />
+    <Compile Include="zz\Checksums\IChecksum.cs" />
+    <Compile Include="zz\Checksums\StrangeCrc.cs" />
+    <Compile Include="zz\Compression\Deflater.cs" />
+    <Compile Include="zz\Compression\DeflaterConstants.cs" />
+    <Compile Include="zz\Compression\DeflaterEngine.cs" />
+    <Compile Include="zz\Compression\DeflaterHuffman.cs" />
+    <Compile Include="zz\Compression\DeflaterPending.cs" />
+    <Compile Include="zz\Compression\Inflater.cs" />
+    <Compile Include="zz\Compression\InflaterDynHeader.cs" />
+    <Compile Include="zz\Compression\InflaterHuffmanTree.cs" />
+    <Compile Include="zz\Compression\PendingBuffer.cs" />
+    <Compile Include="zz\Compression\Streams\DeflaterOutputStream.cs" />
+    <Compile Include="zz\Compression\Streams\InflaterInputStream.cs" />
+    <Compile Include="zz\Compression\Streams\OutputWindow.cs" />
+    <Compile Include="zz\Compression\Streams\StreamManipulator.cs" />
+    <Compile Include="zz\Core\FileSystemScanner.cs" />
+    <Compile Include="zz\Core\INameTransform.cs" />
+    <Compile Include="zz\Core\IScanFilter.cs" />
+    <Compile Include="zz\Core\NameFilter.cs" />
+    <Compile Include="zz\Core\PathFilter.cs" />
+    <Compile Include="zz\Core\StreamUtils.cs" />
+    <Compile Include="zz\Core\WindowsPathUtils.cs" />
+    <Compile Include="zz\Encryption\PkzipClassic.cs" />
+    <Compile Include="zz\Encryption\ZipAESStream.cs" />
+    <Compile Include="zz\Encryption\ZipAESTransform.cs" />
+    <Compile Include="zz\FastZip.cs" />
+    <Compile Include="zz\IEntryFactory.cs" />
+    <Compile Include="zz\SharpZipBaseException.cs" />
+    <Compile Include="zz\WindowsNameTransform.cs" />
+    <Compile Include="zz\ZipConstants.cs" />
+    <Compile Include="zz\ZipEntry.cs" />
+    <Compile Include="zz\ZipEntryFactory.cs" />
+    <Compile Include="zz\ZipException.cs" />
+    <Compile Include="zz\ZipExtraData.cs" />
+    <Compile Include="zz\ZipFile.cs" />
+    <Compile Include="zz\ZipHelperStream.cs" />
+    <Compile Include="zz\ZipInputStream.cs" />
+    <Compile Include="zz\ZipNameTransform.cs" />
+    <Compile Include="zz\ZipOutputStream.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

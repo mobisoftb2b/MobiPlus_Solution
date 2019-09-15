@@ -1,0 +1,22 @@
+﻿{
+  "UserID": 24,
+  "FirstName": "אנדריי",
+  "LastName": "דודזין",
+  "UserName": null,
+  "Description": "Andrey Dodzin",
+  "Token": "a1FJMENHVWJRSkwrQjZoakl3RGhsZ1IrNkd0MFE4ME1aRW1FcTE0ZDFsRT06YW5kcmV5OjI=",
+  "isAuthenticated": true,
+  "FilterParams": {
+    "FormID": null,
+    "ReportID": null,
+    "TabID": null,
+    "CountryID": 1000,
+    "DistrID": 1000,
+    "AgentID": null,
+    "FromDate": null,
+    "Shipment": null,
+    "UserID": 24,
+    "LanguageID": null,
+    "VersionID": null
+  }
+}

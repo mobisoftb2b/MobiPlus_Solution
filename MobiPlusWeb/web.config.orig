@@ -1,0 +1,186 @@
+﻿<?xml version="1.0"?>
+<!--
+  For more information on how to configure your ASP.NET application, please visit
+  http://go.microsoft.com/fwlink/?LinkId=169433
+  -->
+<configuration>
+<<<<<<< local
+	<system.web>
+		<customErrors defaultRedirect="GenericError.htm" mode="On"></customErrors>
+		<compilation debug="true" targetFramework="4.0">
+			<assemblies>
+				<!--<add assembly="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>-->
+				<add assembly="System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A"/>
+				<add assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+				<add assembly="System.Data.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+				<add assembly="Microsoft.CSharp, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A"/></assemblies>
+		</compilation>
+		<!--<identity impersonate="true" userName="mobisoft\administrator" password="mtns1114"/>-->
+		<authentication mode="Windows"/>
+		<httpHandlers>
+			<add verb="*" path="*.ashx" validate="false" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>
+		</httpHandlers>
+		<httpRuntime requestValidationMode="2.0"/>
+		<pages validateRequest="false" controlRenderingCompatibilityVersion="3.5" clientIDMode="AutoID">
+		</pages>
+		<webServices>
+			<conformanceWarnings>
+				<remove name="BasicProfile1_1"/>
+			</conformanceWarnings>
+		</webServices>
+	</system.web>
+	<system.webServer>
+		<modules runAllManagedModulesForAllRequests="false">
+		</modules>
+		<validation validateIntegratedModeConfiguration="false"/>
+		<handlers>
+			<add name="MainHandler" path="~/Handlers/MainHandler.ashx" verb="*" type="Handler" resourceType="Unspecified" preCondition="integratedMode"/>
+			<add name="ShowImage" path="~/Handlers/ShowImage.ashx" verb="*" type="Handler" resourceType="Unspecified" preCondition="integratedMode"/>
+		</handlers>
+		<httpErrors existingResponse="PassThrough"/>
+	</system.webServer>
+	<appSettings>
+		<add key="MPService.MobiPlusService" value="http://10.0.0.85:8098/MobiPlusServices/MobiPlusService.asmx"/>
+		<add key="LogDirectory" value="C:\MobiPlusLogs\"/>
+		<add key="ServerAddress" value="10.0.0.85:8098"/>
+		<add key="MainService.MobiPlusWS" value="http://10.0.0.85:8098/MobiPlusServices/MobiPlusWS.asmx"/>
+		<!--Dev-->
+		<add key="Dev_WebConnectionString" value="Server=10.0.0.100\mobi2012;Database=MobiPlusWeb;User Id=sa;Password=wiz;Pooling=true"/>
+		<add key="Dev_ClientConnectionString" value="Server=10.0.0.100\mobi2012;Database=MobiPlusWeb;User Id=sa;Password=wiz;Pooling=true"/>
+		<add key="Dev_SqlLiteMtnDBPath" value="C:\SqlLite_AttachDB\mtn.db"/>
+		<add key="Dev_SqlLiteBIDBPath" value="C:\SqlLite_AttachDB\bi.db"/>
+		<add key="Dev_SqlLiteDBDBPath" value="C:\SqlLite_AttachDB\db.db"/>
+		<add key="Dev_SqlLiteDeltaDBPath" value="C:\SqlLite_AttachDB\delta.db"/>
+		<add key="Dev_SqlLiteDeltaLayoutPath" value="C:\SqlLite_AttachDB\Layout.db"/>
+		<!--Strauss-->
+		<add key="Strauss_WebConnectionString" value="Server=10.0.0.100\mobi2008;Database=MobiPlusWebStrauss;User Id=sa;Password=wiz;Pooling=true"/>
+		<add key="Strauss_ClientConnectionString" value="Server=10.0.0.100\mobi2008;Database=MobiPlusWebStrauss;User Id=sa;Password=wiz;Pooling=true"/>
+		<add key="Strauss_SqlLiteMtnDBPath" value="C:\SqlLite_AttachDB\mtn.db"/>
+		<add key="Strauss_SqlLiteBIDBPath" value="C:\SqlLite_AttachDB\bi.db"/>
+		<add key="Strauss_SqlLiteDBDBPath" value="C:\SqlLite_AttachDB\db.db"/>
+		<add key="Strauss_SqlLiteDeltaDBPath" value="C:\SqlLite_AttachDB\delta.db"/>
+		<add key="Strauss_SqlLiteDeltaLayoutPath" value="C:\SqlLite_AttachDB\Layout.db"/>
+		<!--Sides-->
+		<add key="Sides_WebConnectionString" value="Server=10.0.0.100\mobi2008;Database=MobiPlusWebSides;User Id=sa;Password=wiz;Pooling=true"/>
+		<add key="Sides_ClientConnectionString" value="Server=10.0.0.100\mobi2008;Database=MobiPlusWebSides;User Id=sa;Password=wiz;Pooling=true"/>
+		<add key="Sides_SqlLiteMtnDBPath" value="C:\SqlLite_AttachDB\mtn.db"/>
+		<add key="Sides_SqlLiteBIDBPath" value="C:\SqlLite_AttachDB\bi.db"/>
+		<add key="Sides_SqlLiteDBDBPath" value="C:\SqlLite_AttachDB\db.db"/>
+		<add key="Sides_SqlLiteDeltaDBPath" value="C:\SqlLite_AttachDB\delta.db"/>
+		<add key="Sides_SqlLiteDeltaLayoutPath" value="C:\SqlLite_AttachDB\Layout.db"/>
+		<!--Yafora-->
+		<add key="Yafora_WebConnectionString" value="Server=10.0.0.100\mobi2008;Database=MobiPlusWebYafora;User Id=sa;Password=wiz;Pooling=true"/>
+		<add key="Yafora_ClientConnectionString" value="Server=10.0.0.100\mobi2008;Database=MobiPlusWebYafora;User Id=sa;Password=wiz;Pooling=true"/>
+		<add key="Yafora_SqlLiteMtnDBPath" value="C:\SqlLite_AttachDB\mtn.db"/>
+		<add key="Yafora_SqlLiteBIDBPath" value="C:\SqlLite_AttachDB\bi.db"/>
+		<add key="Yafora_SqlLiteDBDBPath" value="C:\SqlLite_AttachDB\db.db"/>
+		<add key="Yafora_SqlLiteDeltaDBPath" value="C:\SqlLite_AttachDB\delta.db"/>
+		<add key="Yafora_SqlLiteDeltaLayoutPath" value="C:\SqlLite_AttachDB\Layout.db"/>
+		<!--Osem-->
+		<add key="Osem_WebConnectionString" value="Server=10.0.0.100\mobi2008;Database=MobiPlusWebOsem;User Id=sa;Password=wiz;Pooling=true"/>
+		<add key="Osem_ClientConnectionString" value="Server=10.0.0.100\mobi2008;Database=MobiPlusWebOsem;User Id=sa;Password=wiz;Pooling=true"/>
+		<add key="Osem_SqlLiteMtnDBPath" value="C:\SqlLite_AttachDB\mtn.db"/>
+		<add key="Osem_SqlLiteBIDBPath" value="C:\SqlLite_AttachDB\bi.db"/>
+		<add key="Osem_SqlLiteDBDBPath" value="C:\SqlLite_AttachDB\db.db"/>
+		<add key="Osem_SqlLiteDeltaDBPath" value="C:\SqlLite_AttachDB\delta.db"/>
+		<add key="Osem_SqlLiteDeltaLayoutPath" value="C:\SqlLite_AttachDB\Layout.db"/>
+	</appSettings>
+</configuration>
+=======
+  <system.web>
+    <customErrors defaultRedirect="GenericError.htm"
+                  mode="On"></customErrors>
+    <compilation debug="true" targetFramework="4.0">
+      <assemblies>
+        <add assembly="System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A"/>
+        <add assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+        <add assembly="System.Data.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+        <!--<add assembly="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>-->
+      </assemblies>
+    </compilation>
+    <identity impersonate="true" userName="mobisoft\administrator" password="mtns1114"/>
+    <authentication mode="Windows"/>
+    
+    <httpHandlers>
+      <remove verb="*" path="*.asmx"/>
+      <add verb="*" path="*.asmx" validate="false" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>
+      <add verb="*" path="*.ashx" validate="false" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>
+      <add verb="GET,HEAD" path="ScriptResource.axd" type="System.Web.Handlers.ScriptResourceHandler, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" validate="false"/>
+    </httpHandlers>
+    <httpModules>
+      <add name="ScriptModule" type="System.Web.Handlers.ScriptModule, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>
+    </httpModules>
+    <httpRuntime requestValidationMode="2.0" />
+    <pages validateRequest="false" />
+    <webServices>
+      <conformanceWarnings>
+        <remove name="BasicProfile1_1"/>
+      </conformanceWarnings>
+    </webServices>    
+  </system.web>
+  <system.webServer>
+    <modules runAllManagedModulesForAllRequests="false"/>
+    <validation validateIntegratedModeConfiguration="false"/>
+    <handlers>
+      <add name="MainHandler" path="~/Handlers/MainHandler.ashx" verb="*" type="Handler" resourceType="Unspecified" preCondition="integratedMode"/>
+      <add name="ShowImage" path="~/Handlers/ShowImage.ashx" verb="*" type="Handler" resourceType="Unspecified" preCondition="integratedMode"/>
+    </handlers>
+    <httpErrors existingResponse="PassThrough"/>
+  </system.webServer>
+  <appSettings>
+    <add key="MPService.MobiPlusService" value="http://10.0.0.31:8098/MobiPlusServices/MobiPlusService.asmx"/>
+    <add key="LogDirectory" value="C:\MobiPlusLogs\"/>
+    <add key="ServerAddress" value="10.0.0.31:8098"/>
+    <add key="MainService.MobiPlusWS" value="http://10.0.0.31:8098/MobiPlusServices/MobiPlusWS.asmx"/>
+    
+
+    <!--Dev-->
+    <add key="Dev_WebConnectionString" value="Server=10.0.0.100\mobi2008;Database=MobiPlusWeb;User Id=sa;Password=wiz;Pooling=true"/>
+    <add key="Dev_ClientConnectionString" value="Server=10.0.0.100\mobi2008;Database=MobiPlusWeb;User Id=sa;Password=wiz;Pooling=true"/>
+    <add key="Dev_SqlLiteMtnDBPath" value="C:\SqlLite_AttachDB\mtn.db"/>
+    <add key="Dev_SqlLiteBIDBPath" value="C:\SqlLite_AttachDB\bi.db"/>
+    <add key="Dev_SqlLiteDBDBPath" value="C:\SqlLite_AttachDB\db.db"/>
+    <add key="Dev_SqlLiteDeltaDBPath" value="C:\SqlLite_AttachDB\delta.db"/>
+    <add key="Dev_SqlLiteDeltaLayoutPath" value="C:\SqlLite_AttachDB\Layout.db"/>
+
+    <!--Strauss-->
+    <add key="Strauss_WebConnectionString" value="Server=10.0.0.100\mobi2008;Database=MobiPlusWebStrauss;User Id=sa;Password=wiz;Pooling=true"/>
+    <add key="Strauss_ClientConnectionString" value="Server=10.0.0.100\mobi2008;Database=MobiPlusWebStrauss;User Id=sa;Password=wiz;Pooling=true"/>
+    <add key="Strauss_SqlLiteMtnDBPath" value="C:\SqlLite_AttachDB\mtn.db"/> 
+    <add key="Strauss_SqlLiteBIDBPath" value="C:\SqlLite_AttachDB\bi.db"/>
+    <add key="Strauss_SqlLiteDBDBPath" value="C:\SqlLite_AttachDB\db.db"/>
+    <add key="Strauss_SqlLiteDeltaDBPath" value="C:\SqlLite_AttachDB\delta.db"/>
+    <add key="Strauss_SqlLiteDeltaLayoutPath" value="C:\SqlLite_AttachDB\Layout.db"/>
+    
+    
+    <!--Sides-->
+    <add key="Sides_WebConnectionString" value="Server=10.0.0.100\mobi2008;Database=MobiPlusWebSides;User Id=sa;Password=wiz;Pooling=true"/>
+    <add key="Sides_ClientConnectionString" value="Server=10.0.0.100\mobi2008;Database=MobiPlusWebSides;User Id=sa;Password=wiz;Pooling=true"/>
+    <add key="Sides_SqlLiteMtnDBPath" value="C:\SqlLite_AttachDB\mtn.db"/>
+    <add key="Sides_SqlLiteBIDBPath" value="C:\SqlLite_AttachDB\bi.db"/>
+    <add key="Sides_SqlLiteDBDBPath" value="C:\SqlLite_AttachDB\db.db"/>
+    <add key="Sides_SqlLiteDeltaDBPath" value="C:\SqlLite_AttachDB\delta.db"/>
+    <add key="Sides_SqlLiteDeltaLayoutPath" value="C:\SqlLite_AttachDB\Layout.db"/>
+
+
+    <!--Yafora-->
+    <add key="Yafora_WebConnectionString" value="Server=10.0.0.100\mobi2008;Database=MobiPlusWebYafora;User Id=sa;Password=wiz;Pooling=true"/>
+    <add key="Yafora_ClientConnectionString" value="Server=10.0.0.100\mobi2008;Database=MobiPlusWebYafora;User Id=sa;Password=wiz;Pooling=true"/>
+    <add key="Yafora_SqlLiteMtnDBPath" value="C:\SqlLite_AttachDB\mtn.db"/>
+    <add key="Yafora_SqlLiteBIDBPath" value="C:\SqlLite_AttachDB\bi.db"/>
+    <add key="Yafora_SqlLiteDBDBPath" value="C:\SqlLite_AttachDB\db.db"/>
+    <add key="Yafora_SqlLiteDeltaDBPath" value="C:\SqlLite_AttachDB\delta.db"/>
+    <add key="Yafora_SqlLiteDeltaLayoutPath" value="C:\SqlLite_AttachDB\Layout.db"/>
+
+
+    <!--Osem-->
+    <add key="Osem_WebConnectionString" value="Server=10.0.0.100\mobi2008;Database=MobiPlusWebOsem;User Id=sa;Password=wiz;Pooling=true"/>
+    <add key="Osem_ClientConnectionString" value="Server=10.0.0.100\mobi2008;Database=MobiPlusWebOsem;User Id=sa;Password=wiz;Pooling=true"/>
+    <add key="Osem_SqlLiteMtnDBPath" value="C:\SqlLite_AttachDB\mtn.db"/>
+    <add key="Osem_SqlLiteBIDBPath" value="C:\SqlLite_AttachDB\bi.db"/>
+    <add key="Osem_SqlLiteDBDBPath" value="C:\SqlLite_AttachDB\db.db"/>
+    <add key="Osem_SqlLiteDeltaDBPath" value="C:\SqlLite_AttachDB\delta.db"/>
+    <add key="Osem_SqlLiteDeltaLayoutPath" value="C:\SqlLite_AttachDB\Layout.db"/>
+
+  </appSettings>
+</configuration>>>>>>>> other

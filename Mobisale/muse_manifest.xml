@@ -1,0 +1,118 @@
+<manifest alg="2" build="2015.1.0.342" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive" exportTarget="other" domain="mobisoft.co.il" resolutions="1x" timestamp="1455199301234">
+  <folder name="assets">
+    <file name="shutterstock_193461476.eps" crc="4054214744" seo="true" mt="1454501594000"/>
+  </folder>
+  <folder name="css">
+    <file name="site_global.css" crc="131700929"/>
+    <file name="index.css" crc="4148180195" ref="index"/>
+    <file name="nomq_index.css" crc="4007871507" ref="index"/>
+  </folder>
+  <folder name="fonts">
+    <file name="opensanshebrew-light.woff" crc="454287734"/>
+    <file name="opensanshebrew-light.eot" crc="228726837"/>
+    <file name="opensanshebrew-light.svg" crc="170849017"/>
+    <file name="opensanshebrewcondensed-bold.woff" crc="3863098236"/>
+    <file name="opensanshebrewcondensed-bold.eot" crc="3781858682"/>
+    <file name="opensanshebrewcondensed-bold.svg" crc="3862466217"/>
+    <file name="opensanshebrew-bold.woff" crc="500405685"/>
+    <file name="opensanshebrew-bold.eot" crc="94914219"/>
+    <file name="opensanshebrew-bold.svg" crc="3812875713"/>
+    <file name="opensanshebrew-regular.woff" crc="4159287193"/>
+    <file name="opensanshebrew-regular.eot" crc="4277150708"/>
+    <file name="opensanshebrew-regular.svg" crc="4011407612"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="409338010" ref="index"/>
+    <file name="museutils.js" crc="4190794036" ref="index"/>
+    <file name="whatinput.js" crc="84559013" ref="index"/>
+    <file name="pie.js" crc="3827607177" ref="index"/>
+    <file name="jquery.watch.js" crc="349565855" ref="index"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="3792042506" ref="index"/>
+    <file name="webpro.js" crc="488283310" ref="index"/>
+    <file name="form_check.php" crc="430210585" ref="index"/>
+    <file name="form_throttle.php" crc="282343929" ref="index"/>
+    <file name="form_process.php" crc="339897355" ref="index"/>
+    <file name="form-u117.php" crc="60982673" ref="index"/>
+    <file name="jquery.museresponsive.js" crc="408737887" ref="index"/>
+  </folder>
+  <folder name="images">
+    <file name="pasted-svg-52595x52.svg" crc="3888824482" ref="index"/>
+    <file name="pasted svg 52595x52_poster_.png" crc="27589197" ref="index"/>
+    <file name="pasted-svg-3414x50.svg" crc="3880734943" ref="index"/>
+    <file name="pasted svg 3414x50_poster_.png" crc="210862244" ref="index"/>
+    <file name="pasted-svg-51789x43.svg" crc="199540103" ref="index"/>
+    <file name="pasted svg 51789x43_poster_.png" crc="350978602" ref="index"/>
+    <file name="pasted-svg-53031x56.svg" crc="3801652461" ref="index"/>
+    <file name="pasted svg 53031x56_poster_.png" crc="176721373" ref="index"/>
+    <file name="pasted-svg-46732x41.svg" crc="4256529875" ref="index"/>
+    <file name="pasted svg 46732x41_poster_.png" crc="3913338831" ref="index"/>
+    <file name="2000px-ibm_logosvg.png" crc="437961360" seo="true" ref="index"/>
+    <file name="87246360f8.png" crc="81396506" seo="true" ref="index"/>
+    <file name="logohasah.png" crc="3892056973" seo="true" ref="index"/>
+    <file name="new-priority2.png" crc="436920082" seo="true" ref="index"/>
+    <file name="sap-b1.png" crc="462805383" seo="true" ref="index"/>
+    <file name="one1(1).png" crc="3898082515" seo="true" ref="index"/>
+    <file name="sap-aktiengesellschaft-logo.png" crc="469853045" seo="true" ref="index"/>
+    <file name="shutterstock_249816679.jpg" crc="215565856" ref="index"/>
+    <file name="mobisoft_logo.png" crc="289362013" seo="true" ref="index"/>
+    <file name="app.png" crc="283253326" seo="true" ref="index"/>
+    <file name="u125-17.png" crc="3790128128" ref="index"/>
+    <file name="u125-17-r.png" crc="404278042" ref="index"/>
+    <file name="u125-17-m.png" crc="240483392" ref="index"/>
+    <file name="u125-17-fs.png" crc="189315635" ref="index"/>
+    <file name="532585684lh_180x88_060420140300.jpg" crc="4111455783" seo="true" ref="index"/>
+    <file name="picture8-crop-u274.jpg" crc="320286036" ref="index"/>
+    <file name="angellogo.jpg" crc="170576799" seo="true" ref="index"/>
+    <file name="108px-tnuva_svgsvg.png" crc="131726112" seo="true" ref="index"/>
+    <file name="2229tiv_taam.jpg" crc="329831029" seo="true" ref="index"/>
+    <file name="29012013_083542_3204203522_.jpg" crc="3976305606" seo="true" ref="index"/>
+    <file name="logo_heb3665.jpg" crc="4292645167" seo="true" ref="index"/>
+    <file name="pillsbury-logo.png" crc="348471710" seo="true" ref="index"/>
+    <file name="logo_tambur-crop-u751.jpg" crc="4272615973" ref="index"/>
+    <file name="blank.gif" crc="4208392903" ref="index"/>
+    <file name="facebook51.png" crc="4292946444" seo="true" ref="index"/>
+    <file name="social123.png" crc="20443667" seo="true" ref="index"/>
+    <file name="pin56.png" crc="3841424957" seo="true" ref="index"/>
+    <file name="telephone5.png" crc="3998959604" seo="true" ref="index"/>
+    <file name="m348_oracle.png" crc="3928287318" seo="true" ref="index"/>
+    <file name="trustlogowhite.png" crc="3809222983" seo="true" ref="index"/>
+    <file name="logo_sidad-crop-u1862.jpg" crc="4192068498" ref="index"/>
+    <file name="logo_berman-crop-u1840.png" crc="3787871015" ref="index"/>
+    <file name="dark4.png" crc="3957038667" seo="true" ref="index"/>
+    <file name="logos_mobisale-3.png" crc="4165896287" seo="true" ref="index"/>
+    <file name="logo_duvek-crop-u1855.png" crc="1829490" ref="index"/>
+    <file name="logo_gad-crop-u1848.png" crc="3927077205" ref="index"/>
+    <file name="u125-172.png" crc="497705478" ref="index"/>
+    <file name="u125-17-r2.png" crc="3991912163" ref="index"/>
+    <file name="u125-17-m2.png" crc="362042058" ref="index"/>
+    <file name="u125-17-fs2.png" crc="448513706" ref="index"/>
+    <file name="logo_duvek-crop-u18552.png" crc="198915360" ref="index"/>
+    <file name="logo_tambur-crop-u7512.jpg" crc="4059917362" ref="index"/>
+    <file name="logo_gad-crop-u18482.png" crc="3899342674" ref="index"/>
+    <file name="logo_berman-crop-u18402.png" crc="86464649" ref="index"/>
+    <file name="logo_sidad-crop-u18622.jpg" crc="236403370" ref="index"/>
+    <file name="app287x114.png" crc="3971362791" seo="true" ref="index"/>
+    <file name="picture8.jpg" crc="4210672707" seo="true" ref="index"/>
+    <file name="logo_duvek-crop-u18553.png" crc="198915360" ref="index"/>
+    <file name="logo_sidad-crop-u18623.jpg" crc="236403370" ref="index"/>
+    <file name="u125-173.png" crc="497705478" ref="index"/>
+    <file name="u125-17-r3.png" crc="3991912163" ref="index"/>
+    <file name="u125-17-m3.png" crc="362042058" ref="index"/>
+    <file name="u125-17-fs3.png" crc="448513706" ref="index"/>
+    <file name="logo_tambur-crop-u7513.jpg" crc="4059917362" ref="index"/>
+    <file name="logo_berman-crop-u18403.png" crc="86464649" ref="index"/>
+    <file name="logo_gad-crop-u18483.png" crc="3899342674" ref="index"/>
+    <file name="logo_duvek-crop-u18554.png" crc="198915360" ref="index"/>
+    <file name="logo_sidad-crop-u18624.jpg" crc="236403370" ref="index"/>
+    <file name="u125-174.png" crc="497705478" ref="index"/>
+    <file name="u125-17-r4.png" crc="3991912163" ref="index"/>
+    <file name="u125-17-m4.png" crc="362042058" ref="index"/>
+    <file name="u125-17-fs4.png" crc="448513706" ref="index"/>
+    <file name="logo_tambur-crop-u7514.jpg" crc="4059917362" ref="index"/>
+    <file name="logo_berman-crop-u18404.png" crc="86464649" ref="index"/>
+    <file name="logo_gad-crop-u18484.png" crc="3899342674" ref="index"/>
+    <file name="u98-grad.png" crc="4160995893" ref="index"/>
+    <file name="u98-grad2.png" crc="453536099" ref="index"/>
+  </folder>
+  <file name="index.html" crc="3938697924" seo="true" mt="1455199287607" redirect="true"/>
+</manifest>

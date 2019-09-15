@@ -1,0 +1,34 @@
+﻿{
+  "dashboard": {
+    "WELCOME": "ברוכים הבאים ל MobiSoft",
+    "tabs": {
+      "MAIN": "ריכוז פעילות",
+      "DRIVERACTION": "פעילות נהג",
+      "DRIVERSTATUS": "סטטוס נהגים",
+      "ENDDAY": "סוף יום" 
+    }
+  },
+  "topbar": {
+    "search": {
+      "PLACEHOLDER": "Tipea y pulsa enter.."
+    }
+  },
+  "sidebar": {
+    "heading": {
+      "HEADER": "Navegacion principal"
+    },
+    "nav": {
+      "DASHBOARD": "לוח מלוונים",
+      "SINGLEVIEW": "נהגים למשתמש",
+      "menu": {
+        "MENU": "משתמשים",
+        "SUBMENU": "נהול משתמשים"
+      }
+    },
+    "WELCOME": "ברוכים הבאים"
+  },
+  "offsidebar": {
+    "SETTINGS": "הגדרות"
+  }
+
+}

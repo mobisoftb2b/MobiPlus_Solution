@@ -1,0 +1,1 @@
+﻿<%@ WebHandler Class="PQ.DAL.Persons.PersonAttachDownloadHandler" Language="C#" %>

@@ -1,0 +1,223 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainMasterPage.master.cs"
+    Inherits="MasterPages_MainMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link id="MainStyleSheet" rel="stylesheet" href="../css/Main.css?SessionID=<%= Session.SessionID%>" />
+    <script type="text/javascript">
+
+        function styler() {
+            var lang = '<%= Lang %>';
+            var href;
+            switch (lang) {
+                case 'He': href = "../../css/Main.css?SessionID=<%= Session.SessionID%>"; break;
+                case 'En': href = "../../css/MainLTR.css?SessionID=<%= Session.SessionID%>"; break;
+				case 'Ge': href = "../../css/MainLTR.css?SessionID=<%= Session.SessionID%>"; break;
+                default: href = "../../css/Main.css?SessionID=<%= Session.SessionID%>"; break;
+            }
+            document.getElementById('ctl00_MainStyleSheet').href = href;
+        }
+        
+        styler();
+    </script>
+    <%--   <link href="~/css/MainLTR.css" rel="stylesheet" type="text/css" />--%>
+    <script src="../../js/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../js/Main.js" type="text/javascript"></script>
+    <script src="../../js/json2.js" type="text/javascript"></script>
+    <script src="../../js/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="../../js/jquery-ui.js" type="text/javascript"></script>
+    <script src="../../js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+    <script src="../../js/jquery-ui-resizeRight.js" type="text/javascript"></script>
+    <link rel="SHORTCUT ICON" href="../Img/NetWork.ico" />
+    <link rel="stylesheet" href="../css/smoothness/jquery-ui.css" />
+    <script>
+        $(document).ready(function () {
+            $("#menu").menu();
+            /*$(".inner").hide();
+            $("#i3").click(function () {
+            $(".inner").toggle();
+            });
+            */
+        });
+
+
+    </script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="dBody" style="overflow-x: hidden;">
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server">
+        </asp:ScriptManager>
+        <div>
+            <div>
+                <div>
+                    <div class="mpHeadRow" style="color: White;">
+                        <div class="HomeLogo">
+                            <img alt="" src="../../Img/logoblue.jpg" height="50px" />
+                        </div>
+                        <div class="dUsr" onclick="ShowLogOut();">
+                            <div class="dImgUsr">
+                                <img alt="User" src="../../Img/usr.png" class="imgUsr" />
+                            </div>
+                            <div class="dLblUsr">
+                                <asp:Label ID="lblProjectName" runat="server" Text="" CssClass="lblProjectName"></asp:Label>
+                                <br />
+                                <asp:Label runat="server" ID="lblUser" CssClass="LblUsr"></asp:Label>
+                            </div>
+                        </div>
+                        <div class="dLang">
+                            <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                     <td>
+                                        <div class="btnLang">
+                                            <%--<asp:LinkButton ID="lbtnEn" CssClass="lbtn" runat="server" OnClick="lbtnEn_Click" OnClientClick="SetMenuClick();">English</asp:LinkButton>--%>
+                                            <a href="javascript:SetMenuClick('En');" id="lbtnEn" class="lbtn">English</a>
+                                        </div>
+                                    </td>
+                                        <td>
+                                        <div class="pipeLang">|</div>
+                                    </td>
+                                    <td>
+                                        <div class="btnLang">
+                                            <%--<asp:LinkButton ID="lbtnHe" CssClass="lbtn" runat="server" OnClick="lbtnHe_Click">עברית</asp:LinkButton>--%>
+                                             <a href="javascript:SetMenuClick('He');" id="lbtnHe" class="lbtn">עברית</a>
+                                        </div>
+                                    </td>
+                                        <td>
+                                        <div class="pipeLang">|</div>
+                                    </td>
+                                    <td>
+                                        <div class="btnLang">
+                                            <%--<asp:LinkButton ID="lbtnHe" CssClass="lbtn" runat="server" OnClick="lbtnHe_Click">עברית</asp:LinkButton>--%>
+                                             <a href="javascript:SetMenuClick('Ge');" id="lbtnGe" class="lbtn">Georgian</a>
+                                        </div>
+                                    </td>
+                                
+                                   
+                                </tr>
+                            </table>
+
+
+
+                        </div>
+                        <div class="dmHeaderText">
+                            <div class="innerMSG" style="display: none;" id="ddLblMsg">
+                                <asp:Label runat="server" ID="lblMSG"></asp:Label>
+                            </div>
+                        </div>
+                        <div style="clear: both;">
+                        </div>
+                        <div class="boxlogout" style="z-index: 9999;">
+                            <div class="dLo" id="dLo">
+                                <div class="dLo2">
+                                    <div class="dLo3" onclick="logOut();">
+                                        <div class="dLo5">
+                                            <%=StrSrc("Exit")%>
+                                        </div>
+                                        <div class="dLo4">
+                                            <img alt="Log out" src="../../Img/logout.png" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td style="width: 195px; vertical-align: top;">
+                        <div id="dMenuN" class="MenuN">
+                            <div class="dMR">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </td>
+                    <td style="vertical-align: top;">
+                        <div style="height: 100%;" id="dContent">
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class="mainfotter">
+                <%--      Mobi Plus (טלפון: 09-8858188 ( נתב שיחות --%>
+     Mobi Plus       <%=StrSrc("fotter")%>
+            </div>
+        </div>
+        <div style="display: none;">
+            <asp:UpdatePanel runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <asp:Button runat="server" ID="btnCheckSession" OnClick="btnCheckSession_Click" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+    </form>
+    <script type="text/javascript">
+
+        function SetFotter() {
+            if ($(document).height() - $('#dContent').height() > 0)
+                $('.mainfotter').css("margin-top", $(document).height() - $('#dContent').height() - 94);
+            else
+                $('.mainfotter').css("margin-top", "80");
+        }
+        function SetMSG(MSG) {
+            $('#<%=lblMSG.ClientID %>')[0].innerHTML = MSG;
+            $('#ddLblMsg').show();
+        }
+        function SetMenu() {
+
+            if ($('#menu').css("display") == "block") {
+                $('#menu').slideUp("fast");
+            }
+            else {
+                //$('#menu').show();
+                $('#menu').slideDown("fast");
+            }
+        }
+
+        SetFotter();
+
+        function CheckSession() {
+            $('#<%=btnCheckSession.ClientID %>').click();
+        }
+        
+        function SetMenuClick(Lan) {
+            var request;
+            request = $.ajax({
+                url: "../../Handlers/MainHandler.ashx?MethodName=SetEn&Lan=" + Lan,
+                type: "get",
+                data: ""
+            });
+            request.done(function (response, textStatus, jqXHR) {
+                
+                for (var i = 0; i < $('.smSelected').length ; i++) {
+                    if ($('.smSelected')[i].id.toString().toLowerCase().indexOf('sm_') > -1) {
+                        //SetMenuSelectedItenm($('.smSelected')[i].id);
+                        openNewForm3(jqXHR.responseText, "");
+                        break;
+                    }
+                }
+            });
+            request.fail(function (jqXHR, textStatus, errorThrown) {
+                if (jqXHR.status == 200) {
+                   
+                }
+               
+            });
+        }
+
+        $('.MenuN').height($(document).height());
+        //setInterval("CheckSession();",5 * 60 * 1000.0);
+    </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="PQ.Admin.WebService.OpSemsService" CodeBehind="OpSemsService.svc.cs" %>

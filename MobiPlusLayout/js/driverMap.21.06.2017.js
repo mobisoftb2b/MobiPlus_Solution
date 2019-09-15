@@ -1,0 +1,390 @@
+﻿/// <reference path="_references.js" />
+/// <reference path="~/js/markerwithlabel.js" />
+var map = '', arrLatLon = [], line = new google.maps.Polyline,
+    arrMarker = [], arrPointsVisits = [], infoWindows = [], gMarkers = [],
+    arrPointLatLon = [], arrPointMarker = [], pMarkers = [], arrTitels = [], markerArray = [];
+
+var driverMap = {
+    InitMap: function () {
+        let lat = parseFloat($("#hdnLat").val());
+        let lon = parseFloat($("#hdnLon").val());
+        var cbOnline = $("#cbOnline").prop("checked");
+        var cbFlags = $("#cbFlags").prop("checked");
+        var cbRoad = $("#cbRoad").prop("checked");
+
+        var mapOptions = {
+            zoom: 8,
+            center: new google.maps.LatLng(lat, lon),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        if (cbOnline) driverMap.InitTrucks();
+    },
+    InitTrucks: function () {
+        window.parent.ShowLoading();
+        var countryID = $.QueryString["CountryID"] == undefined ? 1000 : $.QueryString["CountryID"];
+        var coord = $("#hdnCustomCoord").val();
+        var agentID = $("#AgentsList").val();
+        let date = $("#txtDate").val();
+        var cbOnline = $("#cbOnline").prop("checked");
+        var titles = [], distanceMsgs = [], winMsgs = [];
+        const image = '../../img/truck2.png';
+
+        HardwareWebService.MPLayout_GetDriverGPSLocationByCountry(agentID == null ? "0" : agentID, date, countryID,
+            function (dtPoints) {
+                if (dtPoints.length > 0) {
+                    for (var i = 0; i < dtPoints.length; i++) {
+                        let tooltip = new google.maps.InfoWindow();
+                        let point = dtPoints[i];
+                        let location = new google.maps.LatLng(point.DriverGPSLocation.Lat, point.DriverGPSLocation.Lng);
+                        arrLatLon.push(location);
+                        if (cbOnline) {
+                            let marker = new MarkerWithLabel({
+                                position: location, draggable: false, raiseOnDrag: false,
+                                map: map, labelContent: (parseInt(point.AgentID) + " - " + point.AgentName), labelAnchor: new google.maps.Point(34, 0), labelClass: 'labels', icon: image
+                            });
+                            if (dtPoints.length == 1) {
+                                //map.panTo(marker.position);
+                                map.setCenter(location);
+                                map.setZoom(12);     
+                            }
+                            
+                            let listener = google.maps.event.addListener(marker, 'click',
+                                function (e) {
+                                    tooltip.setContent(point.DriverGPSLocation.Comment);
+                                    tooltip.setPosition(this.getPosition());
+                                    tooltip.open(map);
+                                    map.panTo(marker.position);
+                                    map.setCenter(location);
+                                    map.setZoom(12);
+                                });
+                            arrMarker.push(marker);
+                            gMarkers.push(listener);
+                        }
+                    }
+                } else { map.setZoom(8); }
+                window.parent.CloseLoading();
+            },
+            function (ex) {
+                console.log(ex.mesage);
+                window.parent.CloseLoading();
+            });
+    },
+    InitVistPoint: function () {
+        window.parent.ShowLoading();
+        let cbFlags = $("#cbFlags").prop("checked");
+        let agentID = $("#AgentsList").val();
+        let date = $("#txtDate").val();
+        var titles = [], distanceMsgs = [], winMsgs = [];
+
+        HardwareWebService.MPLayout_GetCustomersCord(agentID == null ? "0" : agentID, date,
+          function (response) {
+              let dtPoints = JSON.parse(response).rows;
+              if (dtPoints) {
+                  for (var i = 0; i < dtPoints.length; i++) {
+                      let point = dtPoints[i];
+			let location = new google.maps.LatLng(point.Location.Lat, point.Location.Lng);
+                      arrPointLatLon.push(location );
+                      arrTitels.push(point.CustomerName);
+                      distanceMsgs.push(point.Location.Lat + "," + point.Location.Lng + "^;");
+                      winMsgs.push(point.CustomerName + " ;");
+                      if (cbFlags) {
+                          var image = '../../img/' + point.Color + '.png';
+                          arrPointMarker.push(new google.maps.Marker({
+                              position: location,
+                              map: map,
+                              icon: image,
+                              zIndex: 1,
+                              title: point.CustomerName
+                          }));
+                          google.maps.event.addListener(arrPointMarker[i], 'click',
+                              function (e) {
+                                  tooltip.setContent(point.Location.Comment);
+                                  tooltip.setPosition(this.getPosition());
+                                  tooltip.open(map);
+                              });
+                          pMarkers.push(arrPointMarker[i]);
+                      }
+                  }
+              }
+              setTimeout(window.parent.CloseLoading(), 1500);
+          },
+          function (ex) {
+              console.log(ex.mesage);
+              setTimeout(window.parent.CloseLoading(), 1000);
+          });
+    },
+    InitRoutsView: function () {
+        var arrRoads = [];
+        let agentID = $("#AgentsList").val();
+        let date = $("#txtDate").val();
+
+        HardwareWebService.MPLayout_GetCustomersRoadCord(agentID == null ? "0" : agentID, date,
+            function (response) {
+                let points = JSON.parse(response).rows;
+                driverMap.InitDriveMap(points);
+            },
+            function (ex) {
+                console.log(ex.mesage);
+                setTimeout(window.parent.CloseLoading(), 1000);
+            });
+    },
+    InitDriveMap: function (allPoints) {
+        var geocoder;
+        var polylines = [];
+        var directionsDisplay = new google.maps.DirectionsRenderer();
+        var directionsService = new window.google.maps.DirectionsService();
+        var bounds = new google.maps.LatLngBounds();
+
+        var result = _.groupBy(allPoints, 'AgentCode');
+        $.each(result, function (i, value) {
+            if (value.length > 1) {
+                var col = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+                driverMap.DirRequest(directionsService, directionsDisplay, value, function (path) {
+                    line = new google.maps.Polyline({
+                        clickable: false,
+                        map: map,
+                        path: path,
+                        strokeColor: col,
+                        strokeOpacity: 1,
+                        strokeWeight: 5
+                    });
+                });
+            } 
+        });
+        if(allPoints.length==0) map.setZoom(8); 
+        setTimeout(window.parent.CloseLoading(), 2000);
+    },
+    DirRequest: function (service, directionsDisplay, travelWaypoints, userFunction, waypointIndex, path) {
+        var waypoints = [];
+        var stepDisplay = new google.maps.InfoWindow;
+        let image = "../../img/flag_maps.png";
+        $.each(travelWaypoints, function (i, value) {
+            try {
+
+                waypoints.push({ location: new google.maps.LatLng(value.Location.Lat, value.Location.Lng) });
+                let marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(value.Location.Lat, value.Location.Lng),
+                    map: map,
+                    icon: image,
+                    zIndex: 1,
+                    title: value.Location.Comment
+                });
+                map.panTo(marker.position);
+                map.setCenter(waypoints[i]);
+                map.setZoom(12);
+                google.maps.event.addListener(marker, 'click', function () {
+                    request = $.ajax({
+                        url: "../Handlers/MainHandler.ashx?MethodName=GetDataForMap&Points=" + value.Location.Comment + "&orgAddress=" + value.Location.Comment + "&Lang=<%= Lang %>&Tiks=<%= DateTime.Now.Ticks.ToString()%>",
+                        type: "GET",
+                        data: ''
+                    });
+                    request.done(function (response, textStatus, jqXHR) {
+                        resParams = jqXHR.responseText;
+                    });
+                    request.fail(function (jqXHR, textStatus, errorThrown) {
+                        if (jqXHR.status == 200) {
+                            var arry = (arrDistanceMsgs[counter].split('^')[0] + "," + jqXHR.responseText.split('^')[1]).split(',');
+                            var myCheckPoint0 = new google.maps.LatLng(arry[0], arry[1]);
+                            var myCheckPoint1 = new google.maps.LatLng(arry[2], arry[3]);
+                            var distance = (formatMoney(getDistance(myCheckPoint0, myCheckPoint1), 1)) + " M";
+                            var infowindow = new google.maps.InfoWindow({ content: (counter + 1) + ' <br/>' + arrWinMsgs[counter] + jqXHR.responseText.split('^')[0] + "<br/>מרחק: " + distance });
+                            infoWindows.push(infowindow);
+                            closeAllInfoWindowsAndShowNewWindow(map, startMarker, infoWindows, infowindow);
+                        }
+                    });
+                });
+                markerArray.push(marker);
+
+            } catch (e) { console.log(e.message); }
+        });
+        waypointIndex = typeof waypointIndex !== 'undefined' ? waypointIndex : 0;
+        path = typeof path !== 'undefined' ? path : [];
+
+        var s = driverMap.DirGetNextSet(waypoints, waypointIndex);
+        var startl, endl, request;
+
+        try {
+            startl = s[0].shift()["location"];
+            endl = s[0].pop()["location"];
+            request = {
+                origin: startl,
+                destination: endl,
+                waypoints: s[0],
+                travelMode: google.maps.TravelMode.DRIVING,
+                unitSystem: google.maps.UnitSystem.METRIC,
+                optimizeWaypoints: false,
+                provideRouteAlternatives: false,
+                avoidHighways: false,
+                avoidTolls: false
+            };
+        } catch (e) {
+            console.log(e.message);
+        }
+        console.log(request);
+
+        service.route(request, function (response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+
+                path = path.concat(response.routes[0].overview_path);
+
+                if (s[1] != null) {
+                    driverMap.DirRequest(service, directionsDisplay, waypoints, userFunction, s[1], path);
+                } else {
+                    userFunction(path);
+                }
+                setTimeout(window.parent.CloseLoading(), 2000);
+
+            } else {
+                console.log(status);
+            }
+
+        });
+    },
+    DirGetNextSet: function (waypoints, startIndex) {
+        var MAX_WAYPOINTS_PER_REQUEST = 8;
+
+        var w = [];
+
+        if (startIndex > waypoints.length - 1) { return [w, null]; }
+        var endIndex = startIndex + MAX_WAYPOINTS_PER_REQUEST;
+        endIndex += 2;
+        if (endIndex > waypoints.length - 1) { endIndex = waypoints.length; }
+
+        for (var i = startIndex; i < endIndex; i++) {
+            w.push(waypoints[i]);
+        }
+
+        if (endIndex != waypoints.length) {
+            return [w, endIndex -= 1];
+        } else {
+            return [w, null];
+        }
+    },
+    DrawRoute: function (routeData, directionsService, bounds, polylines, pathColor) {
+        for (var i = 0; i < routeData.length; i++) {
+            if ((i + 1) < routeData.length) {
+                var src = new google.maps.LatLng(parseFloat(routeData[i].Location.Lat),
+                          parseFloat(routeData[i].Location.Lng));
+                var des = new google.maps.LatLng(parseFloat(routeData[i + 1].Location.Lat),
+                  parseFloat(routeData[i + 1].Location.Lng));
+                try {
+                    directionsService.route({
+                        origin: src,
+                        destination: des,
+                        travelMode: google.maps.DirectionsTravelMode.DRIVING
+                    }, function (result, status) {
+                        if (status == google.maps.DirectionsStatus.OK) {
+                            var path = new google.maps.MVCArray();
+                            var poly = new google.maps.Polyline({
+                                map: map,
+                                strokeColor: pathColor
+                            });
+                            for (var i = 0, len = result.routes[0].overview_path.length; i < len; i++) {
+                                path.push(result.routes[0].overview_path[i]);
+                                bounds.extend(result.routes[0].overview_path[i]);
+                            }
+                            poly.setPath(path);
+                            polylines.push(poly);
+                            map.fitBounds(bounds);
+                        }
+                        else {
+                            console.log(status);
+                        }
+                    });
+                } catch (e) {
+                    console.log(e.message);
+                }
+            }
+        }
+    },
+    ClearMarkers: function () {
+        for (var i = 0; i < arrMarker.length; i++) {
+            arrMarker[i].setMap(null);
+            google.maps.event.clearInstanceListeners(arrMarker[i]);
+        }
+        for (var i = 0; i < gMarkers.length; i++) {
+            google.maps.event.removeListener(gMarkers[i]);
+        }
+    },
+    ClearDirections: function () {
+        for (var i = 0; i < markerArray.length; i++) {
+            markerArray[i].setMap(null);
+        }
+        line.setMap(null);
+    },
+    ClearPointMarkers: function () {
+        for (var i = 0; i < arrPointMarker.length; i++) {
+            arrPointMarker[i].setMap(null);
+        }
+    },
+    CloseAllInfoWindowsAndShowNewWindow: function (map, marker, infoWindows, infowindow) {
+        CloseAllWindows(infoWindows);
+        infowindow.open(map, marker);
+    },
+    CloseAllWindows: function (infoWindows) {
+        for (var i = 0; i < infoWindows.length; i++) {
+            infoWindows[i].close();
+        }
+    },
+    AnimateMapZoomTo: function (map, targetZoom) {
+        var currentZoom = arguments[2] || map.getZoom();
+        if (currentZoom != targetZoom) {
+            google.maps.event.addListenerOnce(map, 'zoom_changed', function (event) {
+                animateMapZoomTo(map, targetZoom, currentZoom + (targetZoom > currentZoom ? 1 : -1));
+            });
+            setTimeout(function () { map.setZoom(currentZoom) }, 80);
+        }
+    }
+};
+
+$(function () {
+    $('#MapObj').width($(window).width() - 178);
+    driverMap.InitMap();
+    $("#AgentsList").on("change", function () {
+        window.parent.ShowLoading();
+        var cbOnline = $("#cbOnline").prop("checked");
+        var cbFlags = $("#cbFlags").prop("checked");
+        var cbRoad = $("#cbRoad").prop("checked");
+        driverMap.ClearMarkers(); driverMap.ClearPointMarkers(); driverMap.ClearDirections();
+        if (cbOnline) driverMap.InitTrucks();
+        if (cbFlags) driverMap.InitVistPoint();
+        if (cbRoad) driverMap.InitRoutsView(1);
+    });
+
+    $.datepicker.setDefaults($.datepicker.regional[$("#hdnSessionLanguage").val()]);
+    $("#txtDate").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: 'dd/mm/yy',
+        onSelect: function (dateText) {
+            $("#AgentsList").trigger("change");
+        }
+    });
+    $("#cbOnline").on("change", function () {
+        if ($(this).prop("checked"))
+            driverMap.InitTrucks();
+        else {
+            driverMap.ClearMarkers();
+        }
+    });
+    $("#cbFlags").on("change", function () {
+        if ($(this).prop("checked"))
+            driverMap.InitVistPoint();
+        else
+            driverMap.ClearPointMarkers();
+    });
+    $("#cbRoad").on("change", function () {
+        if ($(this).prop("checked"))
+            driverMap.InitRoutsView(1);
+        else
+        { driverMap.ClearDirections(); }
+    });
+    // map options
+    setTimeout(window.parent.CloseLoading(), 2000);
+
+});
+
+
+
+

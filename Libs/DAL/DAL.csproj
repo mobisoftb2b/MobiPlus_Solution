@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{428BB290-5C65-4B36-9567-B712202D0A5D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CodeFirstStoredProcs, Version=3.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CodeFirstStoredProcs.3.9\lib\Net4.5\CodeFirstStoredProcs.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgentsDAL\AgentRepository.cs" />
+    <Compile Include="ClientDAL.cs" />
+    <Compile Include="Common\BaseRepository.cs" />
+    <Compile Include="DAL.cs" />
+    <Compile Include="GeneralDAL.cs" />
+    <Compile Include="LayoutDAL.cs" />
+    <Compile Include="LayoutRepository\Auth\AuthRepository.cs" />
+    <Compile Include="LayoutRepository\Dashboard\DashboardRepository.cs" />
+    <Compile Include="LayoutRepository\Dashboard\WidgetRepository.cs" />
+    <Compile Include="LayoutRepository\FilterSettings\CountryRepository.cs" />
+    <Compile Include="LayoutRepository\FilterSettings\DistributionRepository.cs" />
+    <Compile Include="LayoutRepository\FilterSettings\DriverRepository.cs" />
+    <Compile Include="LayoutRepository\Layout\LayoutRepository.cs" />
+    <Compile Include="LayoutRepository\Layout_CustomersCordSelect_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_CustomersRoadCordSelect_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_Filter_DistributionCenter_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_GetAgentsL_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_GetDriverGPSLocation_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_GetDriverTasks_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_GetReportColsData_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_GetTaskTypes_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_MenuItems_SelectByUser_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_POD_Filter_Country_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_POD_Filter_Driver_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_POD_WEB_AgentDailyActivity_PopUp_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_POD_WEB_AgentDailyActivity_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_POD_WEB_AgentsReportNoTarget_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_POD_WEB_AgentsReport_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_POD_WEB_ConcentrationActivityAllCountries_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_POD_WEB_ConcentrationActivity_PopUp_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_POD_WEB_ConcentrationActivity_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_POD_WEB_DriverStatusAll_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_POD_WEB_DriverStatus_PopUp_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_POD_WEB_EndDayDetails_Select_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_POD_WEB_EndDay_Select_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_POD_WEB_NotesCollection_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_POD_Widget_AgentReturn_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_POD_Widget_Customers_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_POD_Widget_Delivery_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_POD_Widget_NotFullDelivery_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_POD_Widget_NotVisit_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_POD_Widget_Tasks_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_Reports2Form_SelectAll_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_SaveTask_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_TabsItems_SelectByUser_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_TaskDelete_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Layout_UserLogin_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\MobiPlusLayoutModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MobiPlusLayoutModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\MobiPlusLayoutModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\MobiPlusLayoutModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MobiPlusLayoutModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\MPLayout_GetReportStyles_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\MPLayout_GetSalesOrganizations_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\MPLayout_GetUsers_Result.cs">
+      <DependentUpon>MobiPlusLayoutModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRepository\Tasks\TaskRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MobiPlus.Models\MobiPlus.Models.csproj">
+      <Project>{d61a043e-d974-4089-8365-08b042176152}</Project>
+      <Name>MobiPlus.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Tools\Tools.csproj">
+      <Project>{438B179C-078B-4CA4-8110-70AE3212083C}</Project>
+      <Name>Tools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="LayoutRepository\MobiPlusLayoutModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MobiPlusLayoutModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="LayoutRepository\MobiPlusLayoutModel.edmx.diagram">
+      <DependentUpon>MobiPlusLayoutModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LayoutRepository\MobiPlusLayoutModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MobiPlusLayoutModel.edmx</DependentUpon>
+      <LastGenOutput>MobiPlusLayoutModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="LayoutRepository\MobiPlusLayoutModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MobiPlusLayoutModel.edmx</DependentUpon>
+      <LastGenOutput>MobiPlusLayoutModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

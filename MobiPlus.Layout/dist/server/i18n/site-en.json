@@ -1,0 +1,34 @@
+﻿{
+  "dashboard": {
+    "WELCOME": "Welcome to MobiSoft !",
+     "tabs": {
+      "MAIN": "Activity",
+      "DRIVERACTION": "Driver action",
+      "DRIVERSTATUS": "Driver status",
+      "ENDDAY": "End day" 
+    }
+  },
+  "topbar": {
+    "search": {
+      "PLACEHOLDER": "Type and hit enter.."
+    }
+  },
+  "sidebar": {
+    "WELCOME": "Welcome",
+    "heading": {
+      "HEADER": "Main Navigation"
+    },
+    "nav": {
+      "DASHBOARD": "Dashboard",
+      "SINGLEVIEW": "Single View",
+      "menu": {
+        "MENU": "Menu",
+        "SUBMENU": "Sub Menu"
+      }
+    }
+  },
+  "offsidebar": {
+    "SETTINGS": "Settings"
+
+  }
+}

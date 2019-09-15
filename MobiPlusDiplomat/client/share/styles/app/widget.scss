@@ -1,0 +1,68 @@
+/* ========================================================================
+     Component: widget
+ ========================================================================== */
+
+//
+// Extras styles to use panel as widgets
+// -------------------------------------
+
+$widget-margin: 20px;
+
+.widget {
+    margin-bottom: $widget-margin;
+    border: 0;
+
+    &.panel,
+    & .panel {
+        overflow: hidden;
+    }
+
+
+    .lateral-picture {
+        position: relative;
+        display: block;
+        height: 240px;
+        width: auto;
+        overflow: hidden;
+
+        > img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-height: 100%;
+            width: auto;
+        }
+    }
+}
+
+.widget-header {
+    font-size: 1.5em;
+    color: #929292;
+    margin-bottom: -12px;
+    margin-top: -8px;
+}
+
+.plan {
+    color: #929292;
+}
+
+.done {
+    color: black;
+}
+
+@media only screen and (min-width: $mq-desktop-lg) {
+    .center-percent {
+        position: absolute;
+        margin-top: 0.8em;
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+}
+@media only screen and (min-width: $mq-desktop-xl) {
+    .center-percent {
+        position: absolute;
+        margin-top: 1em;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+}

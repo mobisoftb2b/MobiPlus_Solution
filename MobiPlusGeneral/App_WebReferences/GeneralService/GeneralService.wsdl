@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetUserMap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ezor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Maslol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserMapResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserMapResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserMapAllPoints">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ezor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Maslol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserMapAllPointsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserMapAllPointsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserSumVisit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Filter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserSumVisitResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ETA_GetETAQData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustKey1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustKey2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ETA_GetETAQDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ETA_GetETAQDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLocationToSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SMSID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLocationToSMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLocationToSMSResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetUserMapSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserMap" />
+  </wsdl:message>
+  <wsdl:message name="GetUserMapSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserMapAllPointsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserMapAllPoints" />
+  </wsdl:message>
+  <wsdl:message name="GetUserMapAllPointsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserMapAllPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSumVisitSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserSumVisit" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSumVisitSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserSumVisitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ETA_GetETAQDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ETA_GetETAQData" />
+  </wsdl:message>
+  <wsdl:message name="ETA_GetETAQDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ETA_GetETAQDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLocationToSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLocationToSMS" />
+  </wsdl:message>
+  <wsdl:message name="GetLocationToSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLocationToSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserMapHttpGetIn">
+    <wsdl:part name="User" type="s:string" />
+    <wsdl:part name="Date" type="s:string" />
+    <wsdl:part name="Ezor" type="s:string" />
+    <wsdl:part name="Maslol" type="s:string" />
+    <wsdl:part name="ConString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserMapHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetUserMapAllPointsHttpGetIn">
+    <wsdl:part name="User" type="s:string" />
+    <wsdl:part name="Date" type="s:string" />
+    <wsdl:part name="Ezor" type="s:string" />
+    <wsdl:part name="Maslol" type="s:string" />
+    <wsdl:part name="ConString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserMapAllPointsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSumVisitHttpGetIn">
+    <wsdl:part name="User" type="s:string" />
+    <wsdl:part name="Date" type="s:string" />
+    <wsdl:part name="Filter" type="s:string" />
+    <wsdl:part name="ConString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSumVisitHttpGetOut" />
+  <wsdl:message name="ETA_GetETAQDataHttpGetIn">
+    <wsdl:part name="AgentID" type="s:string" />
+    <wsdl:part name="CustKey1" type="s:string" />
+    <wsdl:part name="CustKey2" type="s:string" />
+    <wsdl:part name="ConString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ETA_GetETAQDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetLocationToSMSHttpGetIn">
+    <wsdl:part name="SMSID" type="s:string" />
+    <wsdl:part name="ConString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLocationToSMSHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetUserMapHttpPostIn">
+    <wsdl:part name="User" type="s:string" />
+    <wsdl:part name="Date" type="s:string" />
+    <wsdl:part name="Ezor" type="s:string" />
+    <wsdl:part name="Maslol" type="s:string" />
+    <wsdl:part name="ConString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserMapHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetUserMapAllPointsHttpPostIn">
+    <wsdl:part name="User" type="s:string" />
+    <wsdl:part name="Date" type="s:string" />
+    <wsdl:part name="Ezor" type="s:string" />
+    <wsdl:part name="Maslol" type="s:string" />
+    <wsdl:part name="ConString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserMapAllPointsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSumVisitHttpPostIn">
+    <wsdl:part name="User" type="s:string" />
+    <wsdl:part name="Date" type="s:string" />
+    <wsdl:part name="Filter" type="s:string" />
+    <wsdl:part name="ConString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSumVisitHttpPostOut" />
+  <wsdl:message name="ETA_GetETAQDataHttpPostIn">
+    <wsdl:part name="AgentID" type="s:string" />
+    <wsdl:part name="CustKey1" type="s:string" />
+    <wsdl:part name="CustKey2" type="s:string" />
+    <wsdl:part name="ConString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ETA_GetETAQDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetLocationToSMSHttpPostIn">
+    <wsdl:part name="SMSID" type="s:string" />
+    <wsdl:part name="ConString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLocationToSMSHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:portType name="GeneralServiceSoap">
+    <wsdl:operation name="GetUserMap">
+      <wsdl:input message="tns:GetUserMapSoapIn" />
+      <wsdl:output message="tns:GetUserMapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserMapAllPoints">
+      <wsdl:input message="tns:GetUserMapAllPointsSoapIn" />
+      <wsdl:output message="tns:GetUserMapAllPointsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSumVisit">
+      <wsdl:input message="tns:GetUserSumVisitSoapIn" />
+      <wsdl:output message="tns:GetUserSumVisitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ETA_GetETAQData">
+      <wsdl:input message="tns:ETA_GetETAQDataSoapIn" />
+      <wsdl:output message="tns:ETA_GetETAQDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocationToSMS">
+      <wsdl:input message="tns:GetLocationToSMSSoapIn" />
+      <wsdl:output message="tns:GetLocationToSMSSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GeneralServiceHttpGet">
+    <wsdl:operation name="GetUserMap">
+      <wsdl:input message="tns:GetUserMapHttpGetIn" />
+      <wsdl:output message="tns:GetUserMapHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserMapAllPoints">
+      <wsdl:input message="tns:GetUserMapAllPointsHttpGetIn" />
+      <wsdl:output message="tns:GetUserMapAllPointsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSumVisit">
+      <wsdl:input message="tns:GetUserSumVisitHttpGetIn" />
+      <wsdl:output message="tns:GetUserSumVisitHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ETA_GetETAQData">
+      <wsdl:input message="tns:ETA_GetETAQDataHttpGetIn" />
+      <wsdl:output message="tns:ETA_GetETAQDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocationToSMS">
+      <wsdl:input message="tns:GetLocationToSMSHttpGetIn" />
+      <wsdl:output message="tns:GetLocationToSMSHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GeneralServiceHttpPost">
+    <wsdl:operation name="GetUserMap">
+      <wsdl:input message="tns:GetUserMapHttpPostIn" />
+      <wsdl:output message="tns:GetUserMapHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserMapAllPoints">
+      <wsdl:input message="tns:GetUserMapAllPointsHttpPostIn" />
+      <wsdl:output message="tns:GetUserMapAllPointsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSumVisit">
+      <wsdl:input message="tns:GetUserSumVisitHttpPostIn" />
+      <wsdl:output message="tns:GetUserSumVisitHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ETA_GetETAQData">
+      <wsdl:input message="tns:ETA_GetETAQDataHttpPostIn" />
+      <wsdl:output message="tns:ETA_GetETAQDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocationToSMS">
+      <wsdl:input message="tns:GetLocationToSMSHttpPostIn" />
+      <wsdl:output message="tns:GetLocationToSMSHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GeneralServiceSoap" type="tns:GeneralServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUserMap">
+      <soap:operation soapAction="http://tempuri.org/GetUserMap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserMapAllPoints">
+      <soap:operation soapAction="http://tempuri.org/GetUserMapAllPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSumVisit">
+      <soap:operation soapAction="http://tempuri.org/GetUserSumVisit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ETA_GetETAQData">
+      <soap:operation soapAction="http://tempuri.org/ETA_GetETAQData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocationToSMS">
+      <soap:operation soapAction="http://tempuri.org/GetLocationToSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GeneralServiceSoap12" type="tns:GeneralServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUserMap">
+      <soap12:operation soapAction="http://tempuri.org/GetUserMap" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserMapAllPoints">
+      <soap12:operation soapAction="http://tempuri.org/GetUserMapAllPoints" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSumVisit">
+      <soap12:operation soapAction="http://tempuri.org/GetUserSumVisit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ETA_GetETAQData">
+      <soap12:operation soapAction="http://tempuri.org/ETA_GetETAQData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocationToSMS">
+      <soap12:operation soapAction="http://tempuri.org/GetLocationToSMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GeneralServiceHttpGet" type="tns:GeneralServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetUserMap">
+      <http:operation location="/GetUserMap" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserMapAllPoints">
+      <http:operation location="/GetUserMapAllPoints" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSumVisit">
+      <http:operation location="/GetUserSumVisit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ETA_GetETAQData">
+      <http:operation location="/ETA_GetETAQData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocationToSMS">
+      <http:operation location="/GetLocationToSMS" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GeneralServiceHttpPost" type="tns:GeneralServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetUserMap">
+      <http:operation location="/GetUserMap" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserMapAllPoints">
+      <http:operation location="/GetUserMapAllPoints" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSumVisit">
+      <http:operation location="/GetUserSumVisit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ETA_GetETAQData">
+      <http:operation location="/ETA_GetETAQData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocationToSMS">
+      <http:operation location="/GetLocationToSMS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GeneralService">
+    <wsdl:port name="GeneralServiceSoap" binding="tns:GeneralServiceSoap">
+      <soap:address location="http://localhost/MobiWebServices/GeneralService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GeneralServiceSoap12" binding="tns:GeneralServiceSoap12">
+      <soap12:address location="http://localhost/MobiWebServices/GeneralService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GeneralServiceHttpGet" binding="tns:GeneralServiceHttpGet">
+      <http:address location="http://localhost/MobiWebServices/GeneralService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GeneralServiceHttpPost" binding="tns:GeneralServiceHttpPost">
+      <http:address location="http://localhost/MobiWebServices/GeneralService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

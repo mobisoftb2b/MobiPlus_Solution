@@ -1,0 +1,132 @@
+﻿
+.ui-jqgrid .ui-jqgrid-bdiv
+        {
+            overflow-y: auto;
+            overflow-x: hidden;
+            background-color:White;
+        }
+        .ui-widget-header
+        {
+            background-color: #244062 !important;
+        }
+        .ui-jqgrid-titlebar
+        {
+            background-color: #E2E3E4;
+        }
+        .ui-jqgrid-sortable
+        {
+            font-size: 12px;
+            font-weight: 600;
+            color: White !important;
+            font: 14px 'Segoe UI' , 'Helvetica Neue' , 'Droid Sans' ,Arial,Tahoma,Geneva,Sans-serif;
+            background-color: #FA6E58 !important;
+            border: none !important;
+            min-height: 100%;
+        }
+        
+        .ui-pg-table
+        {
+            background-color: #E3E3E3;
+            font-size: 14px;
+            text-align:right;
+            direction:ltr;
+        }
+        
+        .footrow
+        {
+            font-weight: 500 !important;
+        }
+        .footrow-rtl
+        {
+            font-weight: 500 !important;
+        }
+        .ui-jqgrid-ftable
+        {
+            font-weight: 500 !important;
+            background-color: White !important;
+            color: Gray !important;
+            border-top:1px solid gray;
+        }
+        .ui-widget-content
+        {
+            background: none !important;
+            color: Gray !important; /*background-color: #EDEDED !important;*/
+        }
+        .ui-row-rtl
+        {
+            background-color: white !important;
+        }
+        .ui-priority-secondary /*alt*/
+        {
+            filter: alpha(opacity=100) !important;
+            -moz-opacity: 1 !important;
+            -khtml-opacity: 1 !important;
+            opacity: 1 !important;
+            background-color: #ECECEC !important;
+        }
+        th.ui-th-column div
+        {
+            white-space: normal !important;
+            height: auto !important;
+            padding: 2px;
+        }
+        .ui-jqgrid tr.jqgrow td
+        {
+            white-space: normal !important;
+        }
+        
+        .grid-col
+        {
+            padding: 2px !important;
+            /*color: black !important;*/
+            font: 14px 'Segoe UI' , 'Helvetica Neue' , 'Droid Sans' ,Arial,Tahoma,Geneva,Sans-serif;
+            border-left: none !important;
+        }
+        .ui-widget-header
+        {
+            background-color: #E8E9ED !important;
+            color: #7C7C7C;
+            height: 22px;
+            font: 14px 'Segoe UI' , 'Helvetica Neue' , 'Droid Sans' ,Arial,Tahoma,Geneva,Sans-serif;
+            font-weight: 600;
+        }
+        .ui-jqgrid-resize.ui-jqgrid-resize-rtl
+        {
+            display: none !important;
+        }
+        .ui-jqgrid tr.ui-row-rtl td
+        {
+            border-left: none !important;
+        }
+        .ui-jqgrid .ui-jqgrid-view
+        {
+            font: 14px 'Segoe UI' , 'Helvetica Neue' , 'Droid Sans' ,Arial,Tahoma,Geneva,Sans-serif;
+        }
+        .dPartItems
+        {
+            background-color: #EDEDED;
+        }
+        .pgNum
+        {
+            border:1px solid black;
+            text-align:center;
+            padding-left:5px;
+            padding-right:5px;
+            font: 14px 'Segoe UI' , 'Helvetica Neue' , 'Droid Sans' ,Arial,Tahoma,Geneva,Sans-serif;
+        }
+        #jQGridPager_center
+        {
+            /*display:none;*/
+        }
+        #searchmodfbox_jQGrid
+        {
+            background-color:gray !important;
+        }
+         .ui-paging-info
+        {
+            display:none;
+        }
+        .ui-widget-content.ui-state-highlight
+        {
+            background-color:#E3E3E3 !important;
+        }

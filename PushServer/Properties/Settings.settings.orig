@@ -1,0 +1,13 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PushServer.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PushServer_MPService_MobiPlusService" Type="(Web Service URL)" Scope="Application">
+<<<<<<< local
+      <Value Profile="(Default)">http://10.0.0.85:8098/MobiPlusServices/MobiPlusService.asmx</Value>
+=======
+      <Value Profile="(Default)">http://10.0.0.31:8098/MobiPlusServices/MobiPlusService.asmx</Value>
+>>>>>>> other
+    </Setting>
+  </Settings>
+</SettingsFile>

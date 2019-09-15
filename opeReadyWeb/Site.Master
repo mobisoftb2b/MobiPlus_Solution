@@ -1,0 +1,412 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="PQ.Admin.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title>opeReady</title>    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" id="cssTheme" type="text/css" media="screen" />
+    <link href="/opeReady/Resources/Styles/ui.jqgrid.css" rel="stylesheet" type="text/css" />
+    <link href="favicon_16x16.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <form runat="server" id="frmScoutForm" clientidmode="Static">
+    <asp:ScriptManager ID="ScriptManager2" runat="server" ScriptMode="Release">
+        <Services>
+            <asp:ServiceReference Path="~/WebService/PQWebService.asmx" />
+            <asp:ServiceReference Path="~/WebService/ReadinessWebService.asmx" />
+        </Services>
+        <Scripts>
+            <asp:ScriptReference Path="~/Resources/Scripts/Common/jquery-1.5.2.js" />
+            <%--<asp:ScriptReference Path="~/Resources/Scripts/Common/jquery-1.8.3.min.js" />--%>
+            <asp:ScriptReference Path="~/Resources/Scripts/Common/jquery-ui-1.8.12.custom.min.js" />
+            <asp:ScriptReference Path="~/Resources/Scripts/Common/Default.js" />
+            <asp:ScriptReference Path="~/Resources/Scripts/Common/ddaccordion.js" />
+            <asp:ScriptReference Path="~/Resources/Scripts/Common/jquery.cookie.js" />
+            <asp:ScriptReference Path="~/Resources/Scripts/Common/jquery.layout-1.2.0.js" />
+            <asp:ScriptReference Path="~/Resources/Scripts/Common/jquery.datapicker-langs.js" />
+            <asp:ScriptReference Path="~/Resources/Scripts/Common/jquery.common.js" />
+            <%--<asp:ScriptReference Path="~/Resources/Scripts/Common/bindows_gauges.js" />--%>
+        </Scripts>
+    </asp:ScriptManager>
+    <div id="top">
+        <div id="head">
+            <h1 class="logo">
+                <a href="/opeReady/Default.aspx"><asp:Label runat="server" ID="Label1" Text="<%$ Resources:Resource, lnkLogo %>"></asp:Label></a>
+            </h1>
+            <div class="headGreeting" id="divHeadGreeting" runat="server" clientidmode="Static">
+            </div>
+            <div class="headVersion" id="divHeadVersion" runat="server" clientidmode="Static">
+            </div>
+            <div class="head_memberinfo">
+                <div class='memberinfo_span'>
+                    <asp:Label runat="server" ID="lblWelcome" Text="<%$ Resources:Resource, lnkWelcome %>"
+                        meta:resourceKey="lnkWelcome"></asp:Label>
+                    <a href="">
+                        <asp:Label runat="server" ID="lnkAdmin" ClientIDMode="Static"></asp:Label></a></div>
+                <div class='memberinfo_span'>
+                    <asp:LinkButton ID="lnkLogout" runat="server" OnClick="lnkLogout_Click" Text="<%$ Resources:Resource, lnkLogout %>"></asp:LinkButton></div>
+                <div class='memberinfo_span'>
+                    <asp:LinkButton ID="lnkClose" OnClientClick="lnkClose_Close();" runat="server" Text="<%$ Resources:Resource, SiteMaster_lnkClose %>"></asp:LinkButton></div>
+                <div class="memberinfo_span1">
+                    <dl class='dropdown'>
+                        <dt><a href='#'><span>
+                            <asp:Label runat="server" ClientIDMode="Static" ID="lnkLanguage" Text="<%$ Resources:Resource, lnkLanguage %>"></asp:Label></span></a></dt>
+                        <dd style="z-index: 50">
+                            <ul class="ulListLang">
+                            </ul>
+                        </dd>
+                    </dl>
+                    <img class="flagvisibility" id="imgLoading" src="<%= this.ResolveClientUrl("~/Resources/images/ajax-loader.gif") %>"
+                        alt="Loading...." />
+                </div>
+                <div class="memberinfo_span1">
+                    <dl class='ddlTheme'>
+                        <dt><a href='#'><span>
+                            <asp:Label runat="server" ID="lblThemes" CssClass="langBar" ClientIDMode="Static"
+                                Text="<%$ Resources:Resource, lblThemes %>" meta:resourceKey="lblThemes"></asp:Label></span></a></dt>
+                        <dd>
+                            <ul id="ulListTheme">
+                                <li class="memberinfo_span2"><a href="#" rel="/opeReady/Resources/Styles/redmond/redmond.css">
+                                    <span>
+                                        <img src="<%= this.ResolveClientUrl("~/Resources/images/redmond.png") %>" alt="Redmond" /></span></a></li>
+                                <li class="memberinfo_span2"><a href="#" rel="/opeReady/Resources/Styles/green/green.css">
+                                    <img src="<%= this.ResolveClientUrl("~/Resources/images/green.png") %>" alt="Green" /></a></li>
+                                <li class="memberinfo_span2"><a href="#" rel="/opeReady/Resources/Styles/ui-lightness/ui-lightness.css">
+                                    <img src="<%= this.ResolveClientUrl("~/Resources/images/UI-lightness.png") %>" alt="UI-lightness" /></a></li>
+                                <li class="memberinfo_span2"><a href="#" rel="/opeReady/Resources/Styles/Blitzer/blitzer.css">
+                                    <img src="<%= this.ResolveClientUrl("~/Resources/images/blitzer.png") %>" alt="Blitzer" /></a></li>
+                                <li class="memberinfo_span2"><a href="#" rel="/opeReady/Resources/Styles/Fuchsia/fuchsia.css">
+                                    <span>
+                                        <img src="<%= this.ResolveClientUrl("~/Resources/images/fuchsia.png") %>" alt="Fuchsia" /></span></a></li>
+                                <li class="memberinfo_span2"><a href="#" rel="/opeReady/Resources/Styles/Salad/salad.css">
+                                    <img src="<%= this.ResolveClientUrl("~/Resources/images/salat.png") %>" alt="Salad" /></a></li>
+                                <li class="memberinfo_span2"><a href="#" rel="/opeReady/Resources/Styles/Humanity/humanity.css">
+                                    <img src="<%= this.ResolveClientUrl("~/Resources/images/govno.png") %>" alt="Humanity"
+                                        id="govno" /></a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <div class='memberinfo_span1'>
+                    <dl class='ddlTheme'>
+                        <dt><a href='#'><span>
+                            <asp:Label runat="server" ClientIDMode="Static" ID="btnChangePassword" ToolTip="<%$ Resources:Resource, Default_tooltipChangePassword %>"
+                                Text="<%$ Resources:Resource, Default_btnChangePassword %>"></asp:Label></span></a></dt>
+                    </dl>
+                </div>
+                <div class="sslImage">
+                    <div class="div_wrapper" id="divSSLImage" runat="server" style="margin-top: 80px;
+                        margin-left: -20px;">                        
+                    </div>
+                </div>
+            </div>
+            <!--end head_memberinfo-->
+        </div>
+        <!--end head-->
+        <div id="bg_wrapper">
+            <div id="main">
+                <div id="content">
+                    <div id="subDirContent">
+                    </div>
+                </div>
+                <div id="divMainContent" class="ui-layout-center">
+                    <div id="waitplease" style="display: none">
+                        <img src="<%= this.ResolveClientUrl("~/Resources/images/waitPlease.gif") %>" alt="" />
+                        <asp:Label ID="lblWaitPls" Style="vertical-align: super;" runat="server" Text="<%$ Resources:Employee, lblWaitPls %>"></asp:Label>
+                    </div>
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                </div>
+            </div>
+            <!--end main-->
+            <div id="sidebar" class="ui-layout-west">
+                <div id="dvSidebar" clientidmode="Static" runat="server">
+                </div>
+                <!--end subnav-->
+                <ul class="headitem item7">
+                    <li></li>
+                </ul>
+            </div>
+            <!--end sidebar-->
+        </div>
+        <!--end bg_wrapper-->
+        <div id="footer">
+        </div>
+        <!--end footer-->
+    </div>
+    <div id="dialogMessage" title="<%$ Resources:Employee, lblError %>" runat="server"
+        clientidmode="Static">
+        <p>
+            <span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 7px 50px 0;">
+            </span>
+            <asp:Label runat="server" ID="Label4" Text="<%$ Resources:Employee, lblErrorMessage %>" />
+        </p>
+    </div>
+    <div id="dialogSuccessMessage" title="<%$ Resources:Employee, lblSuccess %>" runat="server"
+        style="display: none; overflow: visible" clientidmode="Static">
+        <p>
+            <span style="float: left; margin: 0 7px 50px 0;">
+                <img src="/opeReady/Resources/images/24_tick.png" alt="" />
+            </span>
+            <asp:Label runat="server" ID="lblSuccessMessage" ClientIDMode="Static" />
+        </p>
+    </div>
+    <div id="ConfirmDeleteAttachment" style="display: none">
+        <p>
+            <label class="label">
+                <asp:Label runat="server" ID="Label5" Text="<%$ Resources:Employee, lblConfirmDelete %>" /></label></p>
+    </div>
+    <div id="ConfirmResetPassword" style="display: none">
+        <p>
+            <label class="label">
+                <asp:Label runat="server" ID="lblConfirmResetPassword" Text="<%$ Resources:Employee, Dialog_lblConfirmResetPassword %>" /></label></p>
+    </div>
+    <asp:HiddenField ID="hdLangID" ClientIDMode="Static" runat="server" />
+    <!-- end top -->
+    <div id="divLoader" class="loader">
+        <img src="<%= this.ResolveClientUrl("~/Resources/images/waitPlease.gif") %>" alt="" />
+        <asp:Label ID="Label6" Style="vertical-align: super;" runat="server" Text="<%$ Resources:Employee, lblWaitPls %>"></asp:Label>
+    </div>
+    <div id="divErrorMessageAlert" title="<%$ Resources:Employee, lblWarningAlert %>"
+        runat="server" clientidmode="Static" style="display: none">
+        <p>
+            <span class="ui-icon ui-icon-alert alertIconPosition"></span>
+            <asp:Label runat="server" ID="lblErrorMessageAlert" />
+        </p>
+    </div>
+    <div id="divChangePassword" style="display: none">
+        <div class="emplSearch">
+            <div class="emplSearch">
+                <p>
+                    <label class="label">
+                        <asp:Label runat="server" ID="lblCurrentPassword" Text="<%$ Resources:Resource, Password_lblCurrentPassword %>" /></label>
+                    <input class="input-medium" id="txtCurrentPassword" type="password" />
+                </p>
+            </div>
+            <div class="emplSearch">
+                <p>
+                    <label class="label">
+                        <asp:Label runat="server" ID="lblNewPassword" Text="<%$ Resources:Resource, Password_lblNewPassword %>" /></label>
+                    <input class="input-medium" id="txtNewPassword" type="password" />
+                </p>
+            </div>
+            <div class="emplSearch">
+                <p>
+                    <label class="label">
+                        <asp:Label runat="server" ID="lblConfirmPassword" Text="<%$ Resources:Resource, Password_lblConfirmPassword %>" /></label>
+                    <input class="input-medium" id="txtConfirmPassword" type="password" />
+                </p>
+            </div>
+        </div>
+        <div class="emplSearch">
+            <div class="div_wrapper">
+                <p>
+                    <input type="button" id="btnUpdatePassword" runat="server" value="<%$ Resources:Resource, Password_btnUpdatePassword %>"
+                        class="button" clientidmode="Static" onclick="btnUpdatePassword_Click();" />
+                </p>
+            </div>
+            <div class="div_wrapper">
+                <p>
+                    <input type="button" id="btnClose" runat="server" value="<%$ Resources:Resource, Password_btnClose %>"
+                        onclick="$('#divChangePassword').dialog('destroy');" class="button" />
+                </p>
+            </div>
+        </div>
+    </div>
+    <asp:HiddenField ID="hidFullName" ClientIDMode="Static" runat="server" />
+    <div class="no-display">
+        <asp:Label runat="server" ClientIDMode="Static" ID="hidChangePassword" Text="<%$ Resources:Resource, Password_titleChangePassword %>"></asp:Label>
+        <asp:Label runat="server" ClientIDMode="Static" ID="lblChangePasswordFailed" Text="<%$ Resources:Resource, Password_ChangePasswordFailed %>"></asp:Label>
+        <asp:Label runat="server" ClientIDMode="Static" ID="lblChangePasswordSuccess" Text="<%$ Resources:Resource, Password_ChangePasswordSuccess %>"></asp:Label>
+    </div>
+    <script type="text/javascript" language="javascript">
+        kriesi_navigation(".nav"); /*remove this if you dont want a $ sidebar menu*/
+        var outerLayout, innerLayout, dateFormatStr;
+
+        $(document).ready(function () {
+            //------------------------------------ End Toggle Panes ----------------------------------------------------------
+            if ($.cookie("dateFormat")) {
+                if ($.cookie("dateFormat") === "103")
+                    dateFormatStr = "dd/mm/yy";
+                else
+                    dateFormatStr = "mm/dd/yy";
+            }
+            else {
+                PQ.Admin.WebService.ReadinessWebService.DateFormat_SelectCurrent(function (data) {
+                    if (data.DateCode) {
+                        $.cookie("dateFormat", data.DateCode, { expires: 365, path: '/' });
+                        if (data.DateCode === 103)
+                            dateFormatStr = "dd/mm/yy";
+                        else
+                            dateFormatStr = "mm/dd/yy";
+                    }
+                },
+                function (ex) {
+                }, null);
+            }
+            $(".PQ_datepicker, .PQ_datepicker_input").datepicker({
+                beforeShow: function (i, e) {
+                    var z = jQuery(i).closest(".ui-dialog").css("z-index") + 15;
+                    e.dpDiv.css('z-index', (isNaN(z) ? 1 : z));
+                }, changeYear: true, changeMonth: true, dateFormat: dateFormatStr
+            });
+            if ($.cookie("css")) {
+                $("#cssTheme").attr("href", $.cookie("css"));
+            }
+            else {
+                $("#cssTheme").attr("href", "/opeReady/Resources/Styles/redmond/redmond.css");
+            }
+            $("#ulListTheme li a").each(function () {
+                $(this).click(function () {
+                    $("#cssTheme").attr("href", $(this).attr('rel'));
+                    $.cookie("css", $(this).attr('rel'), { expires: 365, path: '/' });
+                    $("#ulListTheme").hide();
+                    return false;
+                });
+            });
+            $("#ulListTheme li a img").addClass('themes');
+
+            $("#dialogMessage").dialog({ autoOpen: false, resizable: false, closeOnEscape: true, show: 'slide', modal: true,
+                buttons: {
+                    Ok: function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+
+        });
+
+        $(document).ready(function () {
+            //---------------------------Language module ---------------------
+            $(".dropdown img.flag").addClass("flagvisibility");
+
+            $(".dropdown dt a").click(function (sender, args) {
+                defaultPage.CreateLanguageBar();
+                $(".dropdown dd ul").toggle();
+            });
+            //------------------------ Theme module ----------------
+            $(".ddlTheme img.flag").addClass("flagvisibility");
+
+            $(".ddlTheme dt a").click(function (sender, args) {
+                $(".ddlTheme dd ul").toggle();
+            });
+            //-------------------- End Theme -----------------------------
+
+            $(document).bind('click', function (e) {
+                var $clicked = $(e.target);
+                if (!$clicked.parents().hasClass("dropdown"))
+                    $(".dropdown dd ul").hide();
+                if (!$clicked.hasClass("langBar"))
+                    $("#ulListTheme").hide();
+            });
+
+
+            $("#flagSwitcher").click(function () {
+                $(".dropdown img.flag").toggleClass("flagvisibility");
+            });
+            $("#bg_wrapper").css({ "minHeight": document.documentElement.clientHeight - 250 });
+        });
+
+        $("#btnChangePassword").click(function () {
+            divChangePassword_Open();
+        });
+
+        function kriesi_navigation(element) {
+            $(element).each(function () {
+                var currentlistitem;
+                currentlistitem = $(this).find(">li");
+
+                currentlistitem.each(function () {
+                    var selected = $.cookie("selected");
+                    if (!$(this).find('ul').hasClass('opened')) {
+                        $(this).find('ul').addClass("closed").css({ display: "none" });
+                    }
+                });
+
+                currentlistitem.find('a:eq(0)').each(function () {                
+                    $(this).click(function () {
+                        if ($(this).next('ul').hasClass('closed')) {
+                            $(this).next('ul').slideDown(200).removeClass("closed");
+                            return false;
+                        } else {
+                            $(this).next('ul').slideUp(200).addClass("closed");
+                        }
+                        return false;
+                    });
+                });
+                $('li.nested').each(function () {
+                    $(this).click(function (sender) {
+                        if ($(this).find('>ul').hasClass('closed')) {
+                            $(this).find('>ul').slideDown(200).removeClass("closed").css({ display: "block" });
+                        }
+                        else {
+                            $(this).find('>ul').slideUp(200).addClass("closed");
+                        }
+                        return false;
+                    });
+                });
+                $('a.item-i').each(function () {
+                    $(this).click(function (sender) {                        
+                        window.location.href = sender.currentTarget;
+                        $.cookie("selected", sender.currentTarget);
+                        return false;
+                    });
+                });
+            });
+
+        };
+
+        function lnkClose_Close() {
+            window.open('', '_self', ''); window.close()
+        }
+
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(endRequestHandler);
+        Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(beginRequestHandler);
+
+        function endRequestHandler(sender, args) {
+            if (args.get_error()) {
+                args.set_errorHandled(true);
+            };
+            $("#waitplease").css({ 'display': 'none' });
+        }
+        function beginRequestHandler() {
+            $("#waitplease").css({ 'display': 'block' });
+        }
+
+        function divChangePassword_Open() {
+            $("#divChangePassword").dialog({ autoOpen: true, bgiframe: true, resizable: false, closeOnEscape: true, width: '200px', modal: true, zIndex: 50,
+                title: $('#hidChangePassword').text(),
+                open: function (type, data) {
+                    $(this).parent().appendTo("form");
+                    $("#txtCurrentPassword").focus();
+                    $(this).find("input:password").each(function () {
+                        $(this).val("").removeClass('ui-state-error');
+                    });
+                }
+            });
+            return false;
+        };
+        $("#txtCurrentPassword").change(function () {
+            if ($(this).val().trim() != "") {
+                $(this).removeClass('ui-state-error', 100);
+            }
+        });
+
+        $("#txtConfirmPassword").change(function () {
+            if ($(this).val().trim() == $("#txtNewPassword").val().trim()) {
+                $(this).removeClass('ui-state-error', 100);
+            }
+        });
+    </script>
+    <!-- webbot  bot="HTMLMarkup" startspan -->
+    <!-- GeoTrust QuickSSL [tm] Smart  Icon tag. Do not edit. -->
+    <%--<script language="JavaScript" type="text/javascript" src="//smarticon.geotrust.com/si.js"></script>--%>
+    <!-- end  GeoTrust Smart Icon tag -->
+    <!-- webbot  bot="HTMLMarkup" endspan -->
+    </form>
+</body>
+</html>

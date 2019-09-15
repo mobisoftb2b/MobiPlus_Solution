@@ -1,0 +1,1714 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MobiPlusWebDiplomatModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="Layout_CustomersCordSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AgentID" Type="bigint" Mode="In" />
+          <Parameter Name="Date" Type="nvarchar" Mode="In" />
+          <Parameter Name="CountryID" Type="bigint" Mode="In" />
+          <Parameter Name="DistrID" Type="bigint" Mode="In" />
+          <Parameter Name="ToDate" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Layout_CustomersRoadCordSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AgentID" Type="bigint" Mode="In" />
+          <Parameter Name="Date" Type="bigint" Mode="In" />
+          <Parameter Name="CountryID" Type="bigint" Mode="In" />
+          <Parameter Name="ToDate" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Layout_Filter_DistributionCenter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryID" Type="bigint" Mode="In" />
+          <Parameter Name="UserID" Type="int" Mode="In" />
+          <Parameter Name="LanguageID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Layout_GetAgentsL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryID" Type="nvarchar" Mode="In" />
+          <Parameter Name="DistrID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Layout_GetDriverGPSLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AgentID" Type="bigint" Mode="In" />
+          <Parameter Name="Date" Type="nvarchar" Mode="In" />
+          <Parameter Name="CountryID" Type="bigint" Mode="In" />
+          <Parameter Name="ToDate" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Layout_GetDriverTasks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryID" Type="bigint" Mode="In" />
+          <Parameter Name="AgentID" Type="bigint" Mode="In" />
+          <Parameter Name="Date" Type="nvarchar" Mode="In" />
+          <Parameter Name="ToDate" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Layout_GetReportColsData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ReportID" Type="bigint" Mode="In" />
+          <Parameter Name="LanguageID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Layout_GetTaskTypes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="Layout_MenuItems_SelectByUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="bigint" Mode="In" />
+          <Parameter Name="LanguageID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Layout_POD_Filter_Country" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SessionUserID" Type="bigint" Mode="In" />
+          <Parameter Name="LanguageID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Layout_POD_Filter_Driver" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryID" Type="bigint" Mode="In" />
+          <Parameter Name="DistrID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="Layout_POD_WEB_AgentDailyActivity" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryID" Type="nvarchar" Mode="In" />
+          <Parameter Name="DistrID" Type="nvarchar" Mode="In" />
+          <Parameter Name="AgentId" Type="nvarchar" Mode="In" />
+          <Parameter Name="FromDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="ToDate" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Layout_POD_WEB_AgentDailyActivity_PopUp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryID" Type="nvarchar" Mode="In" />
+          <Parameter Name="DistrID" Type="nvarchar" Mode="In" />
+          <Parameter Name="AgentId" Type="nvarchar" Mode="In" />
+          <Parameter Name="FromDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="CustId" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Layout_POD_WEB_AgentsReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryID" Type="bigint" Mode="In" />
+          <Parameter Name="DistrID" Type="bigint" Mode="In" />
+          <Parameter Name="AgentId" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="ToDate" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Layout_POD_WEB_AgentsReportNoTarget" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryID" Type="bigint" Mode="In" />
+          <Parameter Name="DistrID" Type="bigint" Mode="In" />
+          <Parameter Name="AgentId" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="ToDate" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Layout_POD_WEB_ConcentrationActivity" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryID" Type="nvarchar" Mode="In" />
+          <Parameter Name="DistrID" Type="nvarchar" Mode="In" />
+          <Parameter Name="AgentId" Type="nvarchar" Mode="In" />
+          <Parameter Name="FromDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="ToDate" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Layout_POD_WEB_ConcentrationActivity_PopUp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryID" Type="nvarchar" Mode="In" />
+          <Parameter Name="DistrID" Type="nvarchar" Mode="In" />
+          <Parameter Name="AgentId" Type="nvarchar" Mode="In" />
+          <Parameter Name="FromDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="ToDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="Cycle" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Layout_POD_WEB_ConcentrationActivityAllCountries" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryID" Type="bigint" Mode="In" />
+          <Parameter Name="DistrID" Type="bigint" Mode="In" />
+          <Parameter Name="AgentId" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="ToDate" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Layout_POD_WEB_DriverStatus_PopUp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryID" Type="nvarchar" Mode="In" />
+          <Parameter Name="DistrID" Type="nvarchar" Mode="In" />
+          <Parameter Name="DriverID" Type="nvarchar" Mode="In" />
+          <Parameter Name="TaskDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="ToDate" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Layout_POD_WEB_DriverStatusAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryID" Type="nvarchar" Mode="In" />
+          <Parameter Name="DistrID" Type="nvarchar" Mode="In" />
+          <Parameter Name="AgentId" Type="nvarchar" Mode="In" />
+          <Parameter Name="FromDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="ToDate" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Layout_POD_WEB_EndDay_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryID" Type="bigint" Mode="In" />
+          <Parameter Name="DistrID" Type="bigint" Mode="In" />
+          <Parameter Name="AgentId" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="ToDate" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Layout_POD_WEB_EndDayDetails_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryID" Type="bigint" Mode="In" />
+          <Parameter Name="DistrID" Type="bigint" Mode="In" />
+          <Parameter Name="AgentId" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="ToDate" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Layout_POD_WEB_NotesCollection" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryID" Type="bigint" Mode="In" />
+          <Parameter Name="DistrID" Type="bigint" Mode="In" />
+          <Parameter Name="AgentId" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="ToDate" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Layout_POD_Widget_AgentReturn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryID" Type="bigint" Mode="In" />
+          <Parameter Name="DistrID" Type="bigint" Mode="In" />
+          <Parameter Name="AgentId" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="ToDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="LanguageID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Layout_POD_Widget_Customers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryID" Type="bigint" Mode="In" />
+          <Parameter Name="DistrID" Type="bigint" Mode="In" />
+          <Parameter Name="AgentId" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="ToDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="LanguageID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Layout_POD_Widget_Delivery" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryID" Type="bigint" Mode="In" />
+          <Parameter Name="DistrID" Type="bigint" Mode="In" />
+          <Parameter Name="AgentId" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="ToDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="LanguageID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Layout_POD_Widget_NotFullDelivery" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryID" Type="bigint" Mode="In" />
+          <Parameter Name="DistrID" Type="bigint" Mode="In" />
+          <Parameter Name="AgentId" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="ToDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="LanguageID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Layout_POD_Widget_NotVisit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryID" Type="nvarchar" Mode="In" />
+          <Parameter Name="DistrID" Type="nvarchar" Mode="In" />
+          <Parameter Name="AgentId" Type="nvarchar" Mode="In" />
+          <Parameter Name="FromDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="ToDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="LanguageID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Layout_POD_Widget_Tasks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryID" Type="bigint" Mode="In" />
+          <Parameter Name="DistrID" Type="bigint" Mode="In" />
+          <Parameter Name="AgentId" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="ToDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="LanguageID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Layout_Reports2Form_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="iFormID" Type="bigint" Mode="In" />
+          <Parameter Name="iTabID" Type="bigint" Mode="In" />
+          <Parameter Name="iReportID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="Layout_SaveTask" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TaskID" Type="bigint" Mode="In" />
+          <Parameter Name="AgentId" Type="nvarchar" Mode="In" />
+          <Parameter Name="CustomerCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="Address" Type="nvarchar" Mode="In" />
+          <Parameter Name="City" Type="nvarchar" Mode="In" />
+          <Parameter Name="DateFrom" Type="nvarchar" Mode="In" />
+          <Parameter Name="DateTo" Type="nvarchar" Mode="In" />
+          <Parameter Name="TaskTypeID" Type="int" Mode="In" />
+          <Parameter Name="Task" Type="nvarchar" Mode="In" />
+          <Parameter Name="MobiUserID" Type="bigint" Mode="In" />
+          <Parameter Name="CountryID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="Layout_TabsItems_SelectByUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FormID" Type="bigint" Mode="In" />
+          <Parameter Name="TabID" Type="int" Mode="In" />
+          <Parameter Name="userID" Type="bigint" Mode="In" />
+          <Parameter Name="LanguageID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Layout_TaskDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TaskID" Type="bigint" Mode="In" />
+          <Parameter Name="CountryID" Type="bigint" Mode="In" />
+          <Parameter Name="AgentId" Type="nvarchar" Mode="In" />
+          <Parameter Name="DateFrom" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Layout_UserLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserIP" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="MPLayout_GetReportStyles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StyleID" Type="bigint" Mode="In" />
+          <Parameter Name="VersionID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="MPLayout_GetSalesOrganizations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="MPLayout_GetUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SessionUserID" Type="bigint" Mode="In" />
+        </Function>
+        <EntityContainer Name="MobiPlusWebDiplomatModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MobiPlusWebDiplomatModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MobiPlusWebDiplomatEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="MPLayout_GetUsers" ReturnType="Collection(MobiPlusWebDiplomatModel.MPLayout_GetUsers_Result)">
+          <Parameter Name="SessionUserID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="MPLayout_GetReportStyles" ReturnType="Collection(MobiPlusWebDiplomatModel.MPLayout_GetReportStyles_Result)">
+            <Parameter Name="StyleID" Mode="In" Type="Int64" />
+            <Parameter Name="VersionID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="MPLayout_GetSalesOrganizations" ReturnType="Collection(MobiPlusWebDiplomatModel.MPLayout_GetSalesOrganizations_Result)" />
+          <FunctionImport Name="Layout_Reports2Form_SelectAll" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_Reports2Form_SelectAll_Result)" >
+            <Parameter Name="iFormID" Mode="In" Type="Int64" />
+            <Parameter Name="iTabID" Mode="In" Type="Int64" />
+            <Parameter Name="iReportID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_MenuItems_SelectByUser" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_MenuItems_SelectByUser_Result)">
+            <Parameter Name="UserID" Mode="In" Type="Int64" />
+            <Parameter Name="LanguageID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_TabsItems_SelectByUser" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_TabsItems_SelectByUser_Result)">
+            <Parameter Name="FormID" Mode="In" Type="Int64" />
+            <Parameter Name="TabID" Mode="In" Type="Int32" />
+            <Parameter Name="userID" Mode="In" Type="Int64" />
+            <Parameter Name="LanguageID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_Filter_DistributionCenter" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_Filter_DistributionCenter_Result)">
+            <Parameter Name="CountryID" Mode="In" Type="Int64" />
+            <Parameter Name="UserID" Mode="In" Type="Int32" />
+            <Parameter Name="LanguageID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_POD_Widget_Customers" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_POD_Widget_Customers_Result)">
+            <Parameter Name="CountryID" Mode="In" Type="Int64" />
+            <Parameter Name="DistrID" Mode="In" Type="Int64" />
+            <Parameter Name="AgentId" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="String" />
+            <Parameter Name="ToDate" Mode="In" Type="String" />
+            <Parameter Name="LanguageID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_POD_Widget_NotFullDelivery" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_POD_Widget_NotFullDelivery_Result)">
+            <Parameter Name="CountryID" Mode="In" Type="Int64" />
+            <Parameter Name="DistrID" Mode="In" Type="Int64" />
+            <Parameter Name="AgentId" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="String" />
+            <Parameter Name="ToDate" Mode="In" Type="String" />
+            <Parameter Name="LanguageID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_POD_Widget_Delivery" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_POD_Widget_Delivery_Result)">
+            <Parameter Name="CountryID" Mode="In" Type="Int64" />
+            <Parameter Name="DistrID" Mode="In" Type="Int64" />
+            <Parameter Name="AgentId" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="String" />
+            <Parameter Name="ToDate" Mode="In" Type="String" />
+            <Parameter Name="LanguageID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_POD_Widget_AgentReturn" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_POD_Widget_AgentReturn_Result)">
+            <Parameter Name="CountryID" Mode="In" Type="Int64" />
+            <Parameter Name="DistrID" Mode="In" Type="Int64" />
+            <Parameter Name="AgentId" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="String" />
+            <Parameter Name="ToDate" Mode="In" Type="String" />
+            <Parameter Name="LanguageID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_POD_Widget_Tasks" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_POD_Widget_Tasks_Result)">
+            <Parameter Name="CountryID" Mode="In" Type="Int64" />
+            <Parameter Name="DistrID" Mode="In" Type="Int64" />
+            <Parameter Name="AgentId" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="String" />
+            <Parameter Name="ToDate" Mode="In" Type="String" />
+            <Parameter Name="LanguageID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_POD_Filter_Country" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_POD_Filter_Country_Result)">
+            <Parameter Name="SessionUserID" Mode="In" Type="Int64" />
+            <Parameter Name="LanguageID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_POD_WEB_ConcentrationActivity_PopUp" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_POD_WEB_ConcentrationActivity_PopUp_Result)">
+            <Parameter Name="CountryID" Mode="In" Type="String" />
+            <Parameter Name="DistrID" Mode="In" Type="String" />
+            <Parameter Name="AgentId" Mode="In" Type="String" />
+            <Parameter Name="FromDate" Mode="In" Type="String" />
+            <Parameter Name="ToDate" Mode="In" Type="String" />
+            <Parameter Name="Cycle" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_POD_WEB_ConcentrationActivity" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_POD_WEB_ConcentrationActivity_Result)">
+            <Parameter Name="CountryID" Mode="In" Type="String" />
+            <Parameter Name="DistrID" Mode="In" Type="String" />
+            <Parameter Name="AgentId" Mode="In" Type="String" />
+            <Parameter Name="FromDate" Mode="In" Type="String" />
+            <Parameter Name="ToDate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_GetReportColsData" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_GetReportColsData_Result)">
+            <Parameter Name="ReportID" Mode="In" Type="Int64" />
+            <Parameter Name="LanguageID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_POD_Widget_NotVisit" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_POD_Widget_NotVisit_Result)">
+            <Parameter Name="CountryID" Mode="In" Type="String" />
+            <Parameter Name="DistrID" Mode="In" Type="String" />
+            <Parameter Name="AgentId" Mode="In" Type="String" />
+            <Parameter Name="FromDate" Mode="In" Type="String" />
+            <Parameter Name="ToDate" Mode="In" Type="String" />
+            <Parameter Name="LanguageID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_POD_Filter_Driver" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_POD_Filter_Driver_Result)">
+            <Parameter Name="CountryID" Mode="In" Type="Int64" />
+            <Parameter Name="DistrID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_UserLogin" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_UserLogin_Result)">
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="UserIP" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_POD_WEB_ConcentrationActivityAllCountries" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_POD_WEB_ConcentrationActivityAllCountries_Result)">
+            <Parameter Name="CountryID" Mode="In" Type="Int64" />
+            <Parameter Name="DistrID" Mode="In" Type="Int64" />
+            <Parameter Name="AgentId" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="String" />
+            <Parameter Name="ToDate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_POD_WEB_DriverStatusAll" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_POD_WEB_DriverStatusAll_Result)">
+            <Parameter Name="CountryID" Mode="In" Type="String" />
+            <Parameter Name="DistrID" Mode="In" Type="String" />
+            <Parameter Name="AgentId" Mode="In" Type="String" />
+            <Parameter Name="FromDate" Mode="In" Type="String" />
+            <Parameter Name="ToDate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_POD_WEB_DriverStatus_PopUp" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_POD_WEB_DriverStatus_PopUp_Result)">
+            <Parameter Name="CountryID" Mode="In" Type="String" />
+            <Parameter Name="DistrID" Mode="In" Type="String" />
+            <Parameter Name="DriverID" Mode="In" Type="String" />
+            <Parameter Name="TaskDate" Mode="In" Type="String" />
+            <Parameter Name="ToDate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_GetAgentsL" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_GetAgentsL_Result)">
+            <Parameter Name="CountryID" Mode="In" Type="String" />
+            <Parameter Name="DistrID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_GetDriverTasks" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_GetDriverTasks_Result)">
+            <Parameter Name="CountryID" Mode="In" Type="Int64" />
+            <Parameter Name="AgentID" Mode="In" Type="Int64" />
+            <Parameter Name="Date" Mode="In" Type="String" />
+            <Parameter Name="ToDate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_GetTaskTypes" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_GetTaskTypes_Result)" >
+          <Parameter Name="CountryID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_SaveTask" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_SaveTask_Result)">
+            <Parameter Name="TaskID" Mode="In" Type="Int64" />
+            <Parameter Name="AgentId" Mode="In" Type="String" />
+            <Parameter Name="CustomerCode" Mode="In" Type="String" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="City" Mode="In" Type="String" />
+            <Parameter Name="DateFrom" Mode="In" Type="String" />
+            <Parameter Name="DateTo" Mode="In" Type="String" />
+            <Parameter Name="TaskTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="Task" Mode="In" Type="String" />
+            <Parameter Name="MobiUserID" Mode="In" Type="Int64" />
+            <Parameter Name="CountryID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_TaskDelete" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_TaskDelete_Result)">
+          <Parameter Name="TaskID" Mode="In" Type="Int64" />
+            <Parameter Name="CountryID" Mode="In" Type="Int64" />
+            <Parameter Name="AgentId" Mode="In" Type="String" />
+            <Parameter Name="DateFrom" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_CustomersCordSelect" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_CustomersCordSelect_Result)">
+            <Parameter Name="AgentID" Mode="In" Type="Int64" />
+            <Parameter Name="Date" Mode="In" Type="String" />
+            <Parameter Name="CountryID" Mode="In" Type="Int64" />
+            <Parameter Name="DistrID" Mode="In" Type="Int64" />
+            <Parameter Name="ToDate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_CustomersRoadCordSelect" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_CustomersRoadCordSelect_Result)">
+            <Parameter Name="AgentID" Mode="In" Type="Int64" />
+            <Parameter Name="Date" Mode="In" Type="Int64" />
+            <Parameter Name="CountryID" Mode="In" Type="Int64" />
+            <Parameter Name="ToDate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_POD_WEB_EndDay_Select" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_POD_WEB_EndDay_Select_Result)">
+            <Parameter Name="CountryID" Mode="In" Type="Int64" />
+            <Parameter Name="DistrID" Mode="In" Type="Int64" />
+            <Parameter Name="AgentId" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="String" />
+            <Parameter Name="ToDate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_POD_WEB_EndDayDetails_Select" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_POD_WEB_EndDayDetails_Select_Result)">
+            <Parameter Name="CountryID" Mode="In" Type="Int64" />
+            <Parameter Name="DistrID" Mode="In" Type="Int64" />
+            <Parameter Name="AgentId" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="String" />
+            <Parameter Name="ToDate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_GetDriverGPSLocation" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_GetDriverGPSLocation_Result)">
+            <Parameter Name="AgentID" Mode="In" Type="Int64" />
+            <Parameter Name="Date" Mode="In" Type="String" />
+            <Parameter Name="CountryID" Mode="In" Type="Int64" />
+            <Parameter Name="ToDate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_POD_WEB_NotesCollection" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_POD_WEB_NotesCollection_Result)">
+            <Parameter Name="CountryID" Mode="In" Type="Int64" />
+            <Parameter Name="DistrID" Mode="In" Type="Int64" />
+            <Parameter Name="AgentId" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="String" />
+            <Parameter Name="ToDate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_POD_WEB_AgentsReport" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_POD_WEB_AgentsReport_Result)">
+            <Parameter Name="CountryID" Mode="In" Type="Int64" />
+            <Parameter Name="DistrID" Mode="In" Type="Int64" />
+            <Parameter Name="AgentId" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="String" />
+            <Parameter Name="ToDate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_POD_WEB_AgentsReportNoTarget" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_POD_WEB_AgentsReportNoTarget_Result)">
+            <Parameter Name="CountryID" Mode="In" Type="Int64" />
+            <Parameter Name="DistrID" Mode="In" Type="Int64" />
+            <Parameter Name="AgentId" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="String" />
+            <Parameter Name="ToDate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_POD_WEB_AgentDailyActivity" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_POD_WEB_AgentDailyActivity_Result)">
+            <Parameter Name="CountryID" Mode="In" Type="String" />
+            <Parameter Name="DistrID" Mode="In" Type="String" />
+            <Parameter Name="AgentId" Mode="In" Type="String" />
+            <Parameter Name="FromDate" Mode="In" Type="String" />
+            <Parameter Name="ToDate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Layout_POD_WEB_AgentDailyActivity_PopUp" ReturnType="Collection(MobiPlusWebDiplomatModel.Layout_POD_WEB_AgentDailyActivity_PopUp_Result)">
+            <Parameter Name="CountryID" Mode="In" Type="String" />
+            <Parameter Name="DistrID" Mode="In" Type="String" />
+            <Parameter Name="AgentId" Mode="In" Type="String" />
+            <Parameter Name="FromDate" Mode="In" Type="String" />
+            <Parameter Name="CustId" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="MPLayout_GetUsers_Result">
+          <Property Type="Int64" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="UserName" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+        </ComplexType>
+        <ComplexType Name="MPLayout_GetReportStyles_Result">
+          <Property Type="Int64" Name="StyleID" Nullable="false" />
+          <Property Type="String" Name="StyleName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="FontSize" Nullable="false" />
+          <Property Type="String" Name="FontFamily" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ForeColor" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="BackColor" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="isBold" Nullable="false" />
+          <Property Type="Int32" Name="isUnderline" Nullable="false" />
+          <Property Type="Int32" Name="isBlink" Nullable="false" />
+          <Property Type="Int64" Name="ChildStyleID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="MPLayout_GetSalesOrganizations_Result">
+          <Property Type="String" Name="SalesOrganization" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="LanguageType" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="Layout_Reports2Form_SelectAll_Result">
+          <Property Type="Int64" Name="FormID" Nullable="false" />
+          <Property Type="Int64" Name="ReportID" Nullable="false" />
+          <Property Type="Int32" Name="StartPos_X" Nullable="false" />
+          <Property Type="Int32" Name="StartPos_Y" Nullable="false" />
+          <Property Type="Boolean" Name="IsVisible" Nullable="false" />
+          <Property Type="Int64" Name="TabID" Nullable="false" />
+          <Property Type="String" Name="FormName" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="TabName" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="ReportName" Nullable="false" MaxLength="250" />
+          <Property Type="Int32" Name="ContentDim_Width" Nullable="false" />
+          <Property Type="Int32" Name="ContentDim_Height" Nullable="false" />
+          <Property Type="Int32" Name="ContentDim_MinWidth" Nullable="true" />
+          <Property Type="Int32" Name="ContentDim_MaxWidth" Nullable="true" />
+          <Property Type="Int32" Name="ContentDim_MinHeight" Nullable="true" />
+          <Property Type="Int32" Name="ContentDim_MaxHeight" Nullable="true" />
+          <Property Type="Boolean" Name="IsStatic" Nullable="false" />
+          <Property Type="Boolean" Name="isDraggable" Nullable="false" />
+          <Property Type="Boolean" Name="isResizable" Nullable="false" />
+          <Property Type="Int32" Name="ReportTypeID" Nullable="false" />
+          <Property Type="Int32" Name="ReportTemplateID" Nullable="true" />
+          <Property Type="String" Name="Layout_ReportTemplate_Desc" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ReportQuery" Nullable="false" />
+          <Property Type="String" Name="ReportCaption" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="Report_SP_Params" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="ReportDataSourceID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Layout_MenuItems_SelectByUser_Result">
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="150" />
+          <Property Type="Int32" Name="FormID" Nullable="true" />
+          <Property Type="Int64" Name="ImgID" Nullable="true" />
+          <Property Type="String" Name="RoutePath" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CssIcon" Nullable="true" MaxLength="20" />
+          <Property Type="Int64" Name="MenuItemParentID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Layout_TabsItems_SelectByUser_Result">
+          <Property Type="Int64" Name="TabID" Nullable="false" />
+          <Property Type="String" Name="TabName" Nullable="false" MaxLength="150" />
+          <Property Type="Int32" Name="TabOrder" Nullable="false" />
+          <Property Type="Int64" Name="FormID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Layout_Filter_DistributionCenter_Result">
+          <Property Type="Int32" Name="DistributionCenterID" Nullable="false" />
+          <Property Type="String" Name="DistributionCenterName" Nullable="false" MaxLength="250" />
+          <Property Type="Int32" Name="SalesOrganization" Nullable="true" />
+          <Property Type="Int32" Name="IsPush" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Layout_POD_Widget_Customers_Result">
+          <Property Type="String" Name="Title" Nullable="true" MaxLength="9" />
+          <Property Type="Int32" Name="Plan" Nullable="true" />
+          <Property Type="Int32" Name="Done" Nullable="true" />
+          <Property Type="Int32" Name="Percent" Nullable="true" />
+          <Property Type="String" Name="BGColor" Nullable="false" MaxLength="13" />
+          <Property Type="String" Name="SubBgColor" Nullable="false" MaxLength="7" />
+          <Property Type="String" Name="IconName" Nullable="false" MaxLength="17" />
+          <Property Type="String" Name="Color" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="ChartColor" Nullable="false" MaxLength="7" />
+          <Property Type="String" Name="TrackColor" Nullable="false" MaxLength="13" />
+        </ComplexType>
+        <ComplexType Name="Layout_POD_Widget_NotFullDelivery_Result">
+          <Property Type="String" Name="Title" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="BGColor" Nullable="false" MaxLength="13" />
+          <Property Type="String" Name="SubBgColor" Nullable="false" MaxLength="7" />
+          <Property Type="String" Name="IconName" Nullable="false" MaxLength="19" />
+          <Property Type="String" Name="Color" Nullable="false" MaxLength="5" />
+          <Property Type="Int32" Name="AgentID" Nullable="false" />
+          <Property Type="String" Name="VALUE" Nullable="true" MaxLength="13" />
+          </ComplexType>
+        <ComplexType Name="Layout_POD_Widget_Delivery_Result">
+          <Property Type="String" Name="Title" Nullable="true" MaxLength="8" />
+          <Property Type="Int32" Name="Plan" Nullable="true" />
+          <Property Type="Int32" Name="Done" Nullable="true" />
+          <Property Type="String" Name="Percent" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="BGColor" Nullable="false" MaxLength="13" />
+          <Property Type="String" Name="SubBgColor" Nullable="false" MaxLength="7" />
+          <Property Type="String" Name="IconName" Nullable="false" MaxLength="17" />
+          <Property Type="String" Name="Color" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="ChartColor" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="TrackColor" Nullable="false" MaxLength="12" />
+        </ComplexType>
+        <ComplexType Name="Layout_POD_Widget_AgentReturn_Result">
+          <Property Type="String" Name="Title" Nullable="true" MaxLength="13" />
+          <Property Type="Int32" Name="Plan" Nullable="true" />
+          <Property Type="Int32" Name="Done" Nullable="true" />
+          <Property Type="String" Name="Percent" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="BGColor" Nullable="false" MaxLength="13" />
+          <Property Type="String" Name="SubBgColor" Nullable="false" MaxLength="7" />
+          <Property Type="String" Name="IconName" Nullable="false" MaxLength="17" />
+          <Property Type="String" Name="Color" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="ChartColor" Nullable="false" MaxLength="7" />
+          <Property Type="String" Name="TrackColor" Nullable="false" MaxLength="13" />
+          <Property Type="Int32" Name="AgentID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Layout_POD_Widget_Tasks_Result">
+          <Property Type="String" Name="Title" Nullable="true" MaxLength="6" />
+          <Property Type="String" Name="Plan" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Done" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="Percent" Nullable="true" />
+          <Property Type="String" Name="BGColor" Nullable="false" MaxLength="13" />
+          <Property Type="String" Name="SubBgColor" Nullable="false" MaxLength="7" />
+          <Property Type="String" Name="IconName" Nullable="false" MaxLength="17" />
+          <Property Type="String" Name="Color" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="ChartColor" Nullable="false" MaxLength="7" />
+          <Property Type="String" Name="TrackColor" Nullable="false" MaxLength="13" />
+        </ComplexType>
+        <ComplexType Name="Layout_POD_Filter_Country_Result">
+          <Property Type="Int32" Name="Value" Nullable="false" />
+          <Property Type="String" Name="Key" Nullable="false" MaxLength="70" />
+          <Property Type="Int32" Name="DistributionCenterID" Nullable="true" />
+          <Property Type="String" Name="DistributionCenterName" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="LatLng" Nullable="true" MaxLength="50" />
+          </ComplexType>
+        <ComplexType Name="Layout_POD_WEB_ConcentrationActivity_PopUp_Result">
+          <Property Type="String" Name="imgStatus" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="Shipment" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Driver" Nullable="true" MaxLength="81" />
+          <Property Type="Int32" Name="Cycle" Nullable="false" />
+          <Property Type="String" Name="ActualSortOrder" Nullable="true" MaxLength="2" />
+          <Property Type="Int32" Name="SortOrder" Nullable="true" />
+          <Property Type="String" Name="Cust" Nullable="true" MaxLength="281" />
+          <Property Type="String" Name="CustAddress" Nullable="true" MaxLength="501" />
+          <Property Type="String" Name="TravelHours" Nullable="true" />
+          <Property Type="String" Name="ServiceHours" Nullable="true" />
+          <Property Type="String" Name="OriginalTime" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="DeliveryTime" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Delivery" Nullable="true" MaxLength="103" />
+          <Property Type="String" Name="CustReturns" Nullable="true" MaxLength="110" />
+          <Property Type="String" Name="DriverReturn" Nullable="true" MaxLength="34" />
+          <Property Type="String" Name="STYLE_DriverReturn" Nullable="false" MaxLength="7" />
+          <Property Type="Int32" Name="CollectedSurfaces" Nullable="true" />
+          <Property Type="String" Name="STYLE_CollectedSurfaces" Nullable="false" MaxLength="9" />
+          <Property Type="String" Name="LastStatus" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CountryID" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DistrID" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AgentId" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="FromDate" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="CustID" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Layout_POD_WEB_ConcentrationActivity_Result">
+          <Property Type="String" Name="DriverName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Shipment" Nullable="false" />
+          <Property Type="String" Name="NotVisited" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="NotFullDelivery" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="AgentReturn" Nullable="true" MaxLength="110" />
+          <Property Type="String" Name="DriverReturn" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="DriverStatus" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="imgStatus" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="idStatus" Nullable="false" />
+          <Property Type="Int32" Name="Cycle" Nullable="false" />
+          <Property Type="String" Name="Visit" Nullable="true" MaxLength="7" />
+          <Property Type="String" Name="Delivery" Nullable="true" MaxLength="110" />
+          <Property Type="Int32" Name="Progress" Nullable="true" />
+          <Property Type="String" Name="Mission" Nullable="true" MaxLength="61" />
+          <Property Type="String" Name="CountryID1" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="DistrID1" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="FromDate1" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="TaskDate" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="AgentId1" Nullable="false" />
+          <Property Type="Int32" Name="LongDistance" Nullable="true" />
+          <Property Type="Int32" Name="EndSupplyDate" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Layout_GetReportColsData_Result">
+          <Property Type="Int64" Name="FragmentID" Nullable="false" />
+          <Property Type="String" Name="FragmentName" Nullable="false" MaxLength="150" />
+          <Property Type="Int64" Name="ReportID" Nullable="false" />
+          <Property Type="String" Name="ReportName" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="ColCaption" Nullable="true" MaxLength="550" />
+          <Property Type="String" Name="ReportQuery" Nullable="false" />
+          <Property Type="String" Name="Report_SP_Params" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ReportCaption" Nullable="false" MaxLength="250" />
+          <Property Type="Int32" Name="ReportDataSourceID" Nullable="false" />
+          <Property Type="Int32" Name="ReportTypeID" Nullable="false" />
+          <Property Type="Int64" Name="ReportColID" Nullable="false" />
+          <Property Type="String" Name="ColName" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="ColOrder" Nullable="false" />
+          <Property Type="Double" Name="ColWidthWeight" Nullable="false" />
+          <Property Type="Int32" Name="ColTypeID" Nullable="false" />
+          <Property Type="Int32" Name="FormatID" Nullable="false" />
+          <Property Type="Int32" Name="AlignmentID" Nullable="false" />
+          <Property Type="Int32" Name="ColMaxLength" Nullable="true" />
+          <Property Type="Int64" Name="StyleID" Nullable="true" />
+          <Property Type="Int32" Name="ColIsSummary" Nullable="false" />
+          <Property Type="String" Name="TypeName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Alignment" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="FragmentDescription" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="FormatString" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="StyleName" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="IsZebra" Nullable="false" />
+          <Property Type="Int32" Name="IsLastRowFooter" Nullable="false" />
+          <Property Type="Int32" Name="HasSubTotals" Nullable="false" />
+          <Property Type="Int32" Name="IsToShowRowsNumberOnTitle" Nullable="false" />
+          <Property Type="Int32" Name="RowsPerPage" Nullable="true" />
+          <Property Type="Int32" Name="HeaderZoomObjTypeID" Nullable="true" />
+          <Property Type="String" Name="HeaderZoomObjID" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="RowReportZoomObjTypeID" Nullable="true" />
+          <Property Type="String" Name="RowReportZoomObjID" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="LayoutTypeID" Nullable="true" />
+          <Property Type="String" Name="CompileActivityURL" Nullable="true" MaxLength="550" />
+          <Property Type="Int32" Name="LayoutTypeID2" Nullable="true" />
+          <Property Type="String" Name="CompileActivityURL2" Nullable="true" MaxLength="550" />
+          <Property Type="String" Name="GroupBy" Nullable="true" MaxLength="150" />
+          <Property Type="Int32" Name="HasSubTotalsOnGroup" Nullable="false" />
+          <Property Type="Int32" Name="SectionsPerRow" Nullable="true" />
+          <Property Type="Double" Name="SectionsRowHeight" Nullable="true" />
+          <Property Type="String" Name="ReportEditByTbl" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="FilterID" Nullable="false" />
+          <Property Type="Int32" Name="AllowAdd" Nullable="false" />
+          <Property Type="Int32" Name="AllowEdit" Nullable="false" />
+          <Property Type="Int32" Name="AllowDelete" Nullable="false" />
+          <Property Type="String" Name="ChosenTemplet" Nullable="true" MaxLength="50" />
+          <Property Type="Int64" Name="frg_FragmentID" Nullable="true" />
+          <Property Type="String" Name="Extra1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Extra2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Extra3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Extra4" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Extra5" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Layout_POD_Widget_NotVisit_Result">
+          <Property Type="String" Name="Title" Nullable="true" MaxLength="1001" />
+          <Property Type="String" Name="Value" Nullable="true" MaxLength="9" />
+          <Property Type="String" Name="BGColor" Nullable="false" MaxLength="13" />
+          <Property Type="String" Name="SubBgColor" Nullable="false" MaxLength="7" />
+          <Property Type="Int32" Name="ImgID" Nullable="false" />
+          <Property Type="String" Name="IconName" Nullable="false" MaxLength="17" />
+          <Property Type="String" Name="Color" Nullable="false" MaxLength="5" />
+          <Property Type="Int32" Name="AgentID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Layout_POD_Filter_Driver_Result">
+          <Property Type="String" Name="Value" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Key" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="Layout_UserLogin_Result">
+          <Property Type="Int64" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+          <Property Type="DateTime" Name="dtCreate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="UserName" Nullable="true" MaxLength="150" />
+          <Property Type="Int64" Name="GroupID" Nullable="false" />
+          <Property Type="Int32" Name="VersionID" Nullable="false" />
+          <Property Type="Int32" Name="ProfileID" Nullable="false" />
+          <Property Type="Int32" Name="MobileProfileID" Nullable="true" />
+          <Property Type="Int32" Name="CountryID" Nullable="false" />
+          <Property Type="Int32" Name="DistributionCenterID" Nullable="true" />
+          <Property Type="Int64" Name="MobileGroupID" Nullable="true" />
+          <Property Type="String" Name="CountryName" Nullable="true" MaxLength="70" />
+          <Property Type="String" Name="LatLng" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Layout_POD_WEB_ConcentrationActivityAllCountries_Result">
+          <Property Type="String" Name="CountryID1" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="DistrID1" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="FromDate1" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="imgStatus" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="idStatus" Nullable="false" />
+          <Property Type="Int32" Name="AgentId1" Nullable="false" />
+          <Property Type="String" Name="DriverName" Nullable="true" MaxLength="50" />
+          <Property Type="Int64" Name="Shipment" Nullable="true" />
+          <Property Type="Int32" Name="Cycle" Nullable="false" />
+          <Property Type="String" Name="Visit" Nullable="true" MaxLength="7" />
+          <Property Type="String" Name="Delivery" Nullable="true" MaxLength="110" />
+          <Property Type="Int32" Name="Progress" Nullable="true" />
+          <Property Type="String" Name="NotVisited" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="NotFullDelivery" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="AgentReturn" Nullable="true" MaxLength="110" />
+          <Property Type="String" Name="DriverReturn" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="DriverStatus" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Mission" Nullable="true" MaxLength="61" />
+          <Property Type="Int32" Name="LongDistance" Nullable="true" />
+          <Property Type="Int32" Name="EndSupplyDate" Nullable="true" />
+          <Property Type="String" Name="TaskDate" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="Layout_POD_WEB_DriverStatusAll_Result">
+          <Property Type="String" Name="SalesOrganization" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="DistrID" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="TaskDate" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="DriverID" Nullable="false" />
+          <Property Type="String" Name="DriverName" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Cycle" Nullable="false" />
+          <Property Type="String" Name="imgLineDownload" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="STYLE_imgLineDownload" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="imgWise" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="STYLE_imgWise" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="imgToDiplomat" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="STYLE_imgToDiplomat" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="imgLineEnded" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="STYLE_imgLineEnded" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="imgArriveBB" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="STYLE_imgArriveBB" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="imgLeaveBB" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="STYLE_imgLeaveBB" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="UpdateDate" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="Layout_POD_WEB_DriverStatus_PopUp_Result">
+          <Property Type="String" Name="TaskTime" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="ShipmentID" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Cust" Nullable="true" MaxLength="286" />
+          <Property Type="String" Name="CustAddress" Nullable="true" MaxLength="511" />
+          <Property Type="String" Name="TaskID" Nullable="true" MaxLength="50" />
+          <Property Type="Int64" Name="DocNum" Nullable="true" />
+          <Property Type="Int32" Name="ReportCode" Nullable="true" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Comment" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="LastChange" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="Layout_GetAgentsL_Result">
+          <Property Type="String" Name="DriverName" Nullable="true" MaxLength="255" />
+          <Property Type="Int64" Name="DriverID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Layout_GetDriverTasks_Result">
+          <Property Type="Int64" Name="TaskID" Nullable="false" />
+          <Property Type="String" Name="AgentId" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="DriverName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CustomerCode" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="City" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="TaskTypeID" Nullable="false" />
+          <Property Type="String" Name="TaskType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Task" Nullable="false" MaxLength="1150" />
+          <Property Type="DateTime" Name="dtCreate" Nullable="false" Precision="23" />
+          <Property Type="Int64" Name="MobiUserIDCreate" Nullable="false" />
+          <Property Type="DateTime" Name="dtUpdate" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="MobiUserIDUpdate" Nullable="true" />
+          <Property Type="String" Name="DateFrom" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="DateTo" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="Layout_GetTaskTypes_Result">
+          <Property Type="Int32" Name="TaskTypeID" Nullable="false" />
+          <Property Type="String" Name="TaskType" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Layout_SaveTask_Result">
+          <Property Type="Int64" Name="TaskID" Nullable="false" />
+          <Property Type="String" Name="AgentId" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="DriverName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CustomerCode" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="City" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="TaskTypeID" Nullable="false" />
+          <Property Type="String" Name="TaskType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Task" Nullable="false" MaxLength="1150" />
+          <Property Type="DateTime" Name="dtCreate" Nullable="false" Precision="23" />
+          <Property Type="Int64" Name="MobiUserIDCreate" Nullable="false" />
+          <Property Type="DateTime" Name="dtUpdate" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="MobiUserIDUpdate" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Layout_CustomersCordSelect_Result">
+          <Property Type="String" Name="CustID" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="CustName" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="IsVisit" Nullable="false" />
+          <Property Type="String" Name="AgentId" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="511" />
+          <Property Type="DateTime" Name="LastChange" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Lat" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Lon" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="IsNotSupplayAndVisit" Nullable="false" />
+          <Property Type="Int32" Name="LastReportCode" Nullable="true" />
+          <Property Type="String" Name="LastStatus" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ReportGPS_LAT" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ReportGPS_Lon" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="CustStatus" Nullable="false" />
+          <Property Type="String" Name="CustStatusDesc" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="Color" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Comment" Nullable="true" MaxLength="869" />
+          <Property Type="String" Name="ImageName" Nullable="false" MaxLength="1" />
+          <Property Type="Int32" Name="OriginalOrder" Nullable="true" />
+          <Property Type="Int32" Name="ActualOrder" Nullable="false" />
+          <Property Type="String" Name="TaskDate" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="Layout_CustomersRoadCordSelect_Result">
+          <Property Type="Int64" Name="DriverGPSLocationID" Nullable="false" />
+          <Property Type="String" Name="AgentCode" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="Lat" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Lon" Nullable="true" MaxLength="30" />
+          <Property Type="DateTime" Name="UpdateDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="SalesOrganization" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Color" Nullable="false" MaxLength="4" />
+        </ComplexType>
+        <ComplexType Name="Layout_POD_WEB_EndDay_Select_Result">
+          <Property Type="String" Name="imgStatus" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="CountryID" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="DistrID" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="FromDate" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="DriverID" Nullable="false" />
+          <Property Type="String" Name="DriverName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Shipment" Nullable="false" />
+          <Property Type="String" Name="Delivery" Nullable="true" MaxLength="61" />
+          <Property Type="String" Name="AgentReturn" Nullable="true" MaxLength="61" />
+          <Property Type="String" Name="DriverReturn" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="CollectedSurfaces" Nullable="true" />
+          <Property Type="String" Name="STYLE_CollectedSurfaces" Nullable="false" MaxLength="9" />
+          <Property Type="String" Name="KmPlanned" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="KmActual" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Layout_POD_WEB_EndDayDetails_Select_Result">
+          <Property Type="String" Name="imgStatus" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="Shipment" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Driver" Nullable="true" MaxLength="81" />
+          <Property Type="Int32" Name="SortOrder" Nullable="true" />
+          <Property Type="String" Name="Cust" Nullable="true" MaxLength="281" />
+          <Property Type="String" Name="CustAddress" Nullable="true" MaxLength="501" />
+          <Property Type="String" Name="TravelHours" Nullable="true" />
+          <Property Type="String" Name="ServiceHours" Nullable="true" />
+          <Property Type="String" Name="OriginalTime" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="DeliveryTime" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Delivery" Nullable="true" MaxLength="61" />
+          <Property Type="String" Name="CustReturns" Nullable="true" MaxLength="61" />
+          <Property Type="String" Name="DriverReturn" Nullable="true" MaxLength="34" />
+          <Property Type="String" Name="STYLE_DriverReturn" Nullable="false" MaxLength="7" />
+          <Property Type="Int32" Name="CollectedSurfaces" Nullable="true" />
+          <Property Type="String" Name="STYLE_CollectedSurfaces" Nullable="false" MaxLength="9" />
+          <Property Type="String" Name="LastStatus" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CustID1" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Layout_GetDriverGPSLocation_Result">
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="AgentID" Nullable="true" MaxLength="16" />
+          <Property Type="Int64" Name="DriverGPSLocationID" Nullable="false" />
+          <Property Type="String" Name="Lat" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Lon" Nullable="true" MaxLength="30" />
+          <Property Type="DateTime" Name="UpdateDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Comment" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Layout_POD_WEB_NotesCollection_Result">
+          <Property Type="Int64" Name="AgentID" Nullable="true" />
+          <Property Type="String" Name="DriverName" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Customer" Nullable="true" MaxLength="286" />
+          <Property Type="String" Name="DeliveryNum" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="InvoiceComment" Nullable="true" MaxLength="1406" />
+          <Property Type="String" Name="CustComment" Nullable="true" MaxLength="1406" />
+          <Property Type="String" Name="DeliveryStatus" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="TaskDescription" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Layout_POD_WEB_AgentsReport_Result">
+          <Property Type="String" Name="DocStartTime" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="Agent" Nullable="true" MaxLength="286" />
+          <Property Type="Int64" Name="Reference" Nullable="true" />
+          <Property Type="Int64" Name="ShipmentNumber" Nullable="true" />
+          <Property Type="String" Name="Customer" Nullable="true" />
+          <Property Type="String" Name="Item" Nullable="true" MaxLength="57" />
+          <Property Type="Double" Name="OrigCases" Nullable="true" />
+          <Property Type="Double" Name="CaseQuantity" Nullable="true" />
+          <Property Type="Double" Name="QTY" Nullable="true" />
+          <Property Type="String" Name="ReturnResCode" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="ReasonDescription" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="Layout_POD_WEB_AgentsReportNoTarget_Result">
+          <Property Type="String" Name="Driver" Nullable="true" MaxLength="81" />
+          <Property Type="Int64" Name="ShipmentID" Nullable="true" />
+          <Property Type="Int64" Name="TaskID" Nullable="true" />
+          <Property Type="String" Name="Customer" Nullable="true" MaxLength="281" />
+          <Property Type="String" Name="ReportDescription" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Delivery" Nullable="true" MaxLength="61" />
+        </ComplexType>
+        <ComplexType Name="Layout_POD_WEB_AgentDailyActivity_Result">
+          <Property Type="String" Name="TaskDate" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="imgStatus" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="idStatus" Nullable="false" />
+          <Property Type="String" Name="Shipment" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Driver" Nullable="true" MaxLength="81" />
+          <Property Type="String" Name="Cust" Nullable="true" MaxLength="281" />
+          <Property Type="String" Name="CustAddress" Nullable="true" MaxLength="501" />
+          <Property Type="String" Name="CustCoord" Nullable="true" MaxLength="111" />
+          <Property Type="String" Name="ReportGPS_Lat" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ReportGPS_Lon" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TravelHours" Nullable="true" />
+          <Property Type="String" Name="ServiceHours" Nullable="true" />
+          <Property Type="String" Name="OriginalTime" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="DeliveryTime" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Delivery" Nullable="true" MaxLength="61" />
+          <Property Type="String" Name="CustReturns" Nullable="true" MaxLength="61" />
+          <Property Type="String" Name="DriverReturn" Nullable="true" MaxLength="34" />
+          <Property Type="String" Name="STYLE_DriverReturn" Nullable="false" MaxLength="7" />
+          <Property Type="Int32" Name="CollectedSurfaces" Nullable="true" />
+          <Property Type="String" Name="STYLE_CollectedSurfaces" Nullable="false" MaxLength="9" />
+          <Property Type="String" Name="CountryID1" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="DistrID1" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="AgentId1" Nullable="false" />
+          <Property Type="String" Name="FromDate1" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="CustId1" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Mission" Nullable="true" MaxLength="61" />
+          <Property Type="Int32" Name="Quality" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Layout_POD_WEB_AgentDailyActivity_PopUp_Result">
+          <Property Type="String" Name="imgStatus" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Shipment" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Driver" Nullable="true" MaxLength="286" />
+          <Property Type="Int32" Name="SortOrder" Nullable="true" />
+          <Property Type="String" Name="Cust" Nullable="true" MaxLength="286" />
+          <Property Type="String" Name="CustAddress" Nullable="true" MaxLength="511" />
+          <Property Type="String" Name="TaskDescription" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DeliveryNum" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Comment" Nullable="true" MaxLength="1406" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Layout_TaskDelete_Result">
+          <Property Type="Int64" Name="TaskID" Nullable="false" />
+          <Property Type="String" Name="AgentId" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="DriverName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CustomerCode" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="City" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="DateFrom" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="DateTo" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="TaskTypeID" Nullable="false" />
+          <Property Type="String" Name="TaskType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Task" Nullable="false" MaxLength="1150" />
+          <Property Type="DateTime" Name="dtCreate" Nullable="false" Precision="23" />
+          <Property Type="Int64" Name="MobiUserIDCreate" Nullable="false" />
+          <Property Type="DateTime" Name="dtUpdate" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="MobiUserIDUpdate" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MobiPlusWebDiplomatModelStoreContainer" CdmEntityContainer="MobiPlusWebDiplomatEntities" >
+          <FunctionImportMapping FunctionImportName="MPLayout_GetUsers" FunctionName="MobiPlusWebDiplomatModel.Store.MPLayout_GetUsers">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.MPLayout_GetUsers_Result">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="MPLayout_GetReportStyles" FunctionName="MobiPlusWebDiplomatModel.Store.MPLayout_GetReportStyles">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.MPLayout_GetReportStyles_Result">
+                <ScalarProperty Name="StyleID" ColumnName="StyleID" />
+                <ScalarProperty Name="StyleName" ColumnName="StyleName" />
+                <ScalarProperty Name="FontSize" ColumnName="FontSize" />
+                <ScalarProperty Name="FontFamily" ColumnName="FontFamily" />
+                <ScalarProperty Name="ForeColor" ColumnName="ForeColor" />
+                <ScalarProperty Name="BackColor" ColumnName="BackColor" />
+                <ScalarProperty Name="isBold" ColumnName="isBold" />
+                <ScalarProperty Name="isUnderline" ColumnName="isUnderline" />
+                <ScalarProperty Name="isBlink" ColumnName="isBlink" />
+                <ScalarProperty Name="ChildStyleID" ColumnName="ChildStyleID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="MPLayout_GetSalesOrganizations" FunctionName="MobiPlusWebDiplomatModel.Store.MPLayout_GetSalesOrganizations">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.MPLayout_GetSalesOrganizations_Result">
+                <ScalarProperty Name="SalesOrganization" ColumnName="SalesOrganization" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="LanguageType" ColumnName="LanguageType" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_Reports2Form_SelectAll" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_Reports2Form_SelectAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_Reports2Form_SelectAll_Result">
+                <ScalarProperty Name="FormID" ColumnName="FormID" />
+                <ScalarProperty Name="ReportID" ColumnName="ReportID" />
+                <ScalarProperty Name="StartPos_X" ColumnName="StartPos_X" />
+                <ScalarProperty Name="StartPos_Y" ColumnName="StartPos_Y" />
+                <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+                <ScalarProperty Name="TabID" ColumnName="TabID" />
+                <ScalarProperty Name="FormName" ColumnName="FormName" />
+                <ScalarProperty Name="TabName" ColumnName="TabName" />
+                <ScalarProperty Name="ReportName" ColumnName="ReportName" />
+                <ScalarProperty Name="ContentDim_Width" ColumnName="ContentDim_Width" />
+                <ScalarProperty Name="ContentDim_Height" ColumnName="ContentDim_Height" />
+                <ScalarProperty Name="ContentDim_MinWidth" ColumnName="ContentDim_MinWidth" />
+                <ScalarProperty Name="ContentDim_MaxWidth" ColumnName="ContentDim_MaxWidth" />
+                <ScalarProperty Name="ContentDim_MinHeight" ColumnName="ContentDim_MinHeight" />
+                <ScalarProperty Name="ContentDim_MaxHeight" ColumnName="ContentDim_MaxHeight" />
+                <ScalarProperty Name="IsStatic" ColumnName="IsStatic" />
+                <ScalarProperty Name="isDraggable" ColumnName="isDraggable" />
+                <ScalarProperty Name="isResizable" ColumnName="isResizable" />
+                <ScalarProperty Name="ReportTypeID" ColumnName="ReportTypeID" />
+                <ScalarProperty Name="ReportTemplateID" ColumnName="ReportTemplateID" />
+                <ScalarProperty Name="Layout_ReportTemplate_Desc" ColumnName="Layout_ReportTemplate_Desc" />
+                <ScalarProperty Name="ReportQuery" ColumnName="ReportQuery" />
+                <ScalarProperty Name="ReportCaption" ColumnName="ReportCaption" />
+                <ScalarProperty Name="Report_SP_Params" ColumnName="Report_SP_Params" />
+                <ScalarProperty Name="ReportDataSourceID" ColumnName="ReportDataSourceID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_MenuItems_SelectByUser" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_MenuItems_SelectByUser">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_MenuItems_SelectByUser_Result">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="FormID" ColumnName="FormID" />
+                <ScalarProperty Name="ImgID" ColumnName="ImgID" />
+                <ScalarProperty Name="RoutePath" ColumnName="RoutePath" />
+                <ScalarProperty Name="CssIcon" ColumnName="CssIcon" />
+                <ScalarProperty Name="MenuItemParentID" ColumnName="MenuItemParentID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_TabsItems_SelectByUser" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_TabsItems_SelectByUser">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_TabsItems_SelectByUser_Result">
+                <ScalarProperty Name="TabID" ColumnName="TabID" />
+                <ScalarProperty Name="TabName" ColumnName="TabName" />
+                <ScalarProperty Name="TabOrder" ColumnName="TabOrder" />
+                <ScalarProperty Name="FormID" ColumnName="FormID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_Filter_DistributionCenter" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_Filter_DistributionCenter">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_Filter_DistributionCenter_Result">
+                <ScalarProperty Name="DistributionCenterID" ColumnName="DistributionCenterID" />
+                <ScalarProperty Name="DistributionCenterName" ColumnName="DistributionCenterName" />
+                <ScalarProperty Name="SalesOrganization" ColumnName="SalesOrganization" />
+                <ScalarProperty Name="IsPush" ColumnName="IsPush" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_POD_Widget_Customers" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_POD_Widget_Customers">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_POD_Widget_Customers_Result">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Plan" ColumnName="Plan" />
+                <ScalarProperty Name="Done" ColumnName="Done" />
+                <ScalarProperty Name="Percent" ColumnName="Percent" />
+                <ScalarProperty Name="BGColor" ColumnName="BGColor" />
+                <ScalarProperty Name="SubBgColor" ColumnName="SubBgColor" />
+                <ScalarProperty Name="IconName" ColumnName="IconName" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="ChartColor" ColumnName="ChartColor" />
+                <ScalarProperty Name="TrackColor" ColumnName="TrackColor" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_POD_Widget_NotFullDelivery" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_POD_Widget_NotFullDelivery">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_POD_Widget_NotFullDelivery_Result">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="BGColor" ColumnName="BGColor" />
+                <ScalarProperty Name="SubBgColor" ColumnName="SubBgColor" />
+                <ScalarProperty Name="IconName" ColumnName="IconName" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+                <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+                </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_POD_Widget_Delivery" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_POD_Widget_Delivery">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_POD_Widget_Delivery_Result">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Plan" ColumnName="Plan" />
+                <ScalarProperty Name="Done" ColumnName="Done" />
+                <ScalarProperty Name="Percent" ColumnName="Percent" />
+                <ScalarProperty Name="BGColor" ColumnName="BGColor" />
+                <ScalarProperty Name="SubBgColor" ColumnName="SubBgColor" />
+                <ScalarProperty Name="IconName" ColumnName="IconName" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="ChartColor" ColumnName="ChartColor" />
+                <ScalarProperty Name="TrackColor" ColumnName="TrackColor" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_POD_Widget_AgentReturn" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_POD_Widget_AgentReturn">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_POD_Widget_AgentReturn_Result">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Plan" ColumnName="Plan" />
+                <ScalarProperty Name="Done" ColumnName="Done" />
+                <ScalarProperty Name="Percent" ColumnName="Percent" />
+                <ScalarProperty Name="BGColor" ColumnName="BGColor" />
+                <ScalarProperty Name="SubBgColor" ColumnName="SubBgColor" />
+                <ScalarProperty Name="IconName" ColumnName="IconName" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="ChartColor" ColumnName="ChartColor" />
+                <ScalarProperty Name="TrackColor" ColumnName="TrackColor" />
+                <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_POD_Widget_Tasks" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_POD_Widget_Tasks">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_POD_Widget_Tasks_Result">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Plan" ColumnName="Plan" />
+                <ScalarProperty Name="Done" ColumnName="Done" />
+                <ScalarProperty Name="Percent" ColumnName="Percent" />
+                <ScalarProperty Name="BGColor" ColumnName="BGColor" />
+                <ScalarProperty Name="SubBgColor" ColumnName="SubBgColor" />
+                <ScalarProperty Name="IconName" ColumnName="IconName" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="ChartColor" ColumnName="ChartColor" />
+                <ScalarProperty Name="TrackColor" ColumnName="TrackColor" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_POD_Filter_Country" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_POD_Filter_Country">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_POD_Filter_Country_Result">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+                <ScalarProperty Name="DistributionCenterID" ColumnName="DistributionCenterID" />
+                <ScalarProperty Name="DistributionCenterName" ColumnName="DistributionCenterName" />
+                <ScalarProperty Name="LatLng" ColumnName="LatLng" />
+                </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_POD_WEB_ConcentrationActivity_PopUp" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_POD_WEB_ConcentrationActivity_PopUp">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_POD_WEB_ConcentrationActivity_PopUp_Result">
+                <ScalarProperty Name="imgStatus" ColumnName="imgStatus" />
+                <ScalarProperty Name="Shipment" ColumnName="Shipment" />
+                <ScalarProperty Name="Driver" ColumnName="Driver" />
+                <ScalarProperty Name="Cycle" ColumnName="Cycle" />
+                <ScalarProperty Name="ActualSortOrder" ColumnName="ActualSortOrder" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="Cust" ColumnName="Cust" />
+                <ScalarProperty Name="CustAddress" ColumnName="CustAddress" />
+                <ScalarProperty Name="TravelHours" ColumnName="TravelHours" />
+                <ScalarProperty Name="ServiceHours" ColumnName="ServiceHours" />
+                <ScalarProperty Name="OriginalTime" ColumnName="OriginalTime" />
+                <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
+                <ScalarProperty Name="Delivery" ColumnName="Delivery" />
+                <ScalarProperty Name="CustReturns" ColumnName="CustReturns" />
+                <ScalarProperty Name="DriverReturn" ColumnName="DriverReturn" />
+                <ScalarProperty Name="STYLE_DriverReturn" ColumnName="STYLE_DriverReturn" />
+                <ScalarProperty Name="CollectedSurfaces" ColumnName="CollectedSurfaces" />
+                <ScalarProperty Name="STYLE_CollectedSurfaces" ColumnName="STYLE_CollectedSurfaces" />
+                <ScalarProperty Name="LastStatus" ColumnName="LastStatus" />
+                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+                <ScalarProperty Name="DistrID" ColumnName="DistrID" />
+                <ScalarProperty Name="AgentId" ColumnName="AgentId" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="CustID" ColumnName="CustID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_POD_WEB_ConcentrationActivity" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_POD_WEB_ConcentrationActivity">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_POD_WEB_ConcentrationActivity_Result">
+                <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+                <ScalarProperty Name="Shipment" ColumnName="Shipment" />
+                <ScalarProperty Name="NotVisited" ColumnName="NotVisited" />
+                <ScalarProperty Name="NotFullDelivery" ColumnName="NotFullDelivery" />
+                <ScalarProperty Name="AgentReturn" ColumnName="AgentReturn" />
+                <ScalarProperty Name="DriverReturn" ColumnName="DriverReturn" />
+                <ScalarProperty Name="DriverStatus" ColumnName="DriverStatus" />
+                <ScalarProperty Name="imgStatus" ColumnName="imgStatus" />
+                <ScalarProperty Name="idStatus" ColumnName="idStatus" />
+                <ScalarProperty Name="Cycle" ColumnName="Cycle" />
+                <ScalarProperty Name="Visit" ColumnName="Visit" />
+                <ScalarProperty Name="Delivery" ColumnName="Delivery" />
+                <ScalarProperty Name="Progress" ColumnName="Progress" />
+                <ScalarProperty Name="Mission" ColumnName="Mission" />
+                <ScalarProperty Name="CountryID1" ColumnName="CountryID1" />
+                <ScalarProperty Name="DistrID1" ColumnName="DistrID1" />
+                <ScalarProperty Name="FromDate1" ColumnName="FromDate1" />
+                <ScalarProperty Name="TaskDate" ColumnName="TaskDate" />
+                <ScalarProperty Name="AgentId1" ColumnName="AgentId1" />
+                <ScalarProperty Name="LongDistance" ColumnName="LongDistance" />
+                <ScalarProperty Name="EndSupplyDate" ColumnName="EndSupplyDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_GetReportColsData" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_GetReportColsData">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_GetReportColsData_Result">
+                <ScalarProperty Name="FragmentID" ColumnName="FragmentID" />
+                <ScalarProperty Name="FragmentName" ColumnName="FragmentName" />
+                <ScalarProperty Name="ReportID" ColumnName="ReportID" />
+                <ScalarProperty Name="ReportName" ColumnName="ReportName" />
+                <ScalarProperty Name="ColCaption" ColumnName="ColCaption" />
+                <ScalarProperty Name="ReportQuery" ColumnName="ReportQuery" />
+                <ScalarProperty Name="Report_SP_Params" ColumnName="Report_SP_Params" />
+                <ScalarProperty Name="ReportCaption" ColumnName="ReportCaption" />
+                <ScalarProperty Name="ReportDataSourceID" ColumnName="ReportDataSourceID" />
+                <ScalarProperty Name="ReportTypeID" ColumnName="ReportTypeID" />
+                <ScalarProperty Name="ReportColID" ColumnName="ReportColID" />
+                <ScalarProperty Name="ColName" ColumnName="ColName" />
+                <ScalarProperty Name="ColOrder" ColumnName="ColOrder" />
+                <ScalarProperty Name="ColWidthWeight" ColumnName="ColWidthWeight" />
+                <ScalarProperty Name="ColTypeID" ColumnName="ColTypeID" />
+                <ScalarProperty Name="FormatID" ColumnName="FormatID" />
+                <ScalarProperty Name="AlignmentID" ColumnName="AlignmentID" />
+                <ScalarProperty Name="ColMaxLength" ColumnName="ColMaxLength" />
+                <ScalarProperty Name="StyleID" ColumnName="StyleID" />
+                <ScalarProperty Name="ColIsSummary" ColumnName="ColIsSummary" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="Alignment" ColumnName="Alignment" />
+                <ScalarProperty Name="FragmentDescription" ColumnName="FragmentDescription" />
+                <ScalarProperty Name="FormatString" ColumnName="FormatString" />
+                <ScalarProperty Name="StyleName" ColumnName="StyleName" />
+                <ScalarProperty Name="IsZebra" ColumnName="IsZebra" />
+                <ScalarProperty Name="IsLastRowFooter" ColumnName="IsLastRowFooter" />
+                <ScalarProperty Name="HasSubTotals" ColumnName="HasSubTotals" />
+                <ScalarProperty Name="IsToShowRowsNumberOnTitle" ColumnName="IsToShowRowsNumberOnTitle" />
+                <ScalarProperty Name="RowsPerPage" ColumnName="RowsPerPage" />
+                <ScalarProperty Name="HeaderZoomObjTypeID" ColumnName="HeaderZoomObjTypeID" />
+                <ScalarProperty Name="HeaderZoomObjID" ColumnName="HeaderZoomObjID" />
+                <ScalarProperty Name="RowReportZoomObjTypeID" ColumnName="RowReportZoomObjTypeID" />
+                <ScalarProperty Name="RowReportZoomObjID" ColumnName="RowReportZoomObjID" />
+                <ScalarProperty Name="LayoutTypeID" ColumnName="LayoutTypeID" />
+                <ScalarProperty Name="CompileActivityURL" ColumnName="CompileActivityURL" />
+                <ScalarProperty Name="LayoutTypeID2" ColumnName="LayoutTypeID2" />
+                <ScalarProperty Name="CompileActivityURL2" ColumnName="CompileActivityURL2" />
+                <ScalarProperty Name="GroupBy" ColumnName="GroupBy" />
+                <ScalarProperty Name="HasSubTotalsOnGroup" ColumnName="HasSubTotalsOnGroup" />
+                <ScalarProperty Name="SectionsPerRow" ColumnName="SectionsPerRow" />
+                <ScalarProperty Name="SectionsRowHeight" ColumnName="SectionsRowHeight" />
+                <ScalarProperty Name="ReportEditByTbl" ColumnName="ReportEditByTbl" />
+                <ScalarProperty Name="FilterID" ColumnName="FilterID" />
+                <ScalarProperty Name="AllowAdd" ColumnName="AllowAdd" />
+                <ScalarProperty Name="AllowEdit" ColumnName="AllowEdit" />
+                <ScalarProperty Name="AllowDelete" ColumnName="AllowDelete" />
+                <ScalarProperty Name="ChosenTemplet" ColumnName="ChosenTemplet" />
+                <ScalarProperty Name="frg_FragmentID" ColumnName="frg_FragmentID" />
+                <ScalarProperty Name="Extra1" ColumnName="Extra1" />
+                <ScalarProperty Name="Extra2" ColumnName="Extra2" />
+                <ScalarProperty Name="Extra3" ColumnName="Extra3" />
+                <ScalarProperty Name="Extra4" ColumnName="Extra4" />
+                <ScalarProperty Name="Extra5" ColumnName="Extra5" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_POD_Widget_NotVisit" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_POD_Widget_NotVisit">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_POD_Widget_NotVisit_Result">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="BGColor" ColumnName="BGColor" />
+                <ScalarProperty Name="SubBgColor" ColumnName="SubBgColor" />
+                <ScalarProperty Name="ImgID" ColumnName="ImgID" />
+                <ScalarProperty Name="IconName" ColumnName="IconName" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_POD_Filter_Driver" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_POD_Filter_Driver">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_POD_Filter_Driver_Result">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_UserLogin" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_UserLogin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_UserLogin_Result">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="VersionID" ColumnName="VersionID" />
+                <ScalarProperty Name="ProfileID" ColumnName="ProfileID" />
+                <ScalarProperty Name="MobileProfileID" ColumnName="MobileProfileID" />
+                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+                <ScalarProperty Name="DistributionCenterID" ColumnName="DistributionCenterID" />
+                <ScalarProperty Name="MobileGroupID" ColumnName="MobileGroupID" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="LatLng" ColumnName="LatLng" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_POD_WEB_ConcentrationActivityAllCountries" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_POD_WEB_ConcentrationActivityAllCountries">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_POD_WEB_ConcentrationActivityAllCountries_Result">
+                <ScalarProperty Name="CountryID1" ColumnName="CountryID1" />
+                <ScalarProperty Name="DistrID1" ColumnName="DistrID1" />
+                <ScalarProperty Name="FromDate1" ColumnName="FromDate1" />
+                <ScalarProperty Name="imgStatus" ColumnName="imgStatus" />
+                <ScalarProperty Name="idStatus" ColumnName="idStatus" />
+                <ScalarProperty Name="AgentId1" ColumnName="AgentId1" />
+                <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+                <ScalarProperty Name="Shipment" ColumnName="Shipment" />
+                <ScalarProperty Name="Cycle" ColumnName="Cycle" />
+                <ScalarProperty Name="Visit" ColumnName="Visit" />
+                <ScalarProperty Name="Delivery" ColumnName="Delivery" />
+                <ScalarProperty Name="Progress" ColumnName="Progress" />
+                <ScalarProperty Name="NotVisited" ColumnName="NotVisited" />
+                <ScalarProperty Name="NotFullDelivery" ColumnName="NotFullDelivery" />
+                <ScalarProperty Name="AgentReturn" ColumnName="AgentReturn" />
+                <ScalarProperty Name="DriverReturn" ColumnName="DriverReturn" />
+                <ScalarProperty Name="DriverStatus" ColumnName="DriverStatus" />
+                <ScalarProperty Name="Mission" ColumnName="Mission" />
+                <ScalarProperty Name="LongDistance" ColumnName="LongDistance" />
+                <ScalarProperty Name="EndSupplyDate" ColumnName="EndSupplyDate" />
+                <ScalarProperty Name="TaskDate" ColumnName="TaskDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_POD_WEB_DriverStatusAll" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_POD_WEB_DriverStatusAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_POD_WEB_DriverStatusAll_Result">
+                <ScalarProperty Name="SalesOrganization" ColumnName="SalesOrganization" />
+                <ScalarProperty Name="DistrID" ColumnName="DistrID" />
+                <ScalarProperty Name="TaskDate" ColumnName="TaskDate" />
+                <ScalarProperty Name="DriverID" ColumnName="DriverID" />
+                <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+                <ScalarProperty Name="Cycle" ColumnName="Cycle" />
+                <ScalarProperty Name="imgLineDownload" ColumnName="imgLineDownload" />
+                <ScalarProperty Name="STYLE_imgLineDownload" ColumnName="STYLE_imgLineDownload" />
+                <ScalarProperty Name="imgWise" ColumnName="imgWise" />
+                <ScalarProperty Name="STYLE_imgWise" ColumnName="STYLE_imgWise" />
+                <ScalarProperty Name="imgToDiplomat" ColumnName="imgToDiplomat" />
+                <ScalarProperty Name="STYLE_imgToDiplomat" ColumnName="STYLE_imgToDiplomat" />
+                <ScalarProperty Name="imgLineEnded" ColumnName="imgLineEnded" />
+                <ScalarProperty Name="STYLE_imgLineEnded" ColumnName="STYLE_imgLineEnded" />
+                <ScalarProperty Name="imgArriveBB" ColumnName="imgArriveBB" />
+                <ScalarProperty Name="STYLE_imgArriveBB" ColumnName="STYLE_imgArriveBB" />
+                <ScalarProperty Name="imgLeaveBB" ColumnName="imgLeaveBB" />
+                <ScalarProperty Name="STYLE_imgLeaveBB" ColumnName="STYLE_imgLeaveBB" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_POD_WEB_DriverStatus_PopUp" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_POD_WEB_DriverStatus_PopUp">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_POD_WEB_DriverStatus_PopUp_Result">
+                <ScalarProperty Name="TaskTime" ColumnName="TaskTime" />
+                <ScalarProperty Name="ShipmentID" ColumnName="ShipmentID" />
+                <ScalarProperty Name="Cust" ColumnName="Cust" />
+                <ScalarProperty Name="CustAddress" ColumnName="CustAddress" />
+                <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+                <ScalarProperty Name="DocNum" ColumnName="DocNum" />
+                <ScalarProperty Name="ReportCode" ColumnName="ReportCode" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="LastChange" ColumnName="LastChange" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_GetAgentsL" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_GetAgentsL">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_GetAgentsL_Result">
+                <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+                <ScalarProperty Name="DriverID" ColumnName="DriverID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_GetDriverTasks" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_GetDriverTasks">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_GetDriverTasks_Result">
+                <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+                <ScalarProperty Name="AgentId" ColumnName="AgentId" />
+                <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="TaskTypeID" ColumnName="TaskTypeID" />
+                <ScalarProperty Name="TaskType" ColumnName="TaskType" />
+                <ScalarProperty Name="Task" ColumnName="Task" />
+                <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+                <ScalarProperty Name="MobiUserIDCreate" ColumnName="MobiUserIDCreate" />
+                <ScalarProperty Name="dtUpdate" ColumnName="dtUpdate" />
+                <ScalarProperty Name="MobiUserIDUpdate" ColumnName="MobiUserIDUpdate" />
+                <ScalarProperty Name="DateFrom" ColumnName="DateFrom" />
+                <ScalarProperty Name="DateTo" ColumnName="DateTo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_GetTaskTypes" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_GetTaskTypes">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_GetTaskTypes_Result">
+                <ScalarProperty Name="TaskTypeID" ColumnName="TaskTypeID" />
+                <ScalarProperty Name="TaskType" ColumnName="TaskType" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_SaveTask" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_SaveTask">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_SaveTask_Result">
+                <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+                <ScalarProperty Name="AgentId" ColumnName="AgentId" />
+                <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="TaskTypeID" ColumnName="TaskTypeID" />
+                <ScalarProperty Name="TaskType" ColumnName="TaskType" />
+                <ScalarProperty Name="Task" ColumnName="Task" />
+                <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+                <ScalarProperty Name="MobiUserIDCreate" ColumnName="MobiUserIDCreate" />
+                <ScalarProperty Name="dtUpdate" ColumnName="dtUpdate" />
+                <ScalarProperty Name="MobiUserIDUpdate" ColumnName="MobiUserIDUpdate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_TaskDelete" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_TaskDelete" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_TaskDelete_Result">
+                <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+                <ScalarProperty Name="AgentId" ColumnName="AgentId" />
+                <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="DateFrom" ColumnName="DateFrom" />
+                <ScalarProperty Name="DateTo" ColumnName="DateTo" />
+                <ScalarProperty Name="TaskTypeID" ColumnName="TaskTypeID" />
+                <ScalarProperty Name="TaskType" ColumnName="TaskType" />
+                <ScalarProperty Name="Task" ColumnName="Task" />
+                <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+                <ScalarProperty Name="MobiUserIDCreate" ColumnName="MobiUserIDCreate" />
+                <ScalarProperty Name="dtUpdate" ColumnName="dtUpdate" />
+                <ScalarProperty Name="MobiUserIDUpdate" ColumnName="MobiUserIDUpdate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_CustomersCordSelect" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_CustomersCordSelect">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_CustomersCordSelect_Result">
+                <ScalarProperty Name="CustID" ColumnName="CustID" />
+                <ScalarProperty Name="CustName" ColumnName="CustName" />
+                <ScalarProperty Name="IsVisit" ColumnName="IsVisit" />
+                <ScalarProperty Name="AgentId" ColumnName="AgentId" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="LastChange" ColumnName="LastChange" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="Lon" ColumnName="Lon" />
+                <ScalarProperty Name="IsNotSupplayAndVisit" ColumnName="IsNotSupplayAndVisit" />
+                <ScalarProperty Name="LastReportCode" ColumnName="LastReportCode" />
+                <ScalarProperty Name="LastStatus" ColumnName="LastStatus" />
+                <ScalarProperty Name="ReportGPS_LAT" ColumnName="ReportGPS_LAT" />
+                <ScalarProperty Name="ReportGPS_Lon" ColumnName="ReportGPS_Lon" />
+                <ScalarProperty Name="CustStatus" ColumnName="CustStatus" />
+                <ScalarProperty Name="CustStatusDesc" ColumnName="CustStatusDesc" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+                <ScalarProperty Name="OriginalOrder" ColumnName="OriginalOrder" />
+                <ScalarProperty Name="ActualOrder" ColumnName="ActualOrder" />
+                <ScalarProperty Name="TaskDate" ColumnName="TaskDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_CustomersRoadCordSelect" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_CustomersRoadCordSelect">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_CustomersRoadCordSelect_Result">
+                <ScalarProperty Name="DriverGPSLocationID" ColumnName="DriverGPSLocationID" />
+                <ScalarProperty Name="AgentCode" ColumnName="AgentCode" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="Lon" ColumnName="Lon" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="SalesOrganization" ColumnName="SalesOrganization" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_POD_WEB_EndDay_Select" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_POD_WEB_EndDay_Select">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_POD_WEB_EndDay_Select_Result">
+                <ScalarProperty Name="imgStatus" ColumnName="imgStatus" />
+                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+                <ScalarProperty Name="DistrID" ColumnName="DistrID" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="DriverID" ColumnName="DriverID" />
+                <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+                <ScalarProperty Name="Shipment" ColumnName="Shipment" />
+                <ScalarProperty Name="Delivery" ColumnName="Delivery" />
+                <ScalarProperty Name="AgentReturn" ColumnName="AgentReturn" />
+                <ScalarProperty Name="DriverReturn" ColumnName="DriverReturn" />
+                <ScalarProperty Name="CollectedSurfaces" ColumnName="CollectedSurfaces" />
+                <ScalarProperty Name="STYLE_CollectedSurfaces" ColumnName="STYLE_CollectedSurfaces" />
+                <ScalarProperty Name="KmPlanned" ColumnName="KmPlanned" />
+                <ScalarProperty Name="KmActual" ColumnName="KmActual" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_POD_WEB_EndDayDetails_Select" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_POD_WEB_EndDayDetails_Select">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_POD_WEB_EndDayDetails_Select_Result">
+                <ScalarProperty Name="imgStatus" ColumnName="imgStatus" />
+                <ScalarProperty Name="Shipment" ColumnName="Shipment" />
+                <ScalarProperty Name="Driver" ColumnName="Driver" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="Cust" ColumnName="Cust" />
+                <ScalarProperty Name="CustAddress" ColumnName="CustAddress" />
+                <ScalarProperty Name="TravelHours" ColumnName="TravelHours" />
+                <ScalarProperty Name="ServiceHours" ColumnName="ServiceHours" />
+                <ScalarProperty Name="OriginalTime" ColumnName="OriginalTime" />
+                <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
+                <ScalarProperty Name="Delivery" ColumnName="Delivery" />
+                <ScalarProperty Name="CustReturns" ColumnName="CustReturns" />
+                <ScalarProperty Name="DriverReturn" ColumnName="DriverReturn" />
+                <ScalarProperty Name="STYLE_DriverReturn" ColumnName="STYLE_DriverReturn" />
+                <ScalarProperty Name="CollectedSurfaces" ColumnName="CollectedSurfaces" />
+                <ScalarProperty Name="STYLE_CollectedSurfaces" ColumnName="STYLE_CollectedSurfaces" />
+                <ScalarProperty Name="LastStatus" ColumnName="LastStatus" />
+                <ScalarProperty Name="CustID1" ColumnName="CustID1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_GetDriverGPSLocation" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_GetDriverGPSLocation">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_GetDriverGPSLocation_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+                <ScalarProperty Name="DriverGPSLocationID" ColumnName="DriverGPSLocationID" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="Lon" ColumnName="Lon" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_POD_WEB_NotesCollection" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_POD_WEB_NotesCollection">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_POD_WEB_NotesCollection_Result">
+                <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+                <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+                <ScalarProperty Name="DeliveryNum" ColumnName="DeliveryNum" />
+                <ScalarProperty Name="InvoiceComment" ColumnName="InvoiceComment" />
+                <ScalarProperty Name="CustComment" ColumnName="CustComment" />
+                <ScalarProperty Name="DeliveryStatus" ColumnName="DeliveryStatus" />
+                <ScalarProperty Name="TaskDescription" ColumnName="TaskDescription" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_POD_WEB_AgentsReport" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_POD_WEB_AgentsReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_POD_WEB_AgentsReport_Result">
+                <ScalarProperty Name="DocStartTime" ColumnName="DocStartTime" />
+                <ScalarProperty Name="Agent" ColumnName="Agent" />
+                <ScalarProperty Name="Reference" ColumnName="Reference" />
+                <ScalarProperty Name="ShipmentNumber" ColumnName="ShipmentNumber" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="OrigCases" ColumnName="OrigCases" />
+                <ScalarProperty Name="CaseQuantity" ColumnName="CaseQuantity" />
+                <ScalarProperty Name="QTY" ColumnName="QTY" />
+                <ScalarProperty Name="ReturnResCode" ColumnName="ReturnResCode" />
+                <ScalarProperty Name="ReasonDescription" ColumnName="ReasonDescription" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_POD_WEB_AgentsReportNoTarget" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_POD_WEB_AgentsReportNoTarget">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_POD_WEB_AgentsReportNoTarget_Result">
+                <ScalarProperty Name="Driver" ColumnName="Driver" />
+                <ScalarProperty Name="ShipmentID" ColumnName="ShipmentID" />
+                <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+                <ScalarProperty Name="ReportDescription" ColumnName="ReportDescription" />
+                <ScalarProperty Name="Delivery" ColumnName="Delivery" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_POD_WEB_AgentDailyActivity" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_POD_WEB_AgentDailyActivity">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_POD_WEB_AgentDailyActivity_Result">
+                <ScalarProperty Name="TaskDate" ColumnName="TaskDate" />
+                <ScalarProperty Name="imgStatus" ColumnName="imgStatus" />
+                <ScalarProperty Name="idStatus" ColumnName="idStatus" />
+                <ScalarProperty Name="Shipment" ColumnName="Shipment" />
+                <ScalarProperty Name="Driver" ColumnName="Driver" />
+                <ScalarProperty Name="Cust" ColumnName="Cust" />
+                <ScalarProperty Name="CustAddress" ColumnName="CustAddress" />
+                <ScalarProperty Name="CustCoord" ColumnName="CustCoord" />
+                <ScalarProperty Name="ReportGPS_Lat" ColumnName="ReportGPS_Lat" />
+                <ScalarProperty Name="ReportGPS_Lon" ColumnName="ReportGPS_Lon" />
+                <ScalarProperty Name="TravelHours" ColumnName="TravelHours" />
+                <ScalarProperty Name="ServiceHours" ColumnName="ServiceHours" />
+                <ScalarProperty Name="OriginalTime" ColumnName="OriginalTime" />
+                <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
+                <ScalarProperty Name="Delivery" ColumnName="Delivery" />
+                <ScalarProperty Name="CustReturns" ColumnName="CustReturns" />
+                <ScalarProperty Name="DriverReturn" ColumnName="DriverReturn" />
+                <ScalarProperty Name="STYLE_DriverReturn" ColumnName="STYLE_DriverReturn" />
+                <ScalarProperty Name="CollectedSurfaces" ColumnName="CollectedSurfaces" />
+                <ScalarProperty Name="STYLE_CollectedSurfaces" ColumnName="STYLE_CollectedSurfaces" />
+                <ScalarProperty Name="CountryID1" ColumnName="CountryID1" />
+                <ScalarProperty Name="DistrID1" ColumnName="DistrID1" />
+                <ScalarProperty Name="AgentId1" ColumnName="AgentId1" />
+                <ScalarProperty Name="FromDate1" ColumnName="FromDate1" />
+                <ScalarProperty Name="CustId1" ColumnName="CustId1" />
+                <ScalarProperty Name="Mission" ColumnName="Mission" />
+                <ScalarProperty Name="Quality" ColumnName="Quality" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Layout_POD_WEB_AgentDailyActivity_PopUp" FunctionName="MobiPlusWebDiplomatModel.Store.Layout_POD_WEB_AgentDailyActivity_PopUp">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MobiPlusWebDiplomatModel.Layout_POD_WEB_AgentDailyActivity_PopUp_Result">
+                <ScalarProperty Name="imgStatus" ColumnName="imgStatus" />
+                <ScalarProperty Name="Shipment" ColumnName="Shipment" />
+                <ScalarProperty Name="Driver" ColumnName="Driver" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="Cust" ColumnName="Cust" />
+                <ScalarProperty Name="CustAddress" ColumnName="CustAddress" />
+                <ScalarProperty Name="TaskDescription" ColumnName="TaskDescription" />
+                <ScalarProperty Name="DeliveryNum" ColumnName="DeliveryNum" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

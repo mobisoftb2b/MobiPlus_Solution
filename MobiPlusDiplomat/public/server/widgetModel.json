@@ -1,0 +1,58 @@
+﻿[
+  {
+    "WidgetID": 1,
+    "WidgetTitle": "אספקות",
+    "Plan": 200,
+    "Done": 100,
+    "Percent": 50,
+    "ChartColor": "255, 100, 6"
+  },
+  {
+    "WidgetID": 1,
+    "WidgetTitle": "לקוחות",
+    "Plan": 100,
+    "Done": 85,
+    "Percent": 85,
+    "ChartColor": "100, 100, 100"
+  },
+  {
+    "WidgetID": 3,
+    "WidgetTitle": "החזרות",
+    "Plan": 100,
+    "Done": 45,
+    "Percent": 45,
+    "ChartColor": "7, 100, 100"
+  },
+  {
+    "WidgetID": 4,
+    "WidgetTitle": "משימות",
+    "Plan": 500,
+    "Done": 400,
+    "Percent": 80,
+    "ChartColor": "255, 2, 100"
+  },
+  {
+    "WidgetID": 5,
+    "WidgetTitle": "איחורים ללקוח",
+    "Plan": 90,
+    "Done": 45,
+    "Percent": 50,
+    "ChartColor": "100, 0, 100"
+  },
+  {
+    "WidgetID": 6,
+    "WidgetTitle": "אי ביקור",
+    "Plan": null,
+    "Done": 45,
+    "Percent": null,
+    "ChartColor": "0, 0, 0"
+  },
+  {
+    "WidgetID": 7,
+    "WidgetTitle": "אי הספקה מלאה",
+    "Plan": null,
+    "Done": 45,
+    "Percent": null,
+    "ChartColor": "0, 0, 0"
+  }
+]

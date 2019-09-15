@@ -1,0 +1,33 @@
+﻿.MSBtnGeneral
+{
+    background-image: url('../Img/ok.png');
+    background-repeat: no-repeat;
+    width: 85px;
+    height: 30px;
+    background-position: right center;
+    background-color: #264366;
+    -webkit-box-shadow: 0 0 1px 1px #418CD3 inset;
+    -moz-box-shadow: 0 0 1px 1px #418CD3 inset;
+    box-shadow: 0 0 1px 1px #418CD3 inset;
+     -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color:White;
+    font-size:16px;
+}
+.MSBtn
+{
+    background-repeat: no-repeat;
+    width: 85px;
+    height: 30px;
+    background-position: right center;
+    background-color: #264366;
+    -webkit-box-shadow: 0 0 1px 1px #418CD3 inset;
+    -moz-box-shadow: 0 0 1px 1px #418CD3 inset;
+    box-shadow: 0 0 1px 1px #418CD3 inset;
+     -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color:White;
+    font-size:16px;
+}

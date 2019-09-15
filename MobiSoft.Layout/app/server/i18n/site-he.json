@@ -1,0 +1,23 @@
+﻿{
+  "dashboard": {
+    "WELCOME": "ברוכים הבאים ל-MobiSoft !"
+  },
+  "topbar": {
+    "search": {
+      "PLACEHOLDER": "הקלד והקש על enter ..."
+    }
+  },
+  "sidebar": {
+    "WELCOME": "שלום",
+    "heading": {
+      "HEADER": "ראשי"
+    },
+    "nav": {
+      "SINGLEVIEW": "Single View",
+      "menu": {
+        "MENU": "תפרית",
+        "SUBMENU": "תת תפרית"
+      }
+    }
+  }
+}

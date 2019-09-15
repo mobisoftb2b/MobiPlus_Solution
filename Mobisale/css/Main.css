@@ -1,0 +1,1776 @@
+﻿body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    direction: rtl;
+    text-align: right;
+    vertical-align: top;
+    margin: 0 auto;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.dLoginBox {
+    width: 350px;
+    height: 170px;
+    border: 1px groove black;
+    background-color: #22235B;
+    color: #E2E3E4;
+    font-size: 14px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.dLoginHeadText {
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.btn {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+    .btn.login {
+        width: 150px;
+        height: 25px;
+        background-color: #20255A;
+        color: #E2E3E4;
+    }
+
+.LoginMsg {
+    text-align: right;
+    width: 300px;
+    padding-right: 30px;
+    color: #DA3039;
+}
+
+.mpHeadRow {
+    width: 100%;
+    height: 50px;
+    background-color: #264366;
+    /*border-bottom: 1px solid black;*/
+}
+
+.imgUsr {
+    cursor: pointer;
+}
+
+.dUsr {
+    width: 200px;
+    float: left;
+    text-align: left;
+    margin-left: 10px;
+    height: 40px;
+    z-index: 9999;
+}
+
+.lblProjectName {
+    font-size: 9px;
+    margin-left: -3px;
+}
+
+.dMenu {
+    float: right;
+    text-align: right;
+    margin-right: 10px;
+    margin-top: 15px;
+    height: 40px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.dmHeaderText {
+    float: left;
+    width: 500px;
+    color: White;
+    margin-top: 10px;
+    font-size: 26px;
+    text-align: right;
+    padding-left: 20%;
+}
+
+
+.LblUsr {
+    font-size: 16px;
+    color: White;
+    cursor: pointer;
+    height: 40px;
+}
+
+.dImgUsr {
+    width: 42px;
+    float: left;
+}
+
+.dLblUsr {
+    width: 150px;
+    float: right;
+    padding-top: 4px;
+}
+
+.dLo {
+    text-align: left;
+    direction: ltr;
+    margin-top: 5px;
+    width: 200px;
+    z-index: 9999;
+}
+
+.dLo2 {
+    background-color: #264366;
+    width: 150px;
+    height: 50px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    display: none;
+    z-index: 9999;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.dLo3 {
+    padding-top: 20px;
+    padding-left: 80px;
+    cursor: pointer;
+}
+
+.dLo4 {
+    float: left;
+    width: 20px;
+}
+
+.dLo5 {
+    float: left;
+    width: 35px;
+    text-align: left;
+    margin-top: 8px;
+    font-size: 14px;
+    text-decoration: underline;
+    color: White;
+}
+
+.boxlogout {
+    direction: ltr;
+    z-index: 9999;
+    position: absolute;
+    left: 0;
+    top: 45px;
+}
+
+.EditWinProjects {
+    top: 5%;
+    left: 41%;
+    position: absolute;
+    width: 350px;
+    height: 260px;
+    border: 2px groove black;
+    background-color: #888A83;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    text-align: right;
+}
+
+.prHead {
+    background-color: #264366;
+    color: White;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.prItem {
+    height: 30px;
+    width: 120px;
+    text-align: right;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+    .prItem:hover {
+        color: Orange;
+    }
+
+.HomeMSG {
+    color: White;
+    position: absolute;
+    right: 35px;
+    margin-top: -33px;
+    cursor: pointer;
+    z-index: 9997;
+    text-align: right;
+}
+
+.HomeLogo {
+    color: White;
+    position: absolute;
+    text-align: center;
+    margin-top: 0px;
+    cursor: pointer;
+    z-index: 1;
+    text-align: right;
+    width: 200px;
+    right: 20px;
+}
+
+.HomeLogo2 {
+    color: White;
+    position: absolute;
+    text-align: center;
+    margin-top: 0px;
+    cursor: pointer;
+    z-index: 1;
+    text-align: right;
+    width: 200px;
+    top: 5px;
+}
+
+.menuLink {
+    text-decoration: none;
+    color: #3D3644;
+    width: 70px;
+    text-align: center;
+}
+
+    .menuLink:hover {
+        color: Orange;
+    }
+
+.menuItem {
+    color: White;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 90px;
+    text-align: center;
+    padding-top: 7px;
+}
+
+.innerMSG {
+    background-color: #414141;
+    width: 200px;
+    height: 35px;
+    text-align: center;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.Selected {
+    font-size: 14px;
+    font-weight: 700;
+    height: 25px;
+    color: #414141;
+    background-color: #888A83;
+    border: 1px groove #FD9100;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.ddivFragment {
+    float: right;
+    border: 1px solid black;
+}
+
+.dAllTab {
+    height: 100%;
+}
+
+.ifReport {
+    width: 100%;
+    height: 100%;
+    -webkit-box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.65);
+    -moz-box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.65);
+    box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.65);
+}
+
+.ifReport2 {
+    width: 100%;
+    height: 100%;
+}
+
+.ifRoutes {
+    width: 100%;
+    height: 100%;
+}
+
+.divForm {
+}
+
+.mainfotter {
+    background-color: #264366;
+    text-align: center;
+    color: White;
+    height: 25px;
+    font-size: 14px;
+    padding-top: 9px;
+}
+
+.ui-widget {
+}
+
+.dmHead {
+    width: 50px;
+    float: right;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.dmItem {
+    margin-top: 5px;
+    float: right;
+}
+
+.dMerchandiseItemDT {
+    text-align: center;
+    height: 30px;
+    margin-top: 5px;
+    margin-right: 5px;
+    vertical-align: middle;
+    cursor: pointer;
+    float: right;
+}
+
+.dMerchandise_rightDDLs {
+    width: 98%;
+    height: 50px;
+    border: 1px groove #6C6C6C;
+    background-color: #264366;
+    color: #414141;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.Merchandise_right {
+    width: 40%;
+    float: right;
+    padding-right: 10px;
+}
+
+.Merchandise_left {
+    width: 450px;
+    text-align: left;
+    position: absolute;
+    background-color: #E2E3E4;
+    z-index: 9999;
+}
+
+.ddlFilter {
+    font-size: 14px;
+    vertical-align: top;
+}
+
+.ddlFilterItem {
+    border: none;
+    background-color: #264366;
+    color: #414141;
+    font-size: 14px;
+    color: White;
+    width: 100%;
+}
+
+.line {
+    border-bottom: 2px solid white;
+}
+
+.aLink {
+    color: White;
+}
+
+.imgN {
+    color: White;
+    position: absolute;
+    left: 18px;
+    margin-top: 7px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.bodyGraf1 {
+}
+
+.bodyGraf2 {
+    background-color: White; /*#E2E3E4;*/
+    border: 1px solid #CDCDCD;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.graf_caption {
+    position: fixed;
+    font-weight: 700;
+    color: #7C7C7C; /*White;*/
+    text-align: right;
+    vertical-align: middle;
+    background-color: #E8E9ED; /*#264366;*/
+    height: 22px;
+    border: 1px solid white;
+    -moz-border-top-left-radius: 3px;
+    -webkit-border-top-left-radius: 3px;
+    border-top-left-radius: 3px;
+    -moz-border-top-right-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    border-top-right-radius: 3px;
+    width: 99%;
+    height: 28px;
+    font: 14px 'Segoe UI', 'Helvetica Neue', 'Droid Sans',Arial,Tahoma,Geneva,Sans-serif;
+    padding-right: 5px;
+    font-weight: 700;
+}
+
+.loading1 {
+    text-align: center;
+    position: fixed;
+    width: 170px;
+    height: 110px;
+    background-color: #264366;
+    /*left: 43%;
+    top: 45%;*/
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    color: White;
+    -webkit-box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.65);
+    -moz-box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.65);
+    box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.65);
+}
+
+.txtPartsGridContainer {
+    text-align: center;
+    margin-right: 20px;
+    width: 650px;
+    background-color: #A2A2A2;
+    height: 570px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border-top: 2px solid #E2E3E4;
+    margin-right: 10px;
+    float: right;
+    margin-top: 15px;
+    -webkit-box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.65);
+    -moz-box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.65);
+    box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.65);
+}
+
+.QueryHeader {
+    text-align: center;
+    border-bottom: 1px solid gray;
+    color: White;
+    background-color: #264366;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.PopHeader {
+    text-align: center;
+    border-bottom: 1px solid gray;
+    color: White;
+    background-color: #3E3647;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.QueryHeaderIn {
+    padding-top: 3px;
+    font-weight: 700;
+}
+
+.ddlQueries {
+    margin-top: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.EditWinMSGItemBox {
+    left: 47%;
+    position: absolute;
+    width: 370px;
+    height: 290px;
+    border: 2px groove black;
+    background-color: #A2A2A2;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display: none;
+}
+
+.JumpWiX {
+    text-align: right;
+    width: 3%;
+    float: right;
+}
+
+.MSBtnGeneral {
+    background-image: url('../Img/ok.png');
+    background-repeat: no-repeat;
+    width: 85px;
+    height: 30px;
+    background-position: right center;
+    background-color: #264366;
+    -webkit-box-shadow: 0 0 1px 1px #418CD3 inset;
+    -moz-box-shadow: 0 0 1px 1px #418CD3 inset;
+    box-shadow: 0 0 1px 1px #418CD3 inset;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: White;
+    font-size: 16px;
+}
+
+.MSBtn {
+    background-repeat: no-repeat;
+    width: 85px;
+    height: 30px;
+    background-position: right center;
+    background-color: #264366;
+    -webkit-box-shadow: 0 0 1px 1px #418CD3 inset;
+    -moz-box-shadow: 0 0 1px 1px #418CD3 inset;
+    box-shadow: 0 0 1px 1px #418CD3 inset;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: White;
+    font-size: 16px;
+}
+
+.ctlPopulations {
+    left: 47%;
+    position: absolute;
+    width: 670px;
+    height: 630px;
+    border: 2px groove black;
+    background-color: #A2A2A2;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display: none;
+}
+
+.header {
+    background-color: #264366 !important;
+    color: White;
+    -webkit-box-shadow: 0 0 1px 3px #5699D8 inset;
+    -moz-box-shadow: 0 0 1px 3px #5699D8 inset;
+    box-shadow: 0 0 1px 3px #5699D8 inset;
+    width: 95%;
+    font-size: 16px;
+    outline: none;
+    width: 645px;
+    text-align: right;
+}
+
+.dEditWinPopItemBox {
+    left: 47%;
+    position: absolute;
+    width: 470px;
+    height: 280px;
+    border: 2px groove black;
+    background-color: #A2A2A2;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display: none;
+}
+
+.dEditParametersPopItemBox {
+    left: 20%;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    border: 2px groove black;
+    background-color: #A2A2A2;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display: none;
+}
+
+.EditWinTaskItemBox {
+    margin-left: 10%;
+    position: absolute;
+    width: 630px;
+    height: 450px;
+    border: 2px groove black;
+    background-color: #A2A2A2;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 1;
+    display: none;
+}
+
+.aMenu {
+    height: 25px;
+    color: Black !important;
+}
+
+.RowndTxt {
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+}
+
+.SectionWidjet {
+    -webkit-box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.65);
+    -moz-box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.65);
+    box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.65);
+    cursor: pointer;
+    margin-right: 8px;
+    margin-top: 2px;
+}
+
+.AllSectionWidjet {
+    overflow: hidden;
+}
+
+.MenuN {
+    background-color: #264366;
+    color: #B6DDDD;
+    vertical-align: top;
+    width: 195px;
+    margin-bottom: 4px;
+    /*border-top:3px solid white;*/
+    border-left: 3px solid white;
+    font-size: 16px;
+}
+
+.MenuNTd {
+    /*background-color:#264366;*/
+    vertical-align: middle;
+    padding-right: 10px;
+    height: 24px !important;
+}
+
+.MenuNTdInner {
+    vertical-align: middle;
+    background-color: #1F3653;
+    height: 30px !important;
+    color: #A0A096;
+}
+
+    .MenuNTdInner:hover {
+        color: White;
+    }
+
+.MenuNTdInner2 {
+    background-color: #1F3653;
+}
+
+.sm {
+    -webkit-box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.25);
+    box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.25);
+    padding-right: 10px;
+}
+
+    .sm:hover {
+        background-color: #1F3653;
+    }
+
+.smSelected {
+    background-color: #1F3653;
+    color: #B6DDDD !important;
+}
+
+.dMR {
+    height: 2px;
+}
+
+.MItem {
+    cursor: pointer;
+    height: 30px;
+}
+
+.p2 {
+    padding-right: 25px !important;
+}
+
+.p3 {
+    padding-right: 10px;
+}
+
+.p4 {
+    padding-right: 35px !important;
+}
+
+.p5 {
+    background-color: #1F3653;
+    color: #B6DDDD !important;
+    padding-right: 10px;
+}
+
+.p6 {
+    color: #B6DDDD !important;
+    padding-right: 19px;
+}
+
+.imgm {
+    width: 20px;
+    vertical-align: middle;
+}
+
+
+
+
+
+.bgCust {
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    height: 100%;
+    padding-bottom: 5px;
+    border: 1px groove #FD9100;
+    background-color: #888A83;
+    color: #414141;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    text-align: center;
+    float: right;
+}
+
+.bgCustLeft {
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    height: 100%;
+    padding-bottom: 5px;
+    border: 1px groove #FD9100;
+    background-color: #888A83;
+    color: #414141;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    text-align: center;
+    float: right;
+}
+
+.agent {
+    margin-bottom: 5px;
+    height: 100%;
+    padding-bottom: 5px;
+    border: 1px groove #FD9100;
+    background-color: #244062;
+    color: #414141;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    text-align: center;
+}
+
+.tblTRCust {
+    border-bottom: 2px solid white;
+    text-align: right;
+}
+
+.tblTRCustName {
+    border-bottom: 2px solid white;
+    width: 280px;
+    text-align: right;
+    color: White;
+}
+
+.tblTRCustDates {
+    border-bottom: 2px solid white;
+    width: 300px;
+    text-align: right;
+    color: White;
+}
+
+.CustAgentHead {
+    color: White;
+}
+
+.dMoveBox {
+    text-align: center;
+    top: 100px;
+    position: absolute;
+    width: 100%;
+    display: none;
+    z-index: 9999;
+}
+
+.dMoveBoxin {
+    width: 240px;
+    text-align: right;
+    height: 210px;
+    border: 2px groove black;
+    background-color: #888A83;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.dMoveHead {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.btnMove {
+    width: 80px;
+    height: 25px;
+    background-color: #20255A;
+    color: White;
+}
+
+.btnPreMove {
+    width: 120px;
+    height: 25px;
+    background-color: #20255A;
+    color: #E2E3E4;
+}
+
+.imngX {
+    cursor: pointer;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.loadingCust {
+    display: none;
+    position: absolute;
+    left: 48%;
+    top: 190px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 2px groove black;
+    height: 100px;
+    width: 120px;
+    background-color: #20255A;
+    color: White;
+}
+
+.CustDates {
+    font-size: 12px;
+    color: Black;
+    margin-right: 20px;
+}
+
+.tblTRCustCB {
+    padding-right: 5px;
+    border-bottom: 2px solid white;
+    text-align: right;
+}
+
+.tdRev {
+    width: 45%;
+}
+
+.CtlDataMainItem {
+    height: 30px;
+    background-color: White;
+    border-bottom: 1px solid gray;
+    width: 100%;
+    cursor: pointer;
+    background-image: url('../Img/left-arrow.png');
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+.CtlDataItem {
+    width: 250px;
+    height: 300px;
+    background-color: orange;
+    position: fixed;
+    border: 1px solid gray;
+}
+
+.cssEditBox {
+    position: absolute;
+    right: 35%;
+    top: 0;
+    width: 500px;
+    height: 0px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    background-clip: padding-box;
+    box-sizing: border-box;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    background-color: #fff;
+    outline: 0;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    z-index: 9998;
+}
+
+    .cssEditBox table {
+        box-shadow: none;
+    }
+
+.cssErrorBox {
+    right: 35%;
+    top: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 350px;
+    height: 60px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    background-clip: padding-box;
+    box-sizing: border-box;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    position: absolute;
+    background-color: #fff;
+    outline: 0;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    z-index: 9999;
+    vertical-align: middle;
+}
+
+.Error-header {
+    min-height: 16.428571429px;
+    padding-right: 20px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #333;
+    background-color: #fff;
+}
+
+    .Error-header h3 {
+        padding-right: 60px;
+        color: #DA3039;
+        background-color: #fff;
+    }
+
+
+.popover.top .arrow {
+    right: -11px;
+    top: 22%;
+    margin-left: -11px;
+    border-left-color: #999;
+    border-left-color: gray;
+    border-right-width: 0;
+}
+
+.popover .arrow {
+    border-width: 11px;
+}
+
+    .popover .arrow, .popover .arrow:after {
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+    }
+
+.popover.top {
+    margin-top: 35px;
+}
+
+.popover {
+    right: 94.8%;
+    width: 170px;
+    height: 31px;
+    position: absolute;
+    z-index: 9990;
+    display: none;
+    padding: 2px;
+    padding-right: 5px;
+    text-align: left;
+    white-space: normal;
+    background-color: #EDEDED;
+    color: #340028;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    background-clip: padding-box;
+}
+
+.tdPopup {
+    line-height: 3;
+}
+
+.select1 {
+    -webkit-rtl-ordering: logical;
+    -webkit-user-select: text;
+    color: initial;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em 0em 0em 0em;
+    display: block;
+    width: 376px;
+    height: 27px;
+    font-size: 14px;
+    color: #555;
+    vertical-align: middle;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.txtPopup {
+    -webkit-rtl-ordering: logical;
+    -webkit-user-select: text;
+    color: initial;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em 0em 0em 0em;
+    display: block;
+    width: 350px;
+    height: 14px;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #555;
+    vertical-align: middle;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.cxxPopup {
+    -webkit-rtl-ordering: logical;
+    -webkit-user-select: text;
+    color: initial;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em 0em 0em 0em;
+    display: block;
+    font-size: 14px;
+    color: #555;
+    vertical-align: middle;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 20px;
+    height: 20px;
+}
+
+.yyyymmddPopup {
+    -webkit-rtl-ordering: logical;
+    -webkit-user-select: text;
+    color: initial;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em 0em 0em 0em;
+    display: block;
+    width: 350px;
+    height: 14px;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #555;
+    vertical-align: middle;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.DateTimePopup {
+    -webkit-rtl-ordering: logical;
+    -webkit-user-select: text;
+    color: initial;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em 0em 0em 0em;
+    display: block;
+    width: 350px;
+    height: 14px;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #555;
+    vertical-align: middle;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-header {
+    min-height: 16.428571429px;
+    padding: 13px;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 18px;
+    line-height: 1.428571429;
+    color: #333;
+    background-color: #fff;
+    text-align: center;
+}
+
+    .modal-header h3 {
+        padding-right: 0px;
+        color: #264366;
+        background-color: #fff;
+    }
+
+.close {
+    float: right;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .2;
+    filter: alpha(opacity=20);
+}
+
+button.close {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .5;
+    filter: alpha(opacity=50);
+}
+
+button.close {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+
+
+.popover-content {
+    text-align: right;
+    white-space: normal;
+    vertical-align: top;
+    font-size: 12px;
+    font-weight: 500;
+    direction: rtl;
+    line-height: 1.4;
+}
+
+.btn-success {
+    color: #fff;
+    width: 100px;
+    background-color: #FA6E58;
+    border-color: #4cae4c;
+    display: block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-user-select: none;
+}
+
+.btn-success-disabled {
+    color: #fff;
+    width: 100px;
+    background-color: #FDCCC5;
+    border-color: #4cae4c;
+    display: block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-user-select: none;
+}
+
+.btnFooter {
+    padding: 19px 20px 20px;
+    margin-top: 15px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5;
+}
+
+.msdatepicker {
+    background-color: white !important;
+}
+
+.ui-datepicker-year {
+    float: left;
+}
+
+.ui-datepicker-month {
+    float: right;
+}
+
+.btn-Approv {
+    color: #fff;
+    width: 100px;
+    background-color: #FA6E58;
+    border-color: #4cae4c;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-right: 40px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-user-select: none;
+}
+
+.cssApprovalBox {
+    right: 35%;
+    top: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 350px;
+    height: 120px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    background-clip: padding-box;
+    box-sizing: border-box;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    position: absolute;
+    background-color: #fff;
+    outline: 0;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    z-index: 9999;
+    vertical-align: middle;
+}
+
+.Approval-header {
+    min-height: 16.428571429px;
+    padding-right: 20px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #333;
+    background-color: #fff;
+}
+
+    .Approval-header h3 {
+        padding-right: 40px;
+        color: #DA3039;
+        background-color: #fff;
+    }
+
+.txtSearch {
+    /*-webkit-rtl-ordering: logical;
+    -webkit-user-select: text;*/
+    color: initial;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 1px -1px 1px 0px;
+    display: block;
+    padding: 6px 0px;
+    font-size: 14px;
+    color: #555;
+    vertical-align: middle;
+    background-color: #FFF5F3;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    height: 10px;
+}
+
+.selectSearch {
+    color: initial;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 1px 0px 1px 0px;
+    display: block;
+    padding: 2px 12px;
+    font-size: 12px !important;
+    color: #555;
+    vertical-align: middle;
+    background-color: #FFF5F3;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    height: 24px;
+}
+
+    .selectSearch option {
+        font-size: 12px;
+    }
+
+.notSearch {
+    color: initial;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 1px -1px 1px 0px;
+    display: block;
+    color: #FA6E58;
+    vertical-align: middle;
+    background-color: #BCBCBC;
+    background-image: none;
+    border: 1px solid #FFF5F3;
+    border-radius: 4px;
+    width: 100%;
+    height: 20px;
+}
+
+
+.ui-iconms {
+    background-image: url(../img/Search2.png);
+    width: 19px;
+    height: 16px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /*padding-right: 16px;*/
+}
+
+.ui-jqgrid-titlebar-closems-other {
+    position: absolute;
+    top: 50%;
+    width: 19px;
+    margin: -10px 0 0 0;
+    padding: 1px;
+    height: 18px;
+}
+
+.ui-iconms-other {
+    background-image: url(../img/Search.png);
+    width: 19px;
+    height: 16px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding-right: 16px;
+}
+
+.routes.top .arrow {
+    right: -11px;
+    top: 22%;
+    margin-left: -11px;
+    border-left-color: #999;
+    border-left-color: gray;
+    border-right-width: 0;
+}
+
+.routes .arrow {
+    border-width: 11px;
+}
+
+.routes .arrow, .popover .arrow:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+
+.routes.top {
+    margin-top: 35px;
+}
+
+.routes {
+    top: -340px;
+    right: 20%;
+    width: 1035px;
+    height: 429px;
+    position: absolute;
+    z-index: 9990;
+    padding: 2px;
+    padding-right: 5px;
+    text-align: right;
+    white-space: normal;
+    background-color: #EDEDED;
+    color: #340028;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    background-clip: padding-box;
+    display: none;
+}
+
+.tdRoutes {
+    line-height: 3;
+}
+
+.BodyRoutes {
+    background-color: #EDEDED;
+    font-size: 14px;
+    width: 1033px;
+}
+
+.RoutesLine {
+    border-left: 1px solid #A0A0A0;
+    padding-right: 10px;
+    vertical-align: top;
+}
+
+.fieldset1 {
+    border-radius: 6px;
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    background-clip: padding-box;
+}
+
+.HeadRoutes {
+    padding-bottom: 10px;
+}
+
+.HeadRoutesText {
+    padding-top: 7px;
+    width: 95%;
+    padding-right: 0%;
+    font-size: 18px;
+    color: #555555;
+}
+
+.txtDailyRoutes {
+    width: 30px;
+    color: initial;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    margin: 1px -1px 1px 0px;
+    display: block;
+    padding: 6px 0px;
+    font-size: 14px;
+    color: #555;
+    vertical-align: middle;
+    background-color: #FFF5F3;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 10px;
+    cursor: pointer;
+}
+
+.txtDateRoutes {
+    width: 100px;
+    color: initial;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    margin: 1px -1px 1px 0px;
+    display: block;
+    padding: 6px 0px;
+    font-size: 14px;
+    color: #555;
+    vertical-align: middle;
+    background-color: #FFF5F3;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 10px;
+    cursor: pointer;
+}
+
+.tdDay {
+    vertical-align: top;
+    border: 1px solid #264366;
+    background-color: white;
+    cursor: pointer;
+}
+
+.txtTime {
+    width: 40px;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+    display: block;
+    padding: 2px 0px;
+    font-size: 14px;
+    color: #555;
+    vertical-align: middle;
+    background-color: #FFF;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    height: 10px;
+    cursor: pointer;
+}
+
+.RouteDayNotSelected {
+    margin-top: 1px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #264366;
+    background-color: white;
+    cursor: pointer;
+    background-size: 40px 40px;
+}
+
+.RouteDaySelected {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #264366;
+    background-color: white;
+    cursor: pointer;
+    background-image: url('images/V-icon.png');
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+}
+
+.WeeklyRoutes {
+    display: none;
+}
+
+.DateRoutes {
+    display: none;
+}
+
+.CyclicRoutes {
+    display: none;
+}
+
+.DateRoutes {
+    display: none;
+}
+
+
+#rblPeriods {
+    vertical-align: top;
+}
+
+.RouteDays {
+    width: 35px;
+    height: 20px;
+    background-color: #264366;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.SideRouteDays {
+    width: 20px;
+    background-color: #264366;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.RouteWeek {
+    width: 35px;
+    height: 35px;
+    background-color: #264366;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.Routes-Approv-div {
+    float: left;
+    padding: 10px 5px 5px 9px;
+}
+
+.Routes-Approv-btn {
+    color: #fff;
+    background-color: #264366;
+    display: inline-block;
+    padding: 2px 20px;
+    margin-right: 40px;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid #264366;
+    border-radius: 4px;
+    -webkit-user-select: none;
+}
+
+    .Routes-Approv-btn:hover {
+        color: #fff;
+        background-color: #264366;
+        display: inline-block;
+        padding: 2px 20px;
+        margin-right: 40px;
+        font-size: 14px;
+        font-weight: normal;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        background-image: none;
+        border: 1px solid #D85066;
+        border-radius: 4px;
+        -webkit-user-select: none;
+    }
+
+.txtTime2 {
+    width: 40px;
+    font-size: 13px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 3px 15px 3px 5px;
+    background: #fff;
+    border: 1px solid #aac;
+}
+
+.TimePopover {
+    display: none;
+    right: 40%;
+    top: 40%;
+    width: 225px;
+    height: 110px;
+    position: absolute;
+    z-index: 9999;
+    padding: 2px;
+    text-align: left;
+    white-space: normal;
+    background-color: #264366;
+    color: #340028;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 5px 10px #e5e5e5;
+    box-shadow: 0 5px 10px #fff;
+    background-clip: padding-box;
+}
+
+.TimePopover-header {
+    min-height: 16.428571429px;
+    padding-right: 5px;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 18px;
+    line-height: 1.428571429;
+    color: #333;
+    background-color: #fff;
+    text-align: center;
+}
+
+    .TimePopover-header h3 {
+        margin: 3px;
+        padding-bottom: 10px;
+        color: #264366;
+        background-color: #fff;
+    }
+
+.Routes-ApprovTime-btn {
+    color: #fff;
+    background-color: #264366;
+    display: inline-block;
+    padding: 2px 20px;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid #264366;
+    border-radius: 4px;
+    -webkit-user-select: none;
+}
+
+#MassageApprov {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.Routes-del-btn {
+    color: #fff;
+    background-color: #264366;
+    display: inline-block;
+    padding: 2px 20px;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid #264366;
+    border-radius: 4px;
+    -webkit-user-select: none;
+}
+
+.day-content {
+    width: 118px;
+    height: 52px;
+}
+
+.LBDates {
+    width: 180px;
+    Height: 110px;
+    padding-right: 3px;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    margin-top: 2px;
+}

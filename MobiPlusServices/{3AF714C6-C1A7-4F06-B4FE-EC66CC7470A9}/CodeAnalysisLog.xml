@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 14.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="14.0">
+ <Targets>
+  <Target Name="C:\Users\Andrey\AppData\Local\Temp\tmpDAE2.tmp.cadir\bin\App_Code.dll">
+   <Modules>
+    <Module Name="app_code.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="MobiPlusService" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#CheckMediaDirectory(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices\App_Code" File="MobiPlusService.cs" Line="1029">'MobiPlusService.CheckMediaDirectory(string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteServerPushFile(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices\App_Code" File="MobiPlusService.cs" Line="1514">'MobiPlusService.DeleteServerPushFile(string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DNBGetZipFile(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices\App_Code" File="MobiPlusService.cs" Line="782">'MobiPlusService.DNBGetZipFile(string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DownloadFile(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices\App_Code" File="MobiPlusService.cs" Line="327">'MobiPlusService.DownloadFile(string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DownloadMediaFile(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices\App_Code" File="MobiPlusService.cs" Line="1077">'MobiPlusService.DownloadMediaFile(string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DownloadMediaFileResponseBytes(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices\App_Code" File="MobiPlusService.cs" Line="1121">'MobiPlusService.DownloadMediaFileResponseBytes(string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetAPKFile()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices\App_Code" File="MobiPlusService.cs" Line="126">'MobiPlusService.GetAPKFile()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetDocument(System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices\App_Code" File="MobiPlusService.cs" Line="224">'MobiPlusService.GetDocument(string, string, string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetFile(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices\App_Code" File="MobiPlusService.cs" Line="288">'MobiPlusService.GetFile(string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetFileDirect(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices\App_Code" File="MobiPlusService.cs" Line="153">'MobiPlusService.GetFileDirect(string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetIMG(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices\App_Code" File="MobiPlusService.cs" Line="1150">'MobiPlusService.GetIMG(string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetServerPushFiles()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices\App_Code" File="MobiPlusService.cs" Line="1448">'MobiPlusService.GetServerPushFiles()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#isToRefreshCacheFunc()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices\App_Code" File="MobiPlusService.cs" Line="1491">'MobiPlusService.isToRefreshCacheFunc()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ResponsBytes(System.Byte[],System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices\App_Code" File="MobiPlusService.cs" Line="1217">'MobiPlusService.ResponsBytes(byte[], string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ResponsBytesApp(System.Byte[],System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices\App_Code" File="MobiPlusService.cs" Line="1251">'MobiPlusService.ResponsBytesApp(byte[], string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ResponsBytesTest(System.Byte[],System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices\App_Code" File="MobiPlusService.cs" Line="1234">'MobiPlusService.ResponsBytesTest(byte[], string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ResponseJSON(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices\App_Code" File="MobiPlusService.cs" Line="1183">'MobiPlusService.ResponseJSON(string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ResponseJSONHalf(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices\App_Code" File="MobiPlusService.cs" Line="1200">'MobiPlusService.ResponseJSONHalf(string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ResponseToUpload(System.Int32,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices\App_Code" File="MobiPlusService.cs" Line="1754">'MobiPlusService.ResponseToUpload(int, string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateCache_ServerPushFiles()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices\App_Code" File="MobiPlusService.cs" Line="1467">'MobiPlusService.UpdateCache_ServerPushFiles()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\Andrey\AppData\Local\Temp\tmpDAE2.tmp.cadir\bin\App_Web_05df4qx2.dll">
+   <Modules>
+    <Module Name="app_web_05df4qx2.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="UploadFile" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ResponseToUpload(System.Int32,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices" File="UploadStrFile.aspx.cs" Line="69">'UploadFile.ResponseToUpload(int, string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\Andrey\AppData\Local\Temp\tmpDAE2.tmp.cadir\bin\App_Web_0dhrykma.dll">
+   <Modules>
+    <Module Name="app_web_0dhrykma.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="UploadFile" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ResponseToUpload(System.Int32,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices" File="UploadMTNFile.aspx.cs" Line="86">'UploadFile.ResponseToUpload(int, string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\Andrey\AppData\Local\Temp\tmpDAE2.tmp.cadir\bin\App_Web_gsgcq0zh.dll">
+   <Modules>
+    <Module Name="app_web_gsgcq0zh.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="UploadFile" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ResponseToUpload(System.Int32,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices" File="UploadFile.aspx.cs" Line="105">'UploadFile.ResponseToUpload(int, string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\Andrey\AppData\Local\Temp\tmpDAE2.tmp.cadir\bin\App_Web_l2r35k4e.dll">
+   <Modules>
+    <Module Name="app_web_l2r35k4e.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="UploadFile" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ResponseToUpload(System.Int32,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices" File="UploadFile_DblCheck.aspx.cs" Line="105">'UploadFile.ResponseToUpload(int, string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\Andrey\AppData\Local\Temp\tmpDAE2.tmp.cadir\bin\App_Web_safcylkc.dll">
+   <Modules>
+    <Module Name="app_web_safcylkc.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="UploadFile" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ResponseToUpload(System.Int32,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices" File="UploadFile_DblCheckAW.aspx.cs" Line="81">'UploadFile.ResponseToUpload(int, string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="UploadSplitedFile" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ResponseToUpload(System.Int32,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices" File="UploadSplitedFile.aspx.cs" Line="94">'UploadSplitedFile.ResponseToUpload(int, string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UnSplitZips(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-02-15 13:14:10Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\Development\MobiSoft.net\MobiPlus_Solution\MobiPlusServices" File="UploadSplitedFile.aspx.cs" Line="156">Object 'streamWriter' can be disposed more than once in method 'UploadSplitedFile.UnSplitZips(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 156</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202">
+   <Name>Do not dispose objects multiple times</Name>
+   <Description>A correctly implemented Dispose method can be called multiple times without throwing an exception. However, this is not guaranteed and to avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.</Description>
+   <Resolution Name="Default">Object {0} can be disposed more than once in method {1}. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 156</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182334.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200">
+   <Name>Rethrow to preserve stack details</Name>
+   <Description>Use the IL rethrow instruction to preserve original stack details when re-raising a caught exception.</Description>
+   <Resolution Name="Default">{0} rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182363.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="14.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

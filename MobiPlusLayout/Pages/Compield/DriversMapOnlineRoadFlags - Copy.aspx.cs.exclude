@@ -1,0 +1,789 @@
+﻿using System;
+using System.Data;
+using System.Diagnostics;
+using System.Web.UI;
+using MobiPlusTools;
+using System.Linq;
+
+public partial class Pages_Compield_DriversMapOnlineRoadFlags : PageBaseCls
+{
+    public string ScriptScr = "";
+    public string contentString1 = "contentString1";
+    public string contentString2 = "contentString2";
+    public string Road1 = "";
+    private static readonly string LogDir = System.Configuration.ConfigurationManager.AppSettings["LogDirectory"].ToString();
+
+
+    public bool isFirst
+    {
+        get
+        {
+            if (ViewState["isFirst"] == null)
+                ViewState["isFirst"] = "True";
+            return Convert.ToBoolean(ViewState["isFirst"].ToString());
+        }
+        set
+        {
+            ViewState["isFirst"] = value.ToString();
+        }
+    }
+
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Lang = SessionLanguage;
+        if (!IsPostBack)
+        {
+            txtDate.Value = DateTime.Now.Date.ToString("dd/MM/yyyy");
+            isFirst = true;
+            init();
+            initAgents(sender, e);
+            GetData(sender, e);
+        }
+    }
+    protected void cbOnline_CheckedChanged(object sender, EventArgs e)
+    {
+        isFirst = true;
+        try
+        {
+            AgentsList.SelectedValue = "0";
+        }
+        catch (Exception)
+        {
+
+        }
+
+        GetData(sender, e);
+    }
+    protected void initAgents(object sender, EventArgs e)
+    {
+        MPLayoutService WR = new MPLayoutService();
+        var cid = string.IsNullOrEmpty(Request["CountryID"]) ? "1000" : Request["CountryID"];
+        var did = string.IsNullOrEmpty(Request["DistrID"]) ? "1000" : Request["DistrID"];
+        DataTable dt = WR.GetAgentsL(SessionUserID, cid, did, ConStrings.DicAllConStrings[SessionProjectName]);
+        AgentsList.DataSource = dt;
+        AgentsList.DataValueField = "AgentID";
+        AgentsList.DataTextField = "AgentName";
+        AgentsList.DataBind();
+        AgentsList.Focus();
+    }
+    private void init()
+    {
+        cbOnline.Text = StrSrc("tru");
+        cbFlags.Text = StrSrc("visits");
+        cbRoad.Text = StrSrc("roads");
+        cbRealDirection.Text = StrSrc("actually");
+
+        if (Request.QueryString["Trucks"] != null)// && Request.QueryString["Trucks"].ToString().ToLower().IndexOf("true;") > -1
+        {
+            string[] arr = Request.QueryString["Trucks"].ToString().Replace("Trucks=", "").Split(';');
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == "Cars:true")
+                {
+                    cbOnline.Checked = true;
+                }
+                if (arr[i] == "Customers:true")
+                {
+                    cbFlags.Checked = true;
+                }
+                if (arr[i] == "Road:true")
+                {
+                    cbRoad.Checked = true;
+                }
+            }
+
+        }
+    }
+    protected void GetData(object sender, EventArgs e)
+    {
+        var cid = string.IsNullOrEmpty(Request["CountryID"]) ? "1000" : Request["CountryID"];
+        Stopwatch globalStopwatch = new Stopwatch();
+        globalStopwatch.Start();
+        string strScriptToCall = "";
+        ScriptScr = "";
+        string ScriptScr2 = "";
+        hdnStrScript.Value = "";
+        MPLayoutService WR = new MPLayoutService();
+        Road1 = "";
+
+        string Titles = "";
+        string WinMsgs = "";
+        string DistanceMsgs = "";
+        string latlon1 = "";
+        //latlon1 = "32.2777255,34.8614782";
+        latlon1 = GetCustomCoord();
+        string[] arrDate = txtDate.Value.Split('/');
+        var datepicker = arrDate[2] + arrDate[1] + arrDate[0];
+
+        #region cbOnline
+        if (cbOnline.Checked)
+        {
+            if (isFirst)
+            {
+                ScriptScr2 = " var myLatlng0 = new google.maps.LatLng(" + latlon1 + ");";
+                if (isFirst)
+                    ScriptScr = ScriptScr2 + "var mapOptions = {zoom: 7,center: myLatlng0};var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);";
+
+                try
+                {
+                    var firstStop = new Stopwatch();
+                    firstStop.Start();
+
+                    DataTable dtPoints = WR.MPLayout_GetDriverGPSLocationByCountry(AgentsList.SelectedValue == "" ? "0" : AgentsList.SelectedValue, datepicker, cid, ConStrings.DicAllConStrings[SessionProjectName]);//arrDate[2] + arrDate[1] + arrDate[0]//DateTime.Now.Date.ToString("yyyyMMdd")
+
+                    if (dtPoints != null && dtPoints.Rows.Count > 0)
+                    {
+                        ScriptScr = "";
+
+                        for (int i = 0; i < dtPoints.Rows.Count; i++)
+                        {
+                            ScriptScr += " var myLatlng" + i.ToString() + " = new google.maps.LatLng(" + dtPoints.Rows[i]["Lat"].ToString() + "," + dtPoints.Rows[i]["Lon"].ToString() + ");";
+                            Titles += dtPoints.Rows[i]["Name"].ToString() + ";";
+
+                            DistanceMsgs += dtPoints.Rows[i]["Lat"].ToString() + "," + dtPoints.Rows[i]["Lon"].ToString() + "^" + ";";
+
+                            WinMsgs += dtPoints.Rows[i]["Name"].ToString() + ";";
+                        }
+
+                        if (dtPoints.Rows.Count > 0)
+                            Road1 = dtPoints.Rows[0]["Lat"].ToString() + "," + dtPoints.Rows[0]["Lon"].ToString() + "," + dtPoints.Rows[dtPoints.Rows.Count - 1]["Lat"].ToString() + "," + dtPoints.Rows[dtPoints.Rows.Count - 1]["Lon"].ToString();
+
+                        if (dtPoints.Rows.Count == 0)
+                        {
+                            //latlon1 = "32.2777255,34.8614782";
+                            ScriptScr += " var myLatlng0 = new google.maps.LatLng(" + latlon1 + ");";
+                        }
+                        ScriptScr += "var image = '../../img/truck2.png';gMarkers = [];";
+                        if (isFirst)
+                            ScriptScr += "var mapOptions = {zoom: 8,center: myLatlng0};var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);";
+
+                        ScriptScr += "var tooltip = new google.maps.InfoWindow();";
+
+                        if (cbOnline.Checked)
+                        {
+                            for (int i = 0; i < dtPoints.Rows.Count; i++)
+                            {
+                                ScriptScr += " var marker" + i.ToString() + " = new MarkerWithLabel({ " +
+                                             "position: myLatlng" + i.ToString() + ", " +
+                                             "draggable: false, " +
+                                             "raiseOnDrag: true, " +
+                                             "map: map, " +
+                                             "labelContent: '" + Convert.ToInt64(dtPoints.Rows[i]["AgentCode"].ToString()) + " - " + dtPoints.Rows[i]["Name"].ToString() + "', " +
+                                             "labelAnchor: new google.maps.Point(34, 0), " +
+                                             "labelClass: 'labels', " +
+                                             "icon:image " +
+                                             "});";
+
+                                ScriptScr += " google.maps.event.addListener(marker" + i.ToString() + ", 'click', function(e) { tooltip.setContent('" + dtPoints.Rows[i]["Comment"].ToString() + "'); tooltip.setPosition(this.getPosition()); tooltip.open(map);}); ";
+
+                                ScriptScr += "gMarkers.push(marker" + i.ToString() + ");";
+                            }
+                        }
+                    }
+
+                    hdnArrDistanceMsgs.Value = DistanceMsgs;
+                    hdnArrWinMsgs.Value = Server.UrlDecode(WinMsgs);
+                    hdnArrTitle.Value = Titles.Replace('"', '\"');
+                    hdnCountPoints.Value = dtPoints.Rows.Count.ToString();
+                    hdnRoad1.Value = Road1;
+                    hdnStrScript.Value = ScriptScr;
+                    firstStop.Stop();
+                    Tools.AddRowToLog(string.Format("First data population. cbOnline.Checked.isFirst. Time:{0}", firstStop.Elapsed.ToString()), LogDir);
+                }
+                catch (Exception exception)
+                {
+                    Tools.AddRowToLog(exception.Message, LogDir);
+                }
+
+                //ScriptManager.RegisterClientScriptBlock(this.Page, typeof(Page), "aa1" + DateTime.Now.Ticks.ToString(), "setTimeout('initMap();',7);", true);
+                //ScriptManager.RegisterClientScriptBlock(this.Page, typeof(Page), "aaf" + DateTime.Now.Ticks.ToString(), "setTimeout('Refresh1();',1117);", true);
+                strScriptToCall += "setTimeout('initMap();',7);" + "setTimeout('Refresh1();',1117);  window.parent.CloseLoading();";
+                isFirst = false;
+            }
+            else
+            {
+                ScriptScr2 = " myLatlng0 = new google.maps.LatLng(" + latlon1 + ");";
+                try
+                {
+                    var secondStop = new Stopwatch();
+                    secondStop.Start();
+                    DataTable dtPoints = WR.MPLayout_GetDriverGPSLocationByCountry(AgentsList.SelectedValue, datepicker, cid, ConStrings.DicAllConStrings[SessionProjectName]);
+                    if (dtPoints != null && dtPoints.Rows.Count > 0)
+                    {
+                        ScriptScr = "";
+
+                        for (int i = 0; i < dtPoints.Rows.Count; i++)
+                        {
+                            ScriptScr += " myLatlng" + i.ToString() + " = new google.maps.LatLng(" + dtPoints.Rows[i]["Lat"].ToString() + "," + dtPoints.Rows[i]["Lon"].ToString() + ");";
+                            Titles += dtPoints.Rows[i]["Name"].ToString() + ";";
+
+                            DistanceMsgs += dtPoints.Rows[i]["Lat"].ToString() + "," + dtPoints.Rows[i]["Lon"].ToString() + "^" + ";";
+
+                            WinMsgs += dtPoints.Rows[i]["Name"].ToString() + ";";
+                        }
+
+                        if (dtPoints.Rows.Count > 0)
+                            Road1 = dtPoints.Rows[0]["Lat"].ToString() + "," + dtPoints.Rows[0]["Lon"].ToString() + "," + dtPoints.Rows[dtPoints.Rows.Count - 1]["Lat"].ToString() + "," + dtPoints.Rows[dtPoints.Rows.Count - 1]["Lon"].ToString();
+
+                        if (dtPoints.Rows.Count == 0)
+                        {
+                            latlon1 = "32.2777255,34.8614782";
+                            ScriptScr += " myLatlng0 = new google.maps.LatLng(" + latlon1 + ");";
+                        }
+                        ScriptScr += "image = '../../img/truck2.png';";
+                        if (AgentsList.SelectedValue != "0")
+                            ScriptScr += "var mapOptions = {zoom: 17,center: myLatlng0};var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);gMarkers = [];";
+                        else
+                            ScriptScr += "var mapOptions = {zoom: 8,center: myLatlng0};var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);gMarkers = [];";
+
+                        ScriptScr += "var tooltip = new google.maps.InfoWindow();";
+
+                        if (cbOnline.Checked)
+                        {
+                            for (int i = 0; i < dtPoints.Rows.Count; i++)
+                            {
+                                var labelContent = string.Format("'{0} - {1}, {2}'", Convert.ToInt64(dtPoints.Rows[i]["AgentCode"].ToString()), dtPoints.Rows[i]["Name"].ToString(), dtPoints.Rows[i]["Comment"].ToString());
+                                ScriptScr += " marker" + i.ToString() + " = new MarkerWithLabel({ " +
+                                "position: myLatlng" + i.ToString() + ", " +
+                                "draggable: false, " +
+                                "raiseOnDrag: true, " +
+                                "map: map, " +
+                                "labelContent: '" + Convert.ToInt64(dtPoints.Rows[i]["AgentCode"].ToString()) + " - " + dtPoints.Rows[i]["Name"].ToString() + "', " +
+                                "labelAnchor: new google.maps.Point(34, 0), " +
+                                "labelClass: 'labels', " +
+                                "icon:image " +
+                                "});";
+
+                                ScriptScr += " google.maps.event.addListener(marker" + i.ToString() + ", 'click', function(e) { tooltip.setContent('" + dtPoints.Rows[i]["Comment"].ToString() + "'); tooltip.setPosition(this.getPosition()); tooltip.open(map);}); ";
+                                ScriptScr += "gMarkers.push(marker" + i.ToString() + ");";
+                            }
+                            for (int i = 1; i < Convert.ToInt32(hdnCountPoints.Value); i++)
+                            {
+                                if (i > 0 && AgentsList.SelectedValue != "0")
+                                    ScriptScr += "try{ marker" + i.ToString() + ".setVisible(false);}catch(e){}";
+                            }
+                        }
+                    }
+                    else
+                    {
+                        ScriptScr = ScriptScr2 + "var mapOptions = {zoom: 9,center: myLatlng0};var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);";
+                    }
+                    //hdnArrDistanceMsgs.Value = DistanceMsgs;
+                    //hdnArrWinMsgs.Value = WinMsgs;
+                    //hdnArrTitle.Value = Titles.Replace('"', '\"');
+                    hdnCountPoints.Value = dtPoints.Rows.Count.ToString();
+                    //hdnRoad1.Value = Road1;
+                    hdnStrScript.Value = ScriptScr;
+
+                    //ScriptManager.RegisterClientScriptBlock(this.Page, typeof(Page), "aa18" + DateTime.Now.Ticks.ToString(), "setTimeout('initMap();',7);", true);
+                    // ScriptManager.RegisterClientScriptBlock(this.Page, typeof(Page), "aa78" + DateTime.Now.Ticks.ToString(), "setTimeout('Refresh1();',1117);", true);
+                    strScriptToCall += "setTimeout('initMap();',7);" + "setTimeout('Refresh1();',1117);  window.parent.CloseLoading();";
+                    isFirst = false;
+                    Tools.AddRowToLog(string.Format("strScriptToCall:{0}", strScriptToCall), LogDir);
+
+                    secondStop.Stop();
+                    Tools.AddRowToLog(string.Format("Second block data population. cbOnline.Checked.isFirst==false. Time:{0}", secondStop.Elapsed.ToString()), LogDir);
+                }
+                catch (Exception exception)
+                {
+                    Tools.AddRowToLog(exception.Message, LogDir);
+                }
+
+
+
+            }
+        }
+
+        /**********************/
+        #endregion
+
+        #region cbFlags
+        if (cbFlags.Checked)
+        {
+            ScriptScr = "";
+
+            Titles = "";
+            string PointsVisits = "";
+            WinMsgs = "";
+            DistanceMsgs = "";
+            latlon1 = "";
+            latlon1 = "32.2777255,34.8614782";
+
+            string latlonNotFoundCust = "";
+            latlonNotFoundCust = "32.2777255,34.7511782";
+
+            ScriptScr2 = " var gLatlng0 = new google.maps.LatLng(" + latlon1 + ");";
+
+            if (!cbOnline.Checked)
+                ScriptScr = ScriptScr2 + "var gmapOptions = {zoom: 8,center: myLatlng0};var map = new google.maps.Map(document.getElementById('map-canvas'), gmapOptions);";
+
+
+            try
+            {
+                var thirdStop = new Stopwatch();
+                thirdStop.Start();
+                DataTable dtPoints = WR.MPLayout_GetCustomersCord(AgentsList.SelectedValue, datepicker, ConStrings.DicAllConStrings[SessionProjectName]);
+                thirdStop.Stop();
+                Tools.AddRowToLog(string.Format("Third block data population. MPLayout_GetCustomersCord. Time:{0}", thirdStop.Elapsed.ToString()), LogDir);
+                thirdStop.Reset();
+                thirdStop.Start();
+
+
+                if (dtPoints != null && dtPoints.Rows.Count > 0)
+                {
+
+                    ScriptScr = "";
+                    var distinctValues = dtPoints.AsEnumerable()
+                        .Select(a => new
+                        {
+                            Color = a.Field<string>("Color")
+                        }).Distinct();
+
+
+                    for (int i = 0; i < dtPoints.Rows.Count; i++)
+                    {
+                        PointsVisits += dtPoints.Rows[i]["IsVisit"].ToString() + ",";
+                        //Titles += dtPoints.Rows[i]["Comment"].ToString().Replace("^", " \n ");
+                        //WinMsgs += dtPoints.Rows[i]["Comment"].ToString().Replace("^", " \n ");
+                        if (dtPoints.Rows[i]["Lat"].ToString() != "" && dtPoints.Rows[i]["Lat"].ToString() != "not found")
+                        {
+                            ScriptScr += " var gLatlng" + i.ToString() + " = new google.maps.LatLng(" + dtPoints.Rows[i]["Lat"].ToString() + "," + dtPoints.Rows[i]["Lon"].ToString() + ");";
+                            //Titles += "לקוח: " + dtPoints.Rows[i]["CustID"].ToString() + "\n" + "שם: " + dtPoints.Rows[i]["CustName"].ToString() + "\n" + ";";//+ "כתובת לקוח: " + dtPoints.Rows[i]["Address"].ToString() + "\n" + ";";
+                            Titles += string.Format("{0} \n;", dtPoints.Rows[i]["Comment"].ToString().Replace("^", " \n "));
+
+                            DistanceMsgs += dtPoints.Rows[i]["Lat"].ToString() + "," + dtPoints.Rows[i]["Lon"].ToString() + "^" + dtPoints.Rows[i]["Address"].ToString() + ";";
+                            //WinMsgs += "לקוח: " + dtPoints.Rows[i]["CustID"].ToString() + "<br/>" + "שם: " + dtPoints.Rows[i]["CustName"].ToString() + "<br/>" + ";"; //+ "כתובת לקוח: " + dtPoints.Rows[i]["Address"].ToString()  + ";";
+                            WinMsgs += string.Format("{0} \n;", dtPoints.Rows[i]["Comment"].ToString().Replace("^", " \n "));
+                        }
+                        else
+                        {
+                            ScriptScr += " var gLatlng" + i.ToString() + " = new google.maps.LatLng(" + latlonNotFoundCust + ");";
+                            //Titles += "לקוח: " + dtPoints.Rows[i]["CustID"].ToString() + "\n" + "שם: " + dtPoints.Rows[i]["CustName"].ToString() + "\n" + ";"; //+ "כתובת לקוח: " + dtPoints.Rows[i]["Address"].ToString() + "\n" + ";";
+                            Titles += string.Format("{0} \n;", dtPoints.Rows[i]["Comment"].ToString().Replace("^", " \n "));
+
+                            DistanceMsgs += latlonNotFoundCust + "^" + dtPoints.Rows[i]["Address"].ToString() + ";";
+                            //WinMsgs += "לקוח: " + dtPoints.Rows[i]["CustID"].ToString() + "<br/>" + "שם: " + dtPoints.Rows[i]["CustName"].ToString() + ";"; //+ "<br/>" + "כתובת לקוח: " + dtPoints.Rows[i]["Address"].ToString() + ";";
+                            WinMsgs += string.Format("{0} \n;", dtPoints.Rows[i]["Comment"].ToString().Replace("^", " \n "));
+                        }
+
+                    }
+
+                    if (dtPoints.Rows.Count > 0)
+                        Road1 = dtPoints.Rows[0]["Lat"].ToString() + "," + dtPoints.Rows[0]["Lon"].ToString() + "," + dtPoints.Rows[dtPoints.Rows.Count - 1]["Lat"].ToString() + "," + dtPoints.Rows[dtPoints.Rows.Count - 1]["Lon"].ToString();
+
+                    if (dtPoints.Rows.Count == 0)
+                    {
+                        latlon1 = "32.2777255,34.8614782";
+                        ScriptScr += " var gLatlng0 = new google.maps.LatLng(" + latlon1 + ");";
+                    }
+
+                    foreach (var item in distinctValues)
+                    {
+                        ScriptScr += string.Format(" var image{0} = '../../img/{1}.png';", item.Color, item.Color);
+                    }
+
+
+
+
+                    //ScriptScr += "var imageGray = '../../img/PinGRAY.png';";
+                    //ScriptScr += "var imageGreen = '../../img/PinGreen.png';";
+                    //ScriptScr += "var imagePurple = '../../img/Map-PointerPerpel.png';";
+                    //ScriptScr += "var imageGrayGreen = '../../img/PinGREEN-GREY.png';";
+                    //ScriptScr += "var imageRed = '../../img/PinRED.png';";
+                    if (!cbOnline.Checked)
+                        ScriptScr += "var gmapOptions = {zoom: 8,center: gLatlng0}; var map = new google.maps.Map(document.getElementById('map-canvas'), gmapOptions);";
+                    //ScriptScr += "var gmapOptions = {zoom: 13,center: gLatlng0};";
+                    int countGreen = 1;
+
+
+
+                    for (int i = 0; i < dtPoints.Rows.Count; i++)
+                    {
+                        var icon = string.Format("'../../img/{0}.png'", dtPoints.Rows[i]["Color"].ToString());
+
+                        if (dtPoints.Rows[i]["IsNotSupplayAndVisit"].ToString() == "0")
+                        {
+                            if (dtPoints.Rows[i]["Lat"].ToString() != "")
+                            {
+                                ScriptScr += " var gmarker" + i.ToString() + " = new google.maps.Marker( " +
+                                       "{ " +
+                                        "   position: gLatlng" + i.ToString() + ", " +
+                                        "   map: map, " +
+                                        "   icon: " + icon + ", " +
+                                        "   zIndex: 1, " +
+                                        "   title: arrTitels[" + i + "] " +
+                                       "}); ";
+                            }
+                            else
+                            {
+                                ScriptScr += " var gmarker" + i.ToString() + " = new google.maps.Marker( " +
+                                         "{ " +
+                                          "   position: gLatlng" + i.ToString() + ", " +
+                                          "   map: map, " +
+                                          "   icon: " + icon + ", " +
+                                          "   zIndex: 1, " +
+                                         "   title: arrTitels[" + i + "] " +
+                                         "}); ";
+
+                            }
+                        }
+                        else if (dtPoints.Rows[i]["IsVisit"].ToString() == "0")
+                        {
+                            if (dtPoints.Rows[i]["Lat"].ToString() != "")
+                            {
+                                ScriptScr += " var gmarker" + i.ToString() + " = new google.maps.Marker( " +
+                                       "{ " +
+                                        "   position: gLatlng" + i.ToString() + ", " +
+                                        "   map: map, " +
+                                        "   icon: " + icon + ", " +
+                                        "   zIndex: 1, " +
+                                        "   title: arrTitels[" + i + "] " +
+                                       "}); ";
+                            }
+                            else
+                            {
+                                ScriptScr += " var gmarker" + i.ToString() + " = new google.maps.Marker( " +
+                                         "{ " +
+                                          "   position: gLatlng" + i.ToString() + ", " +
+                                          "   map: map, " +
+                                          "   icon: " + icon + ", " +
+                                          "   zIndex: 1, " +
+                                         "   title: arrTitels[" + i + "] " +
+                                         "}); ";
+
+                            }
+
+                        }
+                        else
+                        {
+                            if (dtPoints.Rows[i]["Lat"].ToString() != "" && dtPoints.Rows[i]["Lat"].ToString() != "not found")
+                            {
+                                ScriptScr += " var gmarker" + i.ToString() + " = new google.maps.Marker( " +
+                                      "{ " +
+                                       "   position: gLatlng" + i.ToString() + ", " +
+                                       "   map: map, " +
+                                       "   icon: " + icon + ", " +
+                                       "   zIndex: 1000, " +
+                                       "   title: '" + countGreen.ToString() + " \\n' + arrTitels[" + i + "] " +
+                                      "}); ";
+                                countGreen++;
+                            }
+                            else
+                            {
+                                ScriptScr += " var gmarker" + i.ToString() + " = new google.maps.Marker( " +
+                                      "{ " +
+                                       "   position: gLatlng" + i.ToString() + ", " +
+                                       "   map: map, " +
+                                       "   icon: " + icon + ", " +
+                                       "   zIndex: 1, " +
+                                       "   title: arrTitels[" + i + "] " +
+                                      "}); ";
+
+                            }
+
+                        }
+
+                    }
+
+
+
+                }
+                hdnArrDistanceMsgs.Value = DistanceMsgs;
+                hdnArrWinMsgs.Value = Server.UrlDecode(WinMsgs);
+                hdnArrTitle.Value = Titles.Replace('"', '\"');
+                hdnArrPointsVisits.Value = PointsVisits.Replace('"', '\"');
+                hdnCountPoints.Value = dtPoints.Rows.Count.ToString();
+                hdnRoad1.Value = Road1;
+                hdnStrScriptFlags.Value = ScriptScr;
+                //ScriptManager.RegisterClientScriptBlock(this.Page, typeof(Page), "aa8" + DateTime.Now.Ticks.ToString(), "setTimeout('initialize();',1117)", true);
+                strScriptToCall += " window.parent.CloseLoading(); setTimeout('initialize();',417);";
+
+                thirdStop.Stop();
+                Tools.AddRowToLog(string.Format("Third block data population. All loops. Time:{0}", thirdStop.Elapsed.ToString()), LogDir);
+            }
+            catch (Exception exception)
+            {
+
+                Tools.AddRowToLog(exception.Message, LogDir);
+            }
+
+            /****************************/
+
+            //MPLayout_GetCustomersRoadCord 
+        }
+
+        #endregion
+
+        #region cbRoad
+        if (cbRoad.Checked)
+        {
+            ScriptScr = "";
+
+            Titles = "";
+            WinMsgs = "";
+            DistanceMsgs = "";
+            var fourStop = new Stopwatch();
+            fourStop.Start();
+            //DataTable dtPoints = WR.MPLayout_GetCustomersRoadCord(AgentsList.SelectedValue, arrDate[2] + arrDate[1] + arrDate[0], ConStrings.DicAllConStrings[SessionProjectName]);
+            if (AgentsList.SelectedValue == "0" || string.IsNullOrEmpty(AgentsList.SelectedValue))
+                ScriptScr += "var gmapOptions2 = {zoom: 8,center: gRoadLatlng0};var mapMain1 = new google.maps.Map(document.getElementById('map-canvas'), gmapOptions2);";
+            else
+            {
+                DataTable dtPoints = WR.MPLayout_GetCustomersRoadCord(AgentsList.SelectedValue, datepicker, ConStrings.DicAllConStrings[SessionProjectName]);
+                if (dtPoints != null && dtPoints.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dtPoints.Rows.Count; i++)
+                    {
+                        ScriptScr += " var gRoadLatlng" + i.ToString() + " = new google.maps.LatLng(" + dtPoints.Rows[i]["Lat"].ToString() + "," + dtPoints.Rows[i]["Lon"].ToString() + ");";
+                    }
+                    hdnCountRoadPoints.Value = dtPoints.Rows.Count.ToString();
+                }
+            }
+            if (!cbOnline.Checked)
+                ScriptScr += "var gmapOptions2 = {zoom: 8,center: gRoadLatlng0};var mapMain1 = new google.maps.Map(document.getElementById('map-canvas'), gmapOptions2);";
+
+            hdnStrScriptRoad.Value = ScriptScr;
+            strScriptToCall += " window.parent.CloseLoading(); setTimeout('ShowAllRoad();',227);";
+
+            fourStop.Stop();
+            Tools.AddRowToLog(string.Format("Four block data population. cbRoad.Checked.isFirst==false. Time:{0}", fourStop.Elapsed.ToString()), LogDir);
+        }
+        #endregion
+
+        #region cbRealDirection
+        if (cbRealDirection.Checked)
+        {
+            ScriptScr = "";
+
+            Titles = "";
+            string PointsVisits = "";
+            WinMsgs = "";
+            DistanceMsgs = "";
+            latlon1 = "";
+            latlon1 = "32.2777255,34.8614782";
+
+            string latlonNotFoundCust = "";
+            latlonNotFoundCust = "32.2777255,34.7511782";
+
+            ScriptScr2 = " var gLatlng0 = new google.maps.LatLng(" + latlon1 + ");";
+
+            if (!cbOnline.Checked)
+                ScriptScr = ScriptScr2 + "var gmapOptions = {zoom: 8,center: myLatlng0};var map = new google.maps.Map(document.getElementById('map-canvas'), gmapOptions);";
+
+
+            try
+            {
+                var thirdStop = new Stopwatch();
+                thirdStop.Start();
+                DataTable dtPoints = WR.MPLayout_GetCustomersCord(AgentsList.SelectedValue, datepicker, ConStrings.DicAllConStrings[SessionProjectName]);
+                thirdStop.Stop();
+                Tools.AddRowToLog(string.Format("Third block data population. MPLayout_GetCustomersCord. Time:{0}", thirdStop.Elapsed.ToString()), LogDir);
+                thirdStop.Reset();
+                thirdStop.Start();
+
+
+                if (dtPoints != null && dtPoints.Rows.Count > 0)
+                {
+
+                    ScriptScr = "";
+                    var distinctValues = dtPoints.AsEnumerable()
+                        .Select(a => new
+                        {
+                            Color = a.Field<string>("Color")
+                        }).Distinct();
+
+
+                    for (int i = 0; i < dtPoints.Rows.Count; i++)
+                    {
+                        PointsVisits += dtPoints.Rows[i]["IsVisit"].ToString() + ",";
+                        //Titles += dtPoints.Rows[i]["Comment"].ToString().Replace("^", " \n ");
+                        //WinMsgs += dtPoints.Rows[i]["Comment"].ToString().Replace("^", " \n ");
+                        if (dtPoints.Rows[i]["ReportGPS_LAT"].ToString() != "" && dtPoints.Rows[i]["ReportGPS_LAT"].ToString() != "not found")
+                        {
+                            ScriptScr += " var gLatlng" + i.ToString() + " = new google.maps.LatLng(" + dtPoints.Rows[i]["Lat"].ToString() + "," + dtPoints.Rows[i]["Lon"].ToString() + ");";
+                            //Titles += "לקוח: " + dtPoints.Rows[i]["CustID"].ToString() + "\n" + "שם: " + dtPoints.Rows[i]["CustName"].ToString() + "\n" + ";";//+ "כתובת לקוח: " + dtPoints.Rows[i]["Address"].ToString() + "\n" + ";";
+                            Titles += string.Format("{0} \n;", dtPoints.Rows[i]["Comment"].ToString().Replace("^", " \n "));
+
+                            DistanceMsgs += dtPoints.Rows[i]["ReportGPS_LAT"].ToString() + "," + dtPoints.Rows[i]["ReportGPS_Lon"].ToString() + "^" + dtPoints.Rows[i]["Address"].ToString() + ";";
+                            //WinMsgs += "לקוח: " + dtPoints.Rows[i]["CustID"].ToString() + "<br/>" + "שם: " + dtPoints.Rows[i]["CustName"].ToString() + "<br/>" + ";"; //+ "כתובת לקוח: " + dtPoints.Rows[i]["Address"].ToString()  + ";";
+                            WinMsgs += string.Format("{0} \n;", dtPoints.Rows[i]["Comment"].ToString().Replace("^", " \n "));
+                        }
+                        else
+                        {
+                            ScriptScr += " var gLatlng" + i.ToString() + " = new google.maps.LatLng(" + latlonNotFoundCust + ");";
+                            //Titles += "לקוח: " + dtPoints.Rows[i]["CustID"].ToString() + "\n" + "שם: " + dtPoints.Rows[i]["CustName"].ToString() + "\n" + ";"; //+ "כתובת לקוח: " + dtPoints.Rows[i]["Address"].ToString() + "\n" + ";";
+                            Titles += string.Format("{0} \n;", dtPoints.Rows[i]["Comment"].ToString().Replace("^", " \n "));
+
+                            DistanceMsgs += latlonNotFoundCust + "^" + dtPoints.Rows[i]["Address"].ToString() + ";";
+                            //WinMsgs += "לקוח: " + dtPoints.Rows[i]["CustID"].ToString() + "<br/>" + "שם: " + dtPoints.Rows[i]["CustName"].ToString() + ";"; //+ "<br/>" + "כתובת לקוח: " + dtPoints.Rows[i]["Address"].ToString() + ";";
+                            WinMsgs += string.Format("{0} \n;", dtPoints.Rows[i]["Comment"].ToString().Replace("^", " \n "));
+                        }
+
+                    }
+
+                    if (dtPoints.Rows.Count > 0)
+                        Road1 = dtPoints.Rows[0]["ReportGPS_LAT"].ToString() + "," + dtPoints.Rows[0]["ReportGPS_Lon"].ToString() + "," + dtPoints.Rows[dtPoints.Rows.Count - 1]["ReportGPS_LAT"].ToString() + "," + dtPoints.Rows[dtPoints.Rows.Count - 1]["ReportGPS_Lon"].ToString();
+
+                    if (dtPoints.Rows.Count == 0)
+                    {
+                        latlon1 = "32.2777255,34.8614782";
+                        ScriptScr += " var gLatlng0 = new google.maps.LatLng(" + latlon1 + ");";
+                    }
+
+                    foreach (var item in distinctValues)
+                    {
+                        ScriptScr += string.Format(" var image{0} = '../../img/{1}.png';", item.Color, item.Color);
+                    }
+
+
+
+
+                    //ScriptScr += "var imageGray = '../../img/PinGRAY.png';";
+                    //ScriptScr += "var imageGreen = '../../img/PinGreen.png';";
+                    //ScriptScr += "var imagePurple = '../../img/Map-PointerPerpel.png';";
+                    //ScriptScr += "var imageGrayGreen = '../../img/PinGREEN-GREY.png';";
+                    //ScriptScr += "var imageRed = '../../img/PinRED.png';";
+                    if (!cbOnline.Checked)
+                        ScriptScr += "var gmapOptions = {zoom: 8,center: gLatlng0}; var map = new google.maps.Map(document.getElementById('map-canvas'), gmapOptions);";
+                    //ScriptScr += "var gmapOptions = {zoom: 13,center: gLatlng0};";
+                    int countGreen = 1;
+
+
+
+                    for (int i = 0; i < dtPoints.Rows.Count; i++)
+                    {
+                        var icon = string.Format("'../../img/library_maps.png'", dtPoints.Rows[i]["Color"].ToString());
+
+                        if (dtPoints.Rows[i]["IsNotSupplayAndVisit"].ToString() == "0")
+                        {
+                            if (dtPoints.Rows[i]["ReportGPS_LAT"].ToString() != "")
+                            {
+                                ScriptScr += " var gmarker" + i.ToString() + " = new google.maps.Marker( " +
+                                       "{ " +
+                                        "   position: gLatlng" + i.ToString() + ", " +
+                                        "   map: map, " +
+                                        "   icon: " + icon + ", " +
+                                        "   zIndex: 1, " +
+                                        "   title: arrTitels[" + i + "] " +
+                                       "}); ";
+                            }
+                            else
+                            {
+                                ScriptScr += " var gmarker" + i.ToString() + " = new google.maps.Marker( " +
+                                         "{ " +
+                                          "   position: gLatlng" + i.ToString() + ", " +
+                                          "   map: map, " +
+                                          "   icon: " + icon + ", " +
+                                          "   zIndex: 1, " +
+                                         "   title: arrTitels[" + i + "] " +
+                                         "}); ";
+
+                            }
+                        }
+                        else if (dtPoints.Rows[i]["IsVisit"].ToString() == "0")
+                        {
+                            if (dtPoints.Rows[i]["ReportGPS_LAT"].ToString() != "")
+                            {
+                                ScriptScr += " var gmarker" + i.ToString() + " = new google.maps.Marker( " +
+                                       "{ " +
+                                        "   position: gLatlng" + i.ToString() + ", " +
+                                        "   map: map, " +
+                                        "   icon: " + icon + ", " +
+                                        "   zIndex: 1, " +
+                                        "   title: arrTitels[" + i + "] " +
+                                       "}); ";
+                            }
+                            else
+                            {
+                                ScriptScr += " var gmarker" + i.ToString() + " = new google.maps.Marker( " +
+                                         "{ " +
+                                          "   position: gLatlng" + i.ToString() + ", " +
+                                          "   map: map, " +
+                                          "   icon: " + icon + ", " +
+                                          "   zIndex: 1, " +
+                                         "   title: arrTitels[" + i + "] " +
+                                         "}); ";
+
+                            }
+
+                        }
+                        else
+                        {
+                            if (dtPoints.Rows[i]["ReportGPS_LAT"].ToString() != "" && dtPoints.Rows[i]["ReportGPS_LAT"].ToString() != "not found")
+                            {
+                                ScriptScr += " var gmarker" + i.ToString() + " = new google.maps.Marker( " +
+                                      "{ " +
+                                       "   position: gLatlng" + i.ToString() + ", " +
+                                       "   map: map, " +
+                                       "   icon: " + icon + ", " +
+                                       "   zIndex: 1000, " +
+                                       "   title: '" + countGreen.ToString() + " \\n' + arrTitels[" + i + "] " +
+                                      "}); ";
+                                countGreen++;
+                            }
+                            else
+                            {
+                                ScriptScr += " var gmarker" + i.ToString() + " = new google.maps.Marker( " +
+                                      "{ " +
+                                       "   position: gLatlng" + i.ToString() + ", " +
+                                       "   map: map, " +
+                                       "   icon: " + icon + ", " +
+                                       "   zIndex: 1, " +
+                                       "   title: arrTitels[" + i + "] " +
+                                      "}); ";
+
+                            }
+
+                        }
+
+                    }
+
+
+
+                }
+                hdnArrDistanceMsgs.Value = DistanceMsgs;
+                hdnArrWinMsgs.Value = Server.UrlDecode(WinMsgs);
+                hdnArrTitle.Value = Titles.Replace('"', '\"');
+                hdnArrPointsVisits.Value = PointsVisits.Replace('"', '\"');
+                hdnCountPoints.Value = dtPoints.Rows.Count.ToString();
+                hdnRoad1.Value = Road1;
+                hdnStrScriptFlags.Value = ScriptScr;
+                //ScriptManager.RegisterClientScriptBlock(this.Page, typeof(Page), "aa8" + DateTime.Now.Ticks.ToString(), "setTimeout('initialize();',1117)", true);
+                strScriptToCall += " window.parent.CloseLoading(); setTimeout('initialize();',417);";
+
+                thirdStop.Stop();
+                Tools.AddRowToLog(string.Format("Third block data population. All loops. Time:{0}", thirdStop.Elapsed.ToString()), LogDir);
+            }
+            catch (Exception exception)
+            {
+
+                Tools.AddRowToLog(exception.Message, LogDir);
+            }
+        }
+        #endregion
+
+        ScriptManager.RegisterClientScriptBlock(this.Page, typeof(Page), "aa22dfs" + DateTime.Now.Ticks.ToString(), strScriptToCall, true);
+
+        globalStopwatch.Stop();
+        Tools.AddRowToLog(string.Format("Pages_Compield_DriversMapOnlineRoadFlags full method is running {0} seconds",
+                globalStopwatch.Elapsed.ToString()), LogDir);
+    }
+
+
+
+    protected void Unnamed1_AsyncPostBackError(object sender, AsyncPostBackErrorEventArgs e)
+    {
+        if (e.Exception.Data["ExtraInfo"] != null)
+        {
+            ScriptManager1.AsyncPostBackErrorMessage =
+                e.Exception.Message +
+                e.Exception.Data["ExtraInfo"].ToString();
+        }
+        else
+        {
+            ScriptManager1.AsyncPostBackErrorMessage =
+                "An unspecified error occurred.";
+        }
+    }
+}

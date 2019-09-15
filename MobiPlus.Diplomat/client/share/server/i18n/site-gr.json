@@ -1,0 +1,239 @@
+﻿{
+  "langSettings": {
+    "shortLang": "gr",
+    "fullLang": "gr-GE",
+    "langID": 3
+  },
+  "dashboard": {
+    "WELCOME": "Welcome to MobiSoft !",
+    "tabs": {
+      "MAIN": "აქტიურობა",
+      "DRIVERACTION": "მძღოლის აქცია",
+      "DRIVERSTATUS": "მძღოლის სტატუსი",
+      "ENDDAY": "დღის დასასრული",
+      "MAP": "თვალთვალის რუკა",
+      "CUSTOMERS": "კლიენტები",
+      "REMARKS": "შენიშვნები",
+      "COLLECTIONNOTES": "კოლექცია შენიშვნები",
+      "DRIVERREPORT": "მძღოლის ანგარიში"
+    }
+  },
+  "widget": {
+    "titles": {
+      "Customers": "კლიენტები",
+      "Delivery": "მიწოდება",
+      "ReturnsAgent": "დაბრუნება",
+      "Tasks": "დავალებები",
+      "Undelivered": "გამოტოვებული",
+      "Unvisited": "მისასვლელი"
+    }
+  },
+  "topbar": {
+    "search": {
+      "PLACEHOLDER": "ჩაწერეთ და ჩაწერეთ ..."
+    }
+  },
+  "sidebar": {
+    "WELCOME": "გამარჯობა",
+    "heading": {
+      "HEADER": "მთავარი ნავიგაცია"
+    },
+    "nav": {
+      "DASHBOARD": "Dashboard",
+      "SINGLEVIEW": "Single View",
+      "menu": {
+        "MENU": "Menu",
+        "SUBMENU": "Sub Menu"
+      }
+    }
+  },
+  "offsidebar": {
+    "SETTINGS": "პარამეტრები",
+    "LANGUAGES": "ენები"
+
+  },
+  "login": {
+    "header": {
+      "TITLE": "MobiSoft"
+    },
+    "loginForm": {
+      "LOGINTITLE": "Welcome to MobiPlus Layout",
+      "USERNAMEPLACEHOLDER": "შეიყვანეთ თქვენი სახელი",
+      "PASSWORD": "შეიყვანეთ პაროლი",
+      "REMEMBERME": "Remember me",
+      "LOGINBUTTON": "შესვლა"
+    },
+    "wrongLogin": {
+      "headline": "სისტემაში შესვლა ვერ მოხერხდა",
+      "message": "არასწორი მომხმარებელი ან პაროლი"
+    }
+  },
+  "filter": {
+    "COUNTRY": "აირჩიეთ ქვეყანა",
+    "DISTRIBUTION": "აირჩიეთ დისტრიბუციის ცენტრი",
+    "DRIVER": "აირჩიეთ მძღოლი",
+    "DATE": "თარიღიდან",
+    "TODATE": "პაემანზე",
+    "OKLABEL": "კარგი",
+    "CANCELLABEL": "გაუქმება"
+  },
+  "concActivityGrid": {
+    "DriverID": "მძღოლის ID",
+    "DriverName": "მძღოლის სახელი",
+    "Delivery": "მიწოდების",
+    "Shipping": "ტრანსპორტირება",
+    "Cycle": "ციკლი",
+    "Visit": "ვიზიტი",
+    "NotVisited": "არ ეწვია",
+    "NotFullDelivery": "სრული მიწოდების არ არის",
+    "AgentReturn": "აგენტის დაბრუნება",
+    "DriverReturn": "მძღოლი დაბრუნება",
+    "DriverStatus": "მძღოლის სტატუსი",
+    "Progress": "პროგრესი",
+    "Order": "დაალაგე",
+    "Customer": "კლიენტი",
+    "Address": "მისამართი",
+    "TravelHours": "ტურისტული საათი",
+    "ServiceHours": "სამსახურის საათი",
+    "OriginalTime": "ორიგინალური დრო",
+    "DeliveryTime": "მიტანის დრო",
+    "Deliveries": "მიწოდება",
+    "Pallets": "პალტები",
+    "TaskDate": "სამუშაო თარიღი",
+    "Tasks": "დავალებები"
+  },
+  "buttonCaptions": {
+    "CloseModal": "დახურვა",
+    "searchGrid": "ძიება",
+    "AddTask": "ახალი დავალება",
+    "SaveTask": "დავალების შენახვა",
+    "DeleteTask": "წაშლა",
+    "ExportCSV": "ექსპორტი CSV- ზე"
+  },
+  "mapsSettings": {
+    "TrucksView": "სატვირთო მანქანები",
+    "VisitView": "ვიზიტი",
+    "RoadsView": "გზები"
+  },
+  "deleteRowWarnings": {
+    "confirmTitle": "დარწმუნებული ხარ?",
+    "confirmMainText": "დარწმუნებული ხარ რომ წაშლა გინდა?",
+    "confirmButtonText": "დიახ, წაშალე!",
+    "cancelButtonText": "არა, გაუქმება!",
+    "deleted": "წაიშალა",
+    "deletedText": "არჩეული სტრიქონი წაიშალა.",
+    "Cancelled": "გაუქმდა",
+    "CancelledText": "შერჩეული რიგი უსაფრთხოა :)"
+  },
+  "driverStatus": {
+    "UpdateDate": "ბოლო განახლება",
+    "LineDownload": "მიღებული მონაცემები",
+    "Wise": "დატოვე საწყობი",
+    "ToDiplomat": "გზაზე საწყობი",
+    "LineEnded": "ჩამოსვლა საწყობში",
+    "DriverID": "მძღოლის ID",
+    "DriverName": "მძღოლის სახელი",
+    "Cycle": "ციკლი",
+    "ImgLeaveBB": "დატოვე B&B",
+    "ImgArriveBB": "ჩამოსვლა B&B",
+    "TaskTime": "სამუშაო დრო",
+    "ShipmentID": "გადაზიდვის ID",
+    "Customer": "კლიენტი",
+    "CustAddress": "დამკვეთი მისამართი",
+    "TaskID": "სამუშაო ID",
+    "DocNumber": "დოკუმენტის ნომერი",
+    "ReportCode": "ანგარიშის კოდექსი",
+    "Description": "აღწერა",
+    "Comment": "კომენტარი",
+    "LastChange": "ბოლო ცვლილება"
+  },
+  "tasksDataGrid": {
+    "TaskID": "სამუშაო ID",
+    "UsersTasksName": "მომხმარებლის ამოცანების სახელი",
+    "TaskUser": "სამუშაო მომხმარებელი",
+    "CustomerCode": "მომხმარებლის კოდი",
+    "CustAddress": "დამკვეთი მისამართი",
+    "CustCity": "დამკვეთი ქალაქი",
+    "TaskTypeID": "სამუშაო TypeID",
+    "TaskTypeDesc": "სამუშაოების ტიპი",
+    "TaskDesc": "დავალების აღწერა",
+    "TaskEdit_Driver": "მძღოლი",
+    "TaskEdit_Customer": "კლიენტი",
+    "TaskEdit_Address": "მისამართი",
+    "TaskEdit_City": "ქალაქი",
+    "TaskEdit_FromDate": "თარიღიდან",
+    "TaskEdit_ToDate": "პაემანზე",
+    "TaskEdit_TypeTask": "სამუშაოების ტიპი",
+    "TaskEdit_TaskDesc": "დავალების აღწერა",
+    "TaskEdit_Title": "ახალი დავალება"
+  },
+  "endDayGrid": {
+    "DriverID": "მძღოლის ID",
+    "DriverName": "მძღოლის სახელი",
+    "Shipping": "ტრანსპორტირება",
+    "AgentReturn": "აგენტის დაბრუნება",
+    "DriverReturn": "მძღოლი დაბრუნება",
+    "DriverStatus": "მძღოლის სტატუსი",
+    "DistansePlanned": "დაგეგმილი მანძილი",
+    "DistanseReal": "სინამდვილეში დაშორება",
+    "Customer": "კლიენტი",
+    "Address": "მისამართი",
+    "Shipment": "გადაზიდვა",
+    "CollectedSurfaces": "შეგროვებული ზედაპირები",
+    "searchGrid": "ძიება",
+    "ShipmentDetails": "გადაზიდვა",
+    "Order": "დაალაგე",
+    "Delivery": "მიწოდების",
+    "Status": "სტატუსი"
+  },
+  "notesCollectionGrid": {
+    "AgentID": "აგენტის ID",
+    "DriverName": "მძღოლის სახელი",
+    "Customer": "კლიენტი",
+    "TaskDescription": "დავალების აღწერა",
+    "DeliveryNum": "მიწოდების ნომერი",
+    "InvoiceComment": "ინვოისის კომენტარი",
+    "CustomerComment": "მომხმარებელთა კომენტარი",
+    "DeliveryStatus": "მიტანის სტატუსი"
+  },
+  "agentsReportNTGrid": {
+    "Driver": "მძღოლი",
+    "ShipmentID": "გადაზიდვა ID",
+    "Customer": "კლიენტი",
+    "ReportDescription": "ანგარიშის აღწერა",
+    "Delivery": "მიწოდების"
+  },
+  "agentsReportGrid": {
+    "DocStartTime": "დაწყების დრო",
+    "DriverName": "მძღოლის სახელი",
+    "Reference": "მითითება",
+    "Customer": "კლიენტი",
+    "ShipmentNumber": "გადაზიდვის ნომერი",
+    "Item": "საქონელი",
+    "QTY": "QTY",
+    "ReasonDescription": "მიზეზი აღწერა"
+  },
+  "customerGrid": {
+    "TaskDate": "სამუშაო თარიღი",
+    "Shipment": "გადაზიდვა",
+    "DriverName": "მძღოლის სახელი",
+    "Customer": "კლიენტი",
+    "CustAddress": "მისამართი",
+    "TravelHours": "ტურისტული საათი",
+    "ServiceHours": "სამსახურის საათი",
+    "OriginalTime": "ორიგინალური დრო",
+    "DeliveryTime": "მიტანის დრო",
+    "Deliveries": "მიწოდება",
+    "Pallets": "პალტები",
+    "AgentReturn": "აგენტის დაბრუნება",
+    "DriverReturn": "მძღოლი დაბრუნება",
+    "ReportGPS_Lat": "Lat",
+    "ReportGPS_Lon": "Lon",
+    "TaskDescription": "დავალების აღწერა",
+    "DeliveryNum": "მიწოდების ნომერი",
+    "Comment": "კომენტარები",
+    "Description": "აღწერა",
+    "Quality": "ხარისხი",
+    "Mission": "მისია"
+  }
+}

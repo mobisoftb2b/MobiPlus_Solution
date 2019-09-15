@@ -1,0 +1,42 @@
+﻿[
+  [
+    {
+      "DistrID": 5010,
+      "DistributionCenterDesc": "Diplomat Tbilisi Plant"
+    },
+    {
+      "DistrID": 5020,
+      "DistributionCenterDesc": "Diplomat Samtredia Plant"
+    },
+    {
+      "DistrID": 5021,
+      "DistributionCenterDesc": "სამტრედია"
+    },
+    {
+      "DistrID": 5022,
+      "DistributionCenterDesc": "samtredia new"
+    },
+    {
+      "DistrID": 5040,
+      "DistributionCenterDesc": "ქ.ბათუმი"
+    },
+    {
+      "DistrID": 5050,
+      "DistributionCenterDesc": "ქ.ფოთი"
+    },
+    {
+      "DistrID": 5060,
+      "DistributionCenterDesc": "თელავი"
+    },
+    {
+      "DistrID": 5080,
+      "DistributionCenterDesc": "გორი"
+    }
+  ],
+  [
+    {
+      "DistrID": 1000,
+      "DistributionCenterDesc": "דיפלומט מפיצים (1968) בע\"מ"
+    }
+  ]
+] 

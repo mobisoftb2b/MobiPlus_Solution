@@ -1,0 +1,2276 @@
+﻿body {
+    /*background: #b6b7bc;*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    direction: rtl;
+    text-align: right;
+    vertical-align: top;
+    margin: 0 auto;
+    width: 100%; /*padding-bottom: 2em;*/
+    background-color: #E2E3E4;
+    overflow-y: scroll;
+}
+
+.dLoginBox {
+    width: 350px;
+    height: 170px;
+    border: 1px groove black;
+    background-color: #4F81BD;
+    color: #E2E3E4;
+    font-size: 14px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.dLoginHeadText {
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.btn {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+    .btn.login {
+        width: 150px;
+        height: 25px;
+        background-color: #20255A;
+        color: #E2E3E4;
+    }
+
+.LoginMsg {
+    text-align: right;
+    width: 300px;
+    padding-right: 30px;
+    color: #DA3039;
+}
+
+.mpHeadRow {
+    width: 100%;
+    height: 50px;
+    background-color: #4F81BD;
+    border-bottom: 1px solid black;
+}
+
+.imgUsr {
+    cursor: pointer;
+}
+
+.dUsr {
+    width: 200px;
+    float: left;
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 5px;
+    height: 40px;
+    z-index: 9999;
+}
+
+.dMenu {
+    float: right;
+    text-align: right;
+    margin-right: 10px;
+    margin-top: 15px;
+    height: 40px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.dmHeaderText {
+    float: left;
+    width: 500px;
+    color: White;
+    margin-top: 10px;
+    font-size: 26px;
+    text-align: right;
+    padding-left: 20%;
+}
+
+
+.LblUsr {
+    font-size: 16px;
+    color: White;
+    cursor: pointer;
+    height: 40px;
+}
+
+.dImgUsr {
+    width: 42px;
+    float: left;
+}
+
+.dLblUsr {
+    width: 150px;
+    float: right;
+    padding-top: 10px;
+}
+
+.dLo {
+    text-align: left;
+    direction: ltr;
+    margin-top: 5px;
+    width: 200px;
+    z-index: 9999;
+}
+
+.dLo2 {
+    background-color: #4F81BD; /*position: fixed;*/
+    width: 150px;
+    height: 50px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    display: none;
+    z-index: 9999;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.dLo3 {
+    padding-top: 20px;
+    padding-left: 80px;
+    cursor: pointer;
+}
+
+.dLo4 {
+    float: left;
+    width: 20px;
+}
+
+.dLo5 {
+    float: left;
+    width: 35px;
+    text-align: left;
+    margin-top: 8px;
+    font-size: 14px;
+    text-decoration: underline;
+    color: White;
+}
+
+.boxlogout {
+    direction: ltr;
+    z-index: 9999;
+    position: absolute;
+    left: 0;
+    top: 45px;
+}
+
+/********************************************slideshow***********************************/
+#slideshow {
+    position: relative;
+    height: 180px;
+}
+
+    #slideshow div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 8;
+    }
+
+        #slideshow div.active {
+            z-index: 10;
+        }
+
+        #slideshow div.last-active {
+            z-index: 9;
+        }
+/******************************************end slideshow*************************************/
+.Img1 {
+    background-image: url('../img/slide1.png');
+    height: 175px;
+    width: 960px;
+}
+
+.Img2 {
+    background-image: url('../img/slide2.png');
+    height: 175px;
+    width: 960px;
+}
+
+.Img3 {
+    background-image: url('../img/slide3.png');
+    height: 175px;
+    width: 960px;
+}
+
+.revach {
+    margin-top: 20px;
+}
+
+.MainImgData {
+    width: 960px;
+}
+
+.Back {
+    padding-top: 70px;
+    padding-left: 10px;
+}
+
+.idText {
+    padding-left: 350px;
+    padding-top: 63px;
+    color: White;
+    font-size: 20px;
+    width: 550px;
+    text-align: right;
+    font-weight: 700;
+    font-family: Tahoma;
+}
+
+.Next {
+    padding-top: 70px;
+    padding-left: 920px;
+}
+
+.hpHeadText {
+    font-size: 18px;
+    color: #27996B;
+    font-weight: 700;
+    padding-right: 5px;
+}
+
+.hpRightTop {
+    width: 540px;
+    float: right;
+    padding-top: 10px;
+    text-align: right;
+    height: 250px;
+}
+
+.hpText {
+    color: #323232;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: right;
+}
+
+.isbg {
+    width: 960px;
+}
+
+.lblDataImg {
+    background-color: #4F81BD;
+}
+
+.mainfotter {
+    background-color: #4F81BD;
+    text-align: center;
+    color: White;
+    height: 25px;
+    font-size: 14px;
+    padding-top: 9px;
+}
+
+.column {
+    width: 220px;
+    float: left;
+    padding-bottom: 100px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.portlet {
+    margin: 0 1em 1em 0;
+    padding: 0.3em;
+    width: 320px;
+}
+
+.portlet-header {
+    padding: 0.2em 0.3em;
+    margin-bottom: 0.5em;
+    position: relative;
+    font-size: 14px;
+    border: 1px solid #aaaaaa;
+    background-color: #4F81BD !important;
+    color: #222222;
+    font-weight: bold;
+    background-color: White;
+}
+
+.portlet-toggle {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -8px;
+    background-color: White;
+}
+
+.portlet-content {
+    padding: 0.4em;
+    font-size: 12px;
+    background-color: White;
+}
+
+.portlet-placeholder {
+    border: 1px dotted black;
+    margin: 0 1em 1em 0;
+    height: 500px;
+    width: 99%;
+    background-color: White;
+}
+
+.ifr {
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    z-index: 999999;
+    background-color: White;
+}
+
+.tab {
+    background-color: #E2E3E4;
+}
+
+.tabss {
+    background-color: #E2E3E4;
+}
+
+.dWidgetsList {
+    min-width: 200px;
+    min-height: 170px;
+    border: 1px groove black;
+    background-color: #4F81BD;
+    color: White;
+    font-size: 14px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    z-index: 9999;
+    margin-right: 20px;
+    display: none;
+}
+
+.tblW {
+    /*margin-top:3px;     margin-bottom:3px;*/
+}
+
+.WName {
+    /*text-decoration:underline;*/
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+}
+
+    .WName:hover {
+        color: Black;
+    }
+
+.tdAddWidget {
+    background-color: #4F81BD;
+    color: White;
+    border: 1px solid black;
+    padding-right: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.l {
+    min-width: 200px;
+}
+
+.nodata {
+    margin-top: 20%;
+    border: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.dX {
+    color: Black;
+    cursor: pointer;
+    margin-top: 2px;
+    text-align: left;
+}
+
+    .dX:hover {
+        color: White;
+    }
+
+.pt1 {
+}
+
+#jQGrid {
+    font-size: 12px;
+}
+
+.ui-widget-header {
+    direction: rtl;
+    text-align: right;
+}
+
+
+
+.ui-jqgrid-bdiv {
+    height: 100% !important;
+}
+
+.MsgT {
+    background-color: Green !important;
+    color: White;
+}
+
+.MsgError {
+    background-color: Red !important;
+    color: White;
+}
+
+.ui-jqgrid tr.jqgrow td {
+    white-space: normal !important;
+}
+
+.winProp {
+    color: White;
+    position: absolute;
+    right: 4px; /*top: 100px;*/
+    margin-top: -3px;
+    cursor: pointer;
+    background-color: #414141;
+    height: 110px;
+    width: 180px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    display: none;
+    direction: rtl;
+    text-align: right;
+    z-index: 9999;
+}
+
+.imgN {
+    color: White;
+    position: absolute;
+    right: 4px; /*top: 75px;*/
+    margin-top: -33px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.txtDate {
+    width: 117px;
+    margin-top: 10px;
+}
+
+.tblC {
+    width: 99%;
+    height: 100%;
+}
+
+.HomeMSG {
+    color: White;
+    position: absolute;
+    right: 35px; /*top: 75px;*/
+    margin-top: -33px;
+    cursor: pointer;
+    z-index: 9997;
+    text-align: right;
+}
+
+.HomeLogo {
+    color: White;
+    position: absolute;
+    text-align: center; /*top: 75px;*/
+    margin-top: 0px;
+    cursor: pointer;
+    z-index: 1;
+    text-align: right;
+    width: 200px;
+    left: 100px;
+}
+
+.dynDivPortlet {
+    background-color: White;
+    border: 4px solid #CDCDCD;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.EditWinBoxVersions {
+    top: 100px;
+    left: 40%;
+    position: absolute;
+    width: 320px;
+    height: 300px;
+    border: 2px groove black;
+    background-color: #4F81BD;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display: none;
+}
+
+.EditWinBoxLayoutVersions {
+    top: 100px;
+    left: 40%;
+    position: absolute;
+    width: 320px;
+    height: 300px;
+    border: 2px groove black;
+    background-color: #4F81BD;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display: none;
+}
+
+.EditWinBoxGraphs {
+    top: 100px;
+    left: 40%;
+    position: absolute;
+    width: 400px;
+    height: 380px;
+    border: 2px groove black;
+    background-color: #4F81BD;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display: none;
+}
+
+.EditWinBox {
+    top: 100px;
+    left: 40%;
+    position: absolute;
+    width: 400px;
+    height: 440px;
+    border: 2px groove black;
+    background-color: #4F81BD;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display: none;
+}
+
+.EditWinX {
+    text-align: right;
+}
+
+.imngX {
+    cursor: pointer;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.imgRef {
+    height: 18px;
+}
+
+.EditWinHead {
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+.EditWinTbl {
+    text-align: right;
+    padding-right: 20px;
+}
+
+.EditWin.item {
+    color: #E2E3E4;
+    vertical-align: top;
+    font-weight: 700;
+}
+
+.EditWin.val {
+    color: White;
+}
+
+.EditWin.btn {
+    width: 100px;
+    height: 30px;
+    background-color: #20255A;
+    color: White;
+    font-size: 14px;
+}
+
+.dBtns {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.leftt {
+    text-align: left;
+    direction: ltr;
+}
+
+.EditWinMDBox {
+    top: 100px;
+    left: 40%;
+    position: absolute;
+    width: 340px;
+    height: 360px;
+    border: 2px groove black;
+    background-color: #4F81BD;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display: none;
+}
+
+.EditWinMDX {
+    text-align: right;
+}
+
+.imngX {
+    cursor: pointer;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.imgRef {
+    height: 18px;
+}
+
+.EditWinMDHead {
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.EditWinMDTbl {
+    text-align: right;
+    padding-right: 20px;
+}
+
+.EditWinMD.item {
+    color: #E2E3E4;
+    vertical-align: top;
+    font-weight: 700;
+}
+
+.EditWinMD.val {
+    color: White;
+}
+
+.EditWinMD.btn {
+    width: 100px;
+    height: 30px;
+    background-color: #20255A;
+    color: White;
+    font-size: 14px;
+}
+
+.dBtns {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.EditWinMDMsg {
+    text-align: center;
+    color: Red;
+    padding-bottom: 10px;
+}
+
+.msgRed {
+    color: #F91A1D;
+    font-weight: 700;
+}
+
+.EditWinBoxJumpGrid {
+    left: 30%;
+    position: absolute;
+    width: 820px;
+    height: 500px;
+    border: 2px groove black;
+    background-color: #4F81BD;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display: none;
+}
+
+.JumpWinHead {
+    text-align: center;
+    font-size: 20px;
+    float: left;
+    width: 96%;
+}
+
+.JumpWiX {
+    text-align: right;
+    width: 3%;
+    float: right;
+}
+
+.JumpWiXLeft {
+    text-align: left;
+    width: 3%;
+    margin-left: 15px;
+    float: left;
+}
+
+.dColName {
+    white-space: normal !important;
+}
+
+.loadingDiv {
+    position: absolute;
+    z-index: 9999;
+    padding-right: 47%;
+    padding-top: 20%;
+    display: none;
+}
+
+.dLoadingBoxx {
+    width: 100px;
+    height: 70px;
+    border: 2px groove black;
+    background-color: #4F81BD;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.djMenu {
+    position: absolute;
+    background-color: #414141;
+    z-index: 9999;
+    width: 100px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+    padding-bottom: 3px;
+    display: none;
+}
+
+.djMenu2 {
+    position: absolute;
+    background-color: #414141;
+    z-index: 9999;
+    width: 100px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+    padding-bottom: 3px;
+    display: none;
+}
+
+.djMenu3 {
+    position: absolute;
+    background-color: #414141;
+    z-index: 9999;
+    width: 100px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+    padding-bottom: 3px;
+    display: none;
+}
+
+.JMenuItem {
+    border-bottom: 2px solid white;
+    font-size: 14px;
+    height: 25px;
+}
+
+    .JMenuItem:hover {
+        background-color: #888A83;
+    }
+
+.menuLink {
+    text-decoration: none;
+    color: White;
+    width: 70px;
+    text-align: center;
+}
+
+    .menuLink:hover {
+        color: Orange;
+    }
+
+.menuItem {
+    color: White;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 90px;
+    text-align: center;
+    padding-top: 7px;
+}
+
+.innerMSG {
+    background-color: #414141;
+    width: 200px;
+    height: 35px;
+    text-align: center;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.Selected {
+    font-size: 14px;
+    font-weight: 700;
+    height: 25px;
+    color: #414141;
+    background-color: #888A83;
+    border: 1px groove #FD9100;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.ui-jqgrid-sortable {
+    color: #414141 !important;
+}
+
+.dMerchandiseBox {
+    margin-top: 20px;
+    margin-bottom: 5px; /*left:20px;*/
+    width: 555px;
+    height: 38px;
+    padding-bottom: 5px;
+    border: 1px groove #FD9100;
+    background-color: #888A83;
+    color: #414141;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    float: right;
+}
+
+.dMerchandiseItem {
+    text-align: center;
+    width: 23.5%;
+    height: 30px;
+    margin-top: 5px;
+    margin-left: 5px;
+    vertical-align: middle;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid white;
+    cursor: pointer;
+    float: left;
+}
+
+    .dMerchandiseItem:hover {
+        background-color: #FD9100;
+        color: White;
+    }
+
+    .dMerchandiseItem.Selected {
+        background-color: #FD9100;
+        color: White;
+    }
+
+.dMerchandiseItemText {
+    height: 100%;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.mifr {
+    width: 100%;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.mmifr {
+    height: 720px;
+}
+
+.ifM_Merchandise {
+    width: 45%;
+    height: 900px;
+}
+
+.barifr {
+    z-index: 7778;
+}
+
+.dMerchandiseDTBox {
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    width: 330px;
+    height: 38px;
+    padding-bottom: 5px;
+    border: 1px groove #FD9100;
+    background-color: #888A83;
+    color: #414141;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    text-align: center;
+    float: right;
+}
+
+.txt {
+    width: 70px;
+}
+
+.dmHead {
+    width: 50px;
+    float: right;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.dmItem {
+    margin-top: 5px;
+    float: right;
+}
+
+.dMerchandiseItemDT {
+    text-align: center;
+    height: 30px;
+    margin-top: 5px;
+    margin-right: 5px;
+    vertical-align: middle;
+    cursor: pointer;
+    float: right;
+}
+
+.dMerchandise_rightDDLs {
+    width: 330px;
+    margin-top: 10px;
+    margin-right: 20px;
+    border: 1px groove #FD9100;
+    background-color: #888A83;
+    color: #414141;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.Merchandise_right {
+    width: 40%;
+    float: right;
+    padding-right: 10px;
+}
+
+.Merchandise_left {
+    width: 450px;
+    text-align: left;
+    position: absolute;
+    background-color: #E2E3E4;
+    z-index: 9999;
+}
+
+.openLeftBar {
+    width: 5%;
+    text-align: left;
+    float: left;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.ddlFilter {
+    font-size: 14px;
+    vertical-align: top;
+}
+
+.ddlFilterItem {
+    border: none;
+    background-color: #888A83;
+    color: #414141;
+    font-size: 14px;
+    width: 320px;
+    color: White;
+}
+
+.line {
+    border-bottom: 2px solid white;
+}
+
+.aLink {
+    color: White;
+}
+
+.dTblCustomers {
+    width: 305px;
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.dConCust {
+    width: 600px;
+}
+
+.bgCust {
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    width: 46.3%;
+    height: 100%;
+    padding-bottom: 5px;
+    border: 1px groove #FD9100;
+    background-color: #888A83;
+    color: #414141;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    text-align: center;
+    float: right;
+}
+
+.bgCustLeft {
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    width: 48.9%;
+    height: 100%;
+    padding-bottom: 5px;
+    border: 1px groove #FD9100;
+    background-color: #888A83;
+    color: #414141;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    text-align: center;
+    float: right;
+}
+
+.agent {
+    margin-bottom: 5px;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 5px;
+    border: 1px groove #FD9100;
+    background-color: #4F81BD;
+    color: #414141;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    text-align: center;
+}
+
+.tblTRCust {
+    border-bottom: 2px solid white;
+    text-align: right;
+}
+
+.tblTRCustName {
+    border-bottom: 2px solid white;
+    width: 280px;
+    text-align: right;
+    color: White;
+}
+
+.tblTRCustDates {
+    border-bottom: 2px solid white;
+    width: 300px;
+    text-align: right;
+    color: White;
+}
+
+.CustAgentHead {
+    color: White;
+}
+
+.dMoveBox {
+    text-align: center;
+    top: 100px;
+    position: absolute;
+    width: 100%;
+    display: none;
+    z-index: 9999;
+}
+
+.dMoveBoxin {
+    width: 240px;
+    text-align: right;
+    height: 210px;
+    border: 2px groove black;
+    background-color: #888A83;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.dMoveHead {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.btnMove {
+    width: 80px;
+    height: 25px;
+    background-color: #20255A;
+    color: White;
+}
+
+.btnPreMove {
+    width: 120px;
+    height: 25px;
+    background-color: #20255A;
+    color: #E2E3E4;
+}
+
+.imngX {
+    cursor: pointer;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.loadingCust {
+    display: none;
+    position: absolute;
+    left: 48%;
+    top: 190px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 2px groove black;
+    height: 100px;
+    width: 120px;
+    background-color: #20255A;
+    color: White;
+}
+
+.CustDates {
+    font-size: 12px;
+    color: Black;
+    margin-right: 20px;
+}
+
+.tblTRCustCB {
+    padding-right: 5px;
+    border-bottom: 2px solid white;
+    text-align: right;
+}
+
+.tdRev {
+    width: 45%;
+}
+
+.dLayoutDesigner_all {
+    margin-top: 10px;
+    width: 80%;
+    border: 2px groove gray;
+    height: 600px;
+    float: left;
+    text-align: right;
+}
+
+.dObjects {
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 15%;
+    float: right;
+    direction: rtl;
+    text-align: right;
+}
+
+.ui-state-highlight {
+    /*width: 140px;
+    height: 180px;*/
+    line-height: 1.2em;
+}
+
+.Fragment {
+    width: 140px;
+    height: 180px;
+    border: 1px groove gray;
+    margin-top: 2px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.FragmentDiv {
+    width: 200px;
+    height: 110px;
+    border: 1px groove gray;
+    float: right;
+    margin: 2px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.FragmentDivEmpty {
+    width: 100%;
+    height: 12px;
+    float: none;
+    /*background-color:Red;*/
+}
+
+.FragmentDivEmptyRight {
+    width: 20px;
+    height: 80px;
+    float: right;
+}
+
+.FragmentHead {
+    background-color: #4F6380;
+    height: 25px;
+    text-align: right;
+}
+
+.FragmentHeadText {
+    color: White;
+    padding-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.report {
+    position: fixed;
+    vertical-align: middle;
+    font-size: 26px;
+    text-align: center;
+    font-weight: 700;
+    color: #1F3565;
+}
+
+.iiimg {
+    width: 140px;
+    height: 150px;
+}
+
+.imgg {
+    text-align: center;
+}
+
+.divForm {
+    margin-top: 10px;
+    width: 920px;
+    border: 2px groove gray;
+    float: right;
+    text-align: right;
+    height: 610px;
+}
+
+.EditForm.item {
+    color: White;
+    vertical-align: top;
+    font-weight: 700;
+    vertical-align: top;
+}
+
+.EditForm.val {
+    color: White;
+    vertical-align: top;
+}
+
+.EditForm.btn {
+    width: 100px;
+    height: 30px;
+    background-color: #20255A;
+    color: White;
+    font-size: 14px;
+}
+
+.EditWinBoxEditForm {
+    left: 30%;
+    position: absolute;
+    width: 400px;
+    height: 240px;
+    border: 2px groove black;
+    background-color: #888A83;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display: none;
+}
+
+.EditWinBoxEditTabs {
+    left: 30%;
+    position: absolute;
+    width: 400px;
+    height: 540px;
+    border: 2px groove black;
+    background-color: #888A83;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display: none;
+}
+
+.EditWinBoxReports {
+    position: absolute;
+    width: 1180px;
+    min-height: 210px;
+    border: 2px groove black;
+    background-color: #888A83;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display: none;
+    padding-bottom: 20px;
+}
+
+.EditWinBoxAddReport {
+    left: 30%;
+    position: absolute;
+    width: 97%;
+    height: 640px;
+    border: 2px groove black;
+    background-color: #888A83;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display: none;
+}
+
+.ReportWin.item {
+    color: black;
+    vertical-align: top;
+    font-weight: 700;
+}
+
+.ReportWin.val {
+    color: White;
+}
+
+.EdReportWinitWin.btn {
+    width: 100px;
+    height: 30px;
+    background-color: #20255A;
+    color: White;
+    font-size: 14px;
+}
+
+.EditWinReportBox {
+    top: 100px;
+    left: 40%;
+    position: absolute;
+    width: 340px;
+    height: 400px;
+    border: 2px groove black;
+    background-color: #4F81BD;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display: none;
+}
+
+.imgrep {
+    width: 40px;
+    height: 60px;
+    border: 1px solid black;
+}
+
+.FragmentM {
+    width: 200px;
+    height: 110px;
+    border: 1px groove gray;
+    margin-top: 2px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dHeadCat {
+    background-color: black;
+    color: White;
+    font-weight: 700;
+    padding-right: 5px;
+    text-align: right;
+    height: 25px;
+}
+
+.repItem {
+    text-align: left;
+    width: 130px;
+    font-size: 12px;
+}
+
+.bor {
+    background-color: Gray;
+    color: White;
+}
+
+.dMenus {
+    width: 195px;
+    float: right;
+    text-align: right;
+    margin-right: 10px;
+    margin-top: 10px;
+    border: 2px groove gray;
+}
+
+.dMenuItems {
+    margin-right: 40px;
+    width: 60%;
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.dAllMenus {
+    height: 600px;
+    clear: both;
+}
+
+.dMenuHeadLine {
+    text-align: center;
+    font-size: 20px;
+    background-color: Gray;
+    width: 195px;
+    color: White;
+}
+
+.EditWinBoxEditMenu {
+    left: 40%;
+    position: absolute;
+    width: 350px;
+    height: 210px;
+    border: 2px groove black;
+    background-color: #888A83;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display: none;
+}
+
+.EditWinMenuItemBox {
+    left: 40%;
+    position: absolute;
+    width: 350px;
+    height: 260px;
+    border: 2px groove black;
+    background-color: #888A83;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display: none;
+}
+
+.dAllImgs {
+    position: absolute;
+    top: 100px;
+    left: 40%;
+    width: 450px;
+    height: 400px;
+    overflow-y: scroll;
+    border: 1px groove gray;
+    display: none;
+    z-index: 9999;
+    background-color: #888A83;
+    border: 2px groove gray;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.EditWinImageItemBox {
+    left: 40%;
+    position: absolute;
+    width: 350px;
+    height: 220px;
+    border: 2px groove black;
+    background-color: #888A83;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display: none;
+}
+
+.EditWinProjects {
+    top: 5%;
+    left: 41%;
+    position: absolute;
+    width: 350px;
+    height: 460px;
+    border: 2px groove black;
+    background-color: #888A83;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    text-align: right;
+}
+
+.prHead {
+    background-color: #4F81BD;
+    color: White;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.prItem {
+    height: 30px;
+    width: 120px;
+    text-align: right;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+    .prItem:hover {
+        color: Orange;
+    }
+
+.dNAghents {
+    width: 260px;
+    margin-right: 20px;
+    float: right;
+}
+
+.dNNumertors {
+    width: 35%;
+    float: right;
+}
+
+.nAgentsHead {
+    width: 250px;
+    text-align: center;
+    font-size: 14px;
+    background-color: Gray;
+    color: White;
+}
+
+.nAgentsHeadFilter {
+    width: 245px;
+    background-color: Gray;
+    color: White;
+    padding-right: 5px;
+}
+
+.select option[selected] {
+    color: red;
+}
+
+.dNumertorsTblAll {
+}
+
+.tdNAll {
+    border-bottom: 2px solid white;
+}
+
+.tdNTxtAll {
+    padding-right: 62px;
+}
+
+.DynRow {
+    height: 30px;
+}
+
+.nTd1 {
+    width: 120px;
+}
+
+.ShowWinReportBoxParms {
+    top: 100px;
+    left: 15%;
+    position: absolute;
+    width: 340px;
+    height: 400px;
+    border: 2px groove black;
+    background-color: #4F81BD;
+    color: white;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    text-align: left;
+    direction: ltr;
+}
+
+.ParamHead {
+    text-align: center;
+    border-bottom: 2px solid white;
+    margin-bottom: 10px;
+}
+
+.rig {
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.dTBL {
+    width: 1160px;
+}
+
+.clseccc {
+    display: none;
+}
+
+.EditFr {
+    display: none;
+}
+
+.dFilterControls {
+    height: 270px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.BorderBot1 {
+    border-bottom: 1px solid #4F81BD;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: White;
+    color: Black;
+}
+
+.RowndTxt {
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+}
+
+.SectionWidjet {
+    -webkit-box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.65);
+    -moz-box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.65);
+    box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.65);
+    cursor: pointer;
+    margin-right: 8px;
+    margin-top: 8px;
+}
+
+.AllSectionWidjet {
+    overflow-y: auto;
+}
+
+.winTemplets {
+    display: none;
+    width: 66%;
+    height: 85%;
+    position: absolute;
+    right: 15%;
+    top: 10%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    background-clip: padding-box;
+    box-sizing: border-box;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    background-color: #fff;
+    outline: 0;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    z-index: 9999;
+    text-align: right;
+}
+
+.newx {
+    text-align: right;
+    padding-right: 8px;
+    padding-top: 3px;
+    color: red;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+    .newx:hover {
+        color: black;
+    }
+
+.TempletBox {
+    width: 300px;
+    height: 150px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    background-clip: padding-box;
+    box-sizing: border-box;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    background-color: #fff;
+    outline: 0;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: white;
+    z-index: 9999;
+    margin: 5px;
+    font-size: 11px;
+    float: right;
+    cursor: pointer;
+}
+
+.TempletHead {
+    width: 300px;
+    height: 25px;
+    z-index: 9999;
+   margin-right:10px;
+    font-size: 15px;
+    float: right;
+    line-height: 1.42857143;
+}
+
+.PerG {
+    color: #780000;
+}
+
+.rowAllvalue {
+    height: 6px;
+    border: 1px solid #C0C0C0;
+    width: 96%;
+    border-radius: 6px;
+}
+
+.rowAllvalue2 {
+    height: 17px;
+    border: 1px solid #C0C0C0;
+    width: 96%;
+    border-radius: 6px;
+    color: white;
+    font-size: 12px;
+}
+
+.rowAllvalue3 {
+    margin-top: 5px;
+    height: 3px;
+    border: 1px solid #C0C0C0;
+    width: 96%;
+    border-radius: 2px;
+    color: white;
+    font-size: 12px;
+    background-color: #232332;
+}
+
+.dValue1 {
+    background-color: red;
+    height: 6px;
+    border: 1px solid #C0C0C0;
+    border-radius: 6px;
+}
+
+.dValue2 {
+    background-color: yellowgreen;
+    height: 6px;
+    border: 1px solid #C0C0C0;
+    border-radius: 6px;
+}
+
+.dValue3 {
+    background-color: darkorchid;
+    height: 6px;
+    border: 1px solid #C0C0C0;
+    border-radius: 6px;
+}
+
+.dValue4 {
+    background-color: ActiveCaption;
+    height: 6px;
+    border: 1px solid #C0C0C0;
+    border-radius: 6px;
+}
+
+.dValue5 {
+    background-color: beige;
+    height: 6px;
+    border: 1px solid #C0C0C0;
+    border-radius: 6px;
+}
+
+.dValue6 {
+    background-color: steelblue;
+    height: 6px;
+    border: 1px solid #C0C0C0;
+    border-radius: 6px;
+}
+
+.dValue7 {
+    background-color: cadetblue;
+    height: 6px;
+    border: 1px solid #C0C0C0;
+    border-radius: 6px;
+}
+
+.dValue8 {
+    background-color: mediumorchid;
+    height: 6px;
+    border: 1px solid #C0C0C0;
+    border-radius: 6px;
+}
+
+.dValue12 {
+    background-color: red;
+    height: 15px;
+    border: 1px solid #C0C0C0;
+    border-radius: 6px;
+    text-align: center;
+    padding-top: 2px;
+}
+
+.dValue22 {
+    background-color: yellowgreen;
+    height: 15px;
+    border: 1px solid #C0C0C0;
+    border-radius: 6px;
+    text-align: center;
+    padding-top: 2px;
+}
+
+.dValue32 {
+    background-color: darkorchid;
+    height: 15px;
+    border: 1px solid #C0C0C0;
+    border-radius: 6px;
+    text-align: center;
+    padding-top: 2px;
+}
+
+.dValue33 {
+    background-color: aqua;
+    height: 15px;
+    border: 1px solid #C0C0C0;
+    border-radius: 6px;
+    text-align: center;
+    color: black;
+    padding-top: 2px;
+}
+
+.dValueVis {
+    background-color: #EEF1F2;
+    height: 3px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.tblValues {
+    margin: 5px;
+}
+
+.ColordBox {
+    height: 100%;
+    background-color: #E84C3D;
+}
+
+.cGreen {
+    background-color: forestgreen;
+}
+
+.cBlue {
+    background-color: #2A5699;
+}
+
+.cGray {
+    background-color: #E2E3E4;
+    color: #780000 !important;
+}
+
+.cGreenVis {
+    background-color: #13A89E;
+}
+
+.cRedVis {
+    background-color: #E84C3D;
+}
+
+.ColordMainValue {
+    padding: 20px;
+    padding-bottom: 40px;
+    color: white;
+    font-size: 24px;
+}
+
+.ColordSecondValue {
+    padding: 20px;
+    color: white;
+    font-size: 14px;
+}
+
+.Colorval1 {
+    float: right;
+}
+
+.Colorval2 {
+    float: left;
+}
+
+.tblVis {
+    margin-top: 15px;
+    width: 100%;
+    /*color:#C7E4E4;*/
+    text-align: center;
+}
+
+.tnlVisHeader {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.tnlVisItem {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.Visd {
+    height: 100%;
+}
+
+.VisHeader {
+    font-size: 20px;
+    padding-right: 10px;
+    text-align: right;
+    /*color:#C7E4E4;*/
+    padding-bottom: 2px;
+}
+
+.tblVizBorder {
+    border-right: 2px solid #717579;
+    opacity: 0.5;
+}
+
+.VisFotter {
+    /*color:#C7E4E4;*/
+    margin-top: 13px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.FeedImg {
+    width: 32px;
+    height: 32px;
+}
+
+.FeedHeader {
+    font-size: 16px;
+}
+
+.tblFeed {
+    border-bottom: 1px solid #F3F4F5;
+    font-size: 13px;
+    width: 100%;
+}
+
+.FeedMSGHeader {
+    font-size: 16px;
+    padding: 3px;
+    font-weight: 700;
+}
+
+.TempletsExample {
+    float: left;
+}
+
+.Templets.btn {
+    width: 300px;
+    height: 20px;
+    background-color: #20255A;
+    color: White;
+    font-size: 12px;
+}
+.txtSec
+{
+    width:150px;
+}
+.SecHead
+{
+    font-weight:700;
+}
+.FrgObj
+{
+   
+    margin-right: 2px;
+    margin-top: 2px;
+    width:200px;
+    height:200px;
+    background-color:white;
+    position:relative;
+}
+.SectionsSelectorObj
+{
+    position:absolute;
+    top:10%;
+    left:20%;
+    width: 300px;
+    height: 675px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    background-clip: padding-box;
+    box-sizing: border-box;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    background-color: #fff;
+    outline: 0;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: white;
+    z-index: 9999;
+    margin: 5px;
+    font-size: 11px;
+    float: right;
+    cursor: pointer;
+}
+.SectionSelectHead
+{
+
+
+}
+.modal-header2 {
+    min-height: 16.428571429px;
+    padding-top: 13px;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 18px;
+    line-height: 1.428571429;
+    color: #333;
+    background-color: #DCDCDC;
+    text-align: center;
+    height:30px;
+}
+
+.modal-header2 h3 {
+    padding-right: 0px;
+    color: #264366;
+    background-color: #DCDCDC;
+    margin-top: -10px;
+}
+
+.close {
+    float: right;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #lightgray;
+    opacity: .2;
+    filter: alpha(opacity=20);
+     margin-top: -10px;
+      margin-right:5px;
+}
+
+button.close {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .5;
+    filter: alpha(opacity=50);
+}
+
+button.close {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+.close3 {
+    float: left;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #lightgray;
+    opacity: .2;
+    filter: alpha(opacity=20);
+    margin-top: -5px;
+    margin-left:5px;
+    position:static !important;
+    
+}
+
+button.close3 {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+.close3:hover, .close3:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .5;
+    filter: alpha(opacity=50);
+}
+
+button.close3 {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+.close4 {
+    float: left;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #lightgray;
+    opacity: .2;
+    filter: alpha(opacity=20);
+    margin-left:5px;
+}
+
+button.close4 {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+.close4:hover, .close4:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .5;
+    filter: alpha(opacity=50);
+}
+
+button.close4 {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+.myModalLabel
+{
+    color:black !important;
+}
+.SectionDiv {
+    
+    border: 1px groove gray;
+    float: left;
+    margin: 2px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+.DuplicateRep
+{
+    position:absolute;
+    top:10%;
+    left:40%;
+    width: 300px;
+    height: 175px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    background-clip: padding-box;
+    box-sizing: border-box;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    background-color: #fff;
+    outline: 0;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: black;
+    z-index: 9999;
+    margin: 5px;
+    font-size: 11px;
+    float: right;
+    cursor: pointer;
+    display:none;
+}
+.DuplicateForm
+{
+    position:absolute;
+    top:10%;
+    left:40%;
+    width: 300px;
+    height: 175px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    background-clip: padding-box;
+    box-sizing: border-box;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    background-color: #fff;
+    outline: 0;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: black;
+    z-index: 9999;
+    margin: 5px;
+    font-size: 11px;
+    float: right;
+    cursor: pointer;
+    display:none;
+}

@@ -1,0 +1,574 @@
+﻿function Nav(url) {
+    window.location.href = url;
+}
+function CheckForEnter(evt, btn) {
+    if (evt.keyCode == 13) {
+        btn.click();
+    }
+}
+function logOut() {
+    Nav("../../Login.aspx");
+}
+function ShowLogOut() {
+
+    if ($('.dLo2').css("display") == "none")
+        $('.dLo2').css("display", "block");
+    else
+        $('.dLo2').css("display", "none");
+
+}
+
+function slideSwitch(isNext) {
+    var $active = $('#slideshow div.active');
+    if ($active.length == 0) $active = $('#slideshow div:last');
+
+    var $next;
+    if (isNext) {
+        $next = $active.next().length ? $active.next()
+                : $('#slideshow div:first');
+    }
+    else {
+        $next = $active.prev().length ? $active.prev()
+                : $('#slideshow div:last');
+    }
+    $active.addClass('last-active');
+
+    $next.css({ opacity: 0.0 })
+        .addClass('active')
+        .animate({ opacity: 1.0 }, 1000, function () {
+            $active.removeClass('active last-active');
+        });
+}
+function GoBack() {
+    interval = window.clearInterval(interval);
+    interval = setInterval('slideSwitch(true)', 5000);
+    slideSwitch(false);
+}
+function GoNext() {
+    interval = window.clearInterval(interval);
+    interval = setInterval('slideSwitch(true)', 5000);
+    slideSwitch(true);
+}
+function isNumber(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+}
+function setLeft(obj, child) {
+    if (obj.css("width").replace("px", "") * 1.0 + 5.0 < obj[0].scrollWidth)
+        obj.css("width", obj[0].scrollWidth);
+    else {
+        var Max = 0;
+        for (var i = 0; i < child.length; i++) {
+            if (child[i].offsetWidth > Max)
+                Max = child[i].offsetWidth + 5;
+        }
+        obj.css("width", Max);
+    }
+}
+function htmlResizablePopUp(path, message, buttonCaption, h, w) {
+    var args = new Array();
+    args[0] = message;
+    args[1] = buttonCaption;
+    if (window.showModalDialog) {
+        
+    }
+    retVal = window.showModalDialog(path, args, 'dialogHeight:' + h + 'px;unadorned:0;dialogWidth:' + w + 'px;edge:Raised;center:Yes;help:No;resizable:Yes;status:No;scroll:No;');
+    return false;
+};
+window.showModalDialog = function (arg1, arg2, arg3) {
+    var w;
+    var h;
+    var resizable = "no";
+    var scroll = "no";
+    var status = "no";
+
+    // get the modal specs
+    var mdattrs = arg3.split(";");
+    for (i = 0; i < mdattrs.length; i++) {
+        var mdattr = mdattrs[i].split(":");
+
+        var n = mdattr[0];
+        var v = mdattr[1];
+        if (n) { n = n.trim().toLowerCase(); }
+        if (v) { v = v.trim().toLowerCase(); }
+
+        if (n == "dialogheight") {
+            h = v.replace("px", "");
+        } else if (n == "dialogwidth") {
+            w = v.replace("px", "");
+        } else if (n == "resizable") {
+            resizable = v;
+        } else if (n == "scroll") {
+            scroll = v;
+        } else if (n == "status") {
+            status = v;
+        }
+    }
+
+    var left = 0;//window.screenX + (window.outerWidth / 2) - (w / 2);
+    var top = 0;//window.screenY + (window.outerHeight / 2) - (h / 2);
+    var targetWin = window.open(arg1, arg2, 'toolbar=no, location=no, directories=no, status=' + status + ', menubar=no, scrollbars=' + scroll + ', resizable=' + resizable + ', copyhistory=no, width=' + screen.width + ', height=' + screen.height + ', top=' + top + ', left=' + left + ', fullscreen=yes');
+	Maximize(targetWin);	
+ 
+}
+
+function Maximize(targetWin) 
+{
+	targetWin.outerWidth = screen.width;
+	targetWin.outerHeight = screen.height;
+	targetWin.moveTo(0,0);
+	//targetWin.screenX = 0;
+	///targetWin.screenY = 0;
+	alwaysLowered = false;
+	targetWin.focus();
+}
+
+function StrSrc(keyWord, isLocal, host) {
+    var url = window.location.href.toLocaleString().replace("http://" + host + "/MobiPlusWeb/", "");
+    $.ajax({
+        url: "http://" + host + "/MobiPlusWeb/Handlers/MainHandler.ashx?MethodName=StrSrc&keyWord=" + keyWord + "&isLocal=" + isLocal + "&url=" + url,
+        type: "Get",
+        data: '',
+        success: function (data) {
+            return data;
+        },
+        error: function () {
+            alert("failure");
+        }
+    });
+}
+function formatMoney(data, c, d, t) {
+
+    var n = data,
+    c = isNaN(c = Math.abs(c)) ? 2 : c,
+    d = d == undefined ? "." : d,
+    t = t == undefined ? "," : t,
+    s = n < 0 ? "-" : "",
+    i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "",
+    j = (j = i.length) > 3 ? j % 3 : 0;
+    return (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "") + s;
+}
+function SetFieldOnlyNumbers(id) {
+    $('#' + id).keypress(function (event) {
+
+        if (event.which != 8 && isNaN(String.fromCharCode(event.which))) {
+            event.preventDefault();
+        }
+    });
+    $('#' + id).bind('input propertychange', function () {
+        if (!isNumber($(this).val()))
+            $(this).val("");
+    });
+}
+function SetFieldOnlyNumbers(id, isClass) {
+
+    var obj = '#' + id;
+    if (isClass)
+        obj = '.' + id;
+    $(obj).keypress(function (event) {
+
+        if (event.which != 8 && event.which != 46 && isNaN(String.fromCharCode(event.which))) {
+            event.preventDefault();
+        }
+    });
+    $(obj).bind('input propertychange', function () {
+        if (!isNumber($(this).val()))
+            $(this).val("");
+    });
+}
+String.prototype.trim = function () { return this.replace(/^\s+|\s+$/g, ''); };
+
+String.prototype.ltrim = function () { return this.replace(/^\s+/, ''); };
+
+String.prototype.rtrim = function () { return this.replace(/\s+$/, ''); };
+
+String.prototype.fulltrim = function () { return this.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g, '').replace(/\s+/g, ' '); };
+
+function setDt(id) {
+    $("#" + id).datetimepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: 'dd/mm/yy',
+        timeFormat: "HH:mm"
+    });
+
+    var d = new Date();
+
+    var month = d.getMonth() + 1;
+    var day = d.getDate();
+    var hours = d.getHours();
+    var minutes = d.getMinutes();
+
+    var output = (day < 10 ? '0' : '') + day + '/' +
+                    (month < 10 ? '0' : '') + month + '/' +
+                    d.getFullYear() + " " + hours + ":" + minutes;
+
+    $('#' + id).val(output);
+}
+function setDtNoTime(id) {
+
+    $("#" + id).datepicker({
+        onSelect: function (dateText) {
+            //SetDateNow("1");
+        },
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: 'dd/mm/yy'
+    });
+
+    var d = new Date();
+
+    var month = d.getMonth() + 1;
+    var day = d.getDate();
+
+    var output = (day < 10 ? '0' : '') + day + '/' +
+                    (month < 10 ? '0' : '') + month + '/' +
+                    d.getFullYear();
+
+    $('#' + id).val(output);
+}
+/*********************************************************************** MTN GRID ***********************************************************/
+function PassFormatter(cellValue, options, rowObject) {
+    return "********";
+}
+function FloatFormatter(cellValue, options, rowObject) {
+    return formatMoney(cellValue, 0); // + " ₪";
+}
+function MoneyFormatter(cellValue, options, rowObject) {
+    return formatMoney(cellValue, 2) + " ₪";
+}
+function FormatterInt(cellValue, options, rowObject) {
+    return formatMoney(cellValue, 0);
+}
+function MoneyFormatterInt(cellValue, options, rowObject) {
+    return formatMoney(cellValue, 0) + " ₪";
+}
+function PercentFormatter(cellValue, options, rowObject) {
+    if (cellValue > 0)
+        return "<div style='font-weight:500;'>" + formatMoney(cellValue, 2).replace("-", "") + "%" + (cellValue.toString().indexOf("-") > -1 ? "-" : "") + "</div>";
+    else
+        return "<div style='font-weight:500;'>" + formatMoney(cellValue, 2).replace("-", "") + "%" + (cellValue.toString().indexOf("-") > -1 ? "-" : "") + "</div>";
+}
+function PercentFormatterInt(cellValue, options, rowObject) {
+
+    if (!(cellValue))
+        cellValue = 0;
+    if (cellValue > 0)
+        return "<div style='font-weight:500;'>" + formatMoney(cellValue, 0).replace("-", "") + "%" + (cellValue.toString().indexOf("-") > -1 ? "-" : "") + "</div>";
+    else
+        return "<div style='font-weight:500;'>" + formatMoney(cellValue, 0).replace("-", "") + "%" + (cellValue.toString().indexOf("-") > -1 ? "-" : "") + "</div>";
+}
+function TextDesignedFormatter(cellValue, options, rowObject) {
+    return "<div style='font-weight:600;'>" + cellValue + "</div>";
+}
+function NumbersFormatter(cellValue, options, rowObject) {
+    return formatMoney(cellValue, 0)
+}
+function FloatFormatter(cellValue, options, rowObject) {
+    return formatMoney(cellValue, 2)
+}
+function DateFormatteryyyymmdd(cellValue, options, rowObject) {
+    if (cellValue)
+        return cellValue.toString().substr(6, 2) + "/" + cellValue.toString().substr(4, 2) + "/" + cellValue.toString().substr(0, 4);
+    else
+        return cellValue;
+}
+function DateFormatteryymmdd(cellValue, options, rowObject) {
+    if (cellValue)
+        return cellValue.toString().substr(6, 2) + "/" + cellValue.toString().substr(4, 2) + "/" + cellValue.toString().substr(2, 2);
+    else
+        return cellValue;
+}
+function DateFormatterddmmyyy(cellValue, options, rowObject) {
+    return cellValue.substr(0, 2) + "/" + cellValue.substr(2, 2) + "/" + cellValue.substr(4, 4);
+}
+function TimeFormatterHHmmss(cellValue, options, rowObject) {
+    if ((cellValue.toString().substr(0, 2)) * 1.0 < 25)
+        return cellValue.toString().substr(0, 2) + ":" + cellValue.toString().substr(2, 2);
+    else {
+        return "";
+        //        var time = (cellValue.toString().substr(0, 2)) * 1.0;
+        //        while (time > 24)
+        //            time = time - 12;
+
+        //        return "<div style=''>" + time + ":" + cellValue.toString().substr(2, 2); +"</div>";
+    }
+}
+function ImageFormatter(cellValue, options, rowObject) {
+    if (cellValue == '')
+        return '';
+    return "<img src='../../Handlers/ShowImage.ashx?ImageName=" + cellValue + "' width='16px' />";
+}
+function ImageBackgroundFormatter(cellValue, options, rowObject) {
+    if (cellValue == '')
+        return '';
+    return "<div class=" + rowObject + "><img src='../../Handlers/ShowImage.ashx?ImageName=" + cellValue + "' width='16px' /></div>";
+}
+
+function BarFormatter(cellValue, options, rowObject) {
+    return "<div style='font-weight:600;width:" + cellValue + "%;background-color:#4F81BD;color:black;font-size:10px;text-align:center;padding-top:3px;padding-bottom:3px;'>" + cellValue + "%" + "</div>";
+}
+function DownloadAttachFormatter(cellValue, options, rowObject) {    
+     if (cellValue)
+        return "<a target='_blank' href='../../Documents/" + cellValue + "'>" + cellValue + "</a>";
+    else 
+        return "";
+}
+
+function CheckboxFormatter(cellValue, options, rowObject) {
+    try {
+        if (rowObject["DistributionLineID"]) {
+            var formatter = "<div  style='width:" + cellValue + "%;text-align:center;padding-top:3px;padding-bottom:3px;'>"
+                + "<input id='LineID" + rowObject["DistributionLineID"].toString() + "' type='checkbox' class='LineID' onchange='try{parent.AddToSelectedArr(\"" + rowObject["DistributionLineID"].toString() + ";" + rowObject["DistributionLineDescription"].toString() + "\")}catch(e){}'; />" + "</div>";//'try{parent.AddToSelectedArr(\"" + rowObject["DistributionLineID"].toString() + ";" + rowObject["DistributionLineDescription"].toString() + "\");} catch (e) {}'
+            return formatter;
+        }
+        else if (rowObject["UserID"]) {
+            var checked = "checked='checked'"
+            if (rowObject["IsChecked"] == "0")
+                checked = "";
+            var formatter = "<div  style='width:" + cellValue + "%;text-align:center;padding-top:3px;padding-bottom:3px;'>"
+               + "<input " + checked + " id='LineID" + rowObject["UserID"].toString() + "' type='checkbox' class='LineID' onchange='try{parent.SetDriverToUser(\"" + rowObject["UserID"].toString() + "\",\"" + rowObject["UserRoleID"].toString() + "\",this.checked)}catch(e){}'; />" + "</div>";//'try{parent.AddToSelectedArr(\"" + rowObject["DistributionLineID"].toString() + ";" + rowObject["DistributionLineDescription"].toString() + "\");} catch (e) {}'
+            return formatter;
+        }
+    }
+    catch (e) {
+
+        return "";
+    }
+
+}
+
+function addCssFormatter(cellValue, options, rowObject) {
+    return "<div style='font-weight:600;'>" + cellValue + "</div>";
+}
+function editFormatter() {
+    var img = new Image(32, 32);
+    $(img).attr("src", "/MobiPlusLayout/img/editLarge.png");
+    $(img).attr("style", "cursor:pointer");
+    return img.outerHTML || new XMLSerializer().serializeToString(img);
+}
+
+function deleteFormatter() {
+    var img = new Image(32, 32);
+    $(img).attr("src", "/MobiPlusLayout/img/trash.png");
+    $(img).attr("style", "cursor:pointer");
+    return img.outerHTML || new XMLSerializer().serializeToString(img);
+}
+
+function checkboxPic(cellvalue, options, rowObject) {
+    var img = new Image(32, 32);
+    if (cellvalue) {
+        $(img).attr("src", "/MobiPlusLayout/img/24_tick.png");
+    }
+    else {
+        $(img).attr("src", "/MobiPlusLayout/img/24_x_false.png");
+    }
+    return img.outerHTML || new XMLSerializer().serializeToString(img);
+}
+function deleteSpecFormatter(ellvalue, options, rowObject) {
+    var img;
+    try {
+        img = new Image(32, 32);
+        if (!rowObject.isBusy) {
+            $(img).attr("src", "/MobiPlusLayout/img/trash.png");
+            $(img).attr("style", "cursor:pointer");
+        }
+        else {
+            $(img).attr("src", "/MobiPlusLayout/img/empty.png");
+        }
+    } catch (e) { }
+    return img.outerHTML || new XMLSerializer().serializeToString(img);
+}
+function twoLinesTextFormatter(ellvalue, options, rowObject) {
+    if (ellvalue) {
+        return ellvalue.replace(/\^/g, "<br />");
+    }
+    return '';
+}
+
+function twoLinesTextFormatterSpan(ellvalue, options, rowObject) {
+    if (ellvalue) {
+        if (ellvalue.match(/\^/g)) {
+            return ellvalue.replace(/\^/g, "<br /><span>") + ("</span>");
+        }
+    }
+    return '';
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function mysum(val, name, record) {
+    return parseFloat(val || 0) + parseFloat((record[name] || 0));
+}
+var prevCellVal = { cellId: undefined, value: undefined };
+function arrtSetting(rowId, val, rawObject, cm) {
+    return "";
+}
+
+(function ($) {
+    $.QueryString = (function (a) {
+        if (a == "") return {};
+        var b = {};
+        for (var i = 0; i < a.length; ++i) {
+            var p = a[i].split('=', 2);
+            if (p.length != 2) continue;
+            b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+        }
+        return b;
+    })(window.location.search.substr(1).split('&'))
+})(jQuery);
+
+var common = {
+    getRandomColor: function () {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    },
+    sleep: function (milliseconds) {
+        var start = new Date().getTime();
+        for (var i = 0; i < 1e7; i++) {
+            if ((new Date().getTime() - start) > milliseconds) {
+                break;
+            }
+        }
+    }
+};
+
+$.put = function (url, data, callback, type) {
+
+    if ($.isFunction(data)) {
+        type = type || callback,
+            callback = data,
+            data = {}
+    }
+
+    return $.ajax({
+        url: url,
+        type: 'PUT',
+        success: callback,
+        data: data,
+        contentType: type
+    });
+};
+
+$.delete = function (url, data, callback, type) {
+
+    if ($.isFunction(data)) {
+        type = type || callback,
+            callback = data,
+            data = {}
+    }
+
+    return $.ajax({
+        url: url,
+        type: 'DELETE',
+        success: callback,
+        data: data,
+        contentType: type
+    });
+};
+
+$.loadCSS = function (url) {
+    if (!$('link[href="' + url + '"]').length)
+        $('head').append('<link rel="stylesheet" type="text/css" href="' + url + '">');
+}
+
+function summaryType(val, name, record) {
+
+    if (typeof (val) === "string" || typeof (val) == 'image') {
+        val = ''; //{ max: false, totalCount: 0, checkedCount: 0 };
+    }
+
+    return val;
+}
+
+function groupBy(array, f) {
+    var groups = {};
+    //$.each(array, function (o) {
+    //    var group = JSON.stringify(f(o));
+    //    groups[group] = groups[group] || [];
+    //    groups[group].push(o);
+    //});
+    array.forEach(function (o) {
+        var group = JSON.stringify(f(o));
+        groups[group] = groups[group] || [];
+        groups[group].push(o);
+    });
+    return Object.keys(groups).map(function (group) {
+        return groups[group];
+    })
+}
+
+Array.prototype.groupByProperties = function (properties) {
+    var arr = this;
+    var groups = [];
+    for (var i = 0, len = arr.length; i < len; i += 1) {
+        var obj = arr[i];
+        if (groups.length == 0) {
+            groups.push([obj]);
+        }
+        else {
+            var equalGroup = false;
+            for (var a = 0, glen = groups.length; a < glen; a += 1) {
+                var group = groups[a];
+                var equal = true;
+                var firstElement = group[0];
+                properties.forEach(function (property) {
+
+                    if (firstElement[property] !== obj[property]) {
+                        equal = false;
+                    }
+
+                });
+                if (equal) {
+                    equalGroup = group;
+                }
+            }
+            if (equalGroup) {
+                equalGroup.push(obj);
+            }
+            else {
+                groups.push([obj]);
+            }
+        }
+    }
+    return groups;
+};
+
+/*********************************************************************** / MTN GRID ***********************************************************/
+function ShowSection(val) {
+    alert(val);
+}
+function msieversion() {
+    if (navigator.userAgent.match(/msie/i) || navigator.userAgent.match(/trident/i)) {
+        return "ie";
+    }
+    else {
+        return "othe browser";
+        //alert('othe browser');
+    }
+}
+
+var rad = function (x) {
+    return x * Math.PI / 180;
+}
+
+ function getDistance(p1, p2) {
+        var R = 6378137; // Earth’s mean radius in meter
+        var dLat = rad(p2.lat() - p1.lat());
+        var dLong = rad(p2.lng() - p1.lng());
+        var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(rad(p1.lat())) * Math.cos(rad(p2.lat())) *
+        Math.sin(dLong / 2) * Math.sin(dLong / 2);
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        var d = R * c;
+        return d; // returns the distance in meter
+}
+
+function roundTo(x, d) {
+    return x.toFixed(d);
+}

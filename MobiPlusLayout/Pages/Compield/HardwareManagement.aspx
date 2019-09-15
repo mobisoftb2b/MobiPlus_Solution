@@ -1,0 +1,210 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="HardwareManagement.aspx.cs" Inherits="Pages_Compield_HardwareManagement" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link id="lnkUi" runat="server" rel="stylesheet" />
+    <link id="lnkStruct" runat="server" rel="stylesheet" />
+    <link href="../../css/redmond/jquery-ui.theme.css" rel="stylesheet" />
+    <link href="../../css/redmond/css/ui.jqgrid.css" rel="stylesheet" />
+    <link href="../../js/dist/css/select2.min.css" rel="stylesheet" />
+
+    <%--<link id="MainStyleSheet" rel="stylesheet" href="../../css/Main.css?Ver=<%=ClientVersion %>" />--%>
+    <script type="text/javascript">
+        (function () {
+            var lang = '<%= SessionLanguage %>';
+
+            var href;
+            switch (lang) {
+                case 'he':
+                    href = "../../css/Main.css?Ver=<%=ClientVersion %>&SessionID=<%= Session.SessionID%>";
+                    break;
+                case 'en':
+                    href = "../../css/MainLTR.css?Ver=<%=ClientVersion %>&SessionID=<%= Session.SessionID%>";
+                    break;
+                case 'Ge':
+                    href = "../../css/MainLTR.css?SessionID=<%= Session.SessionID%>";
+                    break;
+                default: href = "../../css/Main.css?Ver=<%=ClientVersion %>&SessionID=<%= Session.SessionID%>"; break;
+            }
+            document.getElementById('MainStyleSheet').href = href;
+
+        })();
+
+        function closeAllInfoWindowsAndShowNewWindow(map, marker, infoWindows, infowindow) {
+            closeAllWindows(infoWindows);
+
+            infowindow.open(map, marker);
+        }
+        function closeAllWindows(infoWindows) {
+            for (var i = 0; i < infoWindows.length; i++) {
+                infoWindows[i].close();
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+            <Scripts>
+                <asp:ScriptReference Path="~/css/redmond/jquery.js" />
+                <asp:ScriptReference Path="~/css/redmond/jquery-ui-1.9.2.custom.js" />
+                <asp:ScriptReference Path="~/css/redmond/jqgrid/i18n/grid.locale-en.js" />
+                <asp:ScriptReference Path="~/css/redmond/jqgrid/jquery.jqGrid.js" />
+                <asp:ScriptReference Path="~/js/jquery.blockUI.js" />
+                <asp:ScriptReference Path="~/js/Main.js" />
+                <asp:ScriptReference Path="~/js/hardMng.js" />
+                <asp:ScriptReference Path="~/js/dist/js/select2.min.js" />
+            </Scripts>
+            <Services>
+                <asp:ServiceReference Path="~/Handlers/HardwareWebService.asmx" />
+            </Services>
+        </asp:ScriptManager>
+        <div id="divContent" style="direction: rtl">
+            <div id="tabsHardMgn">
+                <ul>
+                    <li><a href="#tabsDriverDevices"><%=GetLocalString("tabDevice4Driver") %></a></li>
+                    <li><a href="#tabsDevices"><%=GetLocalString("tabDevices") %></a></li>
+                </ul>
+                <div>
+                </div>
+                <div id="tabsDriverDevices">
+                    <div id="divHardMng">
+                        <table id="grdHardMng">
+                        </table>
+                        <div id="grdHardMngPager">
+                        </div>
+                    </div>
+                </div>
+                <div id="tabsDevices">
+                    <div id="divDevicesList">
+                        <table id="grdDevicesList">
+                        </table>
+                        <div id="grdDevicesListPager">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="divSelectDevices" runat="server" style="display: none;">
+            <table style="width: 100%">
+                <tr>
+                    <td class="ui-accordion-header">
+                        <label runat="server" for="ddlDeviceType" id="lblDeviceType"></label>
+                    </td>
+                    <td class="ui-accordion-content">
+                        <asp:DropDownList ID="ddlDeviceType" runat="server" ClientIDMode="Static" Style="width: 300px">
+                        </asp:DropDownList></td>
+                </tr>
+                <tr>
+                    <td class="ui-accordion-header">
+                        <label runat="server" for="txtDeviceDeviceID" id="lblDeviceDeviceID"></label>
+                    </td>
+                    <td class="ui-accordion-content">
+                        <input type="text" id="txtDeviceDeviceID" style="width: 296px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ui-accordion-header">
+                        <label runat="server" for="ddlStatus" id="lblStatus"></label>
+                    </td>
+                    <td class="ui-accordion-content">
+                        <asp:DropDownList ID="ddlStatus" runat="server" ClientIDMode="Static" Style="width: 300px" AppendDataBoundItems="true">
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                  <tr>
+                    <td class="ui-accordion-header">
+                        <label runat="server" for="ddlCountry" id="lblCountry"></label>
+                    </td>
+                    <td class="ui-accordion-content">
+                        <asp:DropDownList ID="ddlCountry" runat="server" ClientIDMode="Static" Style="width: 300px" AppendDataBoundItems="true">
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ui-accordion-header">
+                        <label runat="server" for="txtComment" id="lblDeviceComments"></label>
+                    </td>
+                    <td class="ui-accordion-content">
+                        <textarea id="txtComment" cols="6" rows="8" style="width: 296px"></textarea>
+                    </td>
+                </tr>
+            </table>
+            <asp:HiddenField ID="hidDeviceID" ClientIDMode="Static" runat="server" />
+        </div>
+
+        <!-- #region Add Devices -->
+        <div id="divAddDevices4Driver" runat="server" style="display: none;">
+            <table style="width: 100%">
+                <tr>
+                    <td class="ui-accordion-header">
+                        <label runat="server" id="lblDriverName" for="ddlDriversList"></label>
+                    </td>
+                    <td class="ui-accordion-content">
+                        <asp:DropDownList ID="ddlDriversList" runat="server" Style="width: 300px" ClientIDMode="Static" AppendDataBoundItems="true">
+                        </asp:DropDownList>
+                </tr>
+                <tr>
+                    <td class="ui-accordion-header">
+                        <label runat="server" for="ddlDeviceID" id="lblDeviceID"></label>
+                    </td>
+                    <td class="ui-accordion-content">
+                        <asp:DropDownList ID="ddlDeviceID" runat="server" ClientIDMode="Static" Style="width: 300px" AppendDataBoundItems="true">                       
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ui-accordion-header">
+                        <label runat="server" for="chkIsActive" id="lblIsActive"></label>
+                    </td>
+                    <td class="ui-accordion-content">
+                        <input type="checkbox" id="chkIsActive" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ui-accordion-header">
+                        <label runat="server" for="txtCommentsD4D" id="lblComments"></label>
+                    </td>
+                    <td class="ui-accordion-content">
+                        <textarea id="txtCommentsD4D" cols="6" rows="8" style="width: 296px"></textarea>
+                    </td>
+                </tr>
+            </table>
+
+            <asp:HiddenField ID="hidDevices4Driver_ID" ClientIDMode="Static" runat="server" />
+        </div>
+        <!-- #endregion -->
+
+
+        <asp:HiddenField ID="hidMainDivHeight" ClientIDMode="Static" runat="server" />
+        <asp:HiddenField ID="hidDriverID_Grid_Header" ClientIDMode="Static" runat="server" />
+        <asp:HiddenField ID="hidDriverName_Grid_Header" ClientIDMode="Static" runat="server" />
+        <asp:HiddenField ID="hidDeviceID_Grid_Header" ClientIDMode="Static" runat="server" />
+        <asp:HiddenField ID="hidDeviceTypeName_Grid_Header" ClientIDMode="Static" runat="server" />
+        <asp:HiddenField ID="hidIsActive_Grid_Header" ClientIDMode="Static" runat="server" />
+        <asp:HiddenField ID="hidComment_Grid_Header" ClientIDMode="Static" runat="server" />
+        <asp:HiddenField ID="hidDelete_Grid_Header" ClientIDMode="Static" runat="server" />
+        <asp:HiddenField ID="hidEdit_Grid_Header" ClientIDMode="Static" runat="server" />
+        <asp:HiddenField ID="hidLanguage" ClientIDMode="Static" runat="server" />
+        <asp:HiddenField ID="hidIsActive" ClientIDMode="Static" runat="server" />
+        <asp:HiddenField ID="hidStatus_Grid_Header" ClientIDMode="Static" runat="server" />
+        <asp:HiddenField ID="hidAddbuttonCaption" ClientIDMode="Static" runat="server" />
+        <asp:HiddenField ID="hidSaveButtonCaption" ClientIDMode="Static" runat="server" />
+        <asp:HiddenField ID="hidUpdateButtonCaption" ClientIDMode="Static" runat="server" />
+        <asp:HiddenField ID="hidCancelButtonCaption" ClientIDMode="Static" runat="server" />
+        <asp:HiddenField ID="hidConfirmMsg" runat="server" ClientIDMode="Static" />
+        <asp:HiddenField ID="hidChangeMesageConfirm" runat="server" ClientIDMode="Static" />
+        <asp:HiddenField ID="hidSearchButtonCaption" runat="server" ClientIDMode="Static" />
+        <asp:HiddenField ID="hidExistingDeviceNumber" runat="server" ClientIDMode="Static" />
+        <asp:HiddenField ID="hidTitleAddD4D" runat="server" ClientIDMode="Static" />
+        <asp:HiddenField ID="hidTitleAddDevice" runat="server" ClientIDMode="Static" />
+        <asp:HiddenField ID="hidChangeOwnerButtonCaption" runat="server" ClientIDMode="Static" />
+        <asp:HiddenField ID="hidTitleWarningCaption" runat="server" ClientIDMode="Static" />
+    </form>
+
+</body>
+</html>

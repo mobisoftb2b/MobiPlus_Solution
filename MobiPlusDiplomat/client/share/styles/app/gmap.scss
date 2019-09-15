@@ -1,0 +1,28 @@
+/* ========================================================================
+     Component: gmap
+ ========================================================================== */
+
+.gmap {
+    height: 700px;
+
+    &.gmap-sm {
+        height: 150px;
+    }
+}
+
+.map {
+  height: 700px;
+}
+ 
+@media screen and (min-width: 1024px){
+    .dvMap {
+        height: 700px;
+    }
+}
+
+#dvMap {
+        height: 100%;
+        float: left;
+        width: 70%;
+        height: 100%;
+      }

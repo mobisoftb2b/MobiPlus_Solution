@@ -1,0 +1,3964 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://tempuri.org/AbstractTypes" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAPKFile">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAPKFileResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetFileDirect">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileDirectResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DownloadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadFileResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UploadStrFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFile" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadStrFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadStrFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bFile" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadSplitedFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bFile" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadSplitedFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadSplitedFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFile_DblCheck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bFile" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFile_DblCheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadFile_DblCheckResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HandShake">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HandShakeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HandShakeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckIfFileExsits">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckIfFileExsitsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckIfFileExsitsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIsThereNewVersion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProjectType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIsThereNewVersionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetIsThereNewLayoutVersion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProjectType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIsThereNewLayoutVersionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SendMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="To" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MSG" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bFile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendMailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_PushServerSender_By_AgentID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_PushServerSender_By_AgentIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Delete_PushServerSender_By_AgentIDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_AndroidAssignedAgents_By_AgentID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_AndroidAssignedAgents_By_AgentIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Delete_AndroidAssignedAgents_By_AgentIDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddToDicManagersConnectedPushServer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddToDicManagersConnectedPushServerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddToDicManagersConnectedPushServerResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsAlreadyFillFromPushServer" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFromDicManagersConnectedPushServer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFromDicManagersConnectedPushServerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteFromDicManagersConnectedPushServerResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsAlreadyFillFromPushServer" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FillAllFromPushServer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ManagersList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FillAllFromPushServerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FillAllFromPushServerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClearDicManagersConnectedPushServer">
+        <s:complexType />
+      </s:element>
+      <s:element name="ClearDicManagersConnectedPushServerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClearDicManagersConnectedPushServerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllManagersConnectedPushServer">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllManagersConnectedPushServerResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DNBGetZipFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DNBGetZipFileResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DNBUploadStrFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFile" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DNBUploadStrFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DNBUploadStrFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DNBUploadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bFile" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DNBUploadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DNBUploadFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RunQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Query" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RunQueryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RunQueryTodb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Query" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RunQueryTodbResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RunSP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="spName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="spParameters" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RunSPResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckMediaDirectory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDirsJson" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckMediaDirectoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckMediaDirectoryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadMediaFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadMediaFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadMediaFileResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadMediaFileResponseBytes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadMediaFileResponseBytesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetIMG">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIMGResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIMGResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetManagerPushEmployeeData">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetManagerPushEmployeeDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetManagerPushEmployeeDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePasswordManager">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RequestStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerComment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePasswordManagerResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetServerPushFiles">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetServerPushFilesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServerPushFilesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCache_ServerPushFiles">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateCache_ServerPushFilesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="isToRefreshCacheFunc">
+        <s:complexType />
+      </s:element>
+      <s:element name="isToRefreshCacheFuncResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isToRefreshCacheFuncResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteServerPushFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PushID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteServerPushFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteServerPushFileResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPushServerLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPushServerLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddPushServerLogResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPushServerData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPushServerDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddPushServerDataResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetServerPushFilesAgain">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TimeToCheckInMinutes" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetServerPushFilesAgainResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetServerPushFilesAgainResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddToPasswordManager">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AgentId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AgentName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeeId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeeName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ActivityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ActivityDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cust_Key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerEmployeeId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StatusChangeTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RequestStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerStatusTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerComment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerDeviceType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransmissionState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SubjectDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IsTest" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddToPasswordManagerResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Server_CheckAgentAndHWID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HW_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Server_CheckAgentAndHWIDResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Server_UpdateAgentToOnlineDB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HW_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Server_UpdateAgentToOnlineDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Server_UpdateAgentToOnlineDBResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPushServerDataAndBlockedDevice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HWID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPushServerDataAndBlockedDeviceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddPushServerDataAndBlockedDeviceResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MPush_GetManagersList">
+        <s:complexType />
+      </s:element>
+      <s:element name="MPush_GetManagersListResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="MPush_GetManagerSyncRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerEmployeeId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StatusChangeTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MPush_GetManagerSyncRequestResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetManagersForTabletUI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PermissionActivityCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetManagersForTabletUIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetManagersForTabletUIResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetManagerAuthorizationGroupActivities">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeeId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetManagerAuthorizationGroupActivitiesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SendSMSToClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cust1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cust2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Lat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Lon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMSToClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendSMSToClientResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMSToClientTel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Lat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Lon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tel" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMSToClientTelResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="MPLayout_SetDriverGPSLocation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Lat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Lon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MPLayout_SetDriverGPSLocationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="base64Binary" nillable="true" type="s:base64Binary" />
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAPKFileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAPKFile" />
+  </wsdl:message>
+  <wsdl:message name="GetAPKFileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAPKFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFileDirectSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFileDirect" />
+  </wsdl:message>
+  <wsdl:message name="GetFileDirectSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFileDirectResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocument" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFile" />
+  </wsdl:message>
+  <wsdl:message name="GetFileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadFile" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadStrFileSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadStrFile" />
+  </wsdl:message>
+  <wsdl:message name="UploadStrFileSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadStrFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadFile" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadSplitedFileSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadSplitedFile" />
+  </wsdl:message>
+  <wsdl:message name="UploadSplitedFileSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadSplitedFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadFile_DblCheckSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadFile_DblCheck" />
+  </wsdl:message>
+  <wsdl:message name="UploadFile_DblCheckSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadFile_DblCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="HandShakeSoapIn">
+    <wsdl:part name="parameters" element="tns:HandShake" />
+  </wsdl:message>
+  <wsdl:message name="HandShakeSoapOut">
+    <wsdl:part name="parameters" element="tns:HandShakeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckIfFileExsitsSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckIfFileExsits" />
+  </wsdl:message>
+  <wsdl:message name="CheckIfFileExsitsSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckIfFileExsitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIsThereNewVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIsThereNewVersion" />
+  </wsdl:message>
+  <wsdl:message name="GetIsThereNewVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIsThereNewVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIsThereNewLayoutVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIsThereNewLayoutVersion" />
+  </wsdl:message>
+  <wsdl:message name="GetIsThereNewLayoutVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIsThereNewLayoutVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMailSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMail" />
+  </wsdl:message>
+  <wsdl:message name="SendMailSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="Delete_PushServerSender_By_AgentIDSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete_PushServerSender_By_AgentID" />
+  </wsdl:message>
+  <wsdl:message name="Delete_PushServerSender_By_AgentIDSoapOut">
+    <wsdl:part name="parameters" element="tns:Delete_PushServerSender_By_AgentIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Delete_AndroidAssignedAgents_By_AgentIDSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete_AndroidAssignedAgents_By_AgentID" />
+  </wsdl:message>
+  <wsdl:message name="Delete_AndroidAssignedAgents_By_AgentIDSoapOut">
+    <wsdl:part name="parameters" element="tns:Delete_AndroidAssignedAgents_By_AgentIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddToDicManagersConnectedPushServerSoapIn">
+    <wsdl:part name="parameters" element="tns:AddToDicManagersConnectedPushServer" />
+  </wsdl:message>
+  <wsdl:message name="AddToDicManagersConnectedPushServerSoapOut">
+    <wsdl:part name="parameters" element="tns:AddToDicManagersConnectedPushServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFromDicManagersConnectedPushServerSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFromDicManagersConnectedPushServer" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFromDicManagersConnectedPushServerSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFromDicManagersConnectedPushServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="FillAllFromPushServerSoapIn">
+    <wsdl:part name="parameters" element="tns:FillAllFromPushServer" />
+  </wsdl:message>
+  <wsdl:message name="FillAllFromPushServerSoapOut">
+    <wsdl:part name="parameters" element="tns:FillAllFromPushServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClearDicManagersConnectedPushServerSoapIn">
+    <wsdl:part name="parameters" element="tns:ClearDicManagersConnectedPushServer" />
+  </wsdl:message>
+  <wsdl:message name="ClearDicManagersConnectedPushServerSoapOut">
+    <wsdl:part name="parameters" element="tns:ClearDicManagersConnectedPushServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllManagersConnectedPushServerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllManagersConnectedPushServer" />
+  </wsdl:message>
+  <wsdl:message name="GetAllManagersConnectedPushServerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllManagersConnectedPushServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="DNBGetZipFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DNBGetZipFile" />
+  </wsdl:message>
+  <wsdl:message name="DNBGetZipFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DNBGetZipFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="DNBUploadStrFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DNBUploadStrFile" />
+  </wsdl:message>
+  <wsdl:message name="DNBUploadStrFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DNBUploadStrFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="DNBUploadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DNBUploadFile" />
+  </wsdl:message>
+  <wsdl:message name="DNBUploadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DNBUploadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="RunQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:RunQuery" />
+  </wsdl:message>
+  <wsdl:message name="RunQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:RunQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="RunQueryTodbSoapIn">
+    <wsdl:part name="parameters" element="tns:RunQueryTodb" />
+  </wsdl:message>
+  <wsdl:message name="RunQueryTodbSoapOut">
+    <wsdl:part name="parameters" element="tns:RunQueryTodbResponse" />
+  </wsdl:message>
+  <wsdl:message name="RunSPSoapIn">
+    <wsdl:part name="parameters" element="tns:RunSP" />
+  </wsdl:message>
+  <wsdl:message name="RunSPSoapOut">
+    <wsdl:part name="parameters" element="tns:RunSPResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckMediaDirectorySoapIn">
+    <wsdl:part name="parameters" element="tns:CheckMediaDirectory" />
+  </wsdl:message>
+  <wsdl:message name="CheckMediaDirectorySoapOut">
+    <wsdl:part name="parameters" element="tns:CheckMediaDirectoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadMediaFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadMediaFile" />
+  </wsdl:message>
+  <wsdl:message name="DownloadMediaFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadMediaFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadMediaFileResponseBytesSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadMediaFileResponseBytes" />
+  </wsdl:message>
+  <wsdl:message name="DownloadMediaFileResponseBytesSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadMediaFileResponseBytesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIMGSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIMG" />
+  </wsdl:message>
+  <wsdl:message name="GetIMGSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIMGResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetManagerPushEmployeeDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetManagerPushEmployeeData" />
+  </wsdl:message>
+  <wsdl:message name="GetManagerPushEmployeeDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetManagerPushEmployeeDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePasswordManagerSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePasswordManager" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePasswordManagerSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePasswordManagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServerPushFilesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServerPushFiles" />
+  </wsdl:message>
+  <wsdl:message name="GetServerPushFilesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServerPushFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCache_ServerPushFilesSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCache_ServerPushFiles" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCache_ServerPushFilesSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCache_ServerPushFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="isToRefreshCacheFuncSoapIn">
+    <wsdl:part name="parameters" element="tns:isToRefreshCacheFunc" />
+  </wsdl:message>
+  <wsdl:message name="isToRefreshCacheFuncSoapOut">
+    <wsdl:part name="parameters" element="tns:isToRefreshCacheFuncResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteServerPushFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteServerPushFile" />
+  </wsdl:message>
+  <wsdl:message name="DeleteServerPushFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteServerPushFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPushServerLogSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPushServerLog" />
+  </wsdl:message>
+  <wsdl:message name="AddPushServerLogSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPushServerLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPushServerDataSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPushServerData" />
+  </wsdl:message>
+  <wsdl:message name="AddPushServerDataSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPushServerDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetServerPushFilesAgainSoapIn">
+    <wsdl:part name="parameters" element="tns:SetServerPushFilesAgain" />
+  </wsdl:message>
+  <wsdl:message name="SetServerPushFilesAgainSoapOut">
+    <wsdl:part name="parameters" element="tns:SetServerPushFilesAgainResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddToPasswordManagerSoapIn">
+    <wsdl:part name="parameters" element="tns:AddToPasswordManager" />
+  </wsdl:message>
+  <wsdl:message name="AddToPasswordManagerSoapOut">
+    <wsdl:part name="parameters" element="tns:AddToPasswordManagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="Server_CheckAgentAndHWIDSoapIn">
+    <wsdl:part name="parameters" element="tns:Server_CheckAgentAndHWID" />
+  </wsdl:message>
+  <wsdl:message name="Server_CheckAgentAndHWIDSoapOut">
+    <wsdl:part name="parameters" element="tns:Server_CheckAgentAndHWIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Server_UpdateAgentToOnlineDBSoapIn">
+    <wsdl:part name="parameters" element="tns:Server_UpdateAgentToOnlineDB" />
+  </wsdl:message>
+  <wsdl:message name="Server_UpdateAgentToOnlineDBSoapOut">
+    <wsdl:part name="parameters" element="tns:Server_UpdateAgentToOnlineDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPushServerDataAndBlockedDeviceSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPushServerDataAndBlockedDevice" />
+  </wsdl:message>
+  <wsdl:message name="AddPushServerDataAndBlockedDeviceSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPushServerDataAndBlockedDeviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="MPush_GetManagersListSoapIn">
+    <wsdl:part name="parameters" element="tns:MPush_GetManagersList" />
+  </wsdl:message>
+  <wsdl:message name="MPush_GetManagersListSoapOut">
+    <wsdl:part name="parameters" element="tns:MPush_GetManagersListResponse" />
+  </wsdl:message>
+  <wsdl:message name="MPush_GetManagerSyncRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:MPush_GetManagerSyncRequest" />
+  </wsdl:message>
+  <wsdl:message name="MPush_GetManagerSyncRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:MPush_GetManagerSyncRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetManagersForTabletUISoapIn">
+    <wsdl:part name="parameters" element="tns:GetManagersForTabletUI" />
+  </wsdl:message>
+  <wsdl:message name="GetManagersForTabletUISoapOut">
+    <wsdl:part name="parameters" element="tns:GetManagersForTabletUIResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetManagerAuthorizationGroupActivitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetManagerAuthorizationGroupActivities" />
+  </wsdl:message>
+  <wsdl:message name="GetManagerAuthorizationGroupActivitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetManagerAuthorizationGroupActivitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSToClientSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSMSToClient" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSToClientSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSMSToClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSToClientTelSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSMSToClientTel" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSToClientTelSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSMSToClientTelResponse" />
+  </wsdl:message>
+  <wsdl:message name="MPLayout_SetDriverGPSLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:MPLayout_SetDriverGPSLocation" />
+  </wsdl:message>
+  <wsdl:message name="MPLayout_SetDriverGPSLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:MPLayout_SetDriverGPSLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAPKFileHttpGetIn" />
+  <wsdl:message name="GetAPKFileHttpGetOut" />
+  <wsdl:message name="GetFileDirectHttpGetIn">
+    <wsdl:part name="FileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFileDirectHttpGetOut" />
+  <wsdl:message name="GetDocumentHttpGetIn">
+    <wsdl:part name="FileName" type="s:string" />
+    <wsdl:part name="Date" type="s:string" />
+    <wsdl:part name="Pass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentHttpGetOut" />
+  <wsdl:message name="GetFileHttpGetIn">
+    <wsdl:part name="FileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFileHttpGetOut" />
+  <wsdl:message name="DownloadFileHttpGetIn">
+    <wsdl:part name="FileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileHttpGetOut" />
+  <wsdl:message name="UploadStrFileHttpGetIn">
+    <wsdl:part name="FileName" type="s:string" />
+    <wsdl:part name="strFile" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadStrFileHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileHttpGetIn">
+    <wsdl:part name="FileName" type="s:string" />
+    <wsdl:part name="bFile" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadSplitedFileHttpGetIn">
+    <wsdl:part name="FileName" type="s:string" />
+    <wsdl:part name="bFile" type="s1:StringArray" />
+    <wsdl:part name="Pass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadSplitedFileHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadFile_DblCheckHttpGetIn">
+    <wsdl:part name="FileName" type="s:string" />
+    <wsdl:part name="bFile" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UploadFile_DblCheckHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HandShakeHttpGetIn">
+    <wsdl:part name="FileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HandShakeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckIfFileExsitsHttpGetIn">
+    <wsdl:part name="FileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckIfFileExsitsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIsThereNewVersionHttpGetIn">
+    <wsdl:part name="AgentID" type="s:string" />
+    <wsdl:part name="FromVersion" type="s:string" />
+    <wsdl:part name="ProjectType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIsThereNewVersionHttpGetOut" />
+  <wsdl:message name="GetIsThereNewLayoutVersionHttpGetIn">
+    <wsdl:part name="AgentID" type="s:string" />
+    <wsdl:part name="FromVersion" type="s:string" />
+    <wsdl:part name="ProjectType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIsThereNewLayoutVersionHttpGetOut" />
+  <wsdl:message name="SendMailHttpGetIn">
+    <wsdl:part name="To" type="s:string" />
+    <wsdl:part name="MSG" type="s:string" />
+    <wsdl:part name="bFile" type="s:string" />
+    <wsdl:part name="FileName" type="s:string" />
+    <wsdl:part name="Pass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMailHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="Delete_PushServerSender_By_AgentIDHttpGetIn">
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="AgentID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Delete_PushServerSender_By_AgentIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="Delete_AndroidAssignedAgents_By_AgentIDHttpGetIn">
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="AgentID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Delete_AndroidAssignedAgents_By_AgentIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="FillAllFromPushServerHttpGetIn">
+    <wsdl:part name="ManagersList" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FillAllFromPushServerHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ClearDicManagersConnectedPushServerHttpGetIn" />
+  <wsdl:message name="ClearDicManagersConnectedPushServerHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetAllManagersConnectedPushServerHttpGetIn" />
+  <wsdl:message name="GetAllManagersConnectedPushServerHttpGetOut" />
+  <wsdl:message name="DNBGetZipFileHttpGetIn">
+    <wsdl:part name="FileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DNBGetZipFileHttpGetOut" />
+  <wsdl:message name="DNBUploadStrFileHttpGetIn">
+    <wsdl:part name="FileName" type="s:string" />
+    <wsdl:part name="strFile" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DNBUploadStrFileHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DNBUploadFileHttpGetIn">
+    <wsdl:part name="FileName" type="s:string" />
+    <wsdl:part name="bFile" type="s1:StringArray" />
+    <wsdl:part name="AgentID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DNBUploadFileHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RunQueryHttpGetIn">
+    <wsdl:part name="Query" type="s:string" />
+    <wsdl:part name="pass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RunQueryHttpGetOut" />
+  <wsdl:message name="RunQueryTodbHttpGetIn">
+    <wsdl:part name="Query" type="s:string" />
+    <wsdl:part name="pass" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RunQueryTodbHttpGetOut" />
+  <wsdl:message name="RunSPHttpGetIn">
+    <wsdl:part name="spName" type="s:string" />
+    <wsdl:part name="spParameters" type="s:string" />
+    <wsdl:part name="pass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RunSPHttpGetOut" />
+  <wsdl:message name="CheckMediaDirectoryHttpGetIn">
+    <wsdl:part name="strDirsJson" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckMediaDirectoryHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadMediaFileHttpGetIn">
+    <wsdl:part name="FileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadMediaFileHttpGetOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="DownloadMediaFileResponseBytesHttpGetIn">
+    <wsdl:part name="FileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadMediaFileResponseBytesHttpGetOut" />
+  <wsdl:message name="GetIMGHttpGetIn">
+    <wsdl:part name="FileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIMGHttpGetOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="GetManagerPushEmployeeDataHttpGetIn" />
+  <wsdl:message name="GetManagerPushEmployeeDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePasswordManagerHttpGetIn">
+    <wsdl:part name="RequestID" type="s:string" />
+    <wsdl:part name="RequestStatus" type="s:string" />
+    <wsdl:part name="ManagerComment" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePasswordManagerHttpGetOut" />
+  <wsdl:message name="GetServerPushFilesHttpGetIn" />
+  <wsdl:message name="GetServerPushFilesHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCache_ServerPushFilesHttpGetIn" />
+  <wsdl:message name="UpdateCache_ServerPushFilesHttpGetOut" />
+  <wsdl:message name="isToRefreshCacheFuncHttpGetIn" />
+  <wsdl:message name="isToRefreshCacheFuncHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="DeleteServerPushFileHttpGetIn">
+    <wsdl:part name="PushID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteServerPushFileHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddPushServerLogHttpGetIn">
+    <wsdl:part name="AgentID" type="s:string" />
+    <wsdl:part name="ManagerID" type="s:string" />
+    <wsdl:part name="Message" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddPushServerLogHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddPushServerDataHttpGetIn">
+    <wsdl:part name="AgentID" type="s:string" />
+    <wsdl:part name="ManagerID" type="s:string" />
+    <wsdl:part name="Message" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddPushServerDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SetServerPushFilesAgainHttpGetIn">
+    <wsdl:part name="TimeToCheckInMinutes" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetServerPushFilesAgainHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddToPasswordManagerHttpGetIn">
+    <wsdl:part name="RequestID" type="s:string" />
+    <wsdl:part name="pTime" type="s:string" />
+    <wsdl:part name="AgentId" type="s:string" />
+    <wsdl:part name="AgentName" type="s:string" />
+    <wsdl:part name="EmployeeId" type="s:string" />
+    <wsdl:part name="EmployeeName" type="s:string" />
+    <wsdl:part name="ActivityCode" type="s:string" />
+    <wsdl:part name="ActivityDescription" type="s:string" />
+    <wsdl:part name="Cust_Key" type="s:string" />
+    <wsdl:part name="CustName" type="s:string" />
+    <wsdl:part name="DocType" type="s:string" />
+    <wsdl:part name="DocName" type="s:string" />
+    <wsdl:part name="Comment" type="s:string" />
+    <wsdl:part name="ManagerEmployeeId" type="s:string" />
+    <wsdl:part name="ManagerName" type="s:string" />
+    <wsdl:part name="StatusChangeTime" type="s:string" />
+    <wsdl:part name="RequestStatus" type="s:string" />
+    <wsdl:part name="ManagerStatusTime" type="s:string" />
+    <wsdl:part name="ManagerComment" type="s:string" />
+    <wsdl:part name="ManagerDeviceType" type="s:string" />
+    <wsdl:part name="TransmissionState" type="s:string" />
+    <wsdl:part name="SubjectDescription" type="s:string" />
+    <wsdl:part name="IsTest" type="s:string" />
+    <wsdl:part name="DocNum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddToPasswordManagerHttpGetOut" />
+  <wsdl:message name="Server_CheckAgentAndHWIDHttpGetIn">
+    <wsdl:part name="AgentID" type="s:string" />
+    <wsdl:part name="HW_ID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Server_CheckAgentAndHWIDHttpGetOut" />
+  <wsdl:message name="Server_UpdateAgentToOnlineDBHttpGetIn">
+    <wsdl:part name="AgentID" type="s:string" />
+    <wsdl:part name="HW_ID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Server_UpdateAgentToOnlineDBHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddPushServerDataAndBlockedDeviceHttpGetIn">
+    <wsdl:part name="AgentID" type="s:string" />
+    <wsdl:part name="ManagerID" type="s:string" />
+    <wsdl:part name="Message" type="s:string" />
+    <wsdl:part name="HWID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddPushServerDataAndBlockedDeviceHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="MPush_GetManagersListHttpGetIn" />
+  <wsdl:message name="MPush_GetManagersListHttpGetOut" />
+  <wsdl:message name="MPush_GetManagerSyncRequestHttpGetIn">
+    <wsdl:part name="ManagerEmployeeId" type="s:string" />
+    <wsdl:part name="StatusChangeTime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MPush_GetManagerSyncRequestHttpGetOut" />
+  <wsdl:message name="GetManagersForTabletUIHttpGetIn">
+    <wsdl:part name="PermissionActivityCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetManagersForTabletUIHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetManagerAuthorizationGroupActivitiesHttpGetIn">
+    <wsdl:part name="EmployeeId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetManagerAuthorizationGroupActivitiesHttpGetOut" />
+  <wsdl:message name="SendSMSToClientHttpGetIn">
+    <wsdl:part name="AgentID" type="s:string" />
+    <wsdl:part name="Cust1" type="s:string" />
+    <wsdl:part name="Cust2" type="s:string" />
+    <wsdl:part name="Lat" type="s:string" />
+    <wsdl:part name="Lon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSToClientHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSToClientTelHttpGetIn">
+    <wsdl:part name="AgentID" type="s:string" />
+    <wsdl:part name="CustID" type="s:string" />
+    <wsdl:part name="Lat" type="s:string" />
+    <wsdl:part name="Lon" type="s:string" />
+    <wsdl:part name="Tel" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSToClientTelHttpGetOut" />
+  <wsdl:message name="MPLayout_SetDriverGPSLocationHttpGetIn">
+    <wsdl:part name="AgentID" type="s:string" />
+    <wsdl:part name="Lat" type="s:string" />
+    <wsdl:part name="Lon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MPLayout_SetDriverGPSLocationHttpGetOut" />
+  <wsdl:message name="GetAPKFileHttpPostIn" />
+  <wsdl:message name="GetAPKFileHttpPostOut" />
+  <wsdl:message name="GetFileDirectHttpPostIn">
+    <wsdl:part name="FileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFileDirectHttpPostOut" />
+  <wsdl:message name="GetDocumentHttpPostIn">
+    <wsdl:part name="FileName" type="s:string" />
+    <wsdl:part name="Date" type="s:string" />
+    <wsdl:part name="Pass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentHttpPostOut" />
+  <wsdl:message name="GetFileHttpPostIn">
+    <wsdl:part name="FileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFileHttpPostOut" />
+  <wsdl:message name="DownloadFileHttpPostIn">
+    <wsdl:part name="FileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileHttpPostOut" />
+  <wsdl:message name="UploadStrFileHttpPostIn">
+    <wsdl:part name="FileName" type="s:string" />
+    <wsdl:part name="strFile" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadStrFileHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileHttpPostIn">
+    <wsdl:part name="FileName" type="s:string" />
+    <wsdl:part name="bFile" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadSplitedFileHttpPostIn">
+    <wsdl:part name="FileName" type="s:string" />
+    <wsdl:part name="bFile" type="s1:StringArray" />
+    <wsdl:part name="Pass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadSplitedFileHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadFile_DblCheckHttpPostIn">
+    <wsdl:part name="FileName" type="s:string" />
+    <wsdl:part name="bFile" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UploadFile_DblCheckHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HandShakeHttpPostIn">
+    <wsdl:part name="FileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HandShakeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckIfFileExsitsHttpPostIn">
+    <wsdl:part name="FileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckIfFileExsitsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIsThereNewVersionHttpPostIn">
+    <wsdl:part name="AgentID" type="s:string" />
+    <wsdl:part name="FromVersion" type="s:string" />
+    <wsdl:part name="ProjectType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIsThereNewVersionHttpPostOut" />
+  <wsdl:message name="GetIsThereNewLayoutVersionHttpPostIn">
+    <wsdl:part name="AgentID" type="s:string" />
+    <wsdl:part name="FromVersion" type="s:string" />
+    <wsdl:part name="ProjectType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIsThereNewLayoutVersionHttpPostOut" />
+  <wsdl:message name="SendMailHttpPostIn">
+    <wsdl:part name="To" type="s:string" />
+    <wsdl:part name="MSG" type="s:string" />
+    <wsdl:part name="bFile" type="s:string" />
+    <wsdl:part name="FileName" type="s:string" />
+    <wsdl:part name="Pass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMailHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="Delete_PushServerSender_By_AgentIDHttpPostIn">
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="AgentID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Delete_PushServerSender_By_AgentIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="Delete_AndroidAssignedAgents_By_AgentIDHttpPostIn">
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="AgentID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Delete_AndroidAssignedAgents_By_AgentIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="FillAllFromPushServerHttpPostIn">
+    <wsdl:part name="ManagersList" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FillAllFromPushServerHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ClearDicManagersConnectedPushServerHttpPostIn" />
+  <wsdl:message name="ClearDicManagersConnectedPushServerHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetAllManagersConnectedPushServerHttpPostIn" />
+  <wsdl:message name="GetAllManagersConnectedPushServerHttpPostOut" />
+  <wsdl:message name="DNBGetZipFileHttpPostIn">
+    <wsdl:part name="FileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DNBGetZipFileHttpPostOut" />
+  <wsdl:message name="DNBUploadStrFileHttpPostIn">
+    <wsdl:part name="FileName" type="s:string" />
+    <wsdl:part name="strFile" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DNBUploadStrFileHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DNBUploadFileHttpPostIn">
+    <wsdl:part name="FileName" type="s:string" />
+    <wsdl:part name="bFile" type="s1:StringArray" />
+    <wsdl:part name="AgentID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DNBUploadFileHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RunQueryHttpPostIn">
+    <wsdl:part name="Query" type="s:string" />
+    <wsdl:part name="pass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RunQueryHttpPostOut" />
+  <wsdl:message name="RunQueryTodbHttpPostIn">
+    <wsdl:part name="Query" type="s:string" />
+    <wsdl:part name="pass" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RunQueryTodbHttpPostOut" />
+  <wsdl:message name="RunSPHttpPostIn">
+    <wsdl:part name="spName" type="s:string" />
+    <wsdl:part name="spParameters" type="s:string" />
+    <wsdl:part name="pass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RunSPHttpPostOut" />
+  <wsdl:message name="CheckMediaDirectoryHttpPostIn">
+    <wsdl:part name="strDirsJson" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckMediaDirectoryHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadMediaFileHttpPostIn">
+    <wsdl:part name="FileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadMediaFileHttpPostOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="DownloadMediaFileResponseBytesHttpPostIn">
+    <wsdl:part name="FileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadMediaFileResponseBytesHttpPostOut" />
+  <wsdl:message name="GetIMGHttpPostIn">
+    <wsdl:part name="FileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIMGHttpPostOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="GetManagerPushEmployeeDataHttpPostIn" />
+  <wsdl:message name="GetManagerPushEmployeeDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePasswordManagerHttpPostIn">
+    <wsdl:part name="RequestID" type="s:string" />
+    <wsdl:part name="RequestStatus" type="s:string" />
+    <wsdl:part name="ManagerComment" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePasswordManagerHttpPostOut" />
+  <wsdl:message name="GetServerPushFilesHttpPostIn" />
+  <wsdl:message name="GetServerPushFilesHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCache_ServerPushFilesHttpPostIn" />
+  <wsdl:message name="UpdateCache_ServerPushFilesHttpPostOut" />
+  <wsdl:message name="isToRefreshCacheFuncHttpPostIn" />
+  <wsdl:message name="isToRefreshCacheFuncHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="DeleteServerPushFileHttpPostIn">
+    <wsdl:part name="PushID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteServerPushFileHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddPushServerLogHttpPostIn">
+    <wsdl:part name="AgentID" type="s:string" />
+    <wsdl:part name="ManagerID" type="s:string" />
+    <wsdl:part name="Message" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddPushServerLogHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddPushServerDataHttpPostIn">
+    <wsdl:part name="AgentID" type="s:string" />
+    <wsdl:part name="ManagerID" type="s:string" />
+    <wsdl:part name="Message" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddPushServerDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SetServerPushFilesAgainHttpPostIn">
+    <wsdl:part name="TimeToCheckInMinutes" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetServerPushFilesAgainHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddToPasswordManagerHttpPostIn">
+    <wsdl:part name="RequestID" type="s:string" />
+    <wsdl:part name="pTime" type="s:string" />
+    <wsdl:part name="AgentId" type="s:string" />
+    <wsdl:part name="AgentName" type="s:string" />
+    <wsdl:part name="EmployeeId" type="s:string" />
+    <wsdl:part name="EmployeeName" type="s:string" />
+    <wsdl:part name="ActivityCode" type="s:string" />
+    <wsdl:part name="ActivityDescription" type="s:string" />
+    <wsdl:part name="Cust_Key" type="s:string" />
+    <wsdl:part name="CustName" type="s:string" />
+    <wsdl:part name="DocType" type="s:string" />
+    <wsdl:part name="DocName" type="s:string" />
+    <wsdl:part name="Comment" type="s:string" />
+    <wsdl:part name="ManagerEmployeeId" type="s:string" />
+    <wsdl:part name="ManagerName" type="s:string" />
+    <wsdl:part name="StatusChangeTime" type="s:string" />
+    <wsdl:part name="RequestStatus" type="s:string" />
+    <wsdl:part name="ManagerStatusTime" type="s:string" />
+    <wsdl:part name="ManagerComment" type="s:string" />
+    <wsdl:part name="ManagerDeviceType" type="s:string" />
+    <wsdl:part name="TransmissionState" type="s:string" />
+    <wsdl:part name="SubjectDescription" type="s:string" />
+    <wsdl:part name="IsTest" type="s:string" />
+    <wsdl:part name="DocNum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddToPasswordManagerHttpPostOut" />
+  <wsdl:message name="Server_CheckAgentAndHWIDHttpPostIn">
+    <wsdl:part name="AgentID" type="s:string" />
+    <wsdl:part name="HW_ID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Server_CheckAgentAndHWIDHttpPostOut" />
+  <wsdl:message name="Server_UpdateAgentToOnlineDBHttpPostIn">
+    <wsdl:part name="AgentID" type="s:string" />
+    <wsdl:part name="HW_ID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Server_UpdateAgentToOnlineDBHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddPushServerDataAndBlockedDeviceHttpPostIn">
+    <wsdl:part name="AgentID" type="s:string" />
+    <wsdl:part name="ManagerID" type="s:string" />
+    <wsdl:part name="Message" type="s:string" />
+    <wsdl:part name="HWID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddPushServerDataAndBlockedDeviceHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="MPush_GetManagersListHttpPostIn" />
+  <wsdl:message name="MPush_GetManagersListHttpPostOut" />
+  <wsdl:message name="MPush_GetManagerSyncRequestHttpPostIn">
+    <wsdl:part name="ManagerEmployeeId" type="s:string" />
+    <wsdl:part name="StatusChangeTime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MPush_GetManagerSyncRequestHttpPostOut" />
+  <wsdl:message name="GetManagersForTabletUIHttpPostIn">
+    <wsdl:part name="PermissionActivityCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetManagersForTabletUIHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetManagerAuthorizationGroupActivitiesHttpPostIn">
+    <wsdl:part name="EmployeeId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetManagerAuthorizationGroupActivitiesHttpPostOut" />
+  <wsdl:message name="SendSMSToClientHttpPostIn">
+    <wsdl:part name="AgentID" type="s:string" />
+    <wsdl:part name="Cust1" type="s:string" />
+    <wsdl:part name="Cust2" type="s:string" />
+    <wsdl:part name="Lat" type="s:string" />
+    <wsdl:part name="Lon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSToClientHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSToClientTelHttpPostIn">
+    <wsdl:part name="AgentID" type="s:string" />
+    <wsdl:part name="CustID" type="s:string" />
+    <wsdl:part name="Lat" type="s:string" />
+    <wsdl:part name="Lon" type="s:string" />
+    <wsdl:part name="Tel" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSToClientTelHttpPostOut" />
+  <wsdl:message name="MPLayout_SetDriverGPSLocationHttpPostIn">
+    <wsdl:part name="AgentID" type="s:string" />
+    <wsdl:part name="Lat" type="s:string" />
+    <wsdl:part name="Lon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MPLayout_SetDriverGPSLocationHttpPostOut" />
+  <wsdl:portType name="MobiPlusServiceSoap">
+    <wsdl:operation name="GetAPKFile">
+      <wsdl:input message="tns:GetAPKFileSoapIn" />
+      <wsdl:output message="tns:GetAPKFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileDirect">
+      <wsdl:input message="tns:GetFileDirectSoapIn" />
+      <wsdl:output message="tns:GetFileDirectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocument">
+      <wsdl:input message="tns:GetDocumentSoapIn" />
+      <wsdl:output message="tns:GetDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <wsdl:input message="tns:GetFileSoapIn" />
+      <wsdl:output message="tns:GetFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <wsdl:input message="tns:DownloadFileSoapIn" />
+      <wsdl:output message="tns:DownloadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadStrFile">
+      <wsdl:input message="tns:UploadStrFileSoapIn" />
+      <wsdl:output message="tns:UploadStrFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:input message="tns:UploadFileSoapIn" />
+      <wsdl:output message="tns:UploadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadSplitedFile">
+      <wsdl:input message="tns:UploadSplitedFileSoapIn" />
+      <wsdl:output message="tns:UploadSplitedFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile_DblCheck">
+      <wsdl:input message="tns:UploadFile_DblCheckSoapIn" />
+      <wsdl:output message="tns:UploadFile_DblCheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HandShake">
+      <wsdl:input message="tns:HandShakeSoapIn" />
+      <wsdl:output message="tns:HandShakeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckIfFileExsits">
+      <wsdl:input message="tns:CheckIfFileExsitsSoapIn" />
+      <wsdl:output message="tns:CheckIfFileExsitsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIsThereNewVersion">
+      <wsdl:input message="tns:GetIsThereNewVersionSoapIn" />
+      <wsdl:output message="tns:GetIsThereNewVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIsThereNewLayoutVersion">
+      <wsdl:input message="tns:GetIsThereNewLayoutVersionSoapIn" />
+      <wsdl:output message="tns:GetIsThereNewLayoutVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMail">
+      <wsdl:input message="tns:SendMailSoapIn" />
+      <wsdl:output message="tns:SendMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_PushServerSender_By_AgentID">
+      <wsdl:input message="tns:Delete_PushServerSender_By_AgentIDSoapIn" />
+      <wsdl:output message="tns:Delete_PushServerSender_By_AgentIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_AndroidAssignedAgents_By_AgentID">
+      <wsdl:input message="tns:Delete_AndroidAssignedAgents_By_AgentIDSoapIn" />
+      <wsdl:output message="tns:Delete_AndroidAssignedAgents_By_AgentIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToDicManagersConnectedPushServer">
+      <wsdl:input message="tns:AddToDicManagersConnectedPushServerSoapIn" />
+      <wsdl:output message="tns:AddToDicManagersConnectedPushServerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFromDicManagersConnectedPushServer">
+      <wsdl:input message="tns:DeleteFromDicManagersConnectedPushServerSoapIn" />
+      <wsdl:output message="tns:DeleteFromDicManagersConnectedPushServerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FillAllFromPushServer">
+      <wsdl:input message="tns:FillAllFromPushServerSoapIn" />
+      <wsdl:output message="tns:FillAllFromPushServerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearDicManagersConnectedPushServer">
+      <wsdl:input message="tns:ClearDicManagersConnectedPushServerSoapIn" />
+      <wsdl:output message="tns:ClearDicManagersConnectedPushServerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllManagersConnectedPushServer">
+      <wsdl:input message="tns:GetAllManagersConnectedPushServerSoapIn" />
+      <wsdl:output message="tns:GetAllManagersConnectedPushServerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DNBGetZipFile">
+      <wsdl:input message="tns:DNBGetZipFileSoapIn" />
+      <wsdl:output message="tns:DNBGetZipFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DNBUploadStrFile">
+      <wsdl:input message="tns:DNBUploadStrFileSoapIn" />
+      <wsdl:output message="tns:DNBUploadStrFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DNBUploadFile">
+      <wsdl:input message="tns:DNBUploadFileSoapIn" />
+      <wsdl:output message="tns:DNBUploadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunQuery">
+      <wsdl:input message="tns:RunQuerySoapIn" />
+      <wsdl:output message="tns:RunQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunQueryTodb">
+      <wsdl:input message="tns:RunQueryTodbSoapIn" />
+      <wsdl:output message="tns:RunQueryTodbSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunSP">
+      <wsdl:input message="tns:RunSPSoapIn" />
+      <wsdl:output message="tns:RunSPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMediaDirectory">
+      <wsdl:input message="tns:CheckMediaDirectorySoapIn" />
+      <wsdl:output message="tns:CheckMediaDirectorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMediaFile">
+      <wsdl:input message="tns:DownloadMediaFileSoapIn" />
+      <wsdl:output message="tns:DownloadMediaFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMediaFileResponseBytes">
+      <wsdl:input message="tns:DownloadMediaFileResponseBytesSoapIn" />
+      <wsdl:output message="tns:DownloadMediaFileResponseBytesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIMG">
+      <wsdl:input message="tns:GetIMGSoapIn" />
+      <wsdl:output message="tns:GetIMGSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerPushEmployeeData">
+      <wsdl:input message="tns:GetManagerPushEmployeeDataSoapIn" />
+      <wsdl:output message="tns:GetManagerPushEmployeeDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePasswordManager">
+      <wsdl:input message="tns:UpdatePasswordManagerSoapIn" />
+      <wsdl:output message="tns:UpdatePasswordManagerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerPushFiles">
+      <wsdl:input message="tns:GetServerPushFilesSoapIn" />
+      <wsdl:output message="tns:GetServerPushFilesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCache_ServerPushFiles">
+      <wsdl:input message="tns:UpdateCache_ServerPushFilesSoapIn" />
+      <wsdl:output message="tns:UpdateCache_ServerPushFilesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isToRefreshCacheFunc">
+      <wsdl:input message="tns:isToRefreshCacheFuncSoapIn" />
+      <wsdl:output message="tns:isToRefreshCacheFuncSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteServerPushFile">
+      <wsdl:input message="tns:DeleteServerPushFileSoapIn" />
+      <wsdl:output message="tns:DeleteServerPushFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPushServerLog">
+      <wsdl:input message="tns:AddPushServerLogSoapIn" />
+      <wsdl:output message="tns:AddPushServerLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPushServerData">
+      <wsdl:input message="tns:AddPushServerDataSoapIn" />
+      <wsdl:output message="tns:AddPushServerDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetServerPushFilesAgain">
+      <wsdl:input message="tns:SetServerPushFilesAgainSoapIn" />
+      <wsdl:output message="tns:SetServerPushFilesAgainSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToPasswordManager">
+      <wsdl:input message="tns:AddToPasswordManagerSoapIn" />
+      <wsdl:output message="tns:AddToPasswordManagerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Server_CheckAgentAndHWID">
+      <wsdl:input message="tns:Server_CheckAgentAndHWIDSoapIn" />
+      <wsdl:output message="tns:Server_CheckAgentAndHWIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Server_UpdateAgentToOnlineDB">
+      <wsdl:input message="tns:Server_UpdateAgentToOnlineDBSoapIn" />
+      <wsdl:output message="tns:Server_UpdateAgentToOnlineDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPushServerDataAndBlockedDevice">
+      <wsdl:input message="tns:AddPushServerDataAndBlockedDeviceSoapIn" />
+      <wsdl:output message="tns:AddPushServerDataAndBlockedDeviceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MPush_GetManagersList">
+      <wsdl:input message="tns:MPush_GetManagersListSoapIn" />
+      <wsdl:output message="tns:MPush_GetManagersListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MPush_GetManagerSyncRequest">
+      <wsdl:input message="tns:MPush_GetManagerSyncRequestSoapIn" />
+      <wsdl:output message="tns:MPush_GetManagerSyncRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManagersForTabletUI">
+      <wsdl:input message="tns:GetManagersForTabletUISoapIn" />
+      <wsdl:output message="tns:GetManagersForTabletUISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerAuthorizationGroupActivities">
+      <wsdl:input message="tns:GetManagerAuthorizationGroupActivitiesSoapIn" />
+      <wsdl:output message="tns:GetManagerAuthorizationGroupActivitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSToClient">
+      <wsdl:input message="tns:SendSMSToClientSoapIn" />
+      <wsdl:output message="tns:SendSMSToClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSToClientTel">
+      <wsdl:input message="tns:SendSMSToClientTelSoapIn" />
+      <wsdl:output message="tns:SendSMSToClientTelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MPLayout_SetDriverGPSLocation">
+      <wsdl:input message="tns:MPLayout_SetDriverGPSLocationSoapIn" />
+      <wsdl:output message="tns:MPLayout_SetDriverGPSLocationSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MobiPlusServiceHttpGet">
+    <wsdl:operation name="GetAPKFile">
+      <wsdl:input message="tns:GetAPKFileHttpGetIn" />
+      <wsdl:output message="tns:GetAPKFileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileDirect">
+      <wsdl:input message="tns:GetFileDirectHttpGetIn" />
+      <wsdl:output message="tns:GetFileDirectHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocument">
+      <wsdl:input message="tns:GetDocumentHttpGetIn" />
+      <wsdl:output message="tns:GetDocumentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <wsdl:input message="tns:GetFileHttpGetIn" />
+      <wsdl:output message="tns:GetFileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <wsdl:input message="tns:DownloadFileHttpGetIn" />
+      <wsdl:output message="tns:DownloadFileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadStrFile">
+      <wsdl:input message="tns:UploadStrFileHttpGetIn" />
+      <wsdl:output message="tns:UploadStrFileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:input message="tns:UploadFileHttpGetIn" />
+      <wsdl:output message="tns:UploadFileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadSplitedFile">
+      <wsdl:input message="tns:UploadSplitedFileHttpGetIn" />
+      <wsdl:output message="tns:UploadSplitedFileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile_DblCheck">
+      <wsdl:input message="tns:UploadFile_DblCheckHttpGetIn" />
+      <wsdl:output message="tns:UploadFile_DblCheckHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HandShake">
+      <wsdl:input message="tns:HandShakeHttpGetIn" />
+      <wsdl:output message="tns:HandShakeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckIfFileExsits">
+      <wsdl:input message="tns:CheckIfFileExsitsHttpGetIn" />
+      <wsdl:output message="tns:CheckIfFileExsitsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIsThereNewVersion">
+      <wsdl:input message="tns:GetIsThereNewVersionHttpGetIn" />
+      <wsdl:output message="tns:GetIsThereNewVersionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIsThereNewLayoutVersion">
+      <wsdl:input message="tns:GetIsThereNewLayoutVersionHttpGetIn" />
+      <wsdl:output message="tns:GetIsThereNewLayoutVersionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMail">
+      <wsdl:input message="tns:SendMailHttpGetIn" />
+      <wsdl:output message="tns:SendMailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_PushServerSender_By_AgentID">
+      <wsdl:input message="tns:Delete_PushServerSender_By_AgentIDHttpGetIn" />
+      <wsdl:output message="tns:Delete_PushServerSender_By_AgentIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_AndroidAssignedAgents_By_AgentID">
+      <wsdl:input message="tns:Delete_AndroidAssignedAgents_By_AgentIDHttpGetIn" />
+      <wsdl:output message="tns:Delete_AndroidAssignedAgents_By_AgentIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FillAllFromPushServer">
+      <wsdl:input message="tns:FillAllFromPushServerHttpGetIn" />
+      <wsdl:output message="tns:FillAllFromPushServerHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearDicManagersConnectedPushServer">
+      <wsdl:input message="tns:ClearDicManagersConnectedPushServerHttpGetIn" />
+      <wsdl:output message="tns:ClearDicManagersConnectedPushServerHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllManagersConnectedPushServer">
+      <wsdl:input message="tns:GetAllManagersConnectedPushServerHttpGetIn" />
+      <wsdl:output message="tns:GetAllManagersConnectedPushServerHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DNBGetZipFile">
+      <wsdl:input message="tns:DNBGetZipFileHttpGetIn" />
+      <wsdl:output message="tns:DNBGetZipFileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DNBUploadStrFile">
+      <wsdl:input message="tns:DNBUploadStrFileHttpGetIn" />
+      <wsdl:output message="tns:DNBUploadStrFileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DNBUploadFile">
+      <wsdl:input message="tns:DNBUploadFileHttpGetIn" />
+      <wsdl:output message="tns:DNBUploadFileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunQuery">
+      <wsdl:input message="tns:RunQueryHttpGetIn" />
+      <wsdl:output message="tns:RunQueryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunQueryTodb">
+      <wsdl:input message="tns:RunQueryTodbHttpGetIn" />
+      <wsdl:output message="tns:RunQueryTodbHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunSP">
+      <wsdl:input message="tns:RunSPHttpGetIn" />
+      <wsdl:output message="tns:RunSPHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMediaDirectory">
+      <wsdl:input message="tns:CheckMediaDirectoryHttpGetIn" />
+      <wsdl:output message="tns:CheckMediaDirectoryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMediaFile">
+      <wsdl:input message="tns:DownloadMediaFileHttpGetIn" />
+      <wsdl:output message="tns:DownloadMediaFileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMediaFileResponseBytes">
+      <wsdl:input message="tns:DownloadMediaFileResponseBytesHttpGetIn" />
+      <wsdl:output message="tns:DownloadMediaFileResponseBytesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIMG">
+      <wsdl:input message="tns:GetIMGHttpGetIn" />
+      <wsdl:output message="tns:GetIMGHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerPushEmployeeData">
+      <wsdl:input message="tns:GetManagerPushEmployeeDataHttpGetIn" />
+      <wsdl:output message="tns:GetManagerPushEmployeeDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePasswordManager">
+      <wsdl:input message="tns:UpdatePasswordManagerHttpGetIn" />
+      <wsdl:output message="tns:UpdatePasswordManagerHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerPushFiles">
+      <wsdl:input message="tns:GetServerPushFilesHttpGetIn" />
+      <wsdl:output message="tns:GetServerPushFilesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCache_ServerPushFiles">
+      <wsdl:input message="tns:UpdateCache_ServerPushFilesHttpGetIn" />
+      <wsdl:output message="tns:UpdateCache_ServerPushFilesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isToRefreshCacheFunc">
+      <wsdl:input message="tns:isToRefreshCacheFuncHttpGetIn" />
+      <wsdl:output message="tns:isToRefreshCacheFuncHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteServerPushFile">
+      <wsdl:input message="tns:DeleteServerPushFileHttpGetIn" />
+      <wsdl:output message="tns:DeleteServerPushFileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPushServerLog">
+      <wsdl:input message="tns:AddPushServerLogHttpGetIn" />
+      <wsdl:output message="tns:AddPushServerLogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPushServerData">
+      <wsdl:input message="tns:AddPushServerDataHttpGetIn" />
+      <wsdl:output message="tns:AddPushServerDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetServerPushFilesAgain">
+      <wsdl:input message="tns:SetServerPushFilesAgainHttpGetIn" />
+      <wsdl:output message="tns:SetServerPushFilesAgainHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToPasswordManager">
+      <wsdl:input message="tns:AddToPasswordManagerHttpGetIn" />
+      <wsdl:output message="tns:AddToPasswordManagerHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Server_CheckAgentAndHWID">
+      <wsdl:input message="tns:Server_CheckAgentAndHWIDHttpGetIn" />
+      <wsdl:output message="tns:Server_CheckAgentAndHWIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Server_UpdateAgentToOnlineDB">
+      <wsdl:input message="tns:Server_UpdateAgentToOnlineDBHttpGetIn" />
+      <wsdl:output message="tns:Server_UpdateAgentToOnlineDBHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPushServerDataAndBlockedDevice">
+      <wsdl:input message="tns:AddPushServerDataAndBlockedDeviceHttpGetIn" />
+      <wsdl:output message="tns:AddPushServerDataAndBlockedDeviceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MPush_GetManagersList">
+      <wsdl:input message="tns:MPush_GetManagersListHttpGetIn" />
+      <wsdl:output message="tns:MPush_GetManagersListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MPush_GetManagerSyncRequest">
+      <wsdl:input message="tns:MPush_GetManagerSyncRequestHttpGetIn" />
+      <wsdl:output message="tns:MPush_GetManagerSyncRequestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManagersForTabletUI">
+      <wsdl:input message="tns:GetManagersForTabletUIHttpGetIn" />
+      <wsdl:output message="tns:GetManagersForTabletUIHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerAuthorizationGroupActivities">
+      <wsdl:input message="tns:GetManagerAuthorizationGroupActivitiesHttpGetIn" />
+      <wsdl:output message="tns:GetManagerAuthorizationGroupActivitiesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSToClient">
+      <wsdl:input message="tns:SendSMSToClientHttpGetIn" />
+      <wsdl:output message="tns:SendSMSToClientHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSToClientTel">
+      <wsdl:input message="tns:SendSMSToClientTelHttpGetIn" />
+      <wsdl:output message="tns:SendSMSToClientTelHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MPLayout_SetDriverGPSLocation">
+      <wsdl:input message="tns:MPLayout_SetDriverGPSLocationHttpGetIn" />
+      <wsdl:output message="tns:MPLayout_SetDriverGPSLocationHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MobiPlusServiceHttpPost">
+    <wsdl:operation name="GetAPKFile">
+      <wsdl:input message="tns:GetAPKFileHttpPostIn" />
+      <wsdl:output message="tns:GetAPKFileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileDirect">
+      <wsdl:input message="tns:GetFileDirectHttpPostIn" />
+      <wsdl:output message="tns:GetFileDirectHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocument">
+      <wsdl:input message="tns:GetDocumentHttpPostIn" />
+      <wsdl:output message="tns:GetDocumentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <wsdl:input message="tns:GetFileHttpPostIn" />
+      <wsdl:output message="tns:GetFileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <wsdl:input message="tns:DownloadFileHttpPostIn" />
+      <wsdl:output message="tns:DownloadFileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadStrFile">
+      <wsdl:input message="tns:UploadStrFileHttpPostIn" />
+      <wsdl:output message="tns:UploadStrFileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:input message="tns:UploadFileHttpPostIn" />
+      <wsdl:output message="tns:UploadFileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadSplitedFile">
+      <wsdl:input message="tns:UploadSplitedFileHttpPostIn" />
+      <wsdl:output message="tns:UploadSplitedFileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile_DblCheck">
+      <wsdl:input message="tns:UploadFile_DblCheckHttpPostIn" />
+      <wsdl:output message="tns:UploadFile_DblCheckHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HandShake">
+      <wsdl:input message="tns:HandShakeHttpPostIn" />
+      <wsdl:output message="tns:HandShakeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckIfFileExsits">
+      <wsdl:input message="tns:CheckIfFileExsitsHttpPostIn" />
+      <wsdl:output message="tns:CheckIfFileExsitsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIsThereNewVersion">
+      <wsdl:input message="tns:GetIsThereNewVersionHttpPostIn" />
+      <wsdl:output message="tns:GetIsThereNewVersionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIsThereNewLayoutVersion">
+      <wsdl:input message="tns:GetIsThereNewLayoutVersionHttpPostIn" />
+      <wsdl:output message="tns:GetIsThereNewLayoutVersionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMail">
+      <wsdl:input message="tns:SendMailHttpPostIn" />
+      <wsdl:output message="tns:SendMailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_PushServerSender_By_AgentID">
+      <wsdl:input message="tns:Delete_PushServerSender_By_AgentIDHttpPostIn" />
+      <wsdl:output message="tns:Delete_PushServerSender_By_AgentIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_AndroidAssignedAgents_By_AgentID">
+      <wsdl:input message="tns:Delete_AndroidAssignedAgents_By_AgentIDHttpPostIn" />
+      <wsdl:output message="tns:Delete_AndroidAssignedAgents_By_AgentIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FillAllFromPushServer">
+      <wsdl:input message="tns:FillAllFromPushServerHttpPostIn" />
+      <wsdl:output message="tns:FillAllFromPushServerHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearDicManagersConnectedPushServer">
+      <wsdl:input message="tns:ClearDicManagersConnectedPushServerHttpPostIn" />
+      <wsdl:output message="tns:ClearDicManagersConnectedPushServerHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllManagersConnectedPushServer">
+      <wsdl:input message="tns:GetAllManagersConnectedPushServerHttpPostIn" />
+      <wsdl:output message="tns:GetAllManagersConnectedPushServerHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DNBGetZipFile">
+      <wsdl:input message="tns:DNBGetZipFileHttpPostIn" />
+      <wsdl:output message="tns:DNBGetZipFileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DNBUploadStrFile">
+      <wsdl:input message="tns:DNBUploadStrFileHttpPostIn" />
+      <wsdl:output message="tns:DNBUploadStrFileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DNBUploadFile">
+      <wsdl:input message="tns:DNBUploadFileHttpPostIn" />
+      <wsdl:output message="tns:DNBUploadFileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunQuery">
+      <wsdl:input message="tns:RunQueryHttpPostIn" />
+      <wsdl:output message="tns:RunQueryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunQueryTodb">
+      <wsdl:input message="tns:RunQueryTodbHttpPostIn" />
+      <wsdl:output message="tns:RunQueryTodbHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunSP">
+      <wsdl:input message="tns:RunSPHttpPostIn" />
+      <wsdl:output message="tns:RunSPHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMediaDirectory">
+      <wsdl:input message="tns:CheckMediaDirectoryHttpPostIn" />
+      <wsdl:output message="tns:CheckMediaDirectoryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMediaFile">
+      <wsdl:input message="tns:DownloadMediaFileHttpPostIn" />
+      <wsdl:output message="tns:DownloadMediaFileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMediaFileResponseBytes">
+      <wsdl:input message="tns:DownloadMediaFileResponseBytesHttpPostIn" />
+      <wsdl:output message="tns:DownloadMediaFileResponseBytesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIMG">
+      <wsdl:input message="tns:GetIMGHttpPostIn" />
+      <wsdl:output message="tns:GetIMGHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerPushEmployeeData">
+      <wsdl:input message="tns:GetManagerPushEmployeeDataHttpPostIn" />
+      <wsdl:output message="tns:GetManagerPushEmployeeDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePasswordManager">
+      <wsdl:input message="tns:UpdatePasswordManagerHttpPostIn" />
+      <wsdl:output message="tns:UpdatePasswordManagerHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerPushFiles">
+      <wsdl:input message="tns:GetServerPushFilesHttpPostIn" />
+      <wsdl:output message="tns:GetServerPushFilesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCache_ServerPushFiles">
+      <wsdl:input message="tns:UpdateCache_ServerPushFilesHttpPostIn" />
+      <wsdl:output message="tns:UpdateCache_ServerPushFilesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isToRefreshCacheFunc">
+      <wsdl:input message="tns:isToRefreshCacheFuncHttpPostIn" />
+      <wsdl:output message="tns:isToRefreshCacheFuncHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteServerPushFile">
+      <wsdl:input message="tns:DeleteServerPushFileHttpPostIn" />
+      <wsdl:output message="tns:DeleteServerPushFileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPushServerLog">
+      <wsdl:input message="tns:AddPushServerLogHttpPostIn" />
+      <wsdl:output message="tns:AddPushServerLogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPushServerData">
+      <wsdl:input message="tns:AddPushServerDataHttpPostIn" />
+      <wsdl:output message="tns:AddPushServerDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetServerPushFilesAgain">
+      <wsdl:input message="tns:SetServerPushFilesAgainHttpPostIn" />
+      <wsdl:output message="tns:SetServerPushFilesAgainHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToPasswordManager">
+      <wsdl:input message="tns:AddToPasswordManagerHttpPostIn" />
+      <wsdl:output message="tns:AddToPasswordManagerHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Server_CheckAgentAndHWID">
+      <wsdl:input message="tns:Server_CheckAgentAndHWIDHttpPostIn" />
+      <wsdl:output message="tns:Server_CheckAgentAndHWIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Server_UpdateAgentToOnlineDB">
+      <wsdl:input message="tns:Server_UpdateAgentToOnlineDBHttpPostIn" />
+      <wsdl:output message="tns:Server_UpdateAgentToOnlineDBHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPushServerDataAndBlockedDevice">
+      <wsdl:input message="tns:AddPushServerDataAndBlockedDeviceHttpPostIn" />
+      <wsdl:output message="tns:AddPushServerDataAndBlockedDeviceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MPush_GetManagersList">
+      <wsdl:input message="tns:MPush_GetManagersListHttpPostIn" />
+      <wsdl:output message="tns:MPush_GetManagersListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MPush_GetManagerSyncRequest">
+      <wsdl:input message="tns:MPush_GetManagerSyncRequestHttpPostIn" />
+      <wsdl:output message="tns:MPush_GetManagerSyncRequestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManagersForTabletUI">
+      <wsdl:input message="tns:GetManagersForTabletUIHttpPostIn" />
+      <wsdl:output message="tns:GetManagersForTabletUIHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerAuthorizationGroupActivities">
+      <wsdl:input message="tns:GetManagerAuthorizationGroupActivitiesHttpPostIn" />
+      <wsdl:output message="tns:GetManagerAuthorizationGroupActivitiesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSToClient">
+      <wsdl:input message="tns:SendSMSToClientHttpPostIn" />
+      <wsdl:output message="tns:SendSMSToClientHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSToClientTel">
+      <wsdl:input message="tns:SendSMSToClientTelHttpPostIn" />
+      <wsdl:output message="tns:SendSMSToClientTelHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MPLayout_SetDriverGPSLocation">
+      <wsdl:input message="tns:MPLayout_SetDriverGPSLocationHttpPostIn" />
+      <wsdl:output message="tns:MPLayout_SetDriverGPSLocationHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MobiPlusServiceSoap" type="tns:MobiPlusServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAPKFile">
+      <soap:operation soapAction="http://tempuri.org/GetAPKFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileDirect">
+      <soap:operation soapAction="http://tempuri.org/GetFileDirect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocument">
+      <soap:operation soapAction="http://tempuri.org/GetDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <soap:operation soapAction="http://tempuri.org/GetFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <soap:operation soapAction="http://tempuri.org/DownloadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadStrFile">
+      <soap:operation soapAction="http://tempuri.org/UploadStrFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap:operation soapAction="http://tempuri.org/UploadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadSplitedFile">
+      <soap:operation soapAction="http://tempuri.org/UploadSplitedFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile_DblCheck">
+      <soap:operation soapAction="http://tempuri.org/UploadFile_DblCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HandShake">
+      <soap:operation soapAction="http://tempuri.org/HandShake" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckIfFileExsits">
+      <soap:operation soapAction="http://tempuri.org/CheckIfFileExsits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIsThereNewVersion">
+      <soap:operation soapAction="http://tempuri.org/GetIsThereNewVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIsThereNewLayoutVersion">
+      <soap:operation soapAction="http://tempuri.org/GetIsThereNewLayoutVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMail">
+      <soap:operation soapAction="http://tempuri.org/SendMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_PushServerSender_By_AgentID">
+      <soap:operation soapAction="http://tempuri.org/Delete_PushServerSender_By_AgentID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_AndroidAssignedAgents_By_AgentID">
+      <soap:operation soapAction="http://tempuri.org/Delete_AndroidAssignedAgents_By_AgentID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToDicManagersConnectedPushServer">
+      <soap:operation soapAction="http://tempuri.org/AddToDicManagersConnectedPushServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFromDicManagersConnectedPushServer">
+      <soap:operation soapAction="http://tempuri.org/DeleteFromDicManagersConnectedPushServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FillAllFromPushServer">
+      <soap:operation soapAction="http://tempuri.org/FillAllFromPushServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearDicManagersConnectedPushServer">
+      <soap:operation soapAction="http://tempuri.org/ClearDicManagersConnectedPushServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllManagersConnectedPushServer">
+      <soap:operation soapAction="http://tempuri.org/GetAllManagersConnectedPushServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DNBGetZipFile">
+      <soap:operation soapAction="http://tempuri.org/DNBGetZipFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DNBUploadStrFile">
+      <soap:operation soapAction="http://tempuri.org/DNBUploadStrFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DNBUploadFile">
+      <soap:operation soapAction="http://tempuri.org/DNBUploadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunQuery">
+      <soap:operation soapAction="http://tempuri.org/RunQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunQueryTodb">
+      <soap:operation soapAction="http://tempuri.org/RunQueryTodb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunSP">
+      <soap:operation soapAction="http://tempuri.org/RunSP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMediaDirectory">
+      <soap:operation soapAction="http://tempuri.org/CheckMediaDirectory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMediaFile">
+      <soap:operation soapAction="http://tempuri.org/DownloadMediaFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMediaFileResponseBytes">
+      <soap:operation soapAction="http://tempuri.org/DownloadMediaFileResponseBytes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIMG">
+      <soap:operation soapAction="http://tempuri.org/GetIMG" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerPushEmployeeData">
+      <soap:operation soapAction="http://tempuri.org/GetManagerPushEmployeeData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePasswordManager">
+      <soap:operation soapAction="http://tempuri.org/UpdatePasswordManager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerPushFiles">
+      <soap:operation soapAction="http://tempuri.org/GetServerPushFiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCache_ServerPushFiles">
+      <soap:operation soapAction="http://tempuri.org/UpdateCache_ServerPushFiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isToRefreshCacheFunc">
+      <soap:operation soapAction="http://tempuri.org/isToRefreshCacheFunc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteServerPushFile">
+      <soap:operation soapAction="http://tempuri.org/DeleteServerPushFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPushServerLog">
+      <soap:operation soapAction="http://tempuri.org/AddPushServerLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPushServerData">
+      <soap:operation soapAction="http://tempuri.org/AddPushServerData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetServerPushFilesAgain">
+      <soap:operation soapAction="http://tempuri.org/SetServerPushFilesAgain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToPasswordManager">
+      <soap:operation soapAction="http://tempuri.org/AddToPasswordManager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Server_CheckAgentAndHWID">
+      <soap:operation soapAction="http://tempuri.org/Server_CheckAgentAndHWID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Server_UpdateAgentToOnlineDB">
+      <soap:operation soapAction="http://tempuri.org/Server_UpdateAgentToOnlineDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPushServerDataAndBlockedDevice">
+      <soap:operation soapAction="http://tempuri.org/AddPushServerDataAndBlockedDevice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MPush_GetManagersList">
+      <soap:operation soapAction="http://tempuri.org/MPush_GetManagersList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MPush_GetManagerSyncRequest">
+      <soap:operation soapAction="http://tempuri.org/MPush_GetManagerSyncRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManagersForTabletUI">
+      <soap:operation soapAction="http://tempuri.org/GetManagersForTabletUI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerAuthorizationGroupActivities">
+      <soap:operation soapAction="http://tempuri.org/GetManagerAuthorizationGroupActivities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSToClient">
+      <soap:operation soapAction="http://tempuri.org/SendSMSToClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSToClientTel">
+      <soap:operation soapAction="http://tempuri.org/SendSMSToClientTel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MPLayout_SetDriverGPSLocation">
+      <soap:operation soapAction="http://tempuri.org/MPLayout_SetDriverGPSLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MobiPlusServiceSoap12" type="tns:MobiPlusServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAPKFile">
+      <soap12:operation soapAction="http://tempuri.org/GetAPKFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileDirect">
+      <soap12:operation soapAction="http://tempuri.org/GetFileDirect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocument">
+      <soap12:operation soapAction="http://tempuri.org/GetDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <soap12:operation soapAction="http://tempuri.org/GetFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <soap12:operation soapAction="http://tempuri.org/DownloadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadStrFile">
+      <soap12:operation soapAction="http://tempuri.org/UploadStrFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap12:operation soapAction="http://tempuri.org/UploadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadSplitedFile">
+      <soap12:operation soapAction="http://tempuri.org/UploadSplitedFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile_DblCheck">
+      <soap12:operation soapAction="http://tempuri.org/UploadFile_DblCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HandShake">
+      <soap12:operation soapAction="http://tempuri.org/HandShake" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckIfFileExsits">
+      <soap12:operation soapAction="http://tempuri.org/CheckIfFileExsits" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIsThereNewVersion">
+      <soap12:operation soapAction="http://tempuri.org/GetIsThereNewVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIsThereNewLayoutVersion">
+      <soap12:operation soapAction="http://tempuri.org/GetIsThereNewLayoutVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMail">
+      <soap12:operation soapAction="http://tempuri.org/SendMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_PushServerSender_By_AgentID">
+      <soap12:operation soapAction="http://tempuri.org/Delete_PushServerSender_By_AgentID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_AndroidAssignedAgents_By_AgentID">
+      <soap12:operation soapAction="http://tempuri.org/Delete_AndroidAssignedAgents_By_AgentID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToDicManagersConnectedPushServer">
+      <soap12:operation soapAction="http://tempuri.org/AddToDicManagersConnectedPushServer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFromDicManagersConnectedPushServer">
+      <soap12:operation soapAction="http://tempuri.org/DeleteFromDicManagersConnectedPushServer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FillAllFromPushServer">
+      <soap12:operation soapAction="http://tempuri.org/FillAllFromPushServer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearDicManagersConnectedPushServer">
+      <soap12:operation soapAction="http://tempuri.org/ClearDicManagersConnectedPushServer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllManagersConnectedPushServer">
+      <soap12:operation soapAction="http://tempuri.org/GetAllManagersConnectedPushServer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DNBGetZipFile">
+      <soap12:operation soapAction="http://tempuri.org/DNBGetZipFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DNBUploadStrFile">
+      <soap12:operation soapAction="http://tempuri.org/DNBUploadStrFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DNBUploadFile">
+      <soap12:operation soapAction="http://tempuri.org/DNBUploadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunQuery">
+      <soap12:operation soapAction="http://tempuri.org/RunQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunQueryTodb">
+      <soap12:operation soapAction="http://tempuri.org/RunQueryTodb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunSP">
+      <soap12:operation soapAction="http://tempuri.org/RunSP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMediaDirectory">
+      <soap12:operation soapAction="http://tempuri.org/CheckMediaDirectory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMediaFile">
+      <soap12:operation soapAction="http://tempuri.org/DownloadMediaFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMediaFileResponseBytes">
+      <soap12:operation soapAction="http://tempuri.org/DownloadMediaFileResponseBytes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIMG">
+      <soap12:operation soapAction="http://tempuri.org/GetIMG" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerPushEmployeeData">
+      <soap12:operation soapAction="http://tempuri.org/GetManagerPushEmployeeData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePasswordManager">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePasswordManager" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerPushFiles">
+      <soap12:operation soapAction="http://tempuri.org/GetServerPushFiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCache_ServerPushFiles">
+      <soap12:operation soapAction="http://tempuri.org/UpdateCache_ServerPushFiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isToRefreshCacheFunc">
+      <soap12:operation soapAction="http://tempuri.org/isToRefreshCacheFunc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteServerPushFile">
+      <soap12:operation soapAction="http://tempuri.org/DeleteServerPushFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPushServerLog">
+      <soap12:operation soapAction="http://tempuri.org/AddPushServerLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPushServerData">
+      <soap12:operation soapAction="http://tempuri.org/AddPushServerData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetServerPushFilesAgain">
+      <soap12:operation soapAction="http://tempuri.org/SetServerPushFilesAgain" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToPasswordManager">
+      <soap12:operation soapAction="http://tempuri.org/AddToPasswordManager" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Server_CheckAgentAndHWID">
+      <soap12:operation soapAction="http://tempuri.org/Server_CheckAgentAndHWID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Server_UpdateAgentToOnlineDB">
+      <soap12:operation soapAction="http://tempuri.org/Server_UpdateAgentToOnlineDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPushServerDataAndBlockedDevice">
+      <soap12:operation soapAction="http://tempuri.org/AddPushServerDataAndBlockedDevice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MPush_GetManagersList">
+      <soap12:operation soapAction="http://tempuri.org/MPush_GetManagersList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MPush_GetManagerSyncRequest">
+      <soap12:operation soapAction="http://tempuri.org/MPush_GetManagerSyncRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManagersForTabletUI">
+      <soap12:operation soapAction="http://tempuri.org/GetManagersForTabletUI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerAuthorizationGroupActivities">
+      <soap12:operation soapAction="http://tempuri.org/GetManagerAuthorizationGroupActivities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSToClient">
+      <soap12:operation soapAction="http://tempuri.org/SendSMSToClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSToClientTel">
+      <soap12:operation soapAction="http://tempuri.org/SendSMSToClientTel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MPLayout_SetDriverGPSLocation">
+      <soap12:operation soapAction="http://tempuri.org/MPLayout_SetDriverGPSLocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MobiPlusServiceHttpGet" type="tns:MobiPlusServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetAPKFile">
+      <http:operation location="/GetAPKFile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileDirect">
+      <http:operation location="/GetFileDirect" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocument">
+      <http:operation location="/GetDocument" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <http:operation location="/GetFile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <http:operation location="/DownloadFile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="UploadStrFile">
+      <http:operation location="/UploadStrFile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <http:operation location="/UploadFile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadSplitedFile">
+      <http:operation location="/UploadSplitedFile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile_DblCheck">
+      <http:operation location="/UploadFile_DblCheck" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HandShake">
+      <http:operation location="/HandShake" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckIfFileExsits">
+      <http:operation location="/CheckIfFileExsits" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIsThereNewVersion">
+      <http:operation location="/GetIsThereNewVersion" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetIsThereNewLayoutVersion">
+      <http:operation location="/GetIsThereNewLayoutVersion" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SendMail">
+      <http:operation location="/SendMail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_PushServerSender_By_AgentID">
+      <http:operation location="/Delete_PushServerSender_By_AgentID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_AndroidAssignedAgents_By_AgentID">
+      <http:operation location="/Delete_AndroidAssignedAgents_By_AgentID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FillAllFromPushServer">
+      <http:operation location="/FillAllFromPushServer" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearDicManagersConnectedPushServer">
+      <http:operation location="/ClearDicManagersConnectedPushServer" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllManagersConnectedPushServer">
+      <http:operation location="/GetAllManagersConnectedPushServer" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="DNBGetZipFile">
+      <http:operation location="/DNBGetZipFile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="DNBUploadStrFile">
+      <http:operation location="/DNBUploadStrFile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DNBUploadFile">
+      <http:operation location="/DNBUploadFile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunQuery">
+      <http:operation location="/RunQuery" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="RunQueryTodb">
+      <http:operation location="/RunQueryTodb" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="RunSP">
+      <http:operation location="/RunSP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMediaDirectory">
+      <http:operation location="/CheckMediaDirectory" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMediaFile">
+      <http:operation location="/DownloadMediaFile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMediaFileResponseBytes">
+      <http:operation location="/DownloadMediaFileResponseBytes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetIMG">
+      <http:operation location="/GetIMG" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerPushEmployeeData">
+      <http:operation location="/GetManagerPushEmployeeData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePasswordManager">
+      <http:operation location="/UpdatePasswordManager" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerPushFiles">
+      <http:operation location="/GetServerPushFiles" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCache_ServerPushFiles">
+      <http:operation location="/UpdateCache_ServerPushFiles" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="isToRefreshCacheFunc">
+      <http:operation location="/isToRefreshCacheFunc" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteServerPushFile">
+      <http:operation location="/DeleteServerPushFile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPushServerLog">
+      <http:operation location="/AddPushServerLog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPushServerData">
+      <http:operation location="/AddPushServerData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetServerPushFilesAgain">
+      <http:operation location="/SetServerPushFilesAgain" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToPasswordManager">
+      <http:operation location="/AddToPasswordManager" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Server_CheckAgentAndHWID">
+      <http:operation location="/Server_CheckAgentAndHWID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Server_UpdateAgentToOnlineDB">
+      <http:operation location="/Server_UpdateAgentToOnlineDB" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPushServerDataAndBlockedDevice">
+      <http:operation location="/AddPushServerDataAndBlockedDevice" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MPush_GetManagersList">
+      <http:operation location="/MPush_GetManagersList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="MPush_GetManagerSyncRequest">
+      <http:operation location="/MPush_GetManagerSyncRequest" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetManagersForTabletUI">
+      <http:operation location="/GetManagersForTabletUI" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerAuthorizationGroupActivities">
+      <http:operation location="/GetManagerAuthorizationGroupActivities" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSToClient">
+      <http:operation location="/SendSMSToClient" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSToClientTel">
+      <http:operation location="/SendSMSToClientTel" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="MPLayout_SetDriverGPSLocation">
+      <http:operation location="/MPLayout_SetDriverGPSLocation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MobiPlusServiceHttpPost" type="tns:MobiPlusServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetAPKFile">
+      <http:operation location="/GetAPKFile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileDirect">
+      <http:operation location="/GetFileDirect" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocument">
+      <http:operation location="/GetDocument" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <http:operation location="/GetFile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <http:operation location="/DownloadFile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="UploadStrFile">
+      <http:operation location="/UploadStrFile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <http:operation location="/UploadFile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadSplitedFile">
+      <http:operation location="/UploadSplitedFile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile_DblCheck">
+      <http:operation location="/UploadFile_DblCheck" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HandShake">
+      <http:operation location="/HandShake" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckIfFileExsits">
+      <http:operation location="/CheckIfFileExsits" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIsThereNewVersion">
+      <http:operation location="/GetIsThereNewVersion" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetIsThereNewLayoutVersion">
+      <http:operation location="/GetIsThereNewLayoutVersion" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SendMail">
+      <http:operation location="/SendMail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_PushServerSender_By_AgentID">
+      <http:operation location="/Delete_PushServerSender_By_AgentID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_AndroidAssignedAgents_By_AgentID">
+      <http:operation location="/Delete_AndroidAssignedAgents_By_AgentID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FillAllFromPushServer">
+      <http:operation location="/FillAllFromPushServer" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearDicManagersConnectedPushServer">
+      <http:operation location="/ClearDicManagersConnectedPushServer" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllManagersConnectedPushServer">
+      <http:operation location="/GetAllManagersConnectedPushServer" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="DNBGetZipFile">
+      <http:operation location="/DNBGetZipFile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="DNBUploadStrFile">
+      <http:operation location="/DNBUploadStrFile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DNBUploadFile">
+      <http:operation location="/DNBUploadFile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunQuery">
+      <http:operation location="/RunQuery" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="RunQueryTodb">
+      <http:operation location="/RunQueryTodb" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="RunSP">
+      <http:operation location="/RunSP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMediaDirectory">
+      <http:operation location="/CheckMediaDirectory" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMediaFile">
+      <http:operation location="/DownloadMediaFile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMediaFileResponseBytes">
+      <http:operation location="/DownloadMediaFileResponseBytes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetIMG">
+      <http:operation location="/GetIMG" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerPushEmployeeData">
+      <http:operation location="/GetManagerPushEmployeeData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePasswordManager">
+      <http:operation location="/UpdatePasswordManager" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerPushFiles">
+      <http:operation location="/GetServerPushFiles" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCache_ServerPushFiles">
+      <http:operation location="/UpdateCache_ServerPushFiles" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="isToRefreshCacheFunc">
+      <http:operation location="/isToRefreshCacheFunc" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteServerPushFile">
+      <http:operation location="/DeleteServerPushFile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPushServerLog">
+      <http:operation location="/AddPushServerLog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPushServerData">
+      <http:operation location="/AddPushServerData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetServerPushFilesAgain">
+      <http:operation location="/SetServerPushFilesAgain" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToPasswordManager">
+      <http:operation location="/AddToPasswordManager" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Server_CheckAgentAndHWID">
+      <http:operation location="/Server_CheckAgentAndHWID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Server_UpdateAgentToOnlineDB">
+      <http:operation location="/Server_UpdateAgentToOnlineDB" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPushServerDataAndBlockedDevice">
+      <http:operation location="/AddPushServerDataAndBlockedDevice" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MPush_GetManagersList">
+      <http:operation location="/MPush_GetManagersList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="MPush_GetManagerSyncRequest">
+      <http:operation location="/MPush_GetManagerSyncRequest" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetManagersForTabletUI">
+      <http:operation location="/GetManagersForTabletUI" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerAuthorizationGroupActivities">
+      <http:operation location="/GetManagerAuthorizationGroupActivities" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSToClient">
+      <http:operation location="/SendSMSToClient" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSToClientTel">
+      <http:operation location="/SendSMSToClientTel" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="MPLayout_SetDriverGPSLocation">
+      <http:operation location="/MPLayout_SetDriverGPSLocation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MobiPlusService">
+    <wsdl:port name="MobiPlusServiceSoap" binding="tns:MobiPlusServiceSoap">
+      <soap:address location="http://10.0.0.85:8090/MobiPlusServices/MobiPlusService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MobiPlusServiceSoap12" binding="tns:MobiPlusServiceSoap12">
+      <soap12:address location="http://10.0.0.85:8090/MobiPlusServices/MobiPlusService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MobiPlusServiceHttpGet" binding="tns:MobiPlusServiceHttpGet">
+      <http:address location="http://10.0.0.85:8090/MobiPlusServices/MobiPlusService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MobiPlusServiceHttpPost" binding="tns:MobiPlusServiceHttpPost">
+      <http:address location="http://10.0.0.85:8090/MobiPlusServices/MobiPlusService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

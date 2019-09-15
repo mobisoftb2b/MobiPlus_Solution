@@ -1,0 +1,296 @@
+﻿[
+  {
+    "TabID": 339,
+    "TabDescription": "ריכוז פעילות",
+    "FormID": 27,
+    "Layouts": [
+      {
+        "Tabs": {
+          "TabID": 339,
+          "TabDescription": "ריכוז פעילות",
+          "FormID": null,
+          "Layouts": null
+        },
+        "Forms": {
+          "FormID": 27,
+          "ParentFormID": null,
+          "FormName": "פעילות יומית1",
+          "RoutePath": null,
+          "CssIcon": null
+        },
+        "Report": {
+          "ReportID": 77,
+          "ReportName": "CustInvoice",
+          "ReportTypeID": 1,
+          "ReportTemplate": null,
+          "ReportQuery": "SELECT CustID , InvoiceNum,InvoiceDate, TotalSum,TotalDiscount,Warehouse FROM InvoiceHeader where CustID = @CustID order by InvoiceNum ",
+          "ReportCaption": "חשבוניות לקוח",
+          "Report_SP_Params": "",
+          "ReportDataSourceID": 1,
+          "Widgets": null
+        },
+        "StartPos_X": 1,
+        "StartPos_Y": 4,
+        "ContentDimension_X": 9,
+        "ContentDimension_Y": 15,
+        "ContentDim_MinWidth": 6,
+        "ContentDim_MaxWidth": 10,
+        "ContentDim_MinHeight": 15,
+        "ContentDim_MaxHeight": 20,
+        "IsVisible": true,
+        "IsStatic": false,
+        "isDraggable": true,
+        "isResizable": true
+      },
+      {
+        "Tabs": {
+          "TabID": 339,
+          "TabDescription": "ריכוז פעילות",
+          "FormID": null,
+          "Layouts": null
+        },
+        "Forms": {
+          "FormID": 27,
+          "ParentFormID": null,
+          "FormName": "פעילות יומית1",
+          "RoutePath": null,
+          "CssIcon": null
+        },
+        "Report": {
+          "ReportID": 180,
+          "ReportName": "POD_Widget_CustomerDelays",
+          "ReportTypeID": 17,
+          "ReportTemplate": "DefaultWidgets",
+          "ReportQuery": "sp_POD_Widget_CustomerDelays",
+          "ReportCaption": "POD_Widget_CustomerDelays",
+          "Report_SP_Params": "@CountryID; @DistrID; @AgentId; @FromDate;",
+          "ReportDataSourceID": 3,
+          "Widgets": {
+            "WidgetID": null,
+            "Title": "0/0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0%",
+            "Plan": null,
+            "Done": null,
+            "Percent": null,
+            "ChartColor": null,
+            "TrackColor": null,
+            "Value": "איחורים ללקוח",
+            "UpperText": null,
+            "LowerText": "Andrey",
+            "BGColor": "bg-green",
+            "SubBgColor": "bg-green-light",
+            "IconName": "icon-cloud-upload",
+            "Color": "white"
+          }
+        },
+        "StartPos_X": 1,
+        "StartPos_Y": 2,
+        "ContentDimension_X": 3,
+        "ContentDimension_Y": 3,
+        "ContentDim_MinWidth": 1,
+        "ContentDim_MaxWidth": 3,
+        "ContentDim_MinHeight": 1,
+        "ContentDim_MaxHeight": 4,
+        "IsVisible": true,
+        "IsStatic": false,
+        "isDraggable": true,
+        "isResizable": true
+      },
+      {
+        "Tabs": {
+          "TabID": 339,
+          "TabDescription": "ריכוז פעילות",
+          "FormID": null,
+          "Layouts": null
+        },
+        "Forms": {
+          "FormID": 27,
+          "ParentFormID": null,
+          "FormName": "פעילות יומית1",
+          "RoutePath": null,
+          "CssIcon": null
+        },
+        "Report": {
+          "ReportID": 182,
+          "ReportName": "POD_Widget_NotFullDelivery",
+          "ReportTypeID": 17,
+          "ReportTemplate": "DefaultWidgets",
+          "ReportQuery": "sp_POD_Widget_NotFullDelivery",
+          "ReportCaption": "POD_Widget_NotFullDelivery",
+          "Report_SP_Params": "@CountryID;@DistrID;@AgentId;@FromDate;",
+          "ReportDataSourceID": 3,
+          "Widgets": {
+            "WidgetID": null,
+            "Title": "0/0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0%",
+            "Plan": null,
+            "Done": null,
+            "Percent": null,
+            "ChartColor": null,
+            "TrackColor": null,
+            "Value": "אי אספקה מלאה",
+            "UpperText": null,
+            "LowerText": "Avi",
+            "BGColor": "bg-info",
+            "SubBgColor": "bg-info-light",
+            "IconName": "icon-cloud-download",
+            "Color": "white"
+          }
+        },
+        "StartPos_X": 6,
+        "StartPos_Y": 2,
+        "ContentDimension_X": 3,
+        "ContentDimension_Y": 3,
+        "ContentDim_MinWidth": 1,
+        "ContentDim_MaxWidth": 3,
+        "ContentDim_MinHeight": 1,
+        "ContentDim_MaxHeight": 4,
+        "IsVisible": true,
+        "IsStatic": false,
+        "isDraggable": true,
+        "isResizable": true
+      },
+      {
+        "Tabs": {
+          "TabID": 339,
+          "TabDescription": "ריכוז פעילות",
+          "FormID": null,
+          "Layouts": null
+        },
+        "Forms": {
+          "FormID": 27,
+          "ParentFormID": null,
+          "FormName": "פעילות יומית1",
+          "RoutePath": null,
+          "CssIcon": null
+        },
+        "Report": {
+          "ReportID": 184,
+          "ReportName": "POD_Widget_NotVisit",
+          "ReportTypeID": 17,
+          "ReportTemplate": "RadialWidget",
+          "ReportQuery": "sp_POD_Widget_NotVisit",
+          "ReportCaption": "POD_Widget_NotVisit",
+          "Report_SP_Params": "@CountryID;@DistrID;@AgentId;@FromDate;",
+          "ReportDataSourceID": 3,
+          "Widgets": {
+            "WidgetID": null,
+            "Title": "0/0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0%",
+            "Plan": null,
+            "Done": null,
+            "Percent": 66,
+            "ChartColor": "green",
+            "TrackColor": "green-light",
+            "Value": "אי ביקור",
+            "UpperText": null,
+            "LowerText": "Andrey",
+            "BGColor": "bg-warning",
+            "SubBgColor": "bg-warning-light",
+            "IconName": "icon-tree-conifer",
+            "Color": "white"
+          }
+        },
+        "StartPos_X": 9,
+        "StartPos_Y": 2,
+        "ContentDimension_X": 3,
+        "ContentDimension_Y": 3,
+        "ContentDim_MinWidth": 1,
+        "ContentDim_MaxWidth": 3,
+        "ContentDim_MinHeight": 1,
+        "ContentDim_MaxHeight": 4,
+        "IsVisible": true,
+        "IsStatic": false,
+        "isDraggable": true,
+        "isResizable": true
+      }
+    ]
+  },
+  {
+    "TabID": 347,
+    "TabDescription": "טאב ראשי",
+    "FormID": 27,
+    "Layouts": []
+  },
+  {
+    "TabID": 253,
+    "TabDescription": "פעילות יומית לנהג",
+    "FormID": 27,
+    "Layouts": []
+  },
+  {
+    "TabID": 337,
+    "TabDescription": "סטטוס נהגים",
+    "FormID": 27,
+    "Layouts": []
+  },
+  {
+    "TabID": 251,
+    "TabDescription": "תכנון מול ביצוע",
+    "FormID": 27,
+    "Layouts": []
+  },
+  {
+    "TabID": 323,
+    "TabDescription": "מפה",
+    "FormID": 27,
+    "Layouts": []
+  },
+  {
+    "TabID": 338,
+    "TabDescription": "סוף יום",
+    "FormID": 27,
+    "Layouts": [
+      {
+        "Tabs": {
+          "TabID": 338,
+          "TabDescription": "סוף יום",
+          "FormID": null,
+          "Layouts": null
+        },
+        "Forms": {
+          "FormID": 27,
+          "ParentFormID": null,
+          "FormName": "פעילות יומית1",
+          "RoutePath": null,
+          "CssIcon": null
+        },
+        "Report": {
+          "ReportID": 181,
+          "ReportName": "רכיב לקוחות",
+          "ReportTypeID": 11,
+          "ReportTemplate": "RadialWidget",
+          "ReportQuery": "GetSectionmCustomers",
+          "ReportCaption": "רכיב לקוחות",
+          "Report_SP_Params": "@AgentId;",
+          "ReportDataSourceID": 3,
+          "Widgets": {
+            "WidgetID": null,
+            "Title": null,
+            "Plan": null,
+            "Done": null,
+            "Percent": null,
+            "ChartColor": null,
+            "TrackColor": null,
+            "Value": null,
+            "UpperText": null,
+            "LowerText": null,
+            "BGColor": "#F2F2F2",
+            "SubBgColor": null,
+            "IconName": null,
+            "Color": null
+          }
+        },
+        "StartPos_X": 1,
+        "StartPos_Y": 2,
+        "ContentDimension_X": 3,
+        "ContentDimension_Y": 3,
+        "ContentDim_MinWidth": 1,
+        "ContentDim_MaxWidth": 3,
+        "ContentDim_MinHeight": 1,
+        "ContentDim_MaxHeight": 4,
+        "IsVisible": true,
+        "IsStatic": false,
+        "isDraggable": true,
+        "isResizable": true
+      }
+    ]
+  }
+]

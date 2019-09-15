@@ -1,0 +1,37 @@
+﻿[
+  {
+    "FormID": 27,
+    "ParentFormID": null,
+    "FormName": "ראשי",
+    "RoutePath": "dashboard",
+    "CssIcon": "icon-grid"
+  },
+  {
+    "FormID": 57,
+    "ParentFormID": null,
+    "FormName": "משתמשים",
+    "RoutePath": "layout",
+    "CssIcon": "fa fa-truck"
+  },
+  {
+    "FormID": 58,
+    "ParentFormID": null,
+    "FormName": "נהגים למשתמש",
+    "RoutePath": "submenu",
+    "CssIcon": "icon-speedometer"
+  },
+  {
+    "FormID": 59,
+    "ParentFormID": 96,
+    "FormName": "משימות",
+    "RoutePath": "tasks",
+    "CssIcon": "fa fa-tasks"
+  },
+  {
+    "FormID": 66,
+    "ParentFormID": 96,
+    "FormName": "חומרה",
+    "RoutePath": "hardware",
+    "CssIcon": "fa fa-cogs"
+  }
+]

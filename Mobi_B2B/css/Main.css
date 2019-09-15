@@ -1,0 +1,338 @@
+﻿body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    direction: rtl;
+    text-align: right;
+    vertical-align: top;
+    margin: 0 auto;
+    width: 100%; 
+}
+.OrderContainer
+{
+    width:80em;
+    border-right:2px solid #F8F8F8;
+    border-left:2px solid #F8F8F8;
+    
+}
+.OrderHeaderContainer
+{
+    height:6em;
+    
+}
+.OrderMenuContainer
+{
+    vertical-align:top;
+   
+     width:180px !important;
+    
+}
+.tblMenu
+{
+    border-left:2px solid #F8F8F8;
+    background-color:#F8F8F8;
+}
+.tblSubGroups
+{
+    
+    overflow-y:auto;
+     width:180px !important;
+     border:2px solid #ECECEC;
+}
+.OrderDataContainer
+{
+    vertical-align:top;
+    
+}
+.InOrderDataContainer
+{
+    padding-left:5px;
+     overflow:scroll;
+    overflow-x:hidden;
+    
+}
+.dtOrderDataContainer
+{
+    vertical-align:top;
+}
+.txtSearch
+{
+    width:17em;
+    height:1.9em;
+    color:Gray;
+    font-size:1.2em;
+}
+.SearchImg
+{
+    cursor:pointer;
+    background-image: url('../img/search.png');
+    background-repeat: no-repeat;
+    background-position:right;
+    width:70px;
+}
+.SearchImg:hover
+{
+    cursor:pointer;
+    background-image: url('../img/search2.png');
+    background-repeat: no-repeat;
+    width:70px;
+}
+.userText
+{
+    vertical-align:top;
+    text-align:right;
+    width:15em;
+    font-size:1.2em;   
+}
+.Sal
+{
+    vertical-align:top;
+    width:12em;
+    cursor:pointer;
+    
+}
+.tblSal
+{
+}
+.tblSal:hover
+{
+    background-color:#E8E8E8;
+}
+.exit
+{
+    text-align:left;
+    cursor:pointer;
+}
+.exit:hover
+{
+    color:Gray;
+}
+.HeadItem
+{
+    font-size:1.2em;
+    font-weight:700;
+    color:Gray;
+    padding-right:0.38em;
+}
+.txtUnits
+{
+    width:25px;
+}
+.btnAdd
+{
+    background-color:#2C2E81;
+    color:White;
+}
+.imgItem
+{
+    text-align:left;
+    vertical-align:top;
+}
+.HeadBtnAdd
+{
+    text-align:left;
+ 
+}
+.dtItemFutter
+{
+       background-color:#ECECEC;
+       height:45px;
+}
+.tdItemAll
+{
+     border:2px solid #ECECEC;
+     padding:5px 5px 5px 5px;
+     height:140px;
+     vertical-align:top;
+     max-width:320px;
+}
+.itemPrice
+{
+    font-weight:700;
+}
+.itemNamer
+{
+    color:#226CB7;
+    vertical-align:top;
+    font-weight:700;
+    font-size:13px;
+    height:50px;
+}
+.tdCb
+{
+    text-align:right;
+}
+.imgItemN
+{
+    max-width:90px;
+    height:110px;
+    padding-bottom:3px;
+    vertical-align:top;
+}
+.imgItemNSmall
+{
+    max-width:50px;
+    height:30px;
+    padding-bottom:3px;
+    vertical-align:top;
+}
+.imgItemErr
+{
+    max-width:90px;
+    height:50px;
+    padding-bottom:3px;
+    vertical-align:top;
+    padding-bottom:63px;
+}
+.imgItemErrSamll
+{
+    max-width:30px;
+    height:30px;
+    padding-bottom:3px;
+    vertical-align:top;
+}
+.imgShoppingCartGreen
+{
+    height:32px;
+    min-width:32px !important;
+    padding-bottom:3px;
+    cursor:pointer;
+    background-image: url('../img/Shopping Cart2.png');
+    background-repeat: no-repeat;
+    background-color:#63C795;
+}
+.imgShoppingCart
+{
+    height:32px;
+    min-width:32px !important;
+    padding-bottom:3px;
+    cursor:pointer;
+    background-image: url('../img/Shopping Cart2.png');
+    background-repeat: no-repeat;
+    background-color:#D0E2F0;
+}
+.imgShoppingCart:hover
+{
+    background-color:#81B0D6;
+}
+.tblAll
+{
+}
+.dtAbTbl
+{
+    vertical-align:top;
+}
+.dohefItem
+{
+    
+}
+.sOpen
+{
+    display:none;
+    cursor:pointer;
+}
+.EditWinReportBox
+{
+    top: 100px;
+    left: 25%;
+    position: absolute;
+    width: 50%;
+    height: 400px;
+    border: 2px groove #BFBFBF;
+    background-color: #F8F8F8;
+    color: black;
+    font-size: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 9999;
+    display:none;   
+}
+.EditWinMDTbl
+{
+   
+    height: 270px;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+.EditWinMDX
+{
+    text-align: right;
+    
+}
+.imngX
+{
+    cursor: pointer;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+.EditWinMDHead
+{
+    text-align: center;
+    font-size: 20px;
+    
+    color:Gray;
+    padding-bottom:20px;
+}
+.salHead
+{
+    padding-top:20px;
+    text-align:right;
+    border-bottom:2px solid gray;
+    font-weight:700;
+    padding:8px;
+}
+.bor1
+{
+    border-top:1px solid white;
+    border-bottom:1px solid white;
+    padding:4px;
+}
+.dBtns
+{
+    text-align: center;
+    padding-top: 20px;
+}
+.rowSal
+{
+    border-bottom:2px solid white;
+    padding:8px;
+    
+}
+.itmText
+{
+    padding-top:10px;
+}
+.bb
+{
+    font-weight:700;
+}
+.btn
+{
+    width:100px;
+    height:30px;
+}
+.removeIcon
+{
+    width:30px;
+    cursor:pointer;
+}
+.plusimg
+{
+    width:16px;
+    cursor:pointer;
+}
+.minusimg
+{
+    width:16px;
+    cursor:pointer;
+}
+.progress
+{
+    position:absolute;
+    top:10%;
+    left:40%;
+    z-index:9999;
+    background-color:Red;
+}
