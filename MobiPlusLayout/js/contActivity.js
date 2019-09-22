@@ -56,7 +56,7 @@ var activity = {
                 { name: 'DriverReturn', index: 'DriverReturn', sortable: true, sorttype: 'text', align: 'center', width: 60 },
                 { name: 'DriverStatus', index: 'DriverStatus', sortable: true, sorttype: 'text', formatter: twoLinesTextFormatter, align: recordpos, width: 250 },
                 { name: 'Progress', index: 'Progress', sortable: false, edittype: 'text', formatter: BarFormatter, width: 80, align: recordpos, search: false },
-                { name: 'KPI', index: 'KPI', sortable: true, sorttype: 'text', align: 'center', width: 50 }
+                { name: 'KPI', index: 'KPI', sortable: true, sorttype: 'int', align: 'center', width: 50 }
             ],
             viewrecords: true,
             sortorder: "asc",

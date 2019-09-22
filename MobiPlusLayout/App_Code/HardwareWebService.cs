@@ -774,6 +774,7 @@ public class HardwareWebService : System.Web.Services.WebService
             activity = table.AsEnumerable().Select(a => new ConcActivityModel
             {
                 ActualSortOrder = a["ActualSortOrder"].ToString(),
+                ByTrack = a["ByTrack"].ToString(),
                 AgentReturn = a["CustReturns"].ToString(),
                 DriverName = a["Driver"].ToString(),
                 FromDate = a["FromDate1"].ToString(),

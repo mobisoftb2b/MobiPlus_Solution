@@ -39,5 +39,6 @@ public partial class Pages_Compield_ConcentrationActivityPopup : PageBaseCls
         hidDriverReturn_Grid_Header.Value = GetLocalString("DriverReturn");
         hidDriverStatus_Grid_Header.Value = GetLocalString("DriverStatus");
         hidPallets_Grid_Header.Value = GetLocalString("Pallets");
+        hidRouteAdherence_Grid_Header.Value = GetLocalString("RouteAdherence");
     }
 }

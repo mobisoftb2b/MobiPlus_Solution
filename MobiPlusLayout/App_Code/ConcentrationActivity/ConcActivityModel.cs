@@ -41,4 +41,5 @@ public class ConcActivityModel
     public string TaskDate { get; set; }
     public string TT { get; set; }
     public string TP { get; set; }
+    public string ByTrack { get; set; }
 }
