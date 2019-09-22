@@ -44,13 +44,14 @@ public partial class Pages_Compield_Customers : PageBaseCls
         hidAddbuttonCaption.Value = GetLocalString("addButton");
         hidSearchButtonCaption.Value = GetLocalString("Search");
         hidCollectedSurfaces_Grid_Header.Value = GetLocalString("Pallets");
-		hidCustomerCoordLat_Grid_Header.Value = GetLocalString("Lat");
-		hidCustomerCoordLon_Grid_Header.Value = GetLocalString("Lon");
-		hidCustomerAddress_Grid_Header.Value = GetLocalString("Address");
+        hidCustomerAddress_Grid_Header.Value = GetLocalString("Address");
 		hidMission_Grid_Header.Value = GetLocalString("Mission");
 		hidQuality_Grid_Header.Value = GetLocalString("Quality");
 		hidCycle_Grid_Header.Value = GetLocalString("Cycle");
         hidSortOrder_Grid_Header.Value = GetLocalString("Order");
-        hidActualSortOrder_Grid_Header.Value = GetLocalString("ActualSortOrder");		
+        hidActualSortOrder_Grid_Header.Value = GetLocalString("ActualSortOrder");
+        hidRouteAdherence_Grid_Header.Value = GetLocalString("RouteAdherence");
+        hidServiceHourMin_Grid_Header.Value = GetLocalString("ServiceHoursMinutes");
+        hidTravelHourMin_Grid_Header.Value = GetLocalString("TravelHoursMinutes");
     }
 }

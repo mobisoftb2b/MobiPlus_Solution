@@ -40,22 +40,19 @@
             color:green;
         }*/
    </style>
-
+   <script type="text/javascript" src="../../css/redmond/jquery.js"></script>
+   <script type="text/javascript" src="../../css/redmond/jquery-ui-1.9.2.custom.js"></script>
+   <script type="text/javascript" src="../../css/redmond/jqgrid/i18n/grid.locale-en.js"></script>
+   <script type="text/javascript" src="../../css/redmond/jqgrid/jquery.jqGrid.js"></script>
+   <script type="text/javascript" src="../../js/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="../../js/dist/js/select2.min.js"></script>
+     <script type="text/javascript" src="../../js/jszip.min.js"></script>
+    <script type="text/javascript" src="../../js/Main.js?se=<%=Session.SessionID%>"></script>
+    <script type="text/javascript" src="../../js/customers.js?se=<%=Session.SessionID%>"></script>
 </head>
 <body>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server">
-            <Scripts>
-                <asp:ScriptReference Path="~/css/redmond/jquery.js" />
-                <asp:ScriptReference Path="~/css/redmond/jquery-ui-1.9.2.custom.js" />
-                <asp:ScriptReference Path="~/css/redmond/jqgrid/i18n/grid.locale-en.js" />
-                <asp:ScriptReference Path="~/css/redmond/jqgrid/jquery.jqGrid.js" />
-                <asp:ScriptReference Path="~/js/jquery.blockUI.js" />
-                <asp:ScriptReference Path="~/js/Main.js" />
-                <asp:ScriptReference Path="~/js/customers.js" />
-                <asp:ScriptReference Path="~/js/dist/js/select2.min.js" />
-		<asp:ScriptReference Path="~/js/jszip.min.js" />
-            </Scripts>
             <Services>
                 <asp:ServiceReference Path="~/Handlers/HardwareWebService.asmx" />
             </Services>
@@ -81,13 +78,14 @@
         <asp:HiddenField ID="hidDriverReturn_Grid_Header" ClientIDMode="Static" runat="server" />
         <asp:HiddenField ID="hidLanguage" ClientIDMode="Static" runat="server" />
         <asp:HiddenField ID="hidCollectedSurfaces_Grid_Header" ClientIDMode="Static" runat="server" />
-		<asp:HiddenField ID="hidCustomerCoordLat_Grid_Header" ClientIDMode="Static" runat="server" />
-		<asp:HiddenField ID="hidCustomerCoordLon_Grid_Header" ClientIDMode="Static" runat="server" />
+        <asp:HiddenField ID="hidRouteAdherence_Grid_Header" ClientIDMode="Static" runat="server" />
 		<asp:HiddenField ID="hidMission_Grid_Header" ClientIDMode="Static" runat="server" />
 		<asp:HiddenField ID="hidQuality_Grid_Header" ClientIDMode="Static" runat="server" />
 		<asp:HiddenField ID="hidCycle_Grid_Header" ClientIDMode="Static" runat="server" />
         <asp:HiddenField ID="hidSortOrder_Grid_Header" ClientIDMode="Static" runat="server" />
         <asp:HiddenField ID="hidActualSortOrder_Grid_Header" ClientIDMode="Static" runat="server" />
+        <asp:HiddenField ID="hidTravelHourMin_Grid_Header" ClientIDMode="Static" runat="server" />
+        <asp:HiddenField ID="hidServiceHourMin_Grid_Header" ClientIDMode="Static" runat="server" />
 
         <asp:HiddenField ID="hidAddbuttonCaption" ClientIDMode="Static" runat="server" />
         <asp:HiddenField ID="hidSaveButtonCaption" ClientIDMode="Static" runat="server" />

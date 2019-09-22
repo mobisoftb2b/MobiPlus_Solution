@@ -1107,7 +1107,10 @@ public class HardwareWebService : System.Web.Services.WebService
                 DriverID = a["AgentId1"].ToString(),
                 DistrID = a["DistrID1"].ToString(),
                 ReportGPS_Lat = a["ReportGPS_Lat"].ToString(),
-                ReportGPS_Lon = a["ReportGPS_Lon"].ToString()
+                ReportGPS_Lon = a["ReportGPS_Lon"].ToString(),
+                ServiceHoursMinutes = a["ServiceHoursMinutes"].ToString(),
+                TravelHoursMinutes = a["TravelHoursMinutes"].ToString(),
+                ByTrack = a["ByTrack"].ToString()
             }).ToList();
         }
         catch (Exception ex)
@@ -1154,6 +1157,9 @@ public class HardwareWebService : System.Web.Services.WebService
                 DistrID = a["DistrID1"].ToString(),
                 ReportGPS_Lat = a["ReportGPS_Lat"].ToString(),
                 ReportGPS_Lon = a["ReportGPS_Lon"].ToString(),
+                ByTrack = a["ByTrack"].ToString(),
+                ServiceHoursMinutes = a["ServiceHoursMinutes"].ToString(),
+                TravelHoursMinutes = a["TravelHoursMinutes"].ToString(),
                 Mission = a["Mission"].ToString(),
                 Quality = a["K"].ToString() == "" ? null : (int?)int.Parse(a["K"].ToString()),
                 Cycle = a["Cycle"].ToString(),

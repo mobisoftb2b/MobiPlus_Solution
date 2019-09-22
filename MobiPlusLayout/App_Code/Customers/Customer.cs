@@ -41,4 +41,7 @@ public class CustomerModel
     public string Cycle { get; set; }
     public string SortOrder { get; set; }
     public string ActualSortOrder { get; set; }
+    public string ByTrack { get; set; }
+    public string ServiceHoursMinutes { get; set; }
+    public string TravelHoursMinutes { get; set; }
 }
