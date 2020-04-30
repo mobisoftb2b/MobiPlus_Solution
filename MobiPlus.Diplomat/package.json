@@ -20,7 +20,7 @@
     "ejs": "2.5.7",
     "intl-locales-supported": "^1.0.0",
     "isomorphic-fetch": "^2.2.1",
-    "jquery": "^3.1.1",
+    "jquery": "^3.5.0",
     "material-ui": "^0.20.0",
     "material-ui-superselectfield": "^1.6.1",
     "mdn-polyfills": "^5.0.0",
