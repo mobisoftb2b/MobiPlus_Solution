@@ -24,7 +24,7 @@
     "material-ui": "^0.20.0",
     "material-ui-superselectfield": "^1.6.1",
     "mdn-polyfills": "^5.0.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "prop-types": "^15.6.0",
     "pubsub-js": "1.6.0",
     "react": "^15.5.0",
