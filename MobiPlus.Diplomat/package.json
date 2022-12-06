@@ -22,7 +22,7 @@
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^3.1.1",
     "material-ui": "^0.20.0",
-    "material-ui-superselectfield": "^1.6.1",
+    "material-ui-superselectfield": "^1.10.0",
     "mdn-polyfills": "^5.0.0",
     "node-sass": "^4.12.0",
     "prop-types": "^15.6.0",
